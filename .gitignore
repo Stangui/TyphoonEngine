@@ -1,0 +1,10 @@
+#directories
+.vs
+Typhoon/Intermediate
+
+#files
+*.user
+*.ilk
+*.obj
+*.iobj
+*.ipdb
