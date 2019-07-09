@@ -1,3 +1,5 @@
+#include "TyphoonPCH.h"
+
 #include "Application.h"
 
 namespace TyphooEngine

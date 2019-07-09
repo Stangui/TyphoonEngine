@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TyphoonEngine.h"
+#include "Events/KeyboardEvent.h"
 
 extern TyphooEngine::Application* CreateApplication();
 

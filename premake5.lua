@@ -18,6 +18,9 @@ project "Typhoon"
 	targetdir ("%{prj.name}/bin/" ..  outputdir .. "/%{prj.name}")
 	objdir ("%{prj.name}/Intermediate/" .. outputdir .. "/%{prj.name}")
 	
+	pchheader ("TyphoonPCH.h")
+	pchsource ("%{prj.name}/Src/%{prj.name}/TyphoonPCH.cpp")
+
 	files
 	{
 		"%{prj.name}/Src/**.h",
@@ -26,6 +29,7 @@ project "Typhoon"
 	
 	includedirs 
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/ThirdParty/SpdLog/include"
 	}
 	
