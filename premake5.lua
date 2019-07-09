@@ -10,6 +10,11 @@ workspace "Typhoon"
 	
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 	
+IncludeDir = {}
+IncludeDir["GLFW"] = "Typhoon/ThirdParty/GLFW/include"
+
+include "Typhoon/ThirdParty/GLFW"
+
 project "Typhoon"
 	location "Typhoon"
 	kind "StaticLib"
@@ -30,9 +35,16 @@ project "Typhoon"
 	includedirs 
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/ThirdParty/SpdLog/include"
+		"%{prj.name}/ThirdParty/SpdLog/include",
+		"%{IncludeDir.GLFW}"
 	}
 	
+	links
+	{
+		"GLFW",	
+		"OpenGL32.lib"
+	}
+
 	filter "system:windows"
 		cppdialect "C++11"
 		staticruntime "On"

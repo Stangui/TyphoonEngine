@@ -7,6 +7,8 @@
 #include <vector>
 #include <algorithm>
 
+#include "Loggers/Log.h"
+
 #ifdef TE_PLATFORM_WINDOWS
 
 #include <windows>

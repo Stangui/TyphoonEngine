@@ -1,3 +1,6 @@
 [submodule "ThirdParty/SpdLog"]
 	path = ThirdParty/SpdLog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Typhoon/ThirdParty/GLFw"]
+	path = Typhoon/ThirdParty/GLFw
+	url = https://github.com/glfw/glfw.git
