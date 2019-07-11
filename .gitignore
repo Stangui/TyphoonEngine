@@ -1,6 +1,7 @@
 #directories
 .vs
 Intermediate
+bin
 
 #files
 *.user
@@ -8,3 +9,6 @@ Intermediate
 *.obj
 *.iobj
 *.ipdb
+*.vcxproj
+*.sln
+*.filters
