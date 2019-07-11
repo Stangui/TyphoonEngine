@@ -1,7 +1,7 @@
 #include "TyphoonEngine.h"
 
 //--------------------------------------------------//
-class SandboxApp : public TyphooEngine::Application
+class SandboxApp : public TyphoonEngine::Application
 {
 public:
 
@@ -11,7 +11,7 @@ public:
 };
 
 //--------------------------------------------------//
-TyphooEngine::Application* CreateApplication() 
+TyphoonEngine::Application* CreateApplication() 
 {
 	return new SandboxApp();
 }

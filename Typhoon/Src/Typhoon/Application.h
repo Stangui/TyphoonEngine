@@ -1,6 +1,10 @@
 #pragma once
 
-namespace TyphooEngine
+#include "Core.h"
+#include "TyphoonPCH.h"
+#include "Events/ApplicationEvent.h"
+
+namespace TyphoonEngine
 {
 	class Application
 	{
@@ -15,6 +19,15 @@ namespace TyphooEngine
 		
 		// Update
 		void Run();
+
+		// Events
+		void OnEvent( Event& Evt );
+
+	private:
+
+		std::unique_ptr<class IWindow> m_window;
+		bool m_bRunning;
+		bool m_bFocused;
 
 	};
 

@@ -3,12 +3,14 @@
 #include "TyphoonEngine.h"
 #include "Events/KeyboardEvent.h"
 
-extern TyphooEngine::Application* CreateApplication();
+extern TyphoonEngine::Application* CreateApplication();
 
 #if TYPHOON_PLATFORM_WINDOWS
 
 int main( int argc, char** argv )
 {
+	TyphoonEngine::Log::Init();
+
 	auto App = CreateApplication();
 	App->Run();
 	delete App;
