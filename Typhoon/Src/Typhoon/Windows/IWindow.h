@@ -1,21 +1,33 @@
 #pragma once
 
 #include "Typhoon/Vector2.h"
-#include "Events/Event.h"
+#include "Typhoon/Events/Event.h"
 
 namespace TyphoonEngine
 {
 
+	enum class WINDOW_TYPE : uint8
+	{
+		BorderWindowed,
+		BorderlessWindowed,
+		FullscreenWindowed,
+		Fullscreen
+	};
+
 	struct WindowProperties
 	{
 		Vec2i m_dimensions;
-		bool m_vsync;
+		bool m_bVSync : 1;
+		WINDOW_TYPE m_type;
+		uint8 m_monitorId;
 		std::string m_title;
 
 		WindowProperties() :
 			 m_dimensions(1270, 720)
-			,m_vsync(true)
-			,m_title("Typhoon Engine Window")
+			, m_bVSync( true )
+			, m_type( WINDOW_TYPE::BorderlessWindowed )
+			, m_monitorId( 0 )
+			, m_title("Typhoon Engine Application")
 		{
 		}
 	};
@@ -36,6 +48,7 @@ namespace TyphoonEngine
 		virtual void SetVSync( bool bEnable ) = 0;
 		virtual bool IsVSync( ) const = 0;
 		virtual const Vec2i GetWindowSize() const = 0;
+		virtual void* GetNativeWindow() const = 0;
 
 		static IWindow* Create( const WindowProperties& props = WindowProperties() );
 	

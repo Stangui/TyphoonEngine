@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Windows/IWindow.h"
+#include "Typhoon/Windows/IWindow.h"
 #include <GLFW/glfw3.h>
 
 namespace TyphoonEngine
@@ -13,7 +13,10 @@ namespace TyphoonEngine
 		struct WindowData
 		{
 			Vec2i m_dims;
-			bool m_vSync;
+			uint8 m_monitorId;
+			bool m_bVSync;
+			WINDOW_TYPE m_type;
+
 			EventCallbackFn m_callback;
 		};
 
@@ -27,12 +30,15 @@ namespace TyphoonEngine
 		virtual bool Update() override;
 		virtual void SetVSync( bool bEnable ) override;
 		virtual bool IsVSync() const override;
-		virtual const Vec2i GetWindowSize() const;
+		virtual const Vec2i GetWindowSize() const override;
+		virtual void* GetNativeWindow() const override;
 
 	private:
 
-		bool init( const WindowProperties& props );
-		void shutdown();
+		Vec2i _calculateWindowPos( GLFWmonitor* monitor, int sizeX, int sizeY );
+		bool _init( const WindowProperties& props );
+		void _setCallbacks(struct GLFWwindow* win = nullptr);
+		void _shutdown();
 
 		GLFWwindow* m_glWindow;
 		WindowData m_windowData;

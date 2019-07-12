@@ -26,7 +26,7 @@ namespace TyphoonEngine
 	};
 
 	// Key pressed event, holds additional repeated flag
-	class KeyPressedEvent : KeyEvent
+	class KeyPressedEvent : public KeyEvent
 	{
 
 	public:
@@ -35,9 +35,11 @@ namespace TyphoonEngine
 		{
 		}
 
-		std::string ToString() const
+		const std::string ToString() const
 		{
-			return "KeyPressed";
+			char msg[256];
+			sprintf_s( msg, 256, "%s : %d (%d)", getName(), getKeyCode(), m_bRepeated );
+			return msg;
 		}
 
 		inline bool isRepeated() const { return m_bRepeated; }
@@ -50,14 +52,20 @@ namespace TyphoonEngine
 	};
 	
 	// Key released event
-	class KeyReleasedEvent : KeyEvent
+	class KeyReleasedEvent : public KeyEvent
 	{
 
 	public:
 
-		std::string ToString() const
+		KeyReleasedEvent( int32 keyCode ) : KeyEvent( keyCode )
 		{
-			return getName();
+		}
+
+		const std::string ToString() const
+		{
+			char msg[256];
+			sprintf_s( msg, 256, "%s : %d", getName(), getKeyCode() );
+			return msg;
 		}
 
 		EVENT_TYPE( KeyReleased )

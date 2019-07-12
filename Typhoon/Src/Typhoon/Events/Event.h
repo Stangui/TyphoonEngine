@@ -1,5 +1,6 @@
 #pragma once
 
+#include "TyphoonPCH.h"
 #include "Typhoon/Core.h"
 
 namespace TyphoonEngine
@@ -52,9 +53,7 @@ namespace TyphoonEngine
 		}
 
 		// Returns a debug string event name
-		virtual std::string ToString() const = 0;
-
-	private:
+		virtual const std::string ToString() const = 0;
 
 		// Has event been handled?
 		bool bHandled = false;
@@ -75,10 +74,9 @@ namespace TyphoonEngine
 		template<typename T>
 		bool Dispatch( EventFn<T> func )
 		{
-			if ( m_event.GetEventType() == T::GetStaticType() )
+			if ( m_event.getEventType() == T::getStaticType() )
 			{
-				m_event.bHandled = func( *(T*)&m_event );
-				return true;
+				return m_event.bHandled = func( *(T*)&m_event );
 			}
 			return false;
 		}

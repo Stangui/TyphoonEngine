@@ -1,8 +1,5 @@
 #pragma once
 
-#include "TyphoonEngine.h"
-#include "Events/KeyboardEvent.h"
-
 extern TyphoonEngine::Application* CreateApplication();
 
 #if TYPHOON_PLATFORM_WINDOWS

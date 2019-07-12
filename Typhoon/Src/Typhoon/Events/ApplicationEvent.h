@@ -14,9 +14,11 @@ namespace TyphoonEngine
 		inline unsigned int GetWidth() const { return m_Width; }
 		inline unsigned int GetHeight() const { return m_Height; }
 
-		std::string ToString() const override
+		const std::string ToString() const override
 		{
-			return getName();
+			char msg[256];
+			sprintf_s( msg, 256, "%s : %d %d", getName(), GetWidth(), GetHeight() );
+			return msg;
 		}
 
 		EVENT_TYPE( WindowResize )
@@ -30,7 +32,7 @@ namespace TyphoonEngine
 	public:
 		WindowCloseEvent() {}
 
-		virtual std::string ToString() const override
+		virtual const std::string ToString() const override
 		{
 			return getName();
 		}
@@ -44,7 +46,7 @@ namespace TyphoonEngine
 	public:
 		WindowFocusEvent(bool bFocused) : m_bFocused(bFocused) {}
 
-		virtual std::string ToString() const override
+		virtual const std::string ToString() const override
 		{
 			return getName();
 		}

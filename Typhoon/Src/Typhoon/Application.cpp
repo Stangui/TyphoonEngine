@@ -1,17 +1,30 @@
 #include "TyphoonPCH.h"
+#include "Application.h"
 
-#include "Typhoon/Application.h"
+#include "KeyCodes.h"
+#include "Input.h"
 #include "Windows/IWindow.h"
 
 namespace TyphoonEngine
 {
+
+	Application* Application::s_instance = nullptr;
+
 	//----------------------------------------------//
 	Application::Application() : 
 		 m_bRunning(true)
 		,m_bFocused(true)
 	{
-		m_window = std::unique_ptr<IWindow>( IWindow::Create() );
-		m_window->SetEventCallback(BIND_CB_FUNC(&Application::OnEvent));
+		WindowProperties wp;
+		wp.m_bVSync = true;
+		wp.m_monitorId = 1;
+		wp.m_title = "Title";
+		wp.m_type = WINDOW_TYPE::BorderWindowed;
+		wp.m_dimensions = Vec2i( 1280, 720 );
+		m_window = std::unique_ptr<IWindow>( IWindow::Create(wp) );
+		m_window->SetEventCallback( BIND_CB_FUNC( &Application::OnEvent ) );
+
+		s_instance = this;
 	}
 
 	//----------------------------------------------//
@@ -25,29 +38,32 @@ namespace TyphoonEngine
 	{
 		TE_ENGINE_LOG_INFO( "Application::OnEvent() - {0}", Evt.ToString() );
 
-		switch ( Evt.getEventType() )
-		{
-		case EventType::WindowClose:
+		if ( IInput::isKeyPressed( TE_KEY_1 ) )
 		{
 			m_bRunning = false;
-			break;
+			return;
 		}
-		case EventType::WindowFocus:
+		
+		EventDispatch dispatch( Evt );
+		dispatch.Dispatch<WindowCloseEvent>( BIND_CB_FUNC( &Application::OnWindowClose ) );
+		dispatch.Dispatch<KeyPressedEvent>( BIND_CB_FUNC( &Application::OnKeyPressed ) );
+	}
+
+	//----------------------------------------------//
+	bool Application::OnWindowClose( WindowCloseEvent& Evt )
+	{
+		m_bRunning = false;
+		return true;
+	}
+
+	//----------------------------------------------//
+	bool Application::OnKeyPressed( KeyPressedEvent& Evt )
+	{
+		if ( Evt.getKeyCode() == TE_KEY_ESCAPE )
 		{
-			m_bFocused = static_cast<WindowFocusEvent&>(Evt).isFocused();
-			break;
+			m_bRunning = false;
 		}
-		case EventType::WindowMoved:
-		{
-			break;
-		}
-		case EventType::WindowResize:
-		{
-			break;
-		}
-		default:
-			break;
-		}
+		return true;
 	}
 
 	//----------------------------------------------//
