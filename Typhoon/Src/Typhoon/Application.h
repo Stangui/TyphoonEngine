@@ -4,6 +4,7 @@
 #include "Events/Event.h"
 #include "Typhoon/Events/ApplicationEvent.h"
 #include "Typhoon/Events/KeyboardEvent.h"
+#include "Typhoon/Layers/LayerStack.h"
 
 namespace TyphoonEngine
 {
@@ -16,13 +17,13 @@ namespace TyphoonEngine
 
 		// Constructor
 		Application();
-		
-		// Getters
-		inline static const Application& Get() { return *s_instance; }
-		inline const IWindow* getWindow() const { return m_window.get(); }
 
 		// Destructor
 		virtual ~Application();
+
+		// Getters
+		inline static const Application& Get() { return *s_instance; }
+		inline const IWindow* getWindow() const { return m_window.get(); }
 		
 		// Update
 		void Run();
@@ -32,11 +33,20 @@ namespace TyphoonEngine
 		bool OnWindowClose( WindowCloseEvent& Evt );
 		bool OnKeyPressed( KeyPressedEvent& Evt );
 
+		//Layers
+		void PushLayer( Layer* layer );
+		void PushOverlay( Layer* layer );
+		void PopLayer( Layer* layer );
+		void PopOverlay( Layer* layer );
+
 	private:
 
 		std::unique_ptr<class IWindow> m_window;
 		bool m_bRunning;
 		bool m_bFocused;
+		LayerStack m_layerStack;
+
+		// Singleton
 		static Application* s_instance;
 
 	};

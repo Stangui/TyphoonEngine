@@ -15,9 +15,9 @@
 
 #define BIT(x) (1 << x)
 
-#ifdef TE_ENABLE_ASSERTS
-	#define TE_ASSERT( x, ... ) { if ( !( x ) ) { TE_ERROR( "Assertion Failed {0}", __VA_ARGS__ ); __debugbreak(); } }
-	#define TE_VERIFY( x, ... ) { if ( !( x ) ) { TE_ERROR( "Assertion Failed {0}", __VA_ARGS__ ); __debugbreak(); } }
+#ifdef TE_ASSERTS
+	#define TE_ASSERT( x, ... ) { if ( (!x) ) { TE_ERROR( "Assertion Failed {0}", __VA_ARGS__ ); __debugbreak(); } }
+	#define TE_VERIFY( x, ... ) { if ( (!x) ) { TE_ERROR( "Assertion Failed {0}", __VA_ARGS__ ); __debugbreak(); } }
 #else
 	#define TE_ASSERT( x, ... ) 
 	#define TE_VERIFY( x, ... ) x 

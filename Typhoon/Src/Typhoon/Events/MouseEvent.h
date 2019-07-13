@@ -16,11 +16,11 @@ namespace TyphoonEngine
 		const std::string ToString() const override
 		{
 			char msg[256];
-			sprintf_s( msg, 256, "%s : %.1f %.1f", getName(), m_mouseX, m_mouseY );
+			sprintf_s( msg, 256, "%s : %.1f %.1f", GetName(), m_mouseX, m_mouseY );
 			return msg;
 		}
 
-		inline void getPosition( float& x, float& y ) const
+		inline void GetPosition( float& x, float& y ) const
 		{
 			x = m_mouseX;
 			y = m_mouseY;
@@ -39,7 +39,7 @@ namespace TyphoonEngine
 	{
 	public:
 
-		inline int32 getButtonId() const
+		inline int32 GetButtonId() const
 		{
 			return m_buttonId;
 		}
@@ -68,7 +68,7 @@ namespace TyphoonEngine
 		const std::string ToString() const override
 		{
 			char msg[256];
-			sprintf_s( msg, 256, "%s : %d", getName(), getButtonId() );
+			sprintf_s( msg, 256, "%s : %d", GetName(), GetButtonId() );
 			return msg;
 		}
 
@@ -86,7 +86,7 @@ namespace TyphoonEngine
 		const std::string ToString() const override
 		{
 			char msg[256];
-			sprintf_s( msg, 256, "%s : %d", getName(), getButtonId() );
+			sprintf_s( msg, 256, "%s : %d", GetName(), GetButtonId() );
 			return msg;
 		}
 
@@ -104,7 +104,7 @@ namespace TyphoonEngine
 		const std::string ToString() const override
 		{
 			char msg[256];
-			sprintf_s( msg, 256, "%s : %.1f %.1f", getName(), m_offsetX, m_offsetY );
+			sprintf_s( msg, 256, "%s : %.1f %.1f", GetName(), m_offsetX, m_offsetY );
 			return msg;
 		}
 

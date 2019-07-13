@@ -10,7 +10,7 @@ namespace TyphoonEngine
 	{
 	public:
 
-		inline int32 getKeyCode() const { return m_keyCode; }
+		inline int32 GetKeyCode() const { return m_keyCode; }
 
 		EVENT_CATEGORY( Input | Keyboard )
 
@@ -38,11 +38,11 @@ namespace TyphoonEngine
 		const std::string ToString() const
 		{
 			char msg[256];
-			sprintf_s( msg, 256, "%s : %d (%d)", getName(), getKeyCode(), m_bRepeated );
+			sprintf_s( msg, 256, "%s : %d (%d)", GetName(), GetKeyCode(), m_bRepeated );
 			return msg;
 		}
 
-		inline bool isRepeated() const { return m_bRepeated; }
+		inline bool IsRepeated() const { return m_bRepeated; }
 
 		EVENT_TYPE( KeyPressed )
 
@@ -64,7 +64,7 @@ namespace TyphoonEngine
 		const std::string ToString() const
 		{
 			char msg[256];
-			sprintf_s( msg, 256, "%s : %d", getName(), getKeyCode() );
+			sprintf_s( msg, 256, "%s : %d", GetName(), GetKeyCode() );
 			return msg;
 		}
 

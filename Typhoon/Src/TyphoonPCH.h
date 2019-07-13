@@ -31,6 +31,8 @@ struct ScopedTimer
 	}
 };
 
+#define TE_DELETE(x) if ( x ) { delete x; x = nullptr; }
+
 #define SCOPED_TIMER(x) ScopedTimer x(#x)
 
 #ifdef TE_PLATFORM_WINDOWS

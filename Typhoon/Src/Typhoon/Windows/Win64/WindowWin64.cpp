@@ -5,6 +5,8 @@
 #include "Typhoon/Events/KeyboardEvent.h"
 #include "Typhoon/Events/MouseEvent.h"
 
+#include "glad/glad.h"
+
 namespace TyphoonEngine
 {
 
@@ -206,7 +208,7 @@ namespace TyphoonEngine
 		if ( !s_glfwInitialised )
 		{
 			bool success = glfwInit();
-			TE_ASSERT(success)
+			TE_ASSERT(success, "Error initialising GLFW")
 			s_glfwInitialised = true;
 		}
 
@@ -262,6 +264,8 @@ namespace TyphoonEngine
 		}		
 		
 		glfwMakeContextCurrent( m_glWindow );
+		int status = gladLoadGLLoader( (GLADloadproc)glfwGetProcAddress );
+		TE_ASSERT(status, "Failed to initialise GLAD")
 		glfwSetWindowUserPointer( m_glWindow, &m_windowData );
 		_setCallbacks( m_glWindow );
 

@@ -10,21 +10,21 @@ namespace TyphoonEngine
 {
 	std::unique_ptr<IInput> IInput::s_instance = std::unique_ptr<IInput>(new WindowsInput);
 
-	bool WindowsInput::isKeyPressedImpl( int32 keyCode ) const
+	bool WindowsInput::IsKeyPressedImpl( int32 keyCode ) const
 	{
 		auto* window = static_cast<GLFWwindow*>( Application::Get().getWindow()->GetNativeWindow() );
 		auto state = glfwGetKey( window, keyCode );
 		return ( state == GLFW_PRESS || state == GLFW_REPEAT );
 	}
 
-	bool WindowsInput::isMouseButtonPressedImpl( int32 button ) const
+	bool WindowsInput::IsMouseButtonPressedImpl( int32 button ) const
 	{
 		auto* window = static_cast<GLFWwindow*>( Application::Get().getWindow()->GetNativeWindow() );
 		auto state = glfwGetMouseButton( window, button );
 		return state == GLFW_PRESS;
 	}
 
-	Vec2f WindowsInput::getMousePosImpl() const
+	Vec2f WindowsInput::GetMousePosImpl() const
 	{
 		auto* window = static_cast<GLFWwindow*>( Application::Get().getWindow()->GetNativeWindow() );
 		double x, y;

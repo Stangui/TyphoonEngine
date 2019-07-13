@@ -17,7 +17,7 @@ namespace TyphoonEngine
 		const std::string ToString() const override
 		{
 			char msg[256];
-			sprintf_s( msg, 256, "%s : %d %d", getName(), GetWidth(), GetHeight() );
+			sprintf_s( msg, 256, "%s : %d %d", GetName(), GetWidth(), GetHeight() );
 			return msg;
 		}
 
@@ -34,7 +34,9 @@ namespace TyphoonEngine
 
 		virtual const std::string ToString() const override
 		{
-			return getName();
+			char msg[256];
+			sprintf_s( msg, 256, "%s", GetName() );
+			return msg;
 		}
 
 		EVENT_TYPE( WindowClose )
@@ -48,10 +50,12 @@ namespace TyphoonEngine
 
 		virtual const std::string ToString() const override
 		{
-			return getName();
+			char msg[256];
+			sprintf_s( msg, 256, "%s : %d", GetName(), m_bFocused );
+			return msg;
 		}
 
-		inline bool isFocused() const { return m_bFocused; }
+		inline bool IsFocused() const { return m_bFocused; }
 
 		EVENT_TYPE( WindowFocus )
 		EVENT_CATEGORY( App )

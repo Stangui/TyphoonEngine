@@ -6,10 +6,10 @@
 namespace TyphoonEngine
 {
 
-#define EVENT_CATEGORY(category) virtual int32 getCategoryFlags() const { return category; }
-#define EVENT_TYPE(type) static EventType getStaticType() { return EventType::##type; }\
-                         virtual EventType getEventType() const override { return getStaticType(); }\
-                         virtual const char* getName() const override { return #type; }
+#define EVENT_CATEGORY(category) virtual int32 GetCategoryFlags() const { return category; }
+#define EVENT_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
+                         virtual EventType GetEventType() const override { return GetStaticType(); }\
+                         virtual const char* GetName() const override { return #type; }
 
 	// Type of event 
 	enum class EventType : uint8
@@ -38,18 +38,18 @@ namespace TyphoonEngine
 	public:
 
 		// Returns type of this event
-		virtual EventType getEventType() const = 0;
+		virtual EventType GetEventType() const = 0;
 		
 		// Returns the category this event belongs to
-		virtual int32 getCategoryFlags() const = 0;
+		virtual int32 GetCategoryFlags() const = 0;
 		
 		// Gets event name
-		virtual const char* getName() const = 0;
+		virtual const char* GetName() const = 0;
 
 		// Returns whether this event is in the specified category
-		inline bool isInCategory( EventCategory category )
+		inline bool IsInCategory( EventCategory category )
 		{
-			return getCategoryFlags() & category;
+			return GetCategoryFlags() & category;
 		}
 
 		// Returns a debug string event name
@@ -74,7 +74,7 @@ namespace TyphoonEngine
 		template<typename T>
 		bool Dispatch( EventFn<T> func )
 		{
-			if ( m_event.getEventType() == T::getStaticType() )
+			if ( m_event.GetEventType() == T::GetStaticType() )
 			{
 				return m_event.bHandled = func( *(T*)&m_event );
 			}

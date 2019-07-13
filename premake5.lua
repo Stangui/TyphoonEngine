@@ -12,8 +12,10 @@ workspace "Typhoon"
 	
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "Typhoon/ThirdParty/GLFW/include"
+	IncludeDir["GLAD"] = "Typhoon/ThirdParty/Glad/include"
 
 	include "Typhoon/ThirdParty/GLFW"
+	include "Typhoon/ThirdParty/GLAD"
 
 	project "Typhoon"
 		location "Typhoon"
@@ -36,12 +38,14 @@ workspace "Typhoon"
 		{
 			"%{prj.name}/src",
 			"%{prj.name}/ThirdParty/SpdLog/include",
-			"%{IncludeDir.GLFW}"
+			"%{IncludeDir.GLFW}",
+			"%{IncludeDir.GLAD}"
 		}
 		
 		links
 		{
 			"GLFW",	
+			"GLAD",	
 			"OpenGL32.lib",
 			"gdi32"
 		}
@@ -53,11 +57,12 @@ workspace "Typhoon"
 			
 			defines
 			{
-				"TYPHOON_PLATFORM_WINDOWS"
+				"TYPHOON_PLATFORM_WINDOWS",
+				"GLFW_INCLUDE_NONE"
 			}
 			
 		filter "configurations:Debug"
-			defines "TYPHOON_DEBUG"
+			defines "TYPHOON_DEBUG;TE_ASSERTS"
 			symbols "On"
 			
 		filter "configurations:Release"

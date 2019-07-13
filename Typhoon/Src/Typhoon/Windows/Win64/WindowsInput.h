@@ -9,9 +9,9 @@ namespace TyphoonEngine
 	{
 	protected:
 
-		virtual bool isKeyPressedImpl( int32 keyCode ) const override;
-		virtual bool isMouseButtonPressedImpl( int32 button ) const override;
-		virtual Vec2f getMousePosImpl() const override;
+		virtual bool IsKeyPressedImpl( int32 keyCode ) const override;
+		virtual bool IsMouseButtonPressedImpl( int32 button ) const override;
+		virtual Vec2f GetMousePosImpl() const override;
 
 	};
 

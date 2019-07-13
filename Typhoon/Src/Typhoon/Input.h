@@ -10,15 +10,15 @@ namespace TyphoonEngine
 	{
 	public:
 
-		inline static bool isKeyPressed( int32 keyCode ) { return s_instance->isKeyPressedImpl( keyCode ); }
-		inline static bool isMouseButtonPressed( int32 button ) { return s_instance->isMouseButtonPressedImpl( button ); }
-		inline static Vec2f getMousePos() { return s_instance->getMousePosImpl(); }
+		inline static bool IsKeyPressed( int32 keyCode ) { return s_instance->IsKeyPressedImpl( keyCode ); }
+		inline static bool IsMouseButtonPressed( int32 button ) { return s_instance->IsMouseButtonPressedImpl( button ); }
+		inline static Vec2f GetMousePos() { return s_instance->GetMousePosImpl(); }
 
 	protected:
 
-		virtual bool isKeyPressedImpl( int32 keyCode ) const = 0;
-		virtual bool isMouseButtonPressedImpl( int32 button ) const = 0;
-		virtual Vec2f getMousePosImpl( ) const = 0;
+		virtual bool IsKeyPressedImpl( int32 keyCode ) const = 0;
+		virtual bool IsMouseButtonPressedImpl( int32 button ) const = 0;
+		virtual Vec2f GetMousePosImpl( ) const = 0;
 
 	private:
 
