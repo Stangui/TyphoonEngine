@@ -23,7 +23,7 @@ namespace TyphoonEngine
 
 		// Getters
 		inline static const Application& Get() { return *s_instance; }
-		inline const IWindow* getWindow() const { return m_window.get(); }
+		inline const IWindow* GetWindow() const { return m_window.get(); }
 		
 		// Update
 		void Run();

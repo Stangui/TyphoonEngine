@@ -3,4 +3,7 @@
 	url = https://github.com/gabime/spdlog.git
 [submodule "Typhoon/ThirdParty/GLFw"]
 	path = Typhoon/ThirdParty/GLFw
-	url = https://github.com/glfw/glfw.git
+	url = https://github.com/Stangui/glfw.git
+[submodule "Typhoon/ThirdParty/imgui"]
+	path = Typhoon/ThirdParty/imgui
+	url = https://github.com/stangui/imgui

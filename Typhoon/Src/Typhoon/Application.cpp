@@ -52,7 +52,7 @@ namespace TyphoonEngine
 
 		for ( auto it = m_layerStack.end(); it != m_layerStack.begin(); )
 		{
-			( *it-- )->OnEvent( Evt );
+			( *--it )->OnEvent( Evt );
 			if ( Evt.bHandled )
 			{
 				break;

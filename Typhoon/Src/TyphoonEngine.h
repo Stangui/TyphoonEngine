@@ -12,6 +12,10 @@
 #include "Typhoon/Layers/Layer.h"
 //------------------- Layers ----------------------//
 
+//------------------- UI -----------------------//
+#include "Typhoon/UI/ImGuiLayer.h"
+//------------------- UI -----------------------//
+
 //------------------- Input -----------------------//
 #include "Typhoon/Input.h"
 #include "Typhoon/InputCodes/GamepadCodes.h"

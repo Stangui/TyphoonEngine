@@ -13,9 +13,11 @@ workspace "Typhoon"
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "Typhoon/ThirdParty/GLFW/include"
 	IncludeDir["Glad"] = "Typhoon/ThirdParty/Glad/include"
+	IncludeDir["imgui"] = "Typhoon/ThirdParty/imgui"
 
 	include "Typhoon/ThirdParty/GLFW"
 	include "Typhoon/ThirdParty/Glad"
+	include "Typhoon/ThirdParty/imgui"
 
 	project "Typhoon"
 		location "Typhoon"
@@ -39,13 +41,15 @@ workspace "Typhoon"
 			"%{prj.name}/src",
 			"%{prj.name}/ThirdParty/SpdLog/include",
 			"%{IncludeDir.GLFW}",
-			"%{IncludeDir.Glad}"
+			"%{IncludeDir.Glad}",
+			"%{IncludeDir.imgui}"
 		}
 		
 		links
 		{
 			"GLFW",	
 			"Glad",	
+			"ImGui",	
 			"OpenGL32.lib",
 			"gdi32"
 		}

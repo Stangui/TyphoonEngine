@@ -5,8 +5,14 @@ class SandboxApp : public TyphoonEngine::Application
 {
 public:
 
-	SandboxApp() {}
-	virtual ~SandboxApp() override {};
+	SandboxApp() 
+	{
+		PushLayer( new TyphoonEngine::ImGuiLayer() );
+	}
+	
+	virtual ~SandboxApp() override 
+	{
+	};
 
 };
 

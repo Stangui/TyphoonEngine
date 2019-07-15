@@ -263,6 +263,7 @@ namespace TyphoonEngine
 			}
 		}		
 		
+		glfwGetWindowSize( m_glWindow, &m_windowData.m_dims.x, &m_windowData.m_dims.y );
 		glfwMakeContextCurrent( m_glWindow );
 		int status = gladLoadGLLoader( (GLADloadproc)glfwGetProcAddress );
 		TE_ASSERT(status, "Failed to initialise GLAD")
