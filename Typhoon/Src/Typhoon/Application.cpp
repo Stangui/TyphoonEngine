@@ -82,8 +82,6 @@ namespace TyphoonEngine
 	//----------------------------------------------//
 	void Application::Run()
 	{
-		SCOPED_TIMER( Test );
-
 		while ( m_bRunning )
 		{
 			for ( Layer* layer : m_layerStack )
