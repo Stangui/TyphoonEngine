@@ -42,6 +42,7 @@ namespace TyphoonEngine
 	private:
 
 		std::unique_ptr<class IWindow> m_window;
+		class ImGuiLayer* m_imgui;
 		bool m_bRunning;
 		bool m_bFocused;
 		LayerStack m_layerStack;

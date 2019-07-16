@@ -15,6 +15,7 @@ namespace TyphoonEngine
 		virtual void OnDetach() {}
 		virtual void OnUpdate() {}
 		virtual void OnEvent(Event& Evt) {}
+		virtual void OnImGuiRender() {}
 
 		inline void SetEnabled( bool bEnable ) { m_bEnabled = bEnable; }
 		inline bool IsEnabled() const { return m_bEnabled; }

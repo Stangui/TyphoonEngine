@@ -1,7 +1,9 @@
 #pragma once
 
 #include "Core.h"
+
 #include "spdlog/spdlog.h"
+#include "glm/fwd.hpp"
 
 namespace TyphoonEngine
 {
@@ -12,7 +14,7 @@ namespace TyphoonEngine
 	public:
 
 		// Create loggers and set format
-		static void Init( int32 logLevel = 0, const std::string& logFormat = "%^[%T] %n: %v%$" );
+		static void Init( glm::int32 logLevel = 0, const std::string& logFormat = "%^[%T] %n: %v%$" );
 
 		// Getters
 		inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_coreLogger; }

@@ -10,19 +10,19 @@ namespace TyphoonEngine
 	{
 	public:
 
-		inline int32 GetKeyCode() const { return m_keyCode; }
+		inline glm::int32 GetKeyCode() const { return m_keyCode; }
 
 		EVENT_CATEGORY( Input | Keyboard )
 
 	protected:
 
-		explicit KeyEvent( int32 keyCode ) : m_keyCode( keyCode )
+		explicit KeyEvent( glm::int32 keyCode ) : m_keyCode( keyCode )
 		{
 		}
 
 	private:
 
-		int32 m_keyCode;
+		glm::int32 m_keyCode;
 	};
 
 	// Key pressed event, holds additional repeated flag
@@ -31,7 +31,7 @@ namespace TyphoonEngine
 
 	public:
 
-		KeyPressedEvent( int32 keyCode, bool repeated ) : KeyEvent( keyCode ), m_bRepeated( repeated )
+		KeyPressedEvent( glm::int32 keyCode, bool repeated ) : KeyEvent( keyCode ), m_bRepeated( repeated )
 		{
 		}
 
@@ -57,7 +57,7 @@ namespace TyphoonEngine
 
 	public:
 
-		KeyReleasedEvent( int32 keyCode ) : KeyEvent( keyCode )
+		KeyReleasedEvent( glm::int32 keyCode ) : KeyEvent( keyCode )
 		{
 		}
 

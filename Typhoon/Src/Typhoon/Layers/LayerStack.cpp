@@ -6,9 +6,8 @@ namespace TyphoonEngine
 {
 
 	//---------------------------------------------//
-	LayerStack::LayerStack()
+	LayerStack::LayerStack() : m_layerInsertIdx(0)
 	{
-		m_layerInsert = m_layers.begin();
 	}
 
 	//---------------------------------------------//
@@ -23,7 +22,8 @@ namespace TyphoonEngine
 	//---------------------------------------------//
 	void LayerStack::PushLayer( Layer* layer )
 	{
-		m_layerInsert = m_layers.emplace( m_layerInsert, layer );
+		m_layers.emplace( m_layers.begin() + m_layerInsertIdx, layer );
+		++m_layerInsertIdx;
 		layer->OnAttach();
 	}
 
@@ -42,7 +42,7 @@ namespace TyphoonEngine
 		{
 			layer->OnDetach();
 			m_layers.erase( it );
-			--m_layerInsert;
+			--m_layerInsertIdx;
 		}
 	}
 

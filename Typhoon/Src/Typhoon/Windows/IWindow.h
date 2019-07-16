@@ -1,12 +1,11 @@
 #pragma once
 
-#include "Typhoon/Vector2.h"
 #include "Typhoon/Events/Event.h"
 
 namespace TyphoonEngine
 {
 
-	enum class WINDOW_TYPE : uint8
+	enum class WINDOW_TYPE : glm::uint8
 	{
 		BorderWindowed,
 		BorderlessWindowed,
@@ -16,10 +15,10 @@ namespace TyphoonEngine
 
 	struct WindowProperties
 	{
-		Vec2i m_dimensions;
+		glm::ivec2 m_dimensions;
 		bool m_bVSync : 1;
 		WINDOW_TYPE m_type;
-		uint8 m_monitorId;
+		glm::uint8 m_monitorId;
 		std::string m_title;
 
 		WindowProperties() :
@@ -47,7 +46,7 @@ namespace TyphoonEngine
 		virtual bool Update() = 0;
 		virtual void SetVSync( bool bEnable ) = 0;
 		virtual bool IsVSync( ) const = 0;
-		virtual const Vec2i GetWindowSize() const = 0;
+		virtual const glm::ivec2 GetWindowSize() const = 0;
 		virtual void* GetNativeWindow() const = 0;
 
 		static IWindow* Create( const WindowProperties& props = WindowProperties() );

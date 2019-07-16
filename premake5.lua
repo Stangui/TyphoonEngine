@@ -14,6 +14,7 @@ workspace "Typhoon"
 	IncludeDir["GLFW"] = "Typhoon/ThirdParty/GLFW/include"
 	IncludeDir["Glad"] = "Typhoon/ThirdParty/Glad/include"
 	IncludeDir["imgui"] = "Typhoon/ThirdParty/imgui"
+	IncludeDir["glm"] = "Typhoon/ThirdParty/glm"
 
 	include "Typhoon/ThirdParty/GLFW"
 	include "Typhoon/ThirdParty/Glad"
@@ -33,7 +34,9 @@ workspace "Typhoon"
 		files
 		{
 			"%{prj.name}/Src/**.h",
-			"%{prj.name}/Src/**.cpp"
+			"%{prj.name}/Src/**.cpp",
+			"%{IncludeDir.glm}/glm/**.hpp",
+			"%{IncludeDir.glm}/glm/**.inl"
 		}
 		
 		includedirs 
@@ -42,7 +45,8 @@ workspace "Typhoon"
 			"%{prj.name}/ThirdParty/SpdLog/include",
 			"%{IncludeDir.GLFW}",
 			"%{IncludeDir.Glad}",
-			"%{IncludeDir.imgui}"
+			"%{IncludeDir.imgui}",
+			"%{IncludeDir.glm}"
 		}
 		
 		links
@@ -96,7 +100,8 @@ workspace "Typhoon"
 		includedirs 
 		{
 			"Typhoon/src",
-			"Typhoon/ThirdParty/spdlog/include"
+			"Typhoon/ThirdParty/spdlog/include",
+			"%{IncludeDir.glm}"
 		}
 		
 		links

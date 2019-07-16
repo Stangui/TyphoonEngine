@@ -4,7 +4,7 @@
 #include "Input.h"
 #include "InputCodes/KeyCodes.h"
 #include "Layers/Layer.h"
-
+#include "UI/ImGuiLayer.h"
 #include "glad/glad.h"
 
 namespace TyphoonEngine
@@ -22,11 +22,13 @@ namespace TyphoonEngine
 		wp.m_monitorId = 1;
 		wp.m_title = "Title";
 		wp.m_type = WINDOW_TYPE::BorderWindowed;
-		wp.m_dimensions = Vec2i( 1280, 720 );
+		wp.m_dimensions = glm::vec2( 1280, 720 );
 		m_window = std::unique_ptr<IWindow>( IWindow::Create( wp ) );
 		m_window->SetEventCallback( BIND_CB_FUNC( &Application::OnEvent ) );
-
 		s_instance = this;
+
+		m_imgui = new ImGuiLayer();
+		PushOverlay( m_imgui );
 	}
 
 	//----------------------------------------------//
@@ -88,6 +90,16 @@ namespace TyphoonEngine
 			{
 				layer->OnUpdate();
 			}
+
+			// UI render			
+			m_imgui->OnBegin();
+
+			for ( Layer* layer : m_layerStack )
+			{
+				layer->OnImGuiRender();
+			}
+		
+			m_imgui->OnEnd();
 
 			m_window->Update();
 		}

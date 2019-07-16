@@ -6,13 +6,13 @@
 namespace TyphoonEngine
 {
 
-#define EVENT_CATEGORY(category) virtual int32 GetCategoryFlags() const { return category; }
+#define EVENT_CATEGORY(category) virtual glm::int32 GetCategoryFlags() const { return category; }
 #define EVENT_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
                          virtual EventType GetEventType() const override { return GetStaticType(); }\
                          virtual const char* GetName() const override { return #type; }
 
 	// Type of event 
-	enum class EventType : uint8
+	enum class EventType : glm::uint8
 	{
 		AppInit, AppUpdate, AppRender, AppClose, AppTick,
 		WindowClose, WindowFocus, WindowResize, WindowMoved,
@@ -41,7 +41,7 @@ namespace TyphoonEngine
 		virtual EventType GetEventType() const = 0;
 		
 		// Returns the category this event belongs to
-		virtual int32 GetCategoryFlags() const = 0;
+		virtual glm::int32 GetCategoryFlags() const = 0;
 		
 		// Gets event name
 		virtual const char* GetName() const = 0;
@@ -85,4 +85,10 @@ namespace TyphoonEngine
 
 		Event& m_event;
 	};
+
+	inline std::ostream& operator<<( std::ostream& os, const Event& Evt )
+	{
+		return os << Evt.ToString();
+	}
+
 }

@@ -9,6 +9,7 @@
 
 namespace TyphoonEngine
 {
+	using namespace glm;
 
 	bool WindowWin64::s_glfwInitialised = false;
 
@@ -42,7 +43,7 @@ namespace TyphoonEngine
 	}
 
 	//------------------------------------------//
-	const Vec2i WindowWin64::GetWindowSize() const
+	const ivec2 WindowWin64::GetWindowSize() const
 	{
 		return m_windowData.m_dims;
 	}
@@ -77,9 +78,9 @@ namespace TyphoonEngine
 	}
 
 	//------------------------------------------//
-	Vec2i WindowWin64::_calculateWindowPos( GLFWmonitor* monitor, int sizeX, int sizeY )
+	ivec2 WindowWin64::_calculateWindowPos( GLFWmonitor* monitor, int sizeX, int sizeY )
 	{
-		Vec2i pos;
+		ivec2 pos(0, 0);
 		if ( monitor )
 		{
 			int x, y, width, height;
@@ -89,8 +90,8 @@ namespace TyphoonEngine
 			if ( width < sizeX ) { width = sizeX; }
 			if ( height  < sizeY ) { height = sizeY; }
 
-			pos.x = x + static_cast<int32>(( width - sizeX ) * 0.5f);
-			pos.y = y + static_cast<int32>(( height - sizeY ) * 0.5f);
+			pos.x = x + static_cast<int32>( ( width - sizeX ) * 0.5f );
+			pos.y = y + static_cast<int32>( ( height - sizeY ) * 0.5f );
 		}
 		return pos;
 	}
@@ -227,7 +228,7 @@ namespace TyphoonEngine
 		{
 			case WINDOW_TYPE::BorderlessWindowed:
 			{
-				const Vec2i pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims.x, m_windowData.m_dims.y );
+				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims.x, m_windowData.m_dims.y );
 				glfwWindowHint( GLFW_DECORATED, GLFW_FALSE );
 				m_glWindow = glfwCreateWindow( (int)m_windowData.m_dims.x, (int)m_windowData.m_dims.y, props.m_title.c_str(), nullptr, nullptr );
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
@@ -235,7 +236,7 @@ namespace TyphoonEngine
 			}
 			case WINDOW_TYPE::BorderWindowed:
 			{
-				const Vec2i pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims.x, m_windowData.m_dims.y );
+				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims.x, m_windowData.m_dims.y );
 				glfwWindowHint( GLFW_DECORATED, GLFW_TRUE );
 				m_glWindow = glfwCreateWindow( (int)m_windowData.m_dims.x, (int)m_windowData.m_dims.y, props.m_title.c_str(), nullptr, nullptr );
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
@@ -245,7 +246,7 @@ namespace TyphoonEngine
 			{
 				const GLFWvidmode* mode = glfwGetVideoMode( windowMonitor );
 				m_glWindow = glfwCreateWindow( mode->width, mode->height, props.m_title.c_str(), nullptr, nullptr );
-				const Vec2i pos = _calculateWindowPos( windowMonitor, mode->width, mode->height );
+				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, mode->width, mode->height );
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
 				break;
 			}

@@ -7,3 +7,6 @@
 [submodule "Typhoon/ThirdParty/imgui"]
 	path = Typhoon/ThirdParty/imgui
 	url = https://github.com/stangui/imgui
+[submodule "Typhoon/ThirdParty/glm"]
+	path = Typhoon/ThirdParty/glm
+	url = https://github.com/g-truc/glm

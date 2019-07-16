@@ -39,7 +39,7 @@ namespace TyphoonEngine
 	{
 	public:
 
-		inline int32 GetButtonId() const
+		inline glm::int32 GetButtonId() const
 		{
 			return m_buttonId;
 		}
@@ -48,20 +48,20 @@ namespace TyphoonEngine
 
 	protected:
 
-		explicit MouseButtonEvent( int32 id ) : m_buttonId( id )
+		explicit MouseButtonEvent( glm::int32 id ) : m_buttonId( id )
 		{
 		}
 
 	private:
 
-		int32 m_buttonId;
+		glm::int32 m_buttonId;
 	};
 
 	class MouseButtonPressed : public MouseButtonEvent
 	{
 	public:
 
-		explicit MouseButtonPressed( int32 id ) : MouseButtonEvent( id )
+		explicit MouseButtonPressed( glm::int32 id ) : MouseButtonEvent( id )
 		{
 		}
 
@@ -79,7 +79,7 @@ namespace TyphoonEngine
 	{
 	public:
 
-		explicit MouseButtonReleased( int32 id ) : MouseButtonEvent( id )
+		explicit MouseButtonReleased( glm::int32 id ) : MouseButtonEvent( id )
 		{
 		}
 

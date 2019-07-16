@@ -16,8 +16,8 @@ namespace TyphoonEngine
 
 		struct WindowData
 		{
-			Vec2i m_dims;
-			uint8 m_monitorId;
+			glm::ivec2 m_dims;
+			glm::uint8 m_monitorId;
 			bool m_bVSync;
 			WINDOW_TYPE m_type;
 
@@ -34,12 +34,12 @@ namespace TyphoonEngine
 		virtual bool Update() override;
 		virtual void SetVSync( bool bEnable ) override;
 		virtual bool IsVSync() const override;
-		virtual const Vec2i GetWindowSize() const override;
+		virtual const glm::ivec2 GetWindowSize() const override;
 		virtual void* GetNativeWindow() const override;
 
 	private:
 
-		Vec2i _calculateWindowPos( GLFWmonitor* monitor, int sizeX, int sizeY );
+		glm::ivec2 _calculateWindowPos( GLFWmonitor* monitor, int sizeX, int sizeY );
 		bool _init( const WindowProperties& props );
 		void _setCallbacks(struct GLFWwindow* win = nullptr);
 		void _shutdown();

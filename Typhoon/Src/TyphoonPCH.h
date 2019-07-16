@@ -9,8 +9,7 @@
 #include <chrono>
 
 #include "Typhoon/Log.h"
-#include "Typhoon/Vector2.h"
-#include "Typhoon/Vector3.h"
+#include "glm/glm.hpp"
 
 struct ScopedTimer
 {

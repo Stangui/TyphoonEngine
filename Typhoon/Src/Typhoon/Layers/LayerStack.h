@@ -13,6 +13,7 @@ namespace TyphoonEngine
 
 		typedef std::vector<Layer*> LayerVec;
 		typedef std::vector<Layer*>::iterator LayerVecIt;
+		typedef unsigned int LayerIndex;
 
 		LayerStack();
 		~LayerStack();
@@ -29,7 +30,7 @@ namespace TyphoonEngine
 	private:
 
 		LayerVec m_layers;
-		LayerVecIt m_layerInsert;
+		LayerIndex m_layerInsertIdx;
 	};
 
 }

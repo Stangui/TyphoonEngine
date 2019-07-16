@@ -9,7 +9,7 @@ namespace TyphoonEngine
 	std::shared_ptr<spdlog::logger> Log::s_coreLogger;
 	std::shared_ptr<spdlog::logger> Log::s_clientLogger;
 
-	void Log::Init( int32 logLevel, const std::string& logFormat )
+	void Log::Init( glm::int32 logLevel, const std::string& logFormat )
 	{
 		// Set output format
 		spdlog::set_pattern( logFormat );

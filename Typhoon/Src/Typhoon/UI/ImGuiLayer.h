@@ -13,10 +13,12 @@ namespace TyphoonEngine
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach();
-		void OnDetach();
-		void OnUpdate();
-		void OnEvent( Event& Evt );
+		void OnAttach() override;
+		void OnDetach() override;
+		void OnImGuiRender() override;
+
+		void OnBegin();
+		void OnEnd();
 
 	private:
 

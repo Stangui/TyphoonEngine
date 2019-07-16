@@ -8,6 +8,8 @@
 
 namespace TyphoonEngine
 {
+	using namespace glm;
+
 	std::unique_ptr<IInput> IInput::s_instance = std::unique_ptr<IInput>(new WindowsInput);
 
 	bool WindowsInput::IsKeyPressedImpl( int32 keyCode ) const
@@ -24,12 +26,12 @@ namespace TyphoonEngine
 		return state == GLFW_PRESS;
 	}
 
-	Vec2f WindowsInput::GetMousePosImpl() const
+	vec2 WindowsInput::GetMousePosImpl() const
 	{
 		auto* window = static_cast<GLFWwindow*>( Application::Get().GetWindow()->GetNativeWindow() );
 		double x, y;
 		glfwGetCursorPos( window, &x, &y );
-		return Vec2f( static_cast<float>( x ), static_cast<float>( y ) );
+		return vec2( static_cast<float>( x ), static_cast<float>( y ) );
 	}
 
 }
