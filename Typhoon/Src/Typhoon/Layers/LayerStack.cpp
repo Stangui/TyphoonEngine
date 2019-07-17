@@ -26,7 +26,7 @@ namespace TyphoonEngine
 		++m_layerInsertIdx;
 		layer->OnAttach();
 	}
-
+	
 	//---------------------------------------------//
 	void LayerStack::PushOverlay( Layer* layer )
 	{

@@ -10,3 +10,6 @@
 [submodule "Typhoon/ThirdParty/glm"]
 	path = Typhoon/ThirdParty/glm
 	url = https://github.com/g-truc/glm
+[submodule "Doxygen"]
+	path = Doxygen
+	url = https://github.com/doxygen/doxygen.git

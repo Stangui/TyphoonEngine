@@ -28,6 +28,7 @@ namespace TyphoonEngine
 
 		// 
 		// Pushes a layer into the stack on top of previous layers
+		// NOTE: LayerStack owns layer and frees memory on destruction
 		// Parameters:
 		//	layer - pointer to layer to insert
 		//
@@ -36,6 +37,7 @@ namespace TyphoonEngine
 		// 
 		// Pushes an overlay into the stack ALWAYS on top of layers
 		// and above the previous overlay
+		// NOTE: LayerStack owns layer and frees memory on destruction
 		// Parameters:
 		//	overlay - pointer to layer to insert
 		//
@@ -43,6 +45,7 @@ namespace TyphoonEngine
 
 		// 
 		// Removes a layer from the stack
+		// NOTE: Ownership transferred to callee!
 		// Parameters:
 		//	layer - pointer to layer to remove
 		//
@@ -50,6 +53,7 @@ namespace TyphoonEngine
 
 		// 
 		// Removes an overlay from the stack
+		// NOTE: Ownership transferred to callee!
 		// Parameters:
 		//	overlay - pointer to layer to remove
 		//

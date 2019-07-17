@@ -18,19 +18,46 @@ namespace TyphoonEngine
 		, m_bFocused( true )
 	{
 		TE_ASSERT( !s_instance, "Application already exists!" )
+		// Singleton
+		s_instance = this;
 
+		//TODO:- config this..
 		WindowProperties wp;
 		wp.m_bVSync = true;
 		wp.m_monitorId = 1;
-		wp.m_title = "Title";
-		wp.m_type = WINDOW_TYPE::BorderWindowed;
+		wp.m_type = EWINDOW_TYPE::BorderWindowed;
 		wp.m_dimensions = glm::vec2( 1280, 720 );
 		m_window = std::unique_ptr<IWindow>( IWindow::Create( wp ) );
 		m_window->SetEventCallback( BIND_CB_FUNC( &Application::OnEvent ) );
-		s_instance = this;
 
+		// Add UI debug layer
 		m_imgui = new ImGuiLayer();
 		PushOverlay( m_imgui );
+
+		// Temp GL rendering
+		glGenVertexArrays( 1, &m_vertexArray );
+		glBindVertexArray( m_vertexArray );
+
+		glGenBuffers( 1, &m_vertexBuffer );
+		glBindBuffer( GL_ARRAY_BUFFER, m_vertexBuffer );
+
+		float vertices[3 * 3] =
+		{
+			-0.5f, -0.5f, 0.f,
+			0.5f, -0.5f, 0.f,
+			0.f, 0.5f, 0.f
+		};
+
+		glBufferData( GL_ARRAY_BUFFER, sizeof( vertices ), vertices, GL_STATIC_DRAW );
+
+		glEnableVertexAttribArray( 0 );
+		glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof( float ), nullptr );
+
+		glGenBuffers( 1, &m_indexBuffer );
+		glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, m_indexBuffer );
+
+		unsigned int indices[3] = { 0, 1, 2 };
+		glBufferData( GL_ELEMENT_ARRAY_BUFFER, sizeof( indices ), indices, GL_STATIC_DRAW );
 	}
 
 	//----------------------------------------------//
@@ -42,8 +69,6 @@ namespace TyphoonEngine
 	//----------------------------------------------//
 	void Application::OnEvent( Event& Evt )
 	{
-		TE_ENGINE_LOG_INFO( "Application::OnEvent() - {0}", Evt.ToString() );
-
 		EventDispatch dispatch( Evt );
 		dispatch.Dispatch<WindowCloseEvent>( BIND_CB_FUNC( &Application::OnWindowClose ) );
 		dispatch.Dispatch<KeyPressedEvent>( BIND_CB_FUNC( &Application::OnKeyPressed ) );
@@ -80,6 +105,11 @@ namespace TyphoonEngine
 	{
 		while ( m_bRunning )
 		{
+			glClearColor( 0.1f, 0.1f, 0.1f, 1.f );
+			glClear( GL_COLOR_BUFFER_BIT );
+			glBindVertexArray( m_vertexArray );
+			glDrawElements( GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr );
+			
 			for ( Layer* layer : m_layerStack )
 			{
 				layer->OnUpdate();

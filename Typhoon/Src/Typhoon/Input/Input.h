@@ -6,7 +6,7 @@ namespace TyphoonEngine
 {
 
 	//
-	// Input Interface
+	// Platform-agnostic input interface
 	//
 	class IInput
 	{

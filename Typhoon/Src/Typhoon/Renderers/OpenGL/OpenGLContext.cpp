@@ -26,6 +26,13 @@ namespace TyphoonEngine
 			glfwMakeContextCurrent( m_window );
 			int status = gladLoadGLLoader( (GLADloadproc)glfwGetProcAddress );
 			TE_ASSERT( status, "Failed to initialise GLAD" )
+
+			TE_ENGINE_LOG_INFO( "-----------------------------------------" );
+			TE_ENGINE_LOG_INFO( "OpenGL Renderer" );
+			TE_ENGINE_LOG_INFO( "    Vendor: {0}", glGetString( GL_VENDOR ) );
+			TE_ENGINE_LOG_INFO( "    Renderer: {0}", glGetString( GL_RENDERER ) );
+			TE_ENGINE_LOG_INFO( "    Version: {0}", glGetString( GL_VERSION ) );
+			TE_ENGINE_LOG_INFO( "-----------------------------------------" );
 		}
 
 		//--------------------------------------------------------//

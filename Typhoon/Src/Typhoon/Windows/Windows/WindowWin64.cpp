@@ -213,8 +213,6 @@ namespace TyphoonEngine
 			s_glfwInitialised = true;
 		}
 
-		TE_ENGINE_LOG_INFO( "Window dimensions: {0} x {1}", m_windowData.m_dims.x, m_windowData.m_dims.y );
-
 		int count;
 		GLFWmonitor** monitors = glfwGetMonitors( &count );
 		GLFWmonitor* windowMonitor = glfwGetPrimaryMonitor();
@@ -226,7 +224,7 @@ namespace TyphoonEngine
 		// Create window
 		switch ( m_windowData.m_type )
 		{
-			case WINDOW_TYPE::BorderlessWindowed:
+			case EWINDOW_TYPE::BorderlessWindowed:
 			{
 				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims );
 				glfwWindowHint( GLFW_DECORATED, GLFW_FALSE );
@@ -234,7 +232,7 @@ namespace TyphoonEngine
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
 				break;
 			}
-			case WINDOW_TYPE::BorderWindowed:
+			case EWINDOW_TYPE::BorderWindowed:
 			{
 				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims );
 				glfwWindowHint( GLFW_DECORATED, GLFW_TRUE );
@@ -242,7 +240,7 @@ namespace TyphoonEngine
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
 				break;
 			}
-			case WINDOW_TYPE::FullscreenWindowed:
+			case EWINDOW_TYPE::FullscreenWindowed:
 			{
 				const GLFWvidmode* mode = glfwGetVideoMode( windowMonitor );
 				m_glWindow = glfwCreateWindow( mode->width, mode->height, props.m_title.c_str(), nullptr, nullptr );
@@ -250,7 +248,7 @@ namespace TyphoonEngine
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
 				break;
 			}
-			case WINDOW_TYPE::Fullscreen:
+			case EWINDOW_TYPE::Fullscreen:
 			{
 				const GLFWvidmode* mode = glfwGetVideoMode( windowMonitor );
 				m_glWindow = glfwCreateWindow( mode->width, mode->height, props.m_title.c_str(), windowMonitor, nullptr );
@@ -267,6 +265,14 @@ namespace TyphoonEngine
 		m_context = new Renderers::OpenGLContext( m_glWindow );
 		TE_ASSERT( m_context, "!!! Failed to create rendering context!" );
 		m_context->Init();
+
+		TE_ENGINE_LOG_INFO( "-----------------------------------------" );
+		TE_ENGINE_LOG_INFO( "Creating Window ({0})", props.m_title );
+		TE_ENGINE_LOG_INFO( "    Type: {0}", static_cast<uint8>( m_windowData.m_type ) );
+		TE_ENGINE_LOG_INFO( "    Size: {0} x {1}", GetWindowSize().x, GetWindowSize().y );
+		TE_ENGINE_LOG_INFO( "    Monitor: {0}", m_windowData.m_monitorId );
+		TE_ENGINE_LOG_INFO( "    VSync: {0}", m_windowData.m_bVSync );
+		TE_ENGINE_LOG_INFO( "-----------------------------------------" );
 
 		glfwGetWindowSize( m_glWindow, &m_windowData.m_dims.x, &m_windowData.m_dims.y );
 		glfwSetWindowUserPointer( m_glWindow, &m_windowData );

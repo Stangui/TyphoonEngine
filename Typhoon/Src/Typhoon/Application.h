@@ -9,10 +9,10 @@
 namespace TyphoonEngine
 {
 	class IWindow;
+	class ImGuiLayer;
 
 	//
-	// Base Typhoon Engine application,
-	// Overriden by client application
+	// Platform-agnostic application
 	//
 	class Application
 	{
@@ -49,7 +49,7 @@ namespace TyphoonEngine
 		std::unique_ptr<class IWindow> m_window;
 		
 		// GUI layer pointer
-		class ImGuiLayer* m_imgui;
+		ImGuiLayer* m_imgui;
 		
 		// Application flags
 		bool m_bRunning : 1;
@@ -57,6 +57,9 @@ namespace TyphoonEngine
 		
 		// Layer stack
 		LayerStack m_layerStack;
+
+		//Temp GL rendering
+		unsigned int m_vertexArray, m_vertexBuffer, m_indexBuffer;
 
 		// Singleton
 		static Application* s_instance;

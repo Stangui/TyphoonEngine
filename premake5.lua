@@ -54,8 +54,7 @@ workspace "Typhoon"
 			"GLFW",	
 			"Glad",	
 			"ImGui",	
-			"OpenGL32.lib",
-			"gdi32"
+			"OpenGL32.lib"
 		}
 
 		filter "system:windows"
@@ -66,7 +65,8 @@ workspace "Typhoon"
 			defines
 			{
 				"TYPHOON_PLATFORM_WINDOWS",
-				"GLFW_INCLUDE_NONE"
+				"GLFW_INCLUDE_NONE",
+				"_CRT_SECURE_NO_WARNINGS"
 			}
 			
 		filter "configurations:Debug"

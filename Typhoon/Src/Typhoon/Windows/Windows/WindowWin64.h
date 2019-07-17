@@ -31,7 +31,7 @@ namespace TyphoonEngine
 			glm::ivec2 m_dims;
 			glm::uint8 m_monitorId;
 			bool m_bVSync;
-			WINDOW_TYPE m_type;
+			EWINDOW_TYPE m_type;
 
 			EventCallbackFn m_callback;
 		};
