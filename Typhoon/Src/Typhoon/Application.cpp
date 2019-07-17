@@ -1,6 +1,6 @@
 #include "TyphoonPCH.h"
 #include "Application.h"
-#include "IWindow.h"
+#include "Windows/IWindow.h"
 #include "Input/Input.h"
 #include "Input/KeyCodes.h"
 #include "Layers/Layer.h"
@@ -17,6 +17,8 @@ namespace TyphoonEngine
 		m_bRunning( true )
 		, m_bFocused( true )
 	{
+		TE_ASSERT( !s_instance, "Application already exists!" )
+
 		WindowProperties wp;
 		wp.m_bVSync = true;
 		wp.m_monitorId = 1;
@@ -41,12 +43,6 @@ namespace TyphoonEngine
 	void Application::OnEvent( Event& Evt )
 	{
 		TE_ENGINE_LOG_INFO( "Application::OnEvent() - {0}", Evt.ToString() );
-
-		if ( IInput::IsKeyPressed( TE_KEY_1 ) )
-		{
-			m_bRunning = false;
-			return;
-		}
 
 		EventDispatch dispatch( Evt );
 		dispatch.Dispatch<WindowCloseEvent>( BIND_CB_FUNC( &Application::OnWindowClose ) );

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Typhoon/IWindow.h"
+#include "Typhoon/Windows/IWindow.h"
 
 #include "GLFW/glfw3.h"
 
@@ -9,6 +9,12 @@ struct GLFWmonitor;
 
 namespace TyphoonEngine
 {
+
+	// Forward declrs
+	namespace Renderers
+	{
+		class IRenderingContext;
+	}
 
 	//
 	// Windows-specific application window
@@ -108,6 +114,9 @@ namespace TyphoonEngine
 		
 		// Window event data
 		WindowData m_windowData;
+
+		// Rendering context
+		Renderers::IRenderingContext* m_context;
 
 		// Initialise GLFW once per application
 		static bool s_glfwInitialised;

@@ -7,7 +7,7 @@ namespace TyphoonEngine
 	//
 	// Input Interface
 	//
-	class WindowsInput : public IInput
+	class GLFWInput : public IInput
 	{
 	protected:
 

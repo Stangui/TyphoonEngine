@@ -3,7 +3,7 @@
 
 #include "imgui.h"
 
-#include "Typhoon/IWindow.h"
+#include "Typhoon/Windows/IWindow.h"
 #include "Typhoon/Application.h"
 #include "Typhoon/Input/KeyCodes.h"
 

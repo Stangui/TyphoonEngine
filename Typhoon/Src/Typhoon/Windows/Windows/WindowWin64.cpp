@@ -4,8 +4,7 @@
 #include "Typhoon/Events/ApplicationEvent.h"
 #include "Typhoon/Events/KeyboardEvent.h"
 #include "Typhoon/Events/MouseEvent.h"
-
-#include "glad/glad.h"
+#include "Typhoon/Renderers/OpenGL/OpenGLContext.h"
 
 namespace TyphoonEngine
 {
@@ -20,7 +19,9 @@ namespace TyphoonEngine
 	}
 
 	//------------------------------------------//
-	WindowWin64::WindowWin64( const WindowProperties& props ) : m_glWindow( nullptr )
+	WindowWin64::WindowWin64( const WindowProperties& props ) : 
+		 m_glWindow( nullptr )
+		,m_context( nullptr )
 	{
 		_init( props );
 	}
@@ -36,8 +37,7 @@ namespace TyphoonEngine
 	{
 		if ( s_glfwInitialised )
 		{
-			glfwPollEvents();
-			glfwSwapBuffers( m_glWindow );
+			m_context->SwapBuffers();
 		}
 		return true;
 	}
@@ -264,10 +264,11 @@ namespace TyphoonEngine
 			}
 		}		
 		
+		m_context = new Renderers::OpenGLContext( m_glWindow );
+		TE_ASSERT( m_context, "!!! Failed to create rendering context!" );
+		m_context->Init();
+
 		glfwGetWindowSize( m_glWindow, &m_windowData.m_dims.x, &m_windowData.m_dims.y );
-		glfwMakeContextCurrent( m_glWindow );
-		int status = gladLoadGLLoader( (GLADloadproc)glfwGetProcAddress );
-		TE_ASSERT(status, "Failed to initialise GLAD")
 		glfwSetWindowUserPointer( m_glWindow, &m_windowData );
 		_setCallbacks( m_glWindow );
 
