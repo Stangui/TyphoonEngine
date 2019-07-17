@@ -3,9 +3,9 @@
 
 #include "imgui.h"
 
-#include "Typhoon/Windows/IWindow.h"
+#include "Typhoon/IWindow.h"
 #include "Typhoon/Application.h"
-#include "Typhoon/InputCodes/KeyCodes.h"
+#include "Typhoon/Input/KeyCodes.h"
 
 #include "examples/imgui_impl_opengl3.h"
 #include "examples/imgui_impl_glfw.h"

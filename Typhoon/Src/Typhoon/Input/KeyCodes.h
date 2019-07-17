@@ -1,6 +1,6 @@
 #pragma once
 
-// Taken from TE3.h
+// Taken from GLFW.h
 #define TE_KEY_SPACE              32
 #define TE_KEY_APOSTROPHE         39  /* ' */
 #define TE_KEY_COMMA              44  /* , */

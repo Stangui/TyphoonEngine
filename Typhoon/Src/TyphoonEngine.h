@@ -17,11 +17,11 @@
 //------------------- UI -----------------------//
 
 //------------------- Input -----------------------//
-#include "Typhoon/Input.h"
-#include "Typhoon/InputCodes/GamepadCodes.h"
-#include "Typhoon/InputCodes/JoystickCodes.h"
-#include "Typhoon/InputCodes/KeyCodes.h"
-#include "Typhoon/InputCodes/MouseCodes.h"
+#include "Typhoon/Input/Input.h"
+#include "Typhoon/Input/GamepadCodes.h"
+#include "Typhoon/Input/JoystickCodes.h"
+#include "Typhoon/Input/KeyCodes.h"
+#include "Typhoon/Input/MouseCodes.h"
 //------------------- Input -----------------------//
 
 //---------------- Entry point --------------------//

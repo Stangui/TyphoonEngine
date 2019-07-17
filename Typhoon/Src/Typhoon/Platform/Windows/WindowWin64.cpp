@@ -78,7 +78,7 @@ namespace TyphoonEngine
 	}
 
 	//------------------------------------------//
-	ivec2 WindowWin64::_calculateWindowPos( GLFWmonitor* monitor, int sizeX, int sizeY )
+	ivec2 WindowWin64::_calculateWindowPos( GLFWmonitor* monitor, const glm::ivec2 size )
 	{
 		ivec2 pos(0, 0);
 		if ( monitor )
@@ -87,11 +87,11 @@ namespace TyphoonEngine
 			glfwGetMonitorPos( monitor, &x, &y );
 			glfwGetMonitorWorkarea( monitor, &x, &y, &width, &height );
 
-			if ( width < sizeX ) { width = sizeX; }
-			if ( height  < sizeY ) { height = sizeY; }
+			if ( width < size.x ) { width = size.x; }
+			if ( height  < size.y ) { height = size.y; }
 
-			pos.x = x + static_cast<int32>( ( width - sizeX ) * 0.5f );
-			pos.y = y + static_cast<int32>( ( height - sizeY ) * 0.5f );
+			pos.x = x + static_cast<int32>( ( width - size.x ) * 0.5f );
+			pos.y = y + static_cast<int32>( ( height - size.y ) * 0.5f );
 		}
 		return pos;
 	}
@@ -228,7 +228,7 @@ namespace TyphoonEngine
 		{
 			case WINDOW_TYPE::BorderlessWindowed:
 			{
-				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims.x, m_windowData.m_dims.y );
+				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims );
 				glfwWindowHint( GLFW_DECORATED, GLFW_FALSE );
 				m_glWindow = glfwCreateWindow( (int)m_windowData.m_dims.x, (int)m_windowData.m_dims.y, props.m_title.c_str(), nullptr, nullptr );
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
@@ -236,7 +236,7 @@ namespace TyphoonEngine
 			}
 			case WINDOW_TYPE::BorderWindowed:
 			{
-				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims.x, m_windowData.m_dims.y );
+				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, m_windowData.m_dims );
 				glfwWindowHint( GLFW_DECORATED, GLFW_TRUE );
 				m_glWindow = glfwCreateWindow( (int)m_windowData.m_dims.x, (int)m_windowData.m_dims.y, props.m_title.c_str(), nullptr, nullptr );
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
@@ -246,7 +246,7 @@ namespace TyphoonEngine
 			{
 				const GLFWvidmode* mode = glfwGetVideoMode( windowMonitor );
 				m_glWindow = glfwCreateWindow( mode->width, mode->height, props.m_title.c_str(), nullptr, nullptr );
-				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, mode->width, mode->height );
+				const glm::ivec2 pos = _calculateWindowPos( windowMonitor, ivec2(mode->width, mode->height) );
 				glfwSetWindowPos( m_glWindow, pos.x, pos.y );
 				break;
 			}

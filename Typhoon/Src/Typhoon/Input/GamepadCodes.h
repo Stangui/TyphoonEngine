@@ -1,5 +1,6 @@
 #pragma once
 
+// Taken from GLFW
 #define TE_GAMEPAD_BUTTON_A               0
 #define TE_GAMEPAD_BUTTON_B               1
 #define TE_GAMEPAD_BUTTON_X               2

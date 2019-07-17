@@ -10,6 +10,10 @@ namespace TyphoonEngine
 {
 	class IWindow;
 
+	//
+	// Base Typhoon Engine application,
+	// Overriden by client application
+	//
 	class Application
 	{
 
@@ -41,10 +45,17 @@ namespace TyphoonEngine
 
 	private:
 
+		// IWindow interface pointer
 		std::unique_ptr<class IWindow> m_window;
+		
+		// GUI layer pointer
 		class ImGuiLayer* m_imgui;
-		bool m_bRunning;
-		bool m_bFocused;
+		
+		// Application flags
+		bool m_bRunning : 1;
+		bool m_bFocused : 1;
+		
+		// Layer stack
 		LayerStack m_layerStack;
 
 		// Singleton

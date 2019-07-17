@@ -1,5 +1,6 @@
 #pragma once
 
+// Taken from GLFW
 #define TE_HAT_CENTERED           0
 #define TE_HAT_UP                 1
 #define TE_HAT_RIGHT              2
