@@ -6,6 +6,9 @@
 #include "Layers/Layer.h"
 #include "UI/ImGuiLayer.h"
 #include "glad/glad.h"
+#include "Renderers/Renderer.h"
+#include "Renderers/Shader.h"
+#include "Renderers/Buffer.h"
 
 namespace TyphoonEngine
 {
@@ -34,30 +37,48 @@ namespace TyphoonEngine
 		m_imgui = new ImGuiLayer();
 		PushOverlay( m_imgui );
 
-		// Temp GL rendering
 		glGenVertexArrays( 1, &m_vertexArray );
 		glBindVertexArray( m_vertexArray );
 
-		glGenBuffers( 1, &m_vertexBuffer );
-		glBindBuffer( GL_ARRAY_BUFFER, m_vertexBuffer );
-
 		float vertices[3 * 3] =
 		{
-			-0.5f, -0.5f, 0.f,
-			0.5f, -0.5f, 0.f,
-			0.f, 0.5f, 0.f
+			-0.5f, -0.5f, 0.0f,
+			 0.5f, -0.5f, 0.0f,
+		 	 0.0f,  0.5f, 0.0f
 		};
 
-		glBufferData( GL_ARRAY_BUFFER, sizeof( vertices ), vertices, GL_STATIC_DRAW );
+		Renderers::IRenderer::SetRenderAPI( Renderers::RenderAPI::OpenGL );
+		m_vertexBuffer.reset( Renderers::IVertexBuffer::Create( vertices, sizeof( vertices ) ) );
 
 		glEnableVertexAttribArray( 0 );
 		glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof( float ), nullptr );
 
-		glGenBuffers( 1, &m_indexBuffer );
-		glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, m_indexBuffer );
+		glm::uint32 indices[3] = { 0, 1, 2 };
+		m_indexBuffer.reset( Renderers::IIndexBuffer::Create( indices, sizeof(indices) / sizeof(glm::uint32) ) );
+		
+		const std::string vSrc = R"(
+			#version 330 core
 
-		unsigned int indices[3] = { 0, 1, 2 };
-		glBufferData( GL_ELEMENT_ARRAY_BUFFER, sizeof( indices ), indices, GL_STATIC_DRAW );
+			layout(location = 0) in vec3 a_Position;
+
+			void main()
+			{
+				gl_Position = vec4(a_Position, 1);	
+			}
+		)";
+
+		const std::string fSrc = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;
+
+			void main()
+			{
+				color = vec4(0.8, 0.2, 0.3, 1.0);	
+			}
+		)";
+
+		m_shader.reset( new Renderers::Shader(vSrc, fSrc) );
 	}
 
 	//----------------------------------------------//
@@ -107,9 +128,12 @@ namespace TyphoonEngine
 		{
 			glClearColor( 0.1f, 0.1f, 0.1f, 1.f );
 			glClear( GL_COLOR_BUFFER_BIT );
-			glBindVertexArray( m_vertexArray );
-			glDrawElements( GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr );
 			
+			m_shader->Bind();
+
+			glBindVertexArray( m_vertexArray );
+			glDrawElements( GL_TRIANGLES, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr );
+
 			for ( Layer* layer : m_layerStack )
 			{
 				layer->OnUpdate();

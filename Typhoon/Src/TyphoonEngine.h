@@ -12,9 +12,16 @@
 #include "Typhoon/Layers/Layer.h"
 //------------------- Layers ----------------------//
 
-//------------------- UI -----------------------//
+//--------------------- UI ------------------------//
 #include "Typhoon/UI/ImGuiLayer.h"
-//------------------- UI -----------------------//
+//--------------------- UI ------------------------//
+
+//------------------- Events ----------------------//
+#include "Typhoon/Events/Event.h"
+#include "Typhoon/Events/KeyboardEvent.h"
+#include "Typhoon/Events/ApplicationEvent.h"
+#include "Typhoon/Events/MouseEvent.h"
+//------------------- Events ----------------------//
 
 //------------------- Input -----------------------//
 #include "Typhoon/Input/Input.h"

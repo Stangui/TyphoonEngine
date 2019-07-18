@@ -1,5 +1,33 @@
 #include "TyphoonEngine.h"
 
+class ExampleLayer : public TyphoonEngine::Layer
+{
+public:
+
+	ExampleLayer()
+	{
+	}
+
+	virtual ~ExampleLayer() override
+	{
+	}
+
+	void OnUpdate() override
+	{
+
+	}
+
+	void OnEvent( TyphoonEngine::Event& Evt ) override
+	{
+	}
+
+	bool OnKeyPressed( TyphoonEngine::KeyPressedEvent& Evt )
+	{
+		return false;
+	}
+
+};
+
 //
 // Sandbox client application
 //

@@ -11,6 +11,13 @@ namespace TyphoonEngine
 	class IWindow;
 	class ImGuiLayer;
 
+	namespace Renderers
+	{
+		class IVertexBuffer;
+		class IIndexBuffer;
+		class Shader;
+	}
+
 	//
 	// Platform-agnostic application
 	//
@@ -59,7 +66,10 @@ namespace TyphoonEngine
 		LayerStack m_layerStack;
 
 		//Temp GL rendering
-		unsigned int m_vertexArray, m_vertexBuffer, m_indexBuffer;
+		unsigned int m_vertexArray;
+		std::unique_ptr<Renderers::Shader> m_shader;
+		std::unique_ptr<Renderers::IVertexBuffer> m_vertexBuffer;
+		std::unique_ptr<Renderers::IIndexBuffer> m_indexBuffer;
 
 		// Singleton
 		static Application* s_instance;

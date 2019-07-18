@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Typhoon/Renderers/IRenderingContext.h"
+#include "Typhoon/Renderers/RenderingContext.h"
 
 struct GLFWwindow;
 
