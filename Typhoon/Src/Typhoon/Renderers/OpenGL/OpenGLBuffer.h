@@ -8,6 +8,7 @@ namespace TyphoonEngine
 
 	namespace Renderers
 	{
+
 		class OpenGLVertexBuffer : public IVertexBuffer
 		{
 
@@ -18,10 +19,13 @@ namespace TyphoonEngine
 
 			virtual void Bind() const override;
 			virtual void Unbind() const override;
+			virtual void SetLayout( const BufferLayout& layout ) override;
+			virtual const BufferLayout& GetLayout() const override;
 
 		private:
 
-			glm::uint32 m_renderId;
+			glm::uint32 m_bufferId;
+			BufferLayout m_layout;
 		};
 
 		class OpenGLIndexBuffer : public IIndexBuffer
@@ -39,7 +43,7 @@ namespace TyphoonEngine
 
 		private:
 
-			glm::uint32 m_renderId;
+			glm::uint32 m_bufferId;
 			glm::uint32 m_count;
 		};
 	}

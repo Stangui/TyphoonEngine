@@ -9,9 +9,9 @@ namespace TyphoonEngine
 	{
 
 		//------------------------------------------------//
-		OpenGLVertexBuffer::OpenGLVertexBuffer( const float* vertices, glm::uint32 size ) : m_renderId( 0 )
+		OpenGLVertexBuffer::OpenGLVertexBuffer( const float* vertices, glm::uint32 size ) : m_bufferId( 0 )
 		{
-			glCreateBuffers( 1, &m_renderId );
+			glCreateBuffers( 1, &m_bufferId );
 			Bind();
 			glBufferData( GL_ARRAY_BUFFER, size, vertices, GL_STATIC_DRAW );
 		}
@@ -19,13 +19,13 @@ namespace TyphoonEngine
 		//------------------------------------------------//
 		OpenGLVertexBuffer::~OpenGLVertexBuffer()
 		{
-			glDeleteBuffers( 1, &m_renderId );
+			glDeleteBuffers( 1, &m_bufferId );
 		}
 
 		//------------------------------------------------//
 		void OpenGLVertexBuffer::Bind() const
 		{
-			glBindBuffer( GL_ARRAY_BUFFER, m_renderId );
+			glBindBuffer( GL_ARRAY_BUFFER, m_bufferId );
 		}
 
 		//------------------------------------------------//
@@ -35,11 +35,23 @@ namespace TyphoonEngine
 		}
 
 		//------------------------------------------------//
+		void OpenGLVertexBuffer::SetLayout(const BufferLayout& layout)
+		{
+			m_layout = layout;
+		}
+
+		//------------------------------------------------//
+		const BufferLayout& OpenGLVertexBuffer::GetLayout() const
+		{
+			return m_layout;
+		}
+
+		//------------------------------------------------//
 		OpenGLIndexBuffer::OpenGLIndexBuffer( const glm::uint32* indices, glm::uint32 count ) : 
-			m_renderId(0)
+			m_bufferId(0)
 			,m_count(count)
 		{
-			glCreateBuffers( 1, &m_renderId );
+			glCreateBuffers( 1, &m_bufferId );
 			Bind();
 			glBufferData( GL_ELEMENT_ARRAY_BUFFER, count * sizeof(glm::uint32), indices, GL_STATIC_DRAW );
 		}
@@ -47,13 +59,13 @@ namespace TyphoonEngine
 		//------------------------------------------------//
 		OpenGLIndexBuffer::~OpenGLIndexBuffer()
 		{
-			glDeleteBuffers( 1, &m_renderId );
+			glDeleteBuffers( 1, &m_bufferId );
 		}
 
 		//------------------------------------------------//
 		void OpenGLIndexBuffer::Bind() const
 		{
-			glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, m_renderId );
+			glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, m_bufferId );
 		}
 
 		//------------------------------------------------//
@@ -65,7 +77,7 @@ namespace TyphoonEngine
 		//------------------------------------------------//
 		const glm::uint32 OpenGLIndexBuffer::GetCount() const
 		{
-			return 0;
+			return m_count;
 		}
 
 	}

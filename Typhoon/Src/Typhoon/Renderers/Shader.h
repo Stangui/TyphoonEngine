@@ -14,14 +14,14 @@ namespace TyphoonEngine
 		public:
 			
 			Shader( const std::string& vertexSrc, const std::string& fragmentSrc );
-			~Shader();
+			virtual ~Shader();
 
 			void Bind() const;
 			void Unbind() const;
 
 		private:
 
-			glm::uint32 m_renderId;
+			glm::uint32 m_shaderId;
 		};
 
 	}

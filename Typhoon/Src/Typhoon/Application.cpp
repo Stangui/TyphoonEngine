@@ -15,6 +15,27 @@ namespace TyphoonEngine
 
 	Application* Application::s_instance = nullptr;
 
+	static GLenum ShaderDataTypeToOpenGLType( Renderers::ShaderDataType type )
+	{
+		switch ( type )
+		{
+		case Renderers::ShaderDataType::Int:
+		case Renderers::ShaderDataType::Int2:
+		case Renderers::ShaderDataType::Int3:
+		case Renderers::ShaderDataType::Int4:	return GL_INT;
+		case Renderers::ShaderDataType::Float:
+		case Renderers::ShaderDataType::Float2:
+		case Renderers::ShaderDataType::Float3:
+		case Renderers::ShaderDataType::Float4:
+		case Renderers::ShaderDataType::Mat3:
+		case Renderers::ShaderDataType::Mat4:	return GL_FLOAT;
+		case Renderers::ShaderDataType::Bool:	return GL_BOOL;
+		}
+
+		TE_ASSERT( false, "Unknown ShaderDataType!" );
+		return 0;
+	}
+
 	//----------------------------------------------//
 	Application::Application() :
 		m_bRunning( true )
@@ -40,30 +61,54 @@ namespace TyphoonEngine
 		glGenVertexArrays( 1, &m_vertexArray );
 		glBindVertexArray( m_vertexArray );
 
-		float vertices[3 * 3] =
+		float vertices[3 * 7] =
 		{
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-		 	 0.0f,  0.5f, 0.0f
+			-0.5f, -0.5f, 0.0f, 0.f, 1.f, 0.f, 1.f,
+			 0.5f, -0.5f, 0.0f, 1.f, 1.f, 0.f, 1.f,
+		 	 0.0f,  0.5f, 0.0f, 0.f, 1.f, 1.f, 1.f
 		};
 
 		Renderers::IRenderer::SetRenderAPI( Renderers::RenderAPI::OpenGL );
 		m_vertexBuffer.reset( Renderers::IVertexBuffer::Create( vertices, sizeof( vertices ) ) );
 
-		glEnableVertexAttribArray( 0 );
-		glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof( float ), nullptr );
+		Renderers::BufferLayout layout = 
+		{
+			{ Renderers::ShaderDataType::Float3, "a_Position" },
+			{ Renderers::ShaderDataType::Float4, "a_Color" }
+		};
+
+		m_vertexBuffer->SetLayout( layout );
+
+		glm::uint32 idx = 0;
+		for ( const auto& element : layout )
+		{
+			glEnableVertexAttribArray( idx );
+			glVertexAttribPointer( idx, 
+				                   element.GetComponentCount(), 
+				                   ShaderDataTypeToOpenGLType( element.m_type ), 
+				                   element.m_bNormalised ? GL_TRUE : GL_FALSE, 
+				                   layout.GetStride(), 
+				                   (const void*)element.m_offset );
+			++idx;
+		}
 
 		glm::uint32 indices[3] = { 0, 1, 2 };
 		m_indexBuffer.reset( Renderers::IIndexBuffer::Create( indices, sizeof(indices) / sizeof(glm::uint32) ) );
-		
+
 		const std::string vSrc = R"(
 			#version 330 core
 
 			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec4 a_Color;
+
+			out vec3 v_Position;
+			out vec4 v_Color;
 
 			void main()
 			{
-				gl_Position = vec4(a_Position, 1);	
+				v_Position = a_Position;
+				v_Color = a_Color;
+				gl_Position = vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -72,13 +117,17 @@ namespace TyphoonEngine
 
 			layout(location = 0) out vec4 color;
 
+			in vec3 v_Position;
+			in vec4 v_Color;
+
 			void main()
 			{
-				color = vec4(0.8, 0.2, 0.3, 1.0);	
+				color = v_Color;	
 			}
 		)";
 
 		m_shader.reset( new Renderers::Shader(vSrc, fSrc) );
+		m_shader->Bind();
 	}
 
 	//----------------------------------------------//
@@ -129,8 +178,6 @@ namespace TyphoonEngine
 			glClearColor( 0.1f, 0.1f, 0.1f, 1.f );
 			glClear( GL_COLOR_BUFFER_BIT );
 			
-			m_shader->Bind();
-
 			glBindVertexArray( m_vertexArray );
 			glDrawElements( GL_TRIANGLES, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr );
 
