@@ -1,2 +1,2 @@
-# TyphooEngine
+# TyphoonEngine
 Multi-platform Game Engine
