@@ -1,0 +1,201 @@
+.TH "core_func_exponential" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+core_func_exponential
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::pow\fP (\fBvec\fP< L, T, Q > const &base, \fBvec\fP< L, T, Q > const &exponent)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::exp\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::log\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::exp2\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::log2\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::sqrt\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::inversesqrt\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides GLSL exponential functions
+.PP
+These all operate component-wise\&. The description is per component\&.
+.PP
+Include <\fBglm/exponential\&.hpp\fP> to use these core features\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::exp (\fBvec\fP< L, T, Q > const & v)"
+Returns the natural exponentiation of x, i\&.e\&., e^x\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP exp function is defined for input values of v defined in the range (inf-, inf+) in the limit of the type qualifier\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL exp man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.2 Exponential Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::exp2 (\fBvec\fP< L, T, Q > const & v)"
+Returns 2 raised to the v power\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP exp2 function is defined for input values of v defined in the range (inf-, inf+) in the limit of the type qualifier\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL exp2 man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.2 Exponential Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::inversesqrt (\fBvec\fP< L, T, Q > const & v)"
+Returns the reciprocal of the positive square root of v\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP inversesqrt function is defined for input values of v defined in the range [0, inf+) in the limit of the type qualifier\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL inversesqrt man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.2 Exponential Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::log (\fBvec\fP< L, T, Q > const & v)"
+Returns the natural logarithm of v, i\&.e\&., returns the value y which satisfies the equation x = e^y\&. Results are undefined if v <= 0\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP log function is defined for input values of v defined in the range (0, inf+) in the limit of the type qualifier\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL log man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.2 Exponential Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::log2 (\fBvec\fP< L, T, Q > const & v)"
+Returns the base 2 log of x, i\&.e\&., returns the value y, which satisfies the equation x = 2 ^ y\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP log2 function is defined for input values of v defined in the range (0, inf+) in the limit of the type qualifier\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL log2 man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.2 Exponential Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::pow (\fBvec\fP< L, T, Q > const & base, \fBvec\fP< L, T, Q > const & exponent)"
+Returns 'base' raised to the power 'exponent'\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbase\fP Floating point value\&. pow function is defined for input values of 'base' defined in the range (inf-, inf+) in the limit of the type qualifier\&. 
+.br
+\fIexponent\fP Floating point value representing the 'exponent'\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL pow man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.2 Exponential Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::sqrt (\fBvec\fP< L, T, Q > const & v)"
+Returns the positive square root of v\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP sqrt function is defined for input values of v defined in the range [0, inf+) in the limit of the type qualifier\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL sqrt man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.2 Exponential Functions\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

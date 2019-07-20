@@ -1,0 +1,68 @@
+.TH "Typhoon/ThirdParty/glm/glm/gtx/matrix_query.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/gtx/matrix_query.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./glm\&.hpp'\fP
+.br
+\fC#include '\&.\&./gtx/vector_query\&.hpp'\fP
+.br
+\fC#include <limits>\fP
+.br
+\fC#include 'matrix_query\&.inl'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNull\fP (mat< 2, 2, T, Q > const &m, T const &epsilon)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNull\fP (mat< 3, 3, T, Q > const &m, T const &epsilon)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNull\fP (mat< 4, 4, T, Q > const &m, T const &epsilon)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q, template< length_t, length_t, typename, qualifier > class matType> GLM_FUNC_DECL bool \fBglm::isIdentity\fP (matType< C, R, T, Q > const &m, T const &epsilon)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNormalized\fP (mat< 2, 2, T, Q > const &m, T const &epsilon)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNormalized\fP (mat< 3, 3, T, Q > const &m, T const &epsilon)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNormalized\fP (mat< 4, 4, T, Q > const &m, T const &epsilon)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q, template< length_t, length_t, typename, qualifier > class matType> GLM_FUNC_DECL bool \fBglm::isOrthogonal\fP (matType< C, R, T, Q > const &m, T const &epsilon)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBGLM_GTX_matrix_query\fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCore features\fP (dependence) 
+.PP
+\fBGLM_GTX_vector_query\fP (dependence) 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,63 @@
+.TH "gtx_vector_angle" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_vector_angle
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::angle\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::orientedAngle\fP (\fBvec\fP< 2, T, Q > const &x, \fBvec\fP< 2, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::orientedAngle\fP (\fBvec\fP< 3, T, Q > const &x, \fBvec\fP< 3, T, Q > const &y, \fBvec\fP< 3, T, Q > const &ref)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/vector_angle\&.hpp\fP> to use the features of this extension\&.
+.PP
+Compute angle between vectors 
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T glm::angle (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & y)"
+Returns the absolute angle between two vectors\&. Parameters need to be normalized\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_angle\fP extension\&. 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::orientedAngle (\fBvec\fP< 2, T, Q > const & x, \fBvec\fP< 2, T, Q > const & y)"
+Returns the oriented angle between two 2d vectors\&. Parameters need to be normalized\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_angle\fP extension\&.
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+epsilon is hard coded to 0\&.01 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::orientedAngle (\fBvec\fP< 3, T, Q > const & x, \fBvec\fP< 3, T, Q > const & y, \fBvec\fP< 3, T, Q > const & ref)"
+Returns the oriented angle between two 3d vectors based from a reference axis\&. Parameters need to be normalized\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_angle\fP extension\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,345 @@
+.TH "glm::vec< 2, T, Q >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+glm::vec< 2, T, Q >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef T \fBvalue_type\fP"
+.br
+.ti -1c
+.RI "typedef \fBvec\fP< 2, T, Q > \fBtype\fP"
+.br
+.ti -1c
+.RI "typedef \fBvec\fP< 2, bool, Q > \fBbool_type\fP"
+.br
+.ti -1c
+.RI "typedef length_t \fBlength_type\fP"
+.br
+.RI "Return the count of components of the vector\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR T & \fBoperator[]\fP (\fBlength_type\fP i)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR T const  & \fBoperator[]\fP (\fBlength_type\fP i) const"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (\fBvec\fP const &v) GLM_DEFAULT"
+.br
+.ti -1c
+.RI "template<qualifier P> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 2, T, P > const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (T scalar)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (T x, T y)"
+.br
+.ti -1c
+.RI "template<typename U , qualifier P> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 1, U, P > const &v)"
+.br
+.ti -1c
+.RI "template<typename A , typename B > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (A x, B y)"
+.br
+.RI "Explicit conversions (From section 5\&.4\&.1 Conversion and scalar constructors of GLSL 1\&.30\&.08 specification) "
+.ti -1c
+.RI "template<typename A , typename B > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 1, A, Q > const &x, B y)"
+.br
+.ti -1c
+.RI "template<typename A , typename B > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (A x, \fBvec\fP< 1, B, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename A , typename B > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 1, A, Q > const &x, \fBvec\fP< 1, B, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename U , qualifier P> GLM_FUNC_DECL GLM_CONSTEXPR GLM_EXPLICIT \fBvec\fP (\fBvec\fP< 3, U, P > const &v)"
+.br
+.RI "Explicit conversions (From section 5\&.4\&.1 Conversion and scalar constructors of GLSL 1\&.30\&.08 specification) "
+.ti -1c
+.RI "template<typename U , qualifier P> GLM_FUNC_DECL GLM_CONSTEXPR GLM_EXPLICIT \fBvec\fP (\fBvec\fP< 4, U, P > const &v)"
+.br
+.RI "Explicit conversions (From section 5\&.4\&.1 Conversion and scalar constructors of GLSL 1\&.30\&.08 specification) "
+.ti -1c
+.RI "template<typename U , qualifier P> GLM_FUNC_DECL GLM_CONSTEXPR GLM_EXPLICIT \fBvec\fP (\fBvec\fP< 2, U, P > const &v)"
+.br
+.RI "Explicit conversions (From section 5\&.4\&.1 Conversion and scalar constructors of GLSL 1\&.30\&.08 specification) "
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator=\fP (\fBvec\fP const &v) GLM_DEFAULT"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator+=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator+=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator+=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator\-=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator\-=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator\-=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator *=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator *=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator *=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator/=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator/=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator/=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator\-\-\fP ()"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > \fBoperator++\fP (int)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > \fBoperator\-\-\fP (int)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator%=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator%=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator%=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator&=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator&=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator&=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator|=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator|=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator|=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator^=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator^=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator^=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator<<=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator<<=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator<<=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator>>=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator>>=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator>>=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 2, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<qualifier P> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 2, T, P > const &v)"
+.br
+.ti -1c
+.RI "template<typename U, qualifier P> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 1, U, P > const &v)"
+.br
+.ti -1c
+.RI "template<typename A, typename B> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (A _x, B _y)"
+.br
+.ti -1c
+.RI "template<typename A, typename B> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 1, A, Q > const &_x, B _y)"
+.br
+.ti -1c
+.RI "template<typename A, typename B> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (A _x, \fBvec\fP< 1, B, Q > const &_y)"
+.br
+.ti -1c
+.RI "template<typename A, typename B> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 1, A, Q > const &_x, \fBvec\fP< 1, B, Q > const &_y)"
+.br
+.ti -1c
+.RI "template<typename U, qualifier P> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 2, U, P > const &v)"
+.br
+.ti -1c
+.RI "template<typename U, qualifier P> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 3, U, P > const &v)"
+.br
+.ti -1c
+.RI "template<typename U, qualifier P> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP (\fBvec\fP< 4, U, P > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator+=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator+=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator+=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator\-=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator\-=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator\-=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator *=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator *=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator *=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator/=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator/=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator/=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator%=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator%=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator%=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator&=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator&=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator&=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator|=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator|=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator|=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator^=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator^=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator^=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator<<=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator<<=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator<<=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator>>=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator>>=\fP (\fBvec\fP< 1, U, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBvec\fP< 2, T, Q > & \fBoperator>>=\fP (\fBvec\fP< 2, U, Q > const &v)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static GLM_FUNC_DECL GLM_CONSTEXPR \fBlength_type\fP \fBlength\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "union \fBglm::vec\fP< 2, T, Q >:: { \&.\&.\&. }  "
+.br
+.ti -1c
+.RI "union \fBglm::vec\fP< 2, T, Q >:: { \&.\&.\&. }  "
+.br
+.ti -1c
+.RI "T \fBx\fP"
+.br
+.ti -1c
+.RI "T \fBr\fP"
+.br
+.ti -1c
+.RI "T \fBs\fP"
+.br
+.ti -1c
+.RI "T \fBy\fP"
+.br
+.ti -1c
+.RI "T \fBg\fP"
+.br
+.ti -1c
+.RI "T \fBt\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

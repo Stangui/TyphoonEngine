@@ -1,0 +1,345 @@
+.TH "intro_guide" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+intro_guide \- Introduction to the API 
+This guide introduces the basic concepts of GLFW and describes initialization, error handling and API guarantees and limitations\&. For a broad but shallow tutorial, see \fBGetting started\fP instead\&. For details on a specific function in this category, see the \fBInitialization, version and error reference\fP\&.
+.PP
+There are also guides for the other areas of GLFW\&.
+.PP
+.IP "\(bu" 2
+\fBWindow guide\fP
+.IP "\(bu" 2
+\fBContext guide\fP
+.IP "\(bu" 2
+\fBVulkan guide\fP
+.IP "\(bu" 2
+\fBMonitor guide\fP
+.IP "\(bu" 2
+\fBInput guide\fP
+.PP
+.SH "Initialization and termination"
+.PP
+Before most GLFW functions may be called, the library must be initialized\&. This initialization checks what features are available on the machine, enumerates monitors and joysticks, initializes the timer and performs any required platform-specific initialization\&.
+.PP
+Only the following functions may be called before the library has been successfully initialized, and only from the main thread\&.
+.PP
+.IP "\(bu" 2
+\fBglfwGetVersion\fP
+.IP "\(bu" 2
+\fBglfwGetVersionString\fP
+.IP "\(bu" 2
+\fBglfwGetError\fP
+.IP "\(bu" 2
+\fBglfwSetErrorCallback\fP
+.IP "\(bu" 2
+\fBglfwInitHint\fP
+.IP "\(bu" 2
+\fBglfwInit\fP
+.IP "\(bu" 2
+\fBglfwTerminate\fP
+.PP
+.PP
+Calling any other function before successful initialization will cause a \fBGLFW_NOT_INITIALIZED\fP error\&.
+.SS "Initializing GLFW"
+The library is initialized with \fBglfwInit\fP, which returns \fCGLFW_FALSE\fP if an error occurred\&.
+.PP
+.PP
+.nf
+if (!glfwInit())
+{
+    // Handle initialization failure
+}
+.fi
+.PP
+.PP
+If any part of initialization fails, any parts that succeeded are terminated as if \fBglfwTerminate\fP had been called\&. The library only needs to be initialized once and additional calls to an already initialized library will return \fCGLFW_TRUE\fP immediately\&.
+.PP
+Once the library has been successfully initialized, it should be terminated before the application exits\&. Modern systems are very good at freeing resources allocated by programs that exit, but GLFW sometimes has to change global system settings and these might not be restored without termination\&.
+.SS "Initialization hints"
+Initialization hints are set before \fBglfwInit\fP and affect how the library behaves until termination\&. Hints are set with \fBglfwInitHint\fP\&.
+.PP
+.PP
+.nf
+glfwInitHint(GLFW_JOYSTICK_HAT_BUTTONS, GLFW_FALSE);
+.fi
+.PP
+.PP
+The values you set hints to are never reset by GLFW, but they only take effect during initialization\&. Once GLFW has been initialized, any values you set will be ignored until the library is terminated and initialized again\&.
+.PP
+Some hints are platform specific\&. These may be set on any platform but they will only affect their specific platform\&. Other platforms will ignore them\&. Setting these hints requires no platform specific headers or functions\&.
+.SS "Shared init hints"
+\fBGLFW_JOYSTICK_HAT_BUTTONS\fP specifies whether to also expose joystick hats as buttons, for compatibility with earlier versions of GLFW that did not have \fBglfwGetJoystickHats\fP\&. Set this with \fBglfwInitHint\fP\&.
+.SS "macOS specific init hints"
+\fBGLFW_COCOA_CHDIR_RESOURCES\fP specifies whether to set the current directory to the application to the \fCContents/Resources\fP subdirectory of the application's bundle, if present\&. Set this with \fBglfwInitHint\fP\&.
+.PP
+\fBGLFW_COCOA_MENUBAR\fP specifies whether to create a basic menu bar, either from a nib or manually, when the first window is created, which is when AppKit is initialized\&. Set this with \fBglfwInitHint\fP\&.
+.SS "Supported and default values"
+Initialization hint  Default value  Supported values   \fBGLFW_JOYSTICK_HAT_BUTTONS\fP  \fCGLFW_TRUE\fP  \fCGLFW_TRUE\fP or \fCGLFW_FALSE\fP   \fBGLFW_COCOA_CHDIR_RESOURCES\fP  \fCGLFW_TRUE\fP  \fCGLFW_TRUE\fP or \fCGLFW_FALSE\fP   \fBGLFW_COCOA_MENUBAR\fP  \fCGLFW_TRUE\fP  \fCGLFW_TRUE\fP or \fCGLFW_FALSE\fP   
+.SS "Terminating GLFW"
+Before your application exits, you should terminate the GLFW library if it has been initialized\&. This is done with \fBglfwTerminate\fP\&.
+.PP
+.PP
+.nf
+glfwTerminate();
+.fi
+.PP
+.PP
+This will destroy any remaining window, monitor and cursor objects, restore any modified gamma ramps, re-enable the screensaver if it had been disabled and free any other resources allocated by GLFW\&.
+.PP
+Once the library is terminated, it is as if it had never been initialized and you will need to initialize it again before being able to use GLFW\&. If the library was not initialized or had already been terminated, it return immediately\&.
+.SH "Error handling"
+.PP
+Some GLFW functions have return values that indicate an error, but this is often not very helpful when trying to figure out what happened or why it occurred\&. Other functions have no return value reserved for errors, so error notification needs a separate channel\&. Finally, far from all GLFW functions have return values\&.
+.PP
+The last \fBerror code\fP for the calling thread can be queried at any time with \fBglfwGetError\fP\&.
+.PP
+.PP
+.nf
+int code = glfwGetError(NULL);
+
+if (code != GLFW_NO_ERROR)
+    handle_error(code);
+.fi
+.PP
+.PP
+If no error has occurred since the last call, \fBGLFW_NO_ERROR\fP (zero) is returned\&. The error is cleared before the function returns\&.
+.PP
+The error code indicates the general category of the error\&. Some error codes, such as \fBGLFW_NOT_INITIALIZED\fP has only a single meaning, whereas others like \fBGLFW_PLATFORM_ERROR\fP are used for many different errors\&.
+.PP
+GLFW often has more information about an error than its general category\&. You can retrieve a UTF-8 encoded human-readable description along with the error code\&. If no error has occurred since the last call, the description is set to \fCNULL\fP\&.
+.PP
+.PP
+.nf
+const char* description;
+int code = glfwGetError(&description);
+
+if (description)
+    display_error_message(code, description);
+.fi
+.PP
+.PP
+The retrieved description string is only valid until the next error occurs\&. This means you must make a copy of it if you want to keep it\&.
+.PP
+You can also set an error callback, which will be called each time an error occurs\&. It is set with \fBglfwSetErrorCallback\fP\&.
+.PP
+.PP
+.nf
+glfwSetErrorCallback(error_callback);
+.fi
+.PP
+.PP
+The error callback receives the same error code and human-readable description returned by \fBglfwGetError\fP\&.
+.PP
+.PP
+.nf
+void error_callback(int code, const char* description)
+{
+    display_error_message(code, description);
+}
+.fi
+.PP
+.PP
+The error callback is called after the error is stored, so calling \fBglfwGetError\fP from within the error callback returns the same values as the callback argument\&.
+.PP
+The description string passed to the callback is only valid until the error callback returns\&. This means you must make a copy of it if you want to keep it\&.
+.PP
+\fBReported errors are never fatal\&.\fP As long as GLFW was successfully initialized, it will remain initialized and in a safe state until terminated regardless of how many errors occur\&. If an error occurs during initialization that causes \fBglfwInit\fP to fail, any part of the library that was initialized will be safely terminated\&.
+.PP
+Do not rely on a currently invalid call to generate a specific error, as in the future that same call may generate a different error or become valid\&.
+.SH "Coordinate systems"
+.PP
+GLFW has two primary coordinate systems: the \fIvirtual screen\fP and the window \fIcontent area\fP or \fIcontent area\fP\&. Both use the same unit: \fIvirtual screen coordinates\fP, or just \fIscreen coordinates\fP, which don't necessarily correspond to pixels\&.
+.PP
+.PP
+Both the virtual screen and the content area coordinate systems have the X-axis pointing to the right and the Y-axis pointing down\&.
+.PP
+Window and monitor positions are specified as the position of the upper-left corners of their content areas relative to the virtual screen, while cursor positions are specified relative to a window's content area\&.
+.PP
+Because the origin of the window's content area coordinate system is also the point from which the window position is specified, you can translate content area coordinates to the virtual screen by adding the window position\&. The window frame, when present, extends out from the content area but does not affect the window position\&.
+.PP
+Almost all positions and sizes in GLFW are measured in screen coordinates relative to one of the two origins above\&. This includes cursor positions, window positions and sizes, window frame sizes, monitor positions and video mode resolutions\&.
+.PP
+Two exceptions are the \fBmonitor physical size\fP, which is measured in millimetres, and \fBframebuffer size\fP, which is measured in pixels\&.
+.PP
+Pixels and screen coordinates may map 1:1 on your machine, but they won't on every other machine, for example on a Mac with a Retina display\&. The ratio between screen coordinates and pixels may also change at run-time depending on which monitor the window is currently considered to be on\&.
+.SH "Guarantees and limitations"
+.PP
+This section describes the conditions under which GLFW can be expected to function, barring bugs in the operating system or drivers\&. Use of GLFW outside of these limits may work on some platforms, or on some machines, or some of the time, or on some versions of GLFW, but it may break at any time and this will not be considered a bug\&.
+.SS "Pointer lifetimes"
+GLFW will never free any pointer you provide to it and you must never free any pointer it provides to you\&.
+.PP
+Many GLFW functions return pointers to dynamically allocated structures, strings or arrays, and some callbacks are provided with strings or arrays\&. These are always managed by GLFW and should never be freed by the application\&. The lifetime of these pointers is documented for each GLFW function and callback\&. If you need to keep this data, you must copy it before its lifetime expires\&.
+.PP
+Many GLFW functions accept pointers to structures or strings allocated by the application\&. These are never freed by GLFW and are always the responsibility of the application\&. If GLFW needs to keep the data in these structures or strings, it is copied before the function returns\&.
+.PP
+Pointer lifetimes are guaranteed not to be shortened in future minor or patch releases\&.
+.SS "Reentrancy"
+GLFW event processing and object destruction are not reentrant\&. This means that the following functions must not be called from any callback function:
+.PP
+.IP "\(bu" 2
+\fBglfwDestroyWindow\fP
+.IP "\(bu" 2
+\fBglfwDestroyCursor\fP
+.IP "\(bu" 2
+\fBglfwPollEvents\fP
+.IP "\(bu" 2
+\fBglfwWaitEvents\fP
+.IP "\(bu" 2
+\fBglfwWaitEventsTimeout\fP
+.IP "\(bu" 2
+\fBglfwTerminate\fP
+.PP
+.PP
+These functions may be made reentrant in future minor or patch releases, but functions not on this list will not be made non-reentrant\&.
+.SS "Thread safety"
+Most GLFW functions must only be called from the main thread (the thread that calls main), but some may be called from any thread once the library has been initialized\&. Before initialization the whole library is thread-unsafe\&.
+.PP
+The reference documentation for every GLFW function states whether it is limited to the main thread\&.
+.PP
+Initialization, termination, event processing and the creation and destruction of windows, cursors and OpenGL and OpenGL ES contexts are all restricted to the main thread due to limitations of one or several platforms\&.
+.PP
+Because event processing must be performed on the main thread, all callbacks except for the error callback will only be called on that thread\&. The error callback may be called on any thread, as any GLFW function may generate errors\&.
+.PP
+The error code and description may be queried from any thread\&.
+.PP
+.IP "\(bu" 2
+\fBglfwGetError\fP
+.PP
+.PP
+Empty events may be posted from any thread\&.
+.PP
+.IP "\(bu" 2
+\fBglfwPostEmptyEvent\fP
+.PP
+.PP
+The window user pointer and close flag may be read and written from any thread, but this is not synchronized by GLFW\&.
+.PP
+.IP "\(bu" 2
+\fBglfwGetWindowUserPointer\fP
+.IP "\(bu" 2
+\fBglfwSetWindowUserPointer\fP
+.IP "\(bu" 2
+\fBglfwWindowShouldClose\fP
+.IP "\(bu" 2
+\fBglfwSetWindowShouldClose\fP
+.PP
+.PP
+These functions for working with OpenGL and OpenGL ES contexts may be called from any thread, but the window object is not synchronized by GLFW\&.
+.PP
+.IP "\(bu" 2
+\fBglfwMakeContextCurrent\fP
+.IP "\(bu" 2
+\fBglfwGetCurrentContext\fP
+.IP "\(bu" 2
+\fBglfwSwapBuffers\fP
+.IP "\(bu" 2
+\fBglfwSwapInterval\fP
+.IP "\(bu" 2
+\fBglfwExtensionSupported\fP
+.IP "\(bu" 2
+\fBglfwGetProcAddress\fP
+.PP
+.PP
+The raw timer functions may be called from any thread\&.
+.PP
+.IP "\(bu" 2
+\fBglfwGetTimerFrequency\fP
+.IP "\(bu" 2
+\fBglfwGetTimerValue\fP
+.PP
+.PP
+The regular timer may be used from any thread, but reading and writing the timer offset is not synchronized by GLFW\&.
+.PP
+.IP "\(bu" 2
+\fBglfwGetTime\fP
+.IP "\(bu" 2
+\fBglfwSetTime\fP
+.PP
+.PP
+Library version information may be queried from any thread\&.
+.PP
+.IP "\(bu" 2
+\fBglfwGetVersion\fP
+.IP "\(bu" 2
+\fBglfwGetVersionString\fP
+.PP
+.PP
+All Vulkan related functions may be called from any thread\&.
+.PP
+.IP "\(bu" 2
+\fBglfwVulkanSupported\fP
+.IP "\(bu" 2
+\fBglfwGetRequiredInstanceExtensions\fP
+.IP "\(bu" 2
+\fBglfwGetInstanceProcAddress\fP
+.IP "\(bu" 2
+\fBglfwGetPhysicalDevicePresentationSupport\fP
+.IP "\(bu" 2
+\fBglfwCreateWindowSurface\fP
+.PP
+.PP
+GLFW uses synchronization objects internally only to manage the per-thread context and error states\&. Additional synchronization is left to the application\&.
+.PP
+Functions that may currently be called from any thread will always remain so, but functions that are currently limited to the main thread may be updated to allow calls from any thread in future releases\&.
+.SS "Version compatibility"
+GLFW uses \fCSemantic Versioning\fP\&. This guarantees source and binary backward compatibility with earlier minor versions of the API\&. This means that you can drop in a newer version of the library and existing programs will continue to compile and existing binaries will continue to run\&.
+.PP
+Once a function or constant has been added, the signature of that function or value of that constant will remain unchanged until the next major version of GLFW\&. No compatibility of any kind is guaranteed between major versions\&.
+.PP
+Undocumented behavior, i\&.e\&. behavior that is not described in the documentation, may change at any time until it is documented\&.
+.PP
+If the reference documentation and the implementation differ, the reference documentation will almost always take precedence and the implementation will be fixed in the next release\&. The reference documentation will also take precedence over anything stated in a guide\&.
+.SS "Event order"
+The order of arrival of related events is not guaranteed to be consistent across platforms\&. The exception is synthetic key and mouse button release events, which are always delivered after the window defocus event\&.
+.SH "Version management"
+.PP
+GLFW provides mechanisms for identifying what version of GLFW your application was compiled against as well as what version it is currently running against\&. If you are loading GLFW dynamically (not just linking dynamically), you can use this to verify that the library binary is compatible with your application\&.
+.SS "Compile-time version"
+The compile-time version of GLFW is provided by the GLFW header with the \fCGLFW_VERSION_MAJOR\fP, \fCGLFW_VERSION_MINOR\fP and \fCGLFW_VERSION_REVISION\fP macros\&.
+.PP
+.PP
+.nf
+printf("Compiled against GLFW %i\&.%i\&.%i\n",
+       GLFW_VERSION_MAJOR,
+       GLFW_VERSION_MINOR,
+       GLFW_VERSION_REVISION);
+.fi
+.PP
+.SS "Run-time version"
+The run-time version can be retrieved with \fBglfwGetVersion\fP, a function that may be called regardless of whether GLFW is initialized\&.
+.PP
+.PP
+.nf
+int major, minor, revision;
+glfwGetVersion(&major, &minor, &revision);
+
+printf("Running against GLFW %i\&.%i\&.%i\n", major, minor, revision);
+.fi
+.PP
+.SS "Version string"
+GLFW 3 also provides a compile-time generated version string that describes the version, platform, compiler and any platform-specific compile-time options\&. This is primarily intended for submitting bug reports, to allow developers to see which code paths are enabled in a binary\&.
+.PP
+The version string is returned by \fBglfwGetVersionString\fP, a function that may be called regardless of whether GLFW is initialized\&.
+.PP
+\fBDo not use the version string\fP to parse the GLFW library version\&. The \fBglfwGetVersion\fP function already provides the version of the running library binary\&.
+.PP
+The format of the string is as follows:
+.IP "\(bu" 2
+The version of GLFW
+.IP "\(bu" 2
+The name of the window system API
+.IP "\(bu" 2
+The name of the context creation API
+.IP "\(bu" 2
+Any additional options or APIs
+.PP
+.PP
+For example, when compiling GLFW 3\&.0 with MinGW using the Win32 and WGL back ends, the version string may look something like this:
+.PP
+.PP
+.nf
+3\&.0\&.0 Win32 WGL MinGW
+.fi
+.PP
+ 

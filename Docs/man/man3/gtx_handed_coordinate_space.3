@@ -1,0 +1,32 @@
+.TH "gtx_handed_coordinate_space" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_handed_coordinate_space
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::rightHanded\fP (\fBvec\fP< 3, T, Q > const &tangent, \fBvec\fP< 3, T, Q > const &binormal, \fBvec\fP< 3, T, Q > const &normal)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::leftHanded\fP (\fBvec\fP< 3, T, Q > const &tangent, \fBvec\fP< 3, T, Q > const &binormal, \fBvec\fP< 3, T, Q > const &normal)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <glm/gtx/handed_coordinate_system\&.hpp> to use the features of this extension\&.
+.PP
+To know if a set of three basis vectors defines a right or left-handed coordinate system\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL bool glm::leftHanded (\fBvec\fP< 3, T, Q > const & tangent, \fBvec\fP< 3, T, Q > const & binormal, \fBvec\fP< 3, T, Q > const & normal)"
+Return if a trihedron left handed or not\&. From GLM_GTX_handed_coordinate_space extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL bool glm::rightHanded (\fBvec\fP< 3, T, Q > const & tangent, \fBvec\fP< 3, T, Q > const & binormal, \fBvec\fP< 3, T, Q > const & normal)"
+Return if a trihedron right handed or not\&. From GLM_GTX_handed_coordinate_space extension\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

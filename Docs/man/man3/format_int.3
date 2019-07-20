@@ -1,0 +1,61 @@
+.TH "format_int" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+format_int
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <format\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBformat_int\fP (int value)"
+.br
+.ti -1c
+.RI "\fBformat_int\fP (long value)"
+.br
+.ti -1c
+.RI "\fBformat_int\fP (long long value)"
+.br
+.ti -1c
+.RI "\fBformat_int\fP (unsigned value)"
+.br
+.ti -1c
+.RI "\fBformat_int\fP (unsigned long value)"
+.br
+.ti -1c
+.RI "\fBformat_int\fP (unsigned long long value)"
+.br
+.ti -1c
+.RI "std::size_t \fBsize\fP () const"
+.br
+.ti -1c
+.RI "const char * \fBdata\fP () const"
+.br
+.ti -1c
+.RI "const char * \fBc_str\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBstr\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Fast integer formatter\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "const char* format_int::c_str () const\fC [inline]\fP"
+Returns a pointer to the output buffer content with terminating null character appended\&. 
+.SS "const char* format_int::data () const\fC [inline]\fP"
+Returns a pointer to the output buffer content\&. No terminating null character is appended\&. 
+.SS "std::size_t format_int::size () const\fC [inline]\fP"
+Returns the number of characters written to the output buffer\&. 
+.SS "std::string format_int::str () const\fC [inline]\fP"
+\\rst Returns the content of the output buffer as an \fCstd::string\fP\&. \\endrst 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

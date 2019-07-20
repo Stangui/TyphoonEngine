@@ -1,0 +1,2680 @@
+.TH "md__typhoon__third_party_glm_manual" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__typhoon__third_party_glm_manual \- manual 
+
+.PP
+.SH "GLM 0\&.9\&.9 Manual"
+.PP
+.PP
+.PP
+.PP
+  
+.PP
+.SS "Table of Contents"
+.PP
+.IP "\(bu" 2
+\fC0\&. Licenses\fP
+.IP "\(bu" 2
+\fC1\&. Getting started\fP
+.IP "\(bu" 2
+\fC1\&.1\&. Using global headers\fP
+.IP "\(bu" 2
+\fC1\&.2\&. Using separated headers\fP
+.IP "\(bu" 2
+\fC1\&.3\&. Using extension headers\fP
+.IP "\(bu" 2
+\fC1\&.4\&. Dependencies\fP
+.IP "\(bu" 2
+\fC2\&. Preprocessor configurations\fP
+.IP "\(bu" 2
+\fC2\&.1\&. GLM_FORCE_MESSAGES: Platform auto detection and default configuration\fP
+.IP "\(bu" 2
+\fC2\&.2\&. GLM_FORCE_PLATFORM_UNKNOWN: Force GLM to no detect the build platform\fP
+.IP "\(bu" 2
+\fC2\&.3\&. GLM_FORCE_COMPILER_UNKNOWN: Force GLM to no detect the C++ compiler\fP
+.IP "\(bu" 2
+\fC2\&.4\&. GLM_FORCE_ARCH_UNKNOWN: Force GLM to no detect the build architecture\fP
+.IP "\(bu" 2
+\fC2\&.5\&. GLM_FORCE_CXX_UNKNOWN: Force GLM to no detect the C++ standard\fP
+.IP "\(bu" 2
+\fC2\&.6\&. GLM_FORCE_CXX**: C++ language detection\fP
+.IP "\(bu" 2
+\fC2\&.7\&. GLM_FORCE_EXPLICIT_CTOR: Requiring explicit conversions\fP
+.IP "\(bu" 2
+\fC2\&.8\&. GLM_FORCE_INLINE: Force inline\fP
+.IP "\(bu" 2
+\fC2\&.9\&. GLM_FORCE_ALIGNED_GENTYPES: Force GLM to enable aligned types\fP
+.IP "\(bu" 2
+\fC2\&.10\&. GLM_FORCE_DEFAULT_ALIGNED_GENTYPES: Force GLM to use aligned types by default\fP
+.IP "\(bu" 2
+\fC2\&.11\&. GLM_FORCE_INTRINSICS: Using SIMD optimizations\fP
+.IP "\(bu" 2
+\fC2\&.12\&. GLM_FORCE_PRECISION_**: Default precision\fP
+.IP "\(bu" 2
+\fC2\&.13\&. GLM_FORCE_SINGLE_ONLY: Removed explicit 64-bits floating point types\fP
+.IP "\(bu" 2
+\fC2\&.14\&. GLM_FORCE_SWIZZLE: Enable swizzle operators\fP
+.IP "\(bu" 2
+\fC2\&.15\&. GLM_FORCE_XYZW_ONLY: Only exposes x, y, z and w components\fP
+.IP "\(bu" 2
+\fC2\&.16\&. GLM_FORCE_LEFT_HANDED: Force left handed coordinate system\fP
+.IP "\(bu" 2
+\fC2\&.17\&. GLM_FORCE_DEPTH_ZERO_TO_ONE: Force the use of a clip space between 0 to 1\fP
+.IP "\(bu" 2
+\fC2\&.18\&. GLM_FORCE_SIZE_T_LENGTH: Vector and matrix static size type\fP
+.IP "\(bu" 2
+\fC2\&.19\&. GLM_FORCE_UNRESTRICTED_GENTYPE: Removing genType restriction\fP
+.IP "\(bu" 2
+\fC2\&.20\&. GLM_FORCE_SILENT_WARNINGS: Silent C++ warnings from language extensions\fP
+.IP "\(bu" 2
+\fC3\&. Stable extensions\fP
+.IP "\(bu" 2
+\fC3\&.1\&. Scalar types\fP
+.IP "\(bu" 2
+\fC3\&.2\&. Scalar functions\fP
+.IP "\(bu" 2
+\fC3\&.3\&. Vector types\fP
+.IP "\(bu" 2
+\fC3\&.4\&. Vector types with precision qualifiers\fP
+.IP "\(bu" 2
+\fC3\&.5\&. Vector functions\fP
+.IP "\(bu" 2
+\fC3\&.6\&. Matrix types\fP
+.IP "\(bu" 2
+\fC3\&.7\&. Matrix types with precision qualifiers\fP
+.IP "\(bu" 2
+\fC3\&.8\&. Matrix functions\fP
+.IP "\(bu" 2
+\fC3\&.9\&. Quaternion types\fP
+.IP "\(bu" 2
+\fC3\&.10\&. Quaternion types with precision qualifiers\fP
+.IP "\(bu" 2
+\fC3\&.11\&. Quaternion functions\fP
+.IP "\(bu" 2
+\fC4\&. Recommended extensions\fP
+.IP "\(bu" 2
+\fC4\&.1\&. GLM_GTC_bitfield\fP
+.IP "\(bu" 2
+\fC4\&.2\&. GLM_GTC_color_space\fP
+.IP "\(bu" 2
+\fC4\&.3\&. GLM_GTC_constants\fP
+.IP "\(bu" 2
+\fC4\&.4\&. GLM_GTC_epsilon\fP
+.IP "\(bu" 2
+\fC4\&.5\&. GLM_GTC_integer\fP
+.IP "\(bu" 2
+\fC4\&.6\&. GLM_GTC_matrix_access\fP
+.IP "\(bu" 2
+\fC4\&.7\&. GLM_GTC_matrix_integer\fP
+.IP "\(bu" 2
+\fC4\&.8\&. GLM_GTC_matrix_inverse\fP
+.IP "\(bu" 2
+\fC4\&.9\&. GLM_GTC_matrix_transform\fP
+.IP "\(bu" 2
+\fC4\&.10\&. GLM_GTC_noise\fP
+.IP "\(bu" 2
+\fC4\&.11\&. GLM_GTC_packing\fP
+.IP "\(bu" 2
+\fC4\&.12\&. GLM_GTC_quaternion\fP
+.IP "\(bu" 2
+\fC4\&.13\&. GLM_GTC_random\fP
+.IP "\(bu" 2
+\fC4\&.14\&. GLM_GTC_reciprocal\fP
+.IP "\(bu" 2
+\fC4\&.15\&. GLM_GTC_round\fP
+.IP "\(bu" 2
+\fC4\&.16\&. GLM_GTC_type_alignment\fP
+.IP "\(bu" 2
+\fC4\&.17\&. GLM_GTC_type_precision\fP
+.IP "\(bu" 2
+\fC4\&.18\&. GLM_GTC_type_ptr\fP
+.IP "\(bu" 2
+\fC4\&.19\&. GLM_GTC_ulp\fP
+.IP "\(bu" 2
+\fC4\&.20\&. GLM_GTC_vec1\fP
+.IP "\(bu" 2
+\fC5\&. OpenGL interoperability\fP
+.IP "\(bu" 2
+\fC5\&.1\&. GLM Replacements for deprecated OpenGL functions\fP
+.IP "\(bu" 2
+\fC5\&.2\&. GLM Replacements for GLU functions\fP
+.IP "\(bu" 2
+\fC6\&. Known issues\fP
+.IP "\(bu" 2
+\fC6\&.1\&. Not function\fP
+.IP "\(bu" 2
+\fC6\&.2\&. Precision qualifiers support\fP
+.IP "\(bu" 2
+\fC7\&. FAQ\fP
+.IP "\(bu" 2
+\fC7\&.1 Why GLM follows GLSL specification and conventions?\fP
+.IP "\(bu" 2
+\fC7\&.2\&. Does GLM run GLSL programs?\fP
+.IP "\(bu" 2
+\fC7\&.3\&. Does a GLSL compiler build GLM codes?\fP
+.IP "\(bu" 2
+\fC7\&.4\&. Should I use ‘GTX’ extensions?\fP
+.IP "\(bu" 2
+\fC7\&.5\&. Where can I ask my questions?\fP
+.IP "\(bu" 2
+\fC7\&.6\&. Where can I find the documentation of extensions?\fP
+.IP "\(bu" 2
+\fC7\&.7\&. Should I use 'using namespace glm;'?\fP
+.IP "\(bu" 2
+\fC7\&.8\&. Is GLM fast?\fP
+.IP "\(bu" 2
+\fC7\&.9\&. When I build with Visual C++ with /w4 warning level, I have warnings\&.\&.\&.\fP
+.IP "\(bu" 2
+\fC7\&.10\&. Why some GLM functions can crash because of division by zero?\fP
+.IP "\(bu" 2
+\fC7\&.11\&. What unit for angles us used in GLM?\fP
+.IP "\(bu" 2
+\fC7\&.12\&. Windows headers cause build errors\&.\&.\&.\fP
+.IP "\(bu" 2
+\fC7\&.13\&. Constant expressions support\fP
+.IP "\(bu" 2
+\fC8\&. Code samples\fP
+.IP "\(bu" 2
+\fC8\&.1\&. Compute a triangle normal\fP
+.IP "\(bu" 2
+\fC8\&.2\&. Matrix transform\fP
+.IP "\(bu" 2
+\fC8\&.3\&. Vector types\fP
+.IP "\(bu" 2
+\fC8\&.4\&. Lighting\fP
+.IP "\(bu" 2
+\fC9\&. Contributing to GLM\fP
+.IP "\(bu" 2
+\fC9\&.1\&. Submitting bug reports\fP
+.IP "\(bu" 2
+\fC9\&.2\&. Contributing to GLM with pull request\fP
+.IP "\(bu" 2
+\fC9\&.3\&. Coding style\fP
+.IP "\(bu" 2
+\fC10\&. References\fP
+.IP "\(bu" 2
+\fC10\&.1\&. OpenGL specifications\fP
+.IP "\(bu" 2
+\fC10\&.2\&. External links\fP
+.IP "\(bu" 2
+\fC10\&.3\&. Projects using GLM\fP
+.IP "\(bu" 2
+\fC10\&.4\&. Tutorials using GLM\fP
+.IP "\(bu" 2
+\fC10\&.5\&. Equivalent for other languages\fP
+.IP "\(bu" 2
+\fC10\&.6\&. Alternatives to GLM\fP
+.IP "\(bu" 2
+\fC10\&.7\&. Acknowledgements\fP
+.PP
+.PP
+.PP
+  
+.PP
+.SS " Licenses"
+.PP
+.SS "The Happy Bunny License (Modified MIT License)"
+.PP
+Copyright (c) 2005 - G-Truc Creation
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+Restrictions: By making use of the Software for military purposes, you choose to make a Bunny unhappy\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE\&.
+.PP
+.PP
+.SS "The MIT License"
+.PP
+Copyright (c) 2005 - G-Truc Creation
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software\&.
+.PP
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT\&. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE\&.
+.PP
+.PP
+.PP
+  
+.PP
+.SS " 1\&. Getting started"
+.PP
+.SS " 1\&.1\&. Using global headers"
+.PP
+GLM is a header-only library, and thus does not need to be compiled\&. We can use GLM's implementation of GLSL's mathematics functionality by including the \fC<\fBglm/glm\&.hpp\fP>\fP header:
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp>
+.fi
+.PP
+.PP
+To extend the feature set supported by GLM and keeping the library as close to GLSL as possible, new features are implemented as extensions that can be included thought a separated header: 
+.PP
+.nf
+// Include all GLM core / GLSL features
+#include <glm/glm\&.hpp> // vec2, vec3, mat4, radians
+
+// Include all GLM extensions
+#include <glm/ext\&.hpp> // perspective, translate, rotate
+
+glm::mat4 transform(glm::vec2 const& Orientation, glm::vec3 const& Translate, glm::vec3 const& Up)
+{
+    glm::mat4 Proj = glm::perspective(glm::radians(45\&.f), 1\&.33f, 0\&.1f, 10\&.f);
+    glm::mat4 ViewTranslate = glm::translate(glm::mat4(1\&.f), Translate);
+    glm::mat4 ViewRotateX = glm::rotate(ViewTranslate, Orientation\&.y, Up);
+    glm::mat4 View = glm::rotate(ViewRotateX, Orientation\&.x, Up);
+    glm::mat4 Model = glm::mat4(1\&.0f);
+    return Proj * View * Model;
+}
+
+.fi
+.PP
+.PP
+\fINote: Including \fC<\fBglm/glm\&.hpp\fP>\fP and \fC<\fBglm/ext\&.hpp\fP>\fP is convenient but pull a lot of code which will significantly increase build time, particularly if these files are included in all source files\&. We may prefer to use the approaches describe in the two following sections to keep the project build fast\&.\fP
+.PP
+.SS " 1\&.2\&. Using separated headers"
+.PP
+GLM relies on C++ templates heavily, and may significantly increase compilation times for projects that use it\&. Hence, user projects could only include the features they actually use\&. Following is the list of all the core features, based on GLSL specification, headers: 
+.PP
+.nf
+#include <glm/vec2\&.hpp>               // vec2, bvec2, dvec2, ivec2 and uvec2
+#include <glm/vec3\&.hpp>               // vec3, bvec3, dvec3, ivec3 and uvec3
+#include <glm/vec4\&.hpp>               // vec4, bvec4, dvec4, ivec4 and uvec4
+#include <glm/mat2x2\&.hpp>             // mat2, dmat2
+#include <glm/mat2x3\&.hpp>             // mat2x3, dmat2x3
+#include <glm/mat2x4\&.hpp>             // mat2x4, dmat2x4
+#include <glm/mat3x2\&.hpp>             // mat3x2, dmat3x2
+#include <glm/mat3x3\&.hpp>             // mat3, dmat3
+#include <glm/mat3x4\&.hpp>             // mat3x4, dmat2
+#include <glm/mat4x2\&.hpp>             // mat4x2, dmat4x2
+#include <glm/mat4x3\&.hpp>             // mat4x3, dmat4x3
+#include <glm/mat4x4\&.hpp>             // mat4, dmat4
+#include <glm/common\&.hpp>             // all the GLSL common functions: abs, min, mix, isnan, fma, etc\&.
+#include <glm/exponential\&.hpp>        // all the GLSL exponential functions: pow, log, exp2, sqrt, etc\&.
+#include <glm/geometry\&.hpp>           // all the GLSL geometry functions: dot, cross, reflect, etc\&.
+#include <glm/integer\&.hpp>            // all the GLSL integer functions: findMSB, bitfieldExtract, etc\&.
+#include <glm/matrix\&.hpp>             // all the GLSL matrix functions: transpose, inverse, etc\&.
+#include <glm/packing\&.hpp>            // all the GLSL packing functions: packUnorm4x8, unpackHalf2x16, etc\&.
+#include <glm/trigonometric\&.hpp>      // all the GLSL trigonometric functions: radians, cos, asin, etc\&.
+#include <glm/vector_relational\&.hpp>  // all the GLSL vector relational functions: equal, less, etc\&.
+
+.fi
+.PP
+.PP
+The following is a code sample using separated core headers and an extension: 
+.PP
+.nf
+// Include GLM core features
+#include <glm/vec2\&.hpp>           // vec2
+#include <glm/vec3\&.hpp>           // vec3
+#include <glm/mat4x4\&.hpp>         // mat4
+#include <glm/trigonometric\&.hpp>  //radians
+
+// Include GLM extension
+#include <glm/ext/matrix_transform\&.hpp> // perspective, translate, rotate
+
+glm::mat4 transform(glm::vec2 const& Orientation, glm::vec3 const& Translate, glm::vec3 const& Up)
+{
+    glm::mat4 Proj = glm::perspective(glm::radians(45\&.f), 1\&.33f, 0\&.1f, 10\&.f);
+    glm::mat4 ViewTranslate = glm::translate(glm::mat4(1\&.f), Translate);
+    glm::mat4 ViewRotateX = glm::rotate(ViewTranslate, Orientation\&.y, Up);
+    glm::mat4 View = glm::rotate(ViewRotateX, Orientation\&.x, Up);
+    glm::mat4 Model = glm::mat4(1\&.0f);
+    return Proj * View * Model;
+}
+
+.fi
+.PP
+.PP
+.SS " 1\&.3\&. Using extension headers"
+.PP
+Using GLM through split headers to minimize the project build time: 
+.PP
+.nf
+// Include GLM vector extensions:
+#include <glm/ext/vector_float2\&.hpp>                // vec2
+#include <glm/ext/vector_float3\&.hpp>                // vec3
+#include <glm/ext/vector_trigonometric\&.hpp>         // radians
+
+// Include GLM matrix extensions:
+#include <glm/ext/matrix_float4x4\&.hpp>              // mat4
+#include <glm/ext/matrix_transform\&.hpp>             // perspective, translate, rotate
+
+glm::mat4 transform(glm::vec2 const& Orientation, glm::vec3 const& Translate, glm::vec3 const& Up)
+{
+    glm::mat4 Proj = glm::perspective(glm::radians(45\&.f), 1\&.33f, 0\&.1f, 10\&.f);
+    glm::mat4 ViewTranslate = glm::translate(glm::mat4(1\&.f), Translate);
+    glm::mat4 ViewRotateX = glm::rotate(ViewTranslate, Orientation\&.y, Up);
+    glm::mat4 View = glm::rotate(ViewRotateX, Orientation\&.x, Up);
+    glm::mat4 Model = glm::mat4(1\&.0f);
+    return Proj * View * Model;
+}
+
+.fi
+.PP
+.PP
+.SS " 1\&.4\&. Dependencies"
+.PP
+GLM does not depend on external libraries or headers such as \fC<GL/gl\&.h>\fP, \fC\fC<GL/glcorearb\&.h>\fP\fP, \fC<GLES3/gl3\&.h>\fP, \fC<GL/glu\&.h>\fP, or \fC<windows\&.h>\fP\&.
+.PP
+.PP
+  
+.PP
+.SS " 2\&. Preprocessor configurations"
+.PP
+.SS " 2\&.1\&. GLM_FORCE_MESSAGES: Platform auto detection and default configuration"
+.PP
+When included, GLM will first automatically detect the compiler used, the C++ standard supported, the compiler arguments used to configure itself matching the build environment\&.
+.PP
+For example, if the compiler arguments request AVX code generation, GLM will rely on its code path providing AVX optimizations when available\&.
+.PP
+We can change GLM configuration using specific C++ preprocessor defines that must be declared before including any GLM headers\&.
+.PP
+Using \fCGLM_FORCE_MESSAGES\fP, GLM will report the configuration as part of the build log\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_MESSAGES // Or defined when building (e\&.g\&. -DGLM_FORCE_SWIZZLE)
+#include <glm/glm\&.hpp>
+.fi
+.PP
+.PP
+Example of configuration log generated by \fCGLM_FORCE_MESSAGES\fP: 
+.PP
+.nf
+GLM: version 0\&.9\&.9\&.1
+GLM: C++ 17 with extensions
+GLM: Clang compiler detected
+GLM: x86 64 bits with AVX instruction set build target
+GLM: Linux platform detected
+GLM: GLM_FORCE_SWIZZLE is undefined\&. swizzling functions or operators are disabled\&.
+GLM: GLM_FORCE_SIZE_T_LENGTH is undefined\&. \&.length() returns a glm::length_t, a typedef of int following GLSL\&.
+GLM: GLM_FORCE_UNRESTRICTED_GENTYPE is undefined\&. Follows strictly GLSL on valid function genTypes\&.
+GLM: GLM_FORCE_DEPTH_ZERO_TO_ONE is undefined\&. Using negative one to one depth clip space\&.
+GLM: GLM_FORCE_LEFT_HANDED is undefined\&. Using right handed coordinate system\&.
+
+.fi
+.PP
+.PP
+The following subsections describe each configurations and defines\&.
+.PP
+.SS " 2\&.2\&. GLM_FORCE_PLATFORM_UNKNOWN: Force GLM to no detect the build platform"
+.PP
+\fCGLM_FORCE_PLATFORM_UNKNOWN\fP prevents GLM from detecting the build platform\&.
+.PP
+.SS " 2\&.3\&. GLM_FORCE_COMPILER_UNKNOWN: Force GLM to no detect the C++ compiler"
+.PP
+\fCGLM_FORCE_COMPILER_UNKNOWN\fP prevents GLM from detecting the C++ compiler\&.
+.PP
+.SS " 2\&.4\&. GLM_FORCE_ARCH_UNKNOWN: Force GLM to no detect the build architecture"
+.PP
+\fCGLM_FORCE_ARCH_UNKNOWN\fP prevents GLM from detecting the build target architecture\&.
+.PP
+.SS " 2\&.5\&. GLM_FORCE_CXX_UNKNOWN: Force GLM to no detect the C++ standard"
+.PP
+\fCGLM_FORCE_CSS_UNKNOWN\fP prevents GLM from detecting the C++ compiler standard support\&.
+.PP
+.SS " 2\&.6\&. GLM_FORCE_CXX**: C++ language detection"
+.PP
+GLM will automatically take advantage of compilers’ language extensions when enabled\&. To increase cross platform compatibility and to avoid compiler extensions, a programmer can define \fCGLM_FORCE_CXX98\fP before any inclusion of \fC<\fBglm/glm\&.hpp\fP>\fP to restrict the language feature set C++98:
+.PP
+.PP
+.nf
+#define GLM_FORCE_CXX98
+#include <glm/glm\&.hpp>
+.fi
+.PP
+.PP
+For C++11, C++14, and C++17 equivalent defines are available:
+.IP "\(bu" 2
+\fCGLM_FORCE_CXX11\fP
+.IP "\(bu" 2
+\fCGLM_FORCE_CXX14\fP
+.IP "\(bu" 2
+\fCGLM_FORCE_CXX17\fP
+.PP
+.PP
+.PP
+.nf
+#define GLM_FORCE_CXX11
+#include <glm/glm\&.hpp>
+
+// If the compiler doesn’t support C++11, compiler errors will happen\&.
+.fi
+.PP
+.PP
+\fCGLM_FORCE_CXX17\fP overrides \fCGLM_FORCE_CXX14\fP; \fCGLM_FORCE_CXX14\fP overrides \fCGLM_FORCE_CXX11\fP; and \fCGLM_FORCE_CXX11\fP overrides \fCGLM_FORCE_CXX98\fP defines\&.
+.PP
+.SS " 2\&.7\&. GLM_FORCE_EXPLICIT_CTOR: Requiring explicit conversions"
+.PP
+GLSL supports implicit conversions of vector and matrix types\&. For example, an ivec4 can be implicitly converted into \fCvec4\fP\&.
+.PP
+Often, this behaviour is not desirable but following the spirit of the library, this is the default behavior in GLM\&. However, GLM 0\&.9\&.6 introduced the define \fCGLM_FORCE_EXPLICIT_CTOR\fP to require explicit conversion for GLM types\&.
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp>
+
+void foo()
+{
+    glm::ivec4 a;
+    \&.\&.\&.
+
+    glm::vec4 b(a); // Explicit conversion, OK
+    glm::vec4 c = a; // Implicit conversion, OK
+    \&.\&.\&.
+}
+.fi
+.PP
+.PP
+With \fCGLM_FORCE_EXPLICIT_CTOR\fP define, implicit conversions are not allowed:
+.PP
+.PP
+.nf
+#define GLM_FORCE_EXPLICIT_CTOR
+#include <glm/glm\&.hpp>
+
+void foo()
+{
+    glm::ivec4 a;
+    {
+        glm::vec4 b(a); // Explicit conversion, OK
+        glm::vec4 c = a; // Implicit conversion, ERROR
+        \&.\&.\&.
+}
+.fi
+.PP
+.PP
+.SS " 2\&.8\&. GLM_FORCE_INLINE: Force inline"
+.PP
+To push further the software performance, a programmer can define \fCGLM_FORCE_INLINE\fP before any inclusion of \fC<\fBglm/glm\&.hpp\fP>\fP to force the compiler to inline GLM code\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_INLINE
+#include <glm/glm\&.hpp>
+.fi
+.PP
+.PP
+.SS " 2\&.9\&. GLM_FORCE_ALIGNED_GENTYPES: Force GLM to enable aligned types"
+.PP
+Every object type has the property called alignment requirement, which is an integer value (of type \fCstd::size_t\fP, always a power of 2) representing the number of bytes between successive addresses at which objects of this type can be allocated\&. The alignment requirement of a type can be queried with alignof or \fCstd::alignment_of\fP\&. The pointer alignment function \fCstd::align\fP can be used to obtain a suitably-aligned pointer within some buffer, and \fCstd::aligned_storage\fP can be used to obtain suitably-aligned storage\&.
+.PP
+Each object type imposes its alignment requirement on every object of that type; stricter alignment (with larger alignment requirement) can be requested using C++11 \fCalignas\fP\&.
+.PP
+In order to satisfy alignment requirements of all non-static members of a class, padding may be inserted after some of its members\&.
+.PP
+GLM supports both packed and aligned types\&. Packed types allow filling data structure without inserting extra padding\&. Aligned GLM types align addresses based on the size of the value type of a GLM type\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_ALIGNED_GENTYPES
+#include <glm/glm\&.hpp>
+#include <glm/gtc/type_aligned\&.hpp>
+
+typedef glm::aligned_vec4 vec4a;
+typedef glm::packed_vec4 vec4p;
+.fi
+.PP
+.PP
+.SS " 2\&.10\&. GLM_FORCE_DEFAULT_ALIGNED_GENTYPES: Force GLM to use aligned types by default"
+.PP
+GLM allows using aligned types by default for vector types using \fCGLM_FORCE_DEFAULT_ALIGNED_GENTYPES\fP:
+.PP
+.PP
+.nf
+#define GLM_FORCE_DEFAULT_ALIGNED_GENTYPES
+#include <glm/glm\&.hpp>
+
+struct MyStruct
+{
+    glm::vec4 a;
+    float b;
+    glm::vec3 c;
+};
+
+void foo()
+{
+    printf("MyStruct requires memory padding: %d bytes\n", sizeof(MyStruct));
+}
+
+>>> MyStruct requires memory padding: 48 bytes
+.fi
+.PP
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp>
+
+struct MyStruct
+{
+    glm::vec4 a;
+    float b;
+    glm::vec3 c;
+};
+
+void foo()
+{
+    printf("MyStruct is tightly packed: %d bytes\n", sizeof(MyStruct));
+}
+
+>>> MyStruct is tightly packed: 32 bytes
+.fi
+.PP
+.PP
+\fINote: GLM SIMD optimizations require the use of aligned types\fP
+.PP
+.SS " 2\&.11\&. GLM_FORCE_INTRINSICS: Using SIMD optimizations"
+.PP
+GLM provides some SIMD optimizations based on \fCcompiler intrinsics\fP\&. These optimizations will be automatically thanks to compiler arguments when \fCGLM_FORCE_INTRINSICS\fP is defined before including GLM files\&. For example, if a program is compiled with Visual Studio using \fC/arch:AVX\fP, GLM will detect this argument and generate code using AVX instructions automatically when available\&.
+.PP
+It’s possible to avoid the instruction set detection by forcing the use of a specific instruction set with one of the fallowing define: \fCGLM_FORCE_SSE2\fP, \fCGLM_FORCE_SSE3\fP, \fCGLM_FORCE_SSSE3\fP, \fCGLM_FORCE_SSE41\fP, \fCGLM_FORCE_SSE42\fP, \fCGLM_FORCE_AVX\fP, \fCGLM_FORCE_AVX2\fP or \fCGLM_FORCE_AVX512\fP\&.
+.PP
+The use of intrinsic functions by GLM implementation can be avoided using the define \fCGLM_FORCE_PURE\fP before any inclusion of GLM headers\&. This can be particularly useful if we want to rely on C++14 \fCconstexpr\fP\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_PURE
+#include <glm/glm\&.hpp>
+
+static_assert(glm::vec4::length() == 4, "Using GLM C++ 14 constexpr support for compile time tests");
+
+// GLM code will be compiled using pure C++ code without any intrinsics
+.fi
+.PP
+.PP
+.PP
+.nf
+#define GLM_FORCE_SIMD_AVX2
+#include <glm/glm\&.hpp>
+
+// If the compiler doesn’t support AVX2 instrinsics, compiler errors will happen\&.
+.fi
+.PP
+.PP
+Additionally, GLM provides a low level SIMD API in glm/simd directory for users who are really interested in writing fast algorithms\&.
+.PP
+.SS " 2\&.12\&. GLM_FORCE_PRECISION_**: Default precision"
+.PP
+C++ does not provide a way to implement GLSL default precision selection (as defined in GLSL 4\&.10 specification section 4\&.5\&.3) with GLSL-like syntax\&.
+.PP
+.PP
+.nf
+precision mediump int;
+precision highp float;
+.fi
+.PP
+.PP
+To use the default precision functionality, GLM provides some defines that need to added before any include of \fC\fBglm\&.hpp\fP\fP:
+.PP
+.PP
+.nf
+#define GLM_FORCE_PRECISION_MEDIUMP_INT
+#define GLM_FORCE_PRECISION_HIGHP_FLOAT
+#include <glm/glm\&.hpp>
+.fi
+.PP
+.PP
+Available defines for floating point types (\fC\fBglm::vec\fP\\*\fP, \fC\fBglm::mat\fP\\*\fP):
+.PP
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_LOWP_FLOAT\fP: Low precision
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_MEDIUMP_FLOAT\fP: Medium precision
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_HIGHP_FLOAT\fP: High precision (default)
+.PP
+.PP
+Available defines for floating point types (\fCglm::dvec\\*\fP, \fCglm::dmat\\*\fP):
+.PP
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_LOWP_DOUBLE\fP: Low precision
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_MEDIUMP_DOUBLE\fP: Medium precision
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_HIGHP_DOUBLE\fP: High precision (default)
+.PP
+.PP
+Available defines for signed integer types (\fCglm::ivec\\*\fP):
+.PP
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_LOWP_INT\fP: Low precision
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_MEDIUMP_INT\fP: Medium precision
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_HIGHP_INT\fP: High precision (default)
+.PP
+.PP
+Available defines for unsigned integer types (\fCglm::uvec\\*\fP):
+.PP
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_LOWP_UINT\fP: Low precision
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_MEDIUMP_UINT\fP: Medium precision
+.IP "\(bu" 2
+\fCGLM_FORCE_PRECISION_HIGHP_UINT\fP: High precision (default)
+.PP
+.PP
+.SS " 2\&.13\&. GLM_FORCE_SINGLE_ONLY: Removed explicit 64-bits floating point types"
+.PP
+Some platforms (Dreamcast) doesn't support double precision floating point values\&. To compile on such platforms, GCC has the \fC--m4-single-only\fP build argument\&. When defining \fCGLM_FORCE_SINGLE_ONLY\fP before including GLM headers, GLM releases the requirement of double precision floating point values support\&. Effectivement, all the float64 types are no longer defined and double behaves like float\&.
+.PP
+.SS " 2\&.14\&. GLM_FORCE_SWIZZLE: Enable swizzle operators"
+.PP
+Shader languages like GLSL often feature so-called swizzle expressions, which may be used to freely select and arrange a vector's components\&. For example, \fCvariable\&.x\fP, \fCvariable\&.xzy\fP and \fCvariable\&.zxyy\fP respectively form a scalar, a 3D vector and a 4D vector\&. The result of a swizzle expression in GLSL can be either an R-value or an L-value\&. Swizzle expressions can be written with characters from exactly one of \fCxyzw\fP (usually for positions), \fCrgba\fP (usually for colors), and \fCstpq\fP (usually for texture coordinates)\&.
+.PP
+.PP
+.nf
+vec4 A;
+vec2 B;
+
+B\&.yx = A\&.wy;
+B = A\&.xx;
+vec3 C = A\&.bgr;
+vec3 D = B\&.rsz; // Invalid, won't compile
+.fi
+.PP
+.PP
+GLM supports some of this functionality\&. Swizzling can be enabled by defining \fCGLM_FORCE_SWIZZLE\fP\&.
+.PP
+\fINote: Enabling swizzle expressions will massively increase the size of your binaries and the time it takes to compile them!\fP
+.PP
+GLM has two levels of swizzling support described in the following subsections\&.
+.PP
+.SS "2\&.14\&.1\&. Swizzle functions for standard C++ 98"
+.PP
+When compiling GLM as C++98, R-value swizzle expressions are simulated through member functions of each vector type\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_SWIZZLE // Or defined when building (e\&.g\&. -DGLM_FORCE_SWIZZLE)
+#include <glm/glm\&.hpp>
+
+void foo()
+{
+    glm::vec4 const ColorRGBA = glm::vec4(1\&.0f, 0\&.5f, 0\&.0f, 1\&.0f);
+    glm::vec3 const ColorBGR = ColorRGBA\&.bgr();
+
+    glm::vec3 const PositionA = glm::vec3(1\&.0f, 0\&.5f, 0\&.0f);
+    glm::vec3 const PositionB = PositionXYZ\&.xyz() * 2\&.0f;
+
+    glm::vec2 const TexcoordST = glm::vec2(1\&.0f, 0\&.5f);
+    glm::vec4 const TexcoordSTPQ = TexcoordST\&.stst();
+}
+.fi
+.PP
+.PP
+Swizzle operators return a \fBcopy\fP of the component values, and thus \fIcan't\fP be used as L-values to change a vector's values\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_SWIZZLE
+#include <glm/glm\&.hpp>
+
+void foo()
+{
+  glm::vec3 const A = glm::vec3(1\&.0f, 0\&.5f, 0\&.0f);
+
+  // No compiler error, but A is not modified\&.
+  // An anonymous copy is being modified (and then discarded)\&.
+  A\&.bgr() = glm::vec3(2\&.0f, 1\&.5f, 1\&.0f); // A is not modified!
+}
+.fi
+.PP
+.PP
+.SS "2\&.14\&.2\&. Swizzle operations for C++ 98 with language extensions"
+.PP
+Visual C++, GCC and Clang support, as a \fInon-standard language extension\fP, anonymous \fCstruct\fPs as \fCunion\fP members\&. This permits a powerful swizzling implementation that both allows L-value swizzle expressions and GLSL-like syntax\&. To use this feature, the language extension must be enabled by a supporting compiler and \fCGLM_FORCE_SWIZZLE\fP must be \fC#define\fPd\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_SWIZZLE
+#include <glm/glm\&.hpp>
+
+// Only guaranteed to work with Visual C++!
+// Some compilers that support Microsoft extensions may compile this\&.
+void foo()
+{
+  glm::vec4 ColorRGBA = glm::vec4(1\&.0f, 0\&.5f, 0\&.0f, 1\&.0f);
+
+  // l-value:
+  glm::vec4 ColorBGRA = ColorRGBA\&.bgra;
+
+  // r-value:
+  ColorRGBA\&.bgra = ColorRGBA;
+
+  // Both l-value and r-value
+  ColorRGBA\&.bgra = ColorRGBA\&.rgba;
+}
+.fi
+.PP
+.PP
+This version returns implementation-specific objects that \fIimplicitly convert\fP to their respective vector types\&. As a consequence of this design, these extra types \fBcan't be directly used\fP as C++ function arguments; they must be converted through constructors or \fCoperator()\fP\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_SWIZZLE
+#include <glm/glm\&.hpp>
+
+using namespace glm;
+
+void foo()
+{
+  vec4 Color = vec4(1\&.0f, 0\&.5f, 0\&.0f, 1\&.0f);
+
+  // Generates compiler errors\&. Color\&.rgba is not a vector type\&.
+  vec4 ClampedA = clamp(Color\&.rgba, 0\&.f, 1\&.f); // ERROR
+
+  // Explicit conversion through a constructor
+  vec4 ClampedB = clamp(vec4(Color\&.rgba), 0\&.f, 1\&.f); // OK
+
+  // Explicit conversion through operator()
+  vec4 ClampedC = clamp(Color\&.rgba(), 0\&.f, 1\&.f); // OK
+}
+.fi
+.PP
+.PP
+\fINote: The implementation has a caveat: Swizzle operator types must be different on both size of the equal operator or the operation will fail\&. There is no known fix for this issue to date\fP
+.PP
+.SS " 2\&.15\&. GLM_FORCE_XYZW_ONLY: Only exposes x, y, z and w components"
+.PP
+Following GLSL specifications, GLM supports three sets of components to access vector types member: x, y, z, w; r, g, b, a; and s, t, p, q\&. Also, this is making vector component very expressive in the code, it may make debugging vector types a little cubersom as the debuggers will typically display three time the values for each compoenents due to the existence of the three sets\&.
+.PP
+To simplify vector types, GLM allows exposing only x, y, z and w components thanks to \fCGLM_FORCE_XYZW_ONLY\fP define\&.
+.PP
+.SS " 2\&.16\&. GLM_FORCE_LEFT_HANDED: Force left handed coordinate system"
+.PP
+By default, OpenGL is using a right handed coordinate system\&. However, others APIs such as Direct3D have done different choice and relies on the left handed coordinate system\&.
+.PP
+GLM allows switching the coordinate system to left handed by defining \fCGLM_FORCE_LEFT_HANDED\fP\&.
+.PP
+.SS " 2\&.17\&. GLM_FORCE_DEPTH_ZERO_TO_ONE: Force the use of a clip space between 0 to 1"
+.PP
+By default, OpenGL is using a -1 to 1 clip space in Z-axis\&. However, others APIs such as Direct3D relies on a clip space between 0 to 1 in Z-axis\&.
+.PP
+GLM allows switching the clip space in Z-axis to 0 to 1 by defining \fCGLM_FORCE_DEPTH_ZERO_TO_ONE\fP\&.
+.PP
+.SS " 2\&.18\&. GLM_FORCE_SIZE_T_LENGTH: Vector and matrix static size"
+.PP
+GLSL supports the member function \&.\fBlength()\fP for all vector and matrix types\&.
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp>
+
+void foo(vec4 const& v)
+{
+    int Length = v\&.length();
+    \&.\&.\&.
+}
+.fi
+.PP
+.PP
+This function returns an \fCint\fP however this function typically interacts with STL \fCsize_t\fP based code\&. GLM provides \fCGLM_FORCE_SIZE_T_LENGTH\fP pre-processor configuration so that member functions \fC\fBlength()\fP\fP return a \fCsize_t\fP\&.
+.PP
+Additionally, GLM defines the type \fCglm::length_t\fP to identify \fC\fBlength()\fP\fP returned type, independently from \fCGLM_FORCE_SIZE_T_LENGTH\fP\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_SIZE_T_LENGTH
+#include <glm/glm\&.hpp>
+
+void foo(vec4 const& v)
+{
+    glm::length_t Length = v\&.length();
+    \&.\&.\&.
+}
+.fi
+.PP
+.PP
+.SS " 2\&.19\&. GLM_FORCE_UNRESTRICTED_GENTYPE: Removing genType restriction"
+.PP
+GLSL has restrictions on types supported by certain functions that may appear excessive\&. By default, GLM follows the GLSL specification as accurately as possible however it's possible to relax these rules using \fCGLM_FORCE_UNRESTRICTED_GENTYPE\fP define\&.
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp>
+
+float average(float const A, float const B)
+{
+    return glm::mix(A, B, 0\&.5f); // By default glm::mix only supports floating-point types
+}
+.fi
+.PP
+.PP
+By defining GLM_FORCE_UNRESTRICTED_GENTYPE, we allow using integer types:
+.PP
+.PP
+.nf
+#define GLM_FORCE_UNRESTRICTED_GENTYPE
+#include <glm/glm\&.hpp>
+
+int average(int const A, int const B)
+{
+    return glm::mix(A, B, 0\&.5f); // integers are ok thanks to GLM_FORCE_UNRESTRICTED_GENTYPE
+}
+.fi
+.PP
+.PP
+.SS " 2\&.20\&. GLM_FORCE_SILENT_WARNINGS: Silent C++ warnings from language extensions"
+.PP
+When using /W4 on Visual C++ or -Wpedantic on GCC, for example, the compilers will generate warnings for using C++ language extensions (/Za with Visual C++) such as anonymous struct\&. GLM relies on anonymous structs for swizzle operators and aligned vector types\&. To silent those warnings define \fCGLM_FORCE_SILENT_WARNINGS\fP before including GLM headers\&.
+.PP
+.PP
+  
+.PP
+.SS " 3\&. Stable extensions"
+.PP
+.SS " 3\&.1\&. Scalar types"
+.PP
+.SS "3\&.1\&.1\&. GLM_EXT_scalar_int_sized"
+.PP
+This extension exposes sized and signed integer types\&.
+.PP
+Include \fC<\fBglm/ext/scalar_int_sized\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.1\&.2\&. GLM_EXT_scalar_uint_sized"
+.PP
+This extension exposes sized and unsigned integer types\&.
+.PP
+.PP
+.nf
+#include <glm/ext/scalar_common\&.hpp>
+
+glm::uint64 pack(glm::uint32 A, glm::uint16 B, glm::uint8 C, glm::uint8 D)
+{
+    glm::uint64 ShiftA = 0;
+    glm::uint64 ShiftB = sizeof(glm::uint32) * 8;
+    glm::uint64 ShiftC = (sizeof(glm::uint32) + sizeof(glm::uint16)) * 8;
+    glm::uint64 ShiftD = (sizeof(glm::uint32) + sizeof(glm::uint16) + sizeof(glm::uint8)) * 8;
+    return (glm::uint64(A) << ShiftA) | (glm::uint64(B) << ShiftB) | (glm::uint64(C) << ShiftC) | (glm::uint64(D) << ShiftD);
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/scalar_uint_sized\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.2\&. Scalar functions"
+.PP
+.SS "3\&.2\&.1\&. GLM_EXT_scalar_common"
+.PP
+This extension exposes support for \fCmin\fP and \fCmax\fP functions taking more than two scalar arguments\&. Also, it adds \fCfmin\fP and \fCfmax\fP variants which prevents \fCNaN\fP propagation\&.
+.PP
+.PP
+.nf
+#include <glm/ext/scalar_common\&.hpp>
+
+float positiveMax(float const a, float const b)
+{
+    return glm::fmax(a, b, 0\&.0f);
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/scalar_common\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.2\&.2\&. GLM_EXT_scalar_relational"
+.PP
+This extension exposes \fCequal\fP and \fCnotEqual\fP scalar variants which takes an epsilon argument\&.
+.PP
+.PP
+.nf
+#include <glm/ext/scalar_relational\&.hpp>
+
+bool epsilonEqual(float const a, float const b)
+{
+    float const CustomEpsilon = 0\&.0001f;
+    return glm::equal(a, b, CustomEpsilon);
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/scalar_relational\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.2\&.3\&. GLM_EXT_scalar_constants"
+.PP
+This extension exposes useful constants such as \fCepsilon\fP and \fCpi\fP\&.
+.PP
+.PP
+.nf
+#include <glm/ext/scalar_constants\&.hpp>
+
+float circumference(float const Diameter)
+{
+    return glm::pi<float>() * Diameter;
+}
+.fi
+.PP
+.PP
+.PP
+.nf
+#include <glm/common\&.hpp> // abs
+#include <glm/ext/scalar_constants\&.hpp> // epsilon
+
+bool equalULP1(float const a, float const b)
+{
+    return glm::abs(a - b) <= glm::epsilon<float>();
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/scalar_constants\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.2\&.4\&. GLM_EXT_scalar_ulp"
+.PP
+This extension exposes function that measure of accuracy in numeric calculations\&.
+.PP
+.PP
+.nf
+#include <glm/ext/scalar_ulp\&.hpp>
+
+bool test_ulp(float x)
+{
+    float const a = glm::next_float(x); // return a float a ULP away from the float argument\&.
+    return float_distance(a, x) == 1; // check both float are a single ULP away\&.
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/scalar_ulp\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.3\&. Vector types"
+.PP
+.SS "3\&.3\&.1\&. GLM_EXT_vector_float1"
+.PP
+This extension exposes single-precision floating point vector with 1 component: \fCvec1\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_float1\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.2\&. GLM_EXT_vector_float2"
+.PP
+This extension exposes single-precision floating point vector with 2 components: \fC\fBvec2\fP\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_float2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.3\&. GLM_EXT_vector_float3"
+.PP
+This extension exposes single-precision floating point vector with 3 components: \fCvec3\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_float3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.4\&. GLM_EXT_vector_float4"
+.PP
+This extension exposes single-precision floating point vector with 4 components: \fCvec4\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_float4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.5\&. GLM_EXT_vector_double1"
+.PP
+This extension exposes double-precision floating point vector with 1 component: \fCdvec1\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_double1\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.6\&. GLM_EXT_vector_double2"
+.PP
+This extension exposes double-precision floating point vector with 2 components: \fCdvec2\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_double2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.7\&. GLM_EXT_vector_double3"
+.PP
+This extension exposes double-precision floating point vector with 3 components: \fCdvec3\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_double3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.8\&. GLM_EXT_vector_double4"
+.PP
+This extension exposes double-precision floating point vector with 4 components: \fCdvec4\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_double4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.9\&. GLM_EXT_vector_int1"
+.PP
+This extension exposes signed integer vector with 1 component: \fCivec1\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_int1\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.10\&. GLM_EXT_vector_int2"
+.PP
+This extension exposes signed integer vector with 2 components: \fCivec2\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_int2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.11\&. GLM_EXT_vector_int3"
+.PP
+This extension exposes signed integer vector with 3 components: \fCivec3\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_int3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.12\&. GLM_EXT_vector_int4"
+.PP
+This extension exposes signed integer vector with 4 components: \fCivec4\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_int4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.13\&. GLM_EXT_vector_int1"
+.PP
+This extension exposes unsigned integer vector with 1 component: \fCuvec1\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_uint1\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.14\&. GLM_EXT_vector_uint2"
+.PP
+This extension exposes unsigned integer vector with 2 components: \fCuvec2\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_uint2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.15\&. GLM_EXT_vector_uint3"
+.PP
+This extension exposes unsigned integer vector with 3 components: \fCuvec3\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_uint3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.16\&. GLM_EXT_vector_uint4"
+.PP
+This extension exposes unsigned integer vector with 4 components: \fCuvec4\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_uint4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.17\&. GLM_EXT_vector_bool1"
+.PP
+This extension exposes boolean vector with 1 component: \fCbvec1\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_bool1\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.18\&. GLM_EXT_vector_bool2"
+.PP
+This extension exposes boolean vector with 2 components: \fCbvec2\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_bool2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.19\&. GLM_EXT_vector_bool3"
+.PP
+This extension exposes boolean vector with 3 components: \fCbvec3\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_bool3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.3\&.20\&. GLM_EXT_vector_bool4"
+.PP
+This extension exposes boolean vector with 4 components: \fCbvec4\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_bool4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.4\&. Vector types with precision qualifiers"
+.PP
+.SS "3\&.4\&.1\&. GLM_EXT_vector_float1_precision"
+.PP
+This extension exposes single-precision floating point vector with 1 component using various precision in term of ULPs: \fClowp_vec1\fP, \fCmediump_vec1\fP and \fChighp_vec1\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_float1_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.4\&.2\&. GLM_EXT_vector_float2_precision"
+.PP
+This extension exposes single-precision floating point vector with 2 components using various precision in term of ULPs: \fClowp_vec2\fP, \fCmediump_vec2\fP and \fChighp_vec2\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_float2_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.4\&.3\&. GLM_EXT_vector_float3_precision"
+.PP
+This extension exposes single-precision floating point vector with 3 components using various precision in term of ULPs: \fClowp_vec3\fP, \fCmediump_vec3\fP and \fChighp_vec3\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_float3_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.4\&.4\&. GLM_EXT_vector_float4_precision"
+.PP
+This extension exposes single-precision floating point vector with 4 components using various precision in term of ULPs: \fClowp_vec4\fP, \fCmediump_vec4\fP and \fChighp_vec4\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_float4_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.4\&.5\&. GLM_EXT_vector_double1_precision"
+.PP
+This extension exposes double-precision floating point vector with 1 component using various precision in term of ULPs: \fClowp_dvec1\fP, \fCmediump_dvec1\fP and \fChighp_dvec1\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_double1_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.4\&.6\&. GLM_EXT_vector_double2_precision"
+.PP
+This extension exposes double-precision floating point vector with 2 components using various precision in term of ULPs: \fClowp_dvec2\fP, \fCmediump_dvec2\fP and \fChighp_dvec2\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_double2_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.4\&.7\&. GLM_EXT_vector_double3_precision"
+.PP
+This extension exposes double-precision floating point vector with 3 components using various precision in term of ULPs: \fClowp_dvec3\fP, \fCmediump_dvec3\fP and \fChighp_dvec3\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_double3_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.4\&.8\&. GLM_EXT_vector_double4_precision"
+.PP
+This extension exposes double-precision floating point vector with 4 components using various precision in term of ULPs: \fClowp_dvec4\fP, \fCmediump_dvec4\fP and \fChighp_dvec4\fP\&.
+.PP
+Include \fC<\fBglm/ext/vector_double4_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.5\&. Vector functions"
+.PP
+.SS "3\&.5\&.1\&. GLM_EXT_vector_common"
+.PP
+This extension exposes support for \fCmin\fP and \fCmax\fP functions taking more than two vector arguments\&. Also, it adds \fCfmin\fP and \fCfmax\fP variants which prevents \fCNaN\fP propagation\&.
+.PP
+.PP
+.nf
+#include <glm/ext/vector_float2\&.hpp> // vec2
+#include <glm/ext/vector_common\&.hpp> // fmax
+
+float positiveMax(float const a, float const b)
+{
+    return glm::fmax(a, b, 0\&.0f);
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/vector_common\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.5\&.2\&. GLM_EXT_vector_relational"
+.PP
+This extension exposes \fCequal\fP and \fCnotEqual\fP vector variants which takes an epsilon argument\&.
+.PP
+.PP
+.nf
+#include <glm/ext/vector_float2\&.hpp> // vec2
+#include <glm/ext/vector_relational\&.hpp> // equal, all
+
+bool epsilonEqual(glm::vec2 const& A, glm::vec2 const& B)
+{
+    float const CustomEpsilon = 0\&.0001f;
+    return glm::all(glm::equal(A, B, CustomEpsilon));
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/vector_relational\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.5\&.3\&. GLM_EXT_vector_ulp"
+.PP
+This extension exposes function that measure of accuracy in numeric calculations\&.
+.PP
+.PP
+.nf
+#include <glm/ext/vector_ulp\&.hpp>
+#include <glm/ext/vector_float4\&.hpp>
+#include <glm/ext/vector_int4\&.hpp>
+
+bool test_ulp(glm::vec4 const& x)
+{
+    glm::vec4 const a = glm::next_float(x); // return a float a ULP away from the float argument\&.
+    return glm::all(float_distance(a, x) == glm::ivec4(1)); // check both float are a single ULP away\&.
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/vector_ulp\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.6\&. Matrix types"
+.PP
+.SS "3\&.6\&.1\&. GLM_EXT_matrix_float2x2"
+.PP
+This extension exposes single-precision floating point vector with 2 columns by 2 rows: \fCmat2x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float2x2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.2\&. GLM_EXT_matrix_float2x3"
+.PP
+This extension exposes single-precision floating point vector with 2 columns by 3 rows: \fCmat2x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float2x3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.3\&. GLM_EXT_matrix_float2x4"
+.PP
+This extension exposes single-precision floating point vector with 2 columns by 4 rows: \fCmat2x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float2x4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.4\&. GLM_EXT_matrix_float3x2"
+.PP
+This extension exposes single-precision floating point vector with 3 columns by 2 rows: \fCmat3x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float3x2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.5\&. GLM_EXT_matrix_float3x3"
+.PP
+This extension exposes single-precision floating point vector with 3 columns by 3 rows: \fCmat3x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float3x3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.6\&. GLM_EXT_matrix_float3x4"
+.PP
+This extension exposes single-precision floating point vector with 3 columns by 4 rows: \fCmat3x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float3x4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.7\&. GLM_EXT_matrix_float4x2"
+.PP
+This extension exposes single-precision floating point vector with 4 columns by 2 rows: \fCmat4x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float4x2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.8\&. GLM_EXT_matrix_float4x3"
+.PP
+This extension exposes single-precision floating point vector with 4 columns by 3 rows: \fCmat4x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float4x3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.9\&. GLM_EXT_matrix_float4x4"
+.PP
+This extension exposes single-precision floating point vector with 4 columns by 4 rows: \fCmat4x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float4x4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.10\&. GLM_EXT_matrix_double2x2"
+.PP
+This extension exposes double-precision floating point vector with 2 columns by 2 rows: \fCdmat2x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double2x2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.11\&. GLM_EXT_matrix_double2x3"
+.PP
+This extension exposes double-precision floating point vector with 2 columns by 3 rows: \fCdmat2x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double2x3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.12\&. GLM_EXT_matrix_double2x4"
+.PP
+This extension exposes double-precision floating point vector with 2 columns by 4 rows: \fCdmat2x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double2x4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.13\&. GLM_EXT_matrix_double3x2"
+.PP
+This extension exposes double-precision floating point vector with 3 columns by 2 rows: \fCdmat3x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double3x2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.14\&. GLM_EXT_matrix_double3x3"
+.PP
+This extension exposes double-precision floating point vector with 3 columns by 3 rows: \fCdmat3x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double3x3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.15\&. GLM_EXT_matrix_double3x4"
+.PP
+This extension exposes double-precision floating point vector with 3 columns by 4 rows: \fCdmat3x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double3x4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.16\&. GLM_EXT_matrix_double4x2"
+.PP
+This extension exposes double-precision floating point vector with 4 columns by 2 rows: \fCdmat4x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double4x2\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.17\&. GLM_EXT_matrix_double4x3"
+.PP
+This extension exposes double-precision floating point vector with 4 columns by 3 rows: \fCdmat4x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double4x3\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.6\&.18\&. GLM_EXT_matrix_double4x4"
+.PP
+This extension exposes double-precision floating point vector with 4 columns by 4 rows: \fCdmat4x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double4x4\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.7\&. Matrix types with precision qualifiers"
+.PP
+.SS "3\&.7\&.1\&. GLM_EXT_matrix_float2x2_precision"
+.PP
+This extension exposes single-precision floating point vector with 2 columns by 2 rows using various precision in term of ULPs: \fClowp_mat2x2\fP, \fCmediump_mat2x2\fP and \fChighp_mat2x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float2x2_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.2\&. GLM_EXT_matrix_float2x3_precision"
+.PP
+This extension exposes single-precision floating point vector with 2 columns by 3 rows using various precision in term of ULPs: \fClowp_mat2x3\fP, \fCmediump_mat2x3\fP and \fChighp_mat2x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float2x3_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.3\&. GLM_EXT_matrix_float2x4_precision"
+.PP
+This extension exposes single-precision floating point vector with 2 columns by 4 rows using various precision in term of ULPs: \fClowp_mat2x4\fP, \fCmediump_mat2x4\fP and \fChighp_mat2x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float2x4_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.4\&. GLM_EXT_matrix_float3x2_precision"
+.PP
+This extension exposes single-precision floating point vector with 3 columns by 2 rows using various precision in term of ULPs: \fClowp_mat3x2\fP, \fCmediump_mat3x2\fP and \fChighp_mat3x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float3x2_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.5\&. GLM_EXT_matrix_float3x3_precision"
+.PP
+This extension exposes single-precision floating point vector with 3 columns by 3 rows using various precision in term of ULPs: \fClowp_mat3x3\fP, \fCmediump_mat3x3\fP and \fChighp_mat3x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float3x3_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.6\&. GLM_EXT_matrix_float3x4_precision"
+.PP
+This extension exposes single-precision floating point vector with 3 columns by 4 rows using various precision in term of ULPs: \fClowp_mat3x4\fP, \fCmediump_mat3x4\fP and \fChighp_mat3x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float3x4_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.7\&. GLM_EXT_matrix_float4x2_precision"
+.PP
+This extension exposes single-precision floating point vector with 4 columns by 2 rows using various precision in term of ULPs: \fClowp_mat4x2\fP, \fCmediump_mat4x2\fP and \fChighp_mat4x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float4x2_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.8\&. GLM_EXT_matrix_float4x3_precision"
+.PP
+This extension exposes single-precision floating point vector with 4 columns by 3 rows using various precision in term of ULPs: \fClowp_mat4x3\fP, \fCmediump_mat4x3\fP and \fChighp_mat4x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float4x3_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.9\&. GLM_EXT_matrix_float4x4_precision"
+.PP
+This extension exposes single-precision floating point vector with 4 columns by 4 rows using various precision in term of ULPs: \fClowp_mat4x4\fP, \fCmediump_mat4x4\fP and \fChighp_mat4x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_float4x4_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.10\&. GLM_EXT_matrix_double2x2_precision"
+.PP
+This extension exposes double-precision floating point vector with 2 columns by 2 rows using various precision in term of ULPs: \fClowp_dmat2x2\fP, \fCmediump_dmat2x2\fP and \fChighp_dmat2x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double2x2_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.11\&. GLM_EXT_matrix_double2x3_precision"
+.PP
+This extension exposes double-precision floating point vector with 2 columns by 3 rows using various precision in term of ULPs: \fClowp_dmat2x3\fP, \fCmediump_dmat2x3\fP and \fChighp_dmat2x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double2x3_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.12\&. GLM_EXT_matrix_double2x4_precision"
+.PP
+This extension exposes double-precision floating point vector with 2 columns by 4 rows using various precision in term of ULPs: \fClowp_dmat2x4\fP, \fCmediump_dmat2x4\fP and \fChighp_dmat2x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double2x4_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.13\&. GLM_EXT_matrix_double3x2_precision"
+.PP
+This extension exposes double-precision floating point vector with 3 columns by 2 rows using various precision in term of ULPs: \fClowp_dmat3x2\fP, \fCmediump_dmat3x2\fP and \fChighp_dmat3x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double3x2_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.14\&. GLM_EXT_matrix_double3x3_precision"
+.PP
+This extension exposes double-precision floating point vector with 3 columns by 3 rows using various precision in term of ULPs: \fClowp_dmat3x3\fP, \fCmediump_dmat3x3\fP and \fChighp_dmat3x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double3x3_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.15\&. GLM_EXT_matrix_double3x4_precision"
+.PP
+This extension exposes double-precision floating point vector with 3 columns by 4 rows using various precision in term of ULPs: \fClowp_dmat3x4\fP, \fCmediump_dmat3x4\fP and \fChighp_dmat3x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double3x4_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.16\&. GLM_EXT_matrix_double4x2_precision"
+.PP
+This extension exposes double-precision floating point vector with 4 columns by 2 rows using various precision in term of ULPs: \fClowp_dmat4x2\fP, \fCmediump_dmat4x2\fP and \fChighp_dmat4x2\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double4x2_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.17\&. GLM_EXT_matrix_double4x3_precision"
+.PP
+This extension exposes double-precision floating point vector with 4 columns by 3 rows using various precision in term of ULPs: \fClowp_dmat4x3\fP, \fCmediump_dmat4x3\fP and \fChighp_dmat4x3\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double4x3_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.7\&.18\&. GLM_EXT_matrix_double4x4_precision"
+.PP
+This extension exposes double-precision floating point vector with 4 columns by 4 rows using various precision in term of ULPs: \fClowp_dmat4x4\fP, \fCmediump_dmat4x4\fP and \fChighp_dmat4x4\fP\&.
+.PP
+Include \fC<\fBglm/ext/matrix_double4x4_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.8\&. Matrix functions"
+.PP
+.SS "3\&.8\&.1\&. GLM_EXT_matrix_relational"
+.PP
+This extension exposes \fCequal\fP and \fCnotEqual\fP matrix variants which takes an optional epsilon argument\&.
+.PP
+.PP
+.nf
+#include <glm/ext/vector_bool4\&.hpp> // bvec4
+#include <glm/ext/matrix_float4x4\&.hpp> // mat4
+#include <glm/ext/matrix_relational\&.hpp> // equal, all
+
+bool epsilonEqual(glm::mat4 const& A, glm::mat4 const& B)
+{
+    float const CustomEpsilon = 0\&.0001f;
+    glm::bvec4 const ColumnEqual = glm::equal(A, B, CustomEpsilon); // Evaluation per column
+    return glm::all(ColumnEqual);
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/matrix_relational\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.8\&.2\&. GLM_EXT_matrix_transform"
+.PP
+This extension exposes matrix transformation functions: \fCtranslate\fP, \fCrotate\fP and \fCscale\fP\&.
+.PP
+.PP
+.nf
+#include <glm/ext/vector_float2\&.hpp> // vec2
+#include <glm/ext/vector_float3\&.hpp> // vec3
+#include <glm/ext/matrix_float4x4\&.hpp> // mat4x4
+#include <glm/ext/matrix_transform\&.hpp> // translate, rotate, scale, identity
+
+glm::mat4 computeModelViewMatrix(float Translate, glm::vec2 const & Rotate)
+{
+    glm::mat4 View = glm::translate(glm::identity(), glm::vec3(0\&.0f, 0\&.0f, -Translate));
+    View = glm::rotate(View, Rotate\&.y, glm::vec3(-1\&.0f, 0\&.0f, 0\&.0f));
+    View = glm::rotate(View, Rotate\&.x, glm::vec3(0\&.0f, 1\&.0f, 0\&.0f));
+    glm::mat4 Model = glm::scale(glm::identity(), glm::vec3(0\&.5f));
+    return View * Model;
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/matrix_transform\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.8\&.3\&. GLM_EXT_matrix_clip_space"
+.PP
+This extension exposes functions to transform scenes into the clip space\&.
+.PP
+.PP
+.nf
+#include <glm/ext/matrix_float4x4\&.hpp> // mat4x4
+#include <glm/ext/matrix_clip_space\&.hpp> // perspective
+#include <glm/trigonometric\&.hpp> // radians
+
+glm::mat4 computeProjection(float Width, float Height)
+{
+    return glm::perspective(glm::radians(45\&.0f), Width / Height, 0\&.1f, 100\&.f);
+}
+.fi
+.PP
+.PP
+Include \fC<\fBglm/ext/matrix_clip_space\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.8\&.4\&. GLM_EXT_matrix_projection"
+.PP
+This extension exposes functions to map object coordinates into window coordinates and reverse
+.PP
+Include \fC<\fBglm/ext/matrix_projection\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.9\&. Quaternion types"
+.PP
+.SS "3\&.9\&.1\&. GLM_EXT_quaternion_float"
+.PP
+This extension exposes single-precision floating point quaternion: \fCquat\fP\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_float\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.9\&.2\&. GLM_EXT_quaternion_double"
+.PP
+This extension exposes double-precision floating point quaternion: \fCdquat\fP\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_double\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.10\&. Quaternion types with precision qualifiers"
+.PP
+.SS "3\&.10\&.1\&. GLM_EXT_quaternion_float_precision"
+.PP
+This extension exposes single-precision floating point quaternion using various precision in term of ULPs: \fClowp_quat\fP, \fCmediump_quat\fP and \fChighp_quat\fP\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_float_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.10\&.2\&. GLM_EXT_quaternion_double_precision"
+.PP
+This extension exposes double-precision floating point quaternion using various precision in term of ULPs: \fClowp_dquat\fP, \fCmediump_dquat\fP and \fChighp_dquat\fP\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_double_precision\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS " 3\&.11\&. Quaternion functions"
+.PP
+.SS "3\&.11\&.1\&. GLM_EXT_quaternion_common"
+.PP
+This extension exposes common quaternion functions such as \fCslerp\fP, \fCconjugate\fP and \fCinverse\fP\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_common\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.11\&.2\&. GLM_EXT_quaternion_geometric"
+.PP
+This extension exposes geometric quaternion functions such as \fClength\fP, \fCnormalize\fP, \fCdot\fP and \fCcross\fP\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_geometric\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.11\&.3\&. GLM_EXT_quaternion_trigonometric"
+.PP
+This extension exposes trigonometric quaternion functions such as \fCangle\fP and \fCaxis\fP\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_trigonometric\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.11\&.4\&. GLM_EXT_quaternion_exponential"
+.PP
+This extensions expose exponential functions for quaternions such as \fCexp\fP, \fClog\fP, \fCpow\fP and \fCsqrt\fP\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_exponential\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.11\&.5\&. GLM_EXT_quaternion_relational"
+.PP
+This extension exposes relational functions to compare quaternions\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_relational\&.hpp\fP>\fP to use these features\&.
+.PP
+.SS "3\&.11\&.6\&. GLM_EXT_quaternion_transform"
+.PP
+This extension exposes functions to transform objects\&.
+.PP
+Include \fC<\fBglm/ext/quaternion_transform\&.hpp\fP>\fP to use these features\&.
+.PP
+.PP
+  
+.PP
+.SS " 4\&. Recommended extensions"
+.PP
+GLM extends the core GLSL feature set with extensions\&. These extensions include: quaternion, transformation, spline, matrix inverse, color spaces, etc\&.
+.PP
+To include an extension, we only need to include the dedicated header file\&. Once included, the features are added to the GLM namespace\&.
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp>
+#include <glm/gtc/matrix_transform\&.hpp>
+
+int foo()
+{
+    glm::vec4 Position = glm::vec4(glm:: vec3(0\&.0f), 1\&.0f);
+    glm::mat4 Model = glm::translate(glm::mat4(1\&.0f), glm::vec3(1\&.0f));
+
+    glm::vec4 Transformed = Model * Position;
+    \&.\&.\&.
+
+    return 0;
+}
+.fi
+.PP
+.PP
+When an extension is included, all the dependent core functionalities and extensions will be included as well\&.
+.PP
+.SS " 4\&.1\&. GLM_GTC_bitfield"
+.PP
+Fast bitfield operations on scalar and vector variables\&.
+.PP
+\fC<\fBglm/gtc/bitfield\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.2\&. GLM_GTC_color_space"
+.PP
+Conversion between linear RGB and sRGB color spaces\&.
+.PP
+\fC<\fBglm/gtc/color_space\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.3\&. GLM_GTC_constants"
+.PP
+Provide a list of built-in constants\&.
+.PP
+\fC<\fBglm/gtc/constants\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.4\&. GLM_GTC_epsilon"
+.PP
+Approximate equality comparisons for floating-point numbers, possibly with a user-defined epsilon\&.
+.PP
+\fC<\fBglm/gtc/epsilon\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.5\&. GLM_GTC_integer"
+.PP
+Integer variants of core GLM functions\&.
+.PP
+\fC<\fBglm/gtc/integer\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.6\&. GLM_GTC_matrix_access"
+.PP
+Functions to conveniently access the individual rows or columns of a matrix\&.
+.PP
+\fC<\fBglm/gtc/matrix_access\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.7\&. GLM_GTC_matrix_integer"
+.PP
+Integer matrix types similar to the core floating-point matrices\&. Some operations (such as inverse and determinant) are not supported\&.
+.PP
+\fC<\fBglm/gtc/matrix_integer\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.8\&. GLM_GTC_matrix_inverse"
+.PP
+Additional matrix inverse functions\&.
+.PP
+\fC<\fBglm/gtc/matrix_inverse\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.9\&. GLM_GTC_matrix_transform"
+.PP
+Matrix transformation functions that follow the OpenGL fixed-function conventions\&.
+.PP
+For example, the \fClookAt\fP function generates a transformation matrix that projects world coordinates into eye coordinates suitable for projection matrices (e\&.g\&. \fCperspective\fP, \fCortho\fP)\&. See the OpenGL compatibility specifications for more information about the layout of these generated matrices\&.
+.PP
+The matrices generated by this extension use standard OpenGL fixed-function conventions\&. For example, the \fClookAt\fP function generates a transform from world space into the specific eye space that the projective matrix functions (\fCperspective\fP, \fCortho\fP, etc) are designed to expect\&. The OpenGL compatibility specifications define the particular layout of this eye space\&.
+.PP
+\fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.10\&. GLM_GTC_noise"
+.PP
+Define 2D, 3D and 4D procedural noise functions\&.
+.PP
+<\fC\fBglm/gtc/noise\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.PP
+Figure 4\&.10\&.1: \fBglm::simplex\fP(\fBglm::vec2\fP(x / 16\&.f, y / 16\&.f));
+.PP
+.PP
+Figure 4\&.10\&.2: \fBglm::simplex\fP(\fBglm::vec3\fP(x / 16\&.f, y / 16\&.f, 0\&.5f));
+.PP
+.PP
+Figure 4\&.10\&.3: \fBglm::simplex\fP(\fBglm::vec4\fP(x / 16\&.f, y / 16\&.f, 0\&.5f, 0\&.5f));
+.PP
+.PP
+Figure 4\&.10\&.4: \fBglm::perlin\fP(\fBglm::vec2\fP(x / 16\&.f, y / 16\&.f));
+.PP
+.PP
+Figure 4\&.10\&.5: \fBglm::perlin\fP(\fBglm::vec3\fP(x / 16\&.f, y / 16\&.f, 0\&.5f));
+.PP
+.PP
+Figure 4\&.10\&.6: \fBglm::perlin\fP(\fBglm::vec4\fP(x / 16\&.f, y / 16\&.f, 0\&.5f, 0\&.5f)));
+.PP
+.PP
+Figure 4\&.10\&.7: \fBglm::perlin\fP(\fBglm::vec2\fP(x / 16\&.f, y / 16\&.f), \fBglm::vec2\fP(2\&.0f));
+.PP
+.PP
+Figure 4\&.10\&.8: \fBglm::perlin\fP(\fBglm::vec3\fP(x / 16\&.f, y / 16\&.f, 0\&.5f), \fBglm::vec3\fP(2\&.0f));
+.PP
+.PP
+Figure 4\&.10\&.9: \fBglm::perlin\fP(\fBglm::vec4\fP(x / 16\&.f, y / 16\&.f, \fBglm::vec2\fP(0\&.5f)), \fBglm::vec4\fP(2\&.0f));
+.PP
+.SS " 4\&.11\&. GLM_GTC_packing"
+.PP
+Convert scalar and vector types to and from packed formats, saving space at the cost of precision\&. However, packing a value into a format that it was previously unpacked from is guaranteed to be lossless\&.
+.PP
+\fC<\fBglm/gtc/packing\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.12\&. GLM_GTC_quaternion"
+.PP
+Quaternions and operations upon thereof\&.
+.PP
+\fC<\fBglm/gtc/quaternion\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.13\&. GLM_GTC_random"
+.PP
+Probability distributions in up to four dimensions\&.
+.PP
+\fC<\fBglm/gtc/random\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.PP
+Figure 4\&.13\&.1: \fBglm::vec4\fP(\fBglm::linearRand\fP(\fBglm::vec2\fP(-1), glm::vec2(1)), 0, 1);
+.PP
+.PP
+Figure 4\&.13\&.2: \fBglm::vec4\fP(\fBglm::circularRand\fP(1\&.0f), 0, 1);
+.PP
+.PP
+Figure 4\&.13\&.3: \fBglm::vec4\fP(\fBglm::sphericalRand\fP(1\&.0f), 1);
+.PP
+.PP
+Figure 4\&.13\&.4: \fBglm::vec4\fP(\fBglm::diskRand\fP(1\&.0f), 0, 1);
+.PP
+.PP
+Figure 4\&.13\&.5: \fBglm::vec4\fP(\fBglm::ballRand\fP(1\&.0f), 1);
+.PP
+.PP
+Figure 4\&.13\&.6: \fBglm::vec4\fP(\fBglm::gaussRand\fP(glm::vec3(0), glm::vec3(1)), 1);
+.PP
+.SS " 4\&.14\&. GLM_GTC_reciprocal"
+.PP
+Reciprocal trigonometric functions (e\&.g\&. secant, cosecant, tangent)\&.
+.PP
+\fC<\fBglm/gtc/reciprocal\&.hpp\fP>\fP need to be included to use the features of this extension\&.
+.PP
+.SS " 4\&.15\&. GLM_GTC_round"
+.PP
+Various rounding operations and common special cases thereof\&.
+.PP
+\fC<\fBglm/gtc/round\&.hpp\fP>\fP need to be included to use the features of this extension\&.
+.PP
+.SS " 4\&.16\&. GLM_GTC_type_aligned"
+.PP
+Aligned vector types\&.
+.PP
+\fC<\fBglm/gtc/type_aligned\&.hpp\fP>\fP need to be included to use the features of this extension\&.
+.PP
+.SS " 4\&.17\&. GLM_GTC_type_precision"
+.PP
+Vector and matrix types with defined precisions, e\&.g\&. \fCi8vec4\fP, which is a 4D vector of signed 8-bit integers\&.
+.PP
+\fC<glm/gtc/type\\_precision\&.hpp>\fP need to be included to use the features of this extension\&.
+.PP
+.SS " 4\&.18\&. GLM_GTC_type_ptr"
+.PP
+Facilitate interactions between pointers to basic types (e\&.g\&. \fCfloat*\fP) and GLM types (e\&.g\&. \fCmat4\fP)\&.
+.PP
+This extension defines an overloaded function, \fC\fBglm::value_ptr\fP\fP, which returns a pointer to the memory layout of any GLM vector or matrix (\fCvec3\fP, \fCmat4\fP, etc\&.)\&. Matrix types store their values in column-major order\&. This is useful for uploading data to matrices or for copying data to buffer objects\&.
+.PP
+.PP
+.nf
+// GLM_GTC_type_ptr provides a safe solution:
+#include <glm/glm\&.hpp>
+#include <glm/gtc/type_ptr\&.hpp>
+
+void foo()
+{
+    glm::vec4 v(0\&.0f);
+    glm::mat4 m(1\&.0f);
+    \&.\&.\&.
+    glVertex3fv(glm::value_ptr(v))
+    glLoadMatrixfv(glm::value_ptr(m));
+}
+
+// Another solution, this one inspired by the STL:
+#include <glm/glm\&.hpp>
+
+void foo()
+{
+    glm::vec4 v(0\&.0f);
+    glm::mat4 m(1\&.0f);
+    \&.\&.\&.
+    glVertex3fv(&v[0]);
+    glLoadMatrixfv(&m[0][0]);
+}
+.fi
+.PP
+.PP
+*Note: It would be possible to implement \fC\fCglVertex3fv\fP\fP(glm::vec3(0)) in C++ with the appropriate cast operator that would result as an implicit cast in this example\&. However cast operators may produce programs running with unexpected behaviours without build error or any form of notification\&. *
+.PP
+\fC<\fBglm/gtc/type_ptr\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.19\&. GLM_GTC_ulp"
+.PP
+Measure a function's accuracy given a reference implementation of it\&. This extension works on floating-point data and provides results in \fCULP\fP\&.
+.PP
+\fC<\fBglm/gtc/ulp\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.SS " 4\&.20\&. GLM_GTC_vec1"
+.PP
+Add *vec1 types\&.
+.PP
+\fC<\fBglm/gtc/vec1\&.hpp\fP>\fP need to be included to use these features\&.
+.PP
+.PP
+  
+.PP
+.SS " 5\&. OpenGL interoperability"
+.PP
+.SS " 5\&.1\&. GLM replacements for deprecated OpenGL functions"
+.PP
+OpenGL 3\&.1 specification has deprecated some features that have been removed from OpenGL 3\&.2 core profile specification\&. GLM provides some replacement functions\&.
+.PP
+\fC\fI\fBglRotate{f, d}:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 glm::rotate(glm::mat4 const& m, float angle, glm::vec3 const& axis);
+glm::dmat4 glm::rotate(glm::dmat4 const& m, double angle, glm::dvec3 const& axis);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: <\fBglm/gtc/matrix_transform\&.hpp\fP>
+.PP
+\fC\fI\fBglScale{f, d}:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 glm::scale(glm::mat4 const& m, glm::vec3 const& factors);
+glm::dmat4 glm::scale(glm::dmat4 const& m, glm::dvec3 const& factors);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: <\fBglm/gtc/matrix_transform\&.hpp\fP>
+.PP
+\fC\fI\fBglTranslate{f, d}:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 glm::translate(glm::mat4 const& m, glm::vec3 const& translation);
+glm::dmat4 glm::translate(glm::dmat4 const& m, glm::dvec3 const& translation);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: <\fBglm/gtc/matrix_transform\&.hpp\fP>
+.PP
+\fC\fI\fBglLoadIdentity:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4(1\&.0) or glm::mat4();
+glm::dmat4(1\&.0) or glm::dmat4();
+.fi
+.PP
+.PP
+From GLM core library: \fC<\fBglm/glm\&.hpp\fP>\fP
+.PP
+\fC\fI\fBglMultMatrix{f, d}:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4() * glm::mat4();
+glm::dmat4() * glm::dmat4();
+.fi
+.PP
+.PP
+From GLM core library: \fC<\fBglm/glm\&.hpp\fP>\fP
+.PP
+\fC\fI\fBglLoadTransposeMatrix{f, d}:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::transpose(glm::mat4());
+glm::transpose(glm::dmat4());
+.fi
+.PP
+.PP
+From GLM core library: \fC<\fBglm/glm\&.hpp\fP>\fP
+.PP
+\fC\fI\fBglMultTransposeMatrix{f, d}:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4() * glm::transpose(glm::mat4());
+glm::dmat4() * glm::transpose(glm::dmat4());
+.fi
+.PP
+.PP
+From GLM core library: \fC<\fBglm/glm\&.hpp\fP>\fP
+.PP
+\fC\fI\fBglFrustum:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 glm::frustum(float left, float right, float bottom, float top, float zNear, float zFar);
+glm::dmat4 glm::frustum(double left, double right, double bottom, double top, double zNear, double zFar);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: \fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP
+.PP
+\fC\fI\fBglOrtho:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 glm::ortho(float left, float right, float bottom, float top, float zNear, float zFar);
+glm::dmat4 glm::ortho(double left, double right, double bottom, double top, double zNear, double zFar);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: \fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP
+.PP
+.SS " 5\&.2\&. GLM replacements for GLU functions"
+.PP
+\fC\fI\fBgluLookAt:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 glm::lookAt(glm::vec3 const& eye, glm::vec3 const& center, glm::vec3 const& up);
+glm::dmat4 glm::lookAt(glm::dvec3 const& eye, glm::dvec3 const& center, glm::dvec3 const& up);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: \fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP
+.PP
+\fC\fI\fBgluOrtho2D:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 glm::ortho(float left, float right, float bottom, float top);
+glm::dmat4 glm::ortho(double left, double right, double bottom, double top);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: \fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP
+.PP
+\fC\fI\fBgluPerspective:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 perspective(float fovy, float aspect, float zNear, float zFar);
+glm::dmat4 perspective(double fovy, double aspect, double zNear, double zFar);
+.fi
+.PP
+.PP
+Note that in GLM, fovy is expressed in radians, not degrees\&.
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: \fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP
+.PP
+\fC\fI\fBgluPickMatrix:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::mat4 pickMatrix(glm::vec2 const& center, glm::vec2 const& delta, glm::ivec4 const& viewport);
+glm::dmat4 pickMatrix(glm::dvec2 const& center, glm::dvec2 const& delta, glm::ivec4 const& viewport);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: \fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP
+.PP
+\fC\fI\fBgluProject:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::vec3 project(glm::vec3 const& obj, glm::mat4 const& model, glm::mat4 const& proj, glm::ivec4 const& viewport);
+glm::dvec3 project(glm::dvec3 const& obj, glm::dmat4 const& model, glm::dmat4 const& proj, glm::ivec4 const& viewport);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: \fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP
+.PP
+\fC\fI\fBgluUnProject:\fP\fP\fP
+.PP
+.PP
+.nf
+glm::vec3 unProject(glm::vec3 const& win, glm::mat4 const& model, glm::mat4 const& proj, glm::ivec4 const& viewport);
+glm::dvec3 unProject(glm::dvec3 const& win, glm::dmat4 const& model, glm::dmat4 const& proj, glm::ivec4 const& viewport);
+.fi
+.PP
+.PP
+From \fCGLM_GTC_matrix_transform\fP extension: \fC<\fBglm/gtc/matrix_transform\&.hpp\fP>\fP
+.PP
+.PP
+  
+.PP
+.SS " 6\&. Known issues"
+.PP
+This section reports GLSL features that GLM can't accurately emulate due to language restrictions\&.
+.PP
+.SS " 6\&.1\&. not function"
+.PP
+The GLSL function 'not' is a keyword in C++\&. To prevent name collisions and ensure a consistent API, the name \fCnot\\_\fP (note the underscore) is used instead\&.
+.PP
+.SS " 6\&.2\&. Precision qualifiers support"
+.PP
+GLM supports GLSL precision qualifiers through prefixes instead of qualifiers\&. For example, GLM exposes \\verb|lowp_vec4|, \\verb|mediump_vec4| and \\verb|highp_vec4| as variations of \\verb|vec4|\&.
+.PP
+Similarly to GLSL, GLM precision qualifiers are used to trade precision of operations in term of \fCULPs\fP for better performance\&. By default, all the types use high precision\&.
+.PP
+.PP
+.nf
+// Using precision qualifier in GLSL:
+
+ivec3 foo(in vec4 v)
+{
+    highp vec4 a = v;
+    mediump vec4 b = a;
+    lowp ivec3 c = ivec3(b);
+    return c;
+}
+
+// Using precision qualifier in GLM:
+
+#include <glm/glm\&.hpp>
+
+ivec3 foo(const vec4 & v)
+{
+    highp_vec4 a = v;
+    medium_vec4 b = a;
+    lowp_ivec3 c = glm::ivec3(b);
+    return c;
+}
+.fi
+.PP
+.PP
+.PP
+  
+.PP
+.SS " 7\&. FAQ"
+.PP
+.SS " 7\&.1 Why GLM follows GLSL specification and conventions?"
+.PP
+Following GLSL conventions is a really strict policy of GLM\&. It has been designed following the idea that everyone does its own math library with his own conventions\&. The idea is that brilliant developers (the OpenGL ARB) worked together and agreed to make GLSL\&. Following GLSL conventions is a way to find consensus\&. Moreover, basically when a developer knows GLSL, he knows GLM\&.
+.PP
+.SS " 7\&.2\&. Does GLM run GLSL program?"
+.PP
+No, GLM is a C++ implementation of a subset of GLSL\&.
+.PP
+.SS " 7\&.3\&. Does a GLSL compiler build GLM codes?"
+.PP
+No, this is not what GLM attends to do\&.
+.PP
+.SS " 7\&.4\&. Should I use ‘GTX’ extensions?"
+.PP
+GTX extensions are qualified to be experimental extensions\&. In GLM this means that these extensions might change from version to version without any restriction\&. In practice, it doesn’t really change except time to time\&. GTC extensions are stabled, tested and perfectly reliable in time\&. Many GTX extensions extend GTC extensions and provide a way to explore features and implementations and APIs and then are promoted to GTC extensions\&. This is fairly the way OpenGL features are developed; through extensions\&.
+.PP
+Stating with GLM 0\&.9\&.9, to use experimental extensions, an application must define GLM_ENABLE_EXPERIMENTAL\&.
+.PP
+.SS " 7\&.5\&. Where can I ask my questions?"
+.PP
+A good place is \fCstackoverflow\fP using the GLM tag\&.
+.PP
+.SS " 7\&.6\&. Where can I find the documentation of extensions?"
+.PP
+The Doxygen generated documentation includes a complete list of all extensions available\&. Explore this \fC\fIAPI documentation\fP\fP to get a complete view of all GLM capabilities!
+.PP
+.SS " 7\&.7\&. Should I use ‘using namespace glm;’?"
+.PP
+NO! Chances are that if using namespace glm; is called, especially in a header file, name collisions will happen as GLM is based on GLSL which uses common tokens for types and functions\&. Avoiding using namespace glm; will a higher compatibility with third party library and SDKs\&.
+.PP
+.SS " 7\&.8\&. Is GLM fast?"
+.PP
+GLM is mainly designed to be convenient and that's why it is written against the GLSL specification\&.
+.PP
+Following the Pareto principle where 20% of the code consumes 80% of the execution time, GLM operates perfectly on the 80% of the code that consumes 20% of the performances\&. Furthermore, thanks to the lowp, mediump and highp qualifiers, GLM provides approximations which trade precision for performance\&. Finally, GLM can automatically produce SIMD optimized code for functions of its implementation\&.
+.PP
+However, on performance critical code paths, we should expect that dedicated algorithms should be written to reach peak performance\&.
+.PP
+.SS " 7\&.9\&. When I build with Visual C++ with /W4 warning level, I have warnings\&.\&.\&."
+.PP
+You should not have any warnings even in \fC/W4\fP mode\&. However, if you expect such level for your code, then you should ask for the same level to the compiler by at least disabling the Visual C++ language extensions (\fC/Za\fP) which generates warnings when used\&. If these extensions are enabled, then GLM will take advantage of them and the compiler will generate warnings\&.
+.PP
+.SS " 7\&.10\&. Why some GLM functions can crash because of division by zero?"
+.PP
+GLM functions crashing is the result of a domain error\&. Such behavior follows the precedent set by C and C++'s standard library\&. For example, it’s a domain error to pass a null vector (all zeroes) to \fBglm::normalize\fP function, or to pass a negative number into std::sqrt\&.
+.PP
+.SS " 7\&.11\&. What unit for angles is used in GLM?"
+.PP
+GLSL is using radians but GLU is using degrees to express angles\&. This has caused GLM to use inconsistent units for angles\&. Starting with GLM 0\&.9\&.6, all GLM functions are using radians\&. For more information, follow the \fClink\fP\&.
+.PP
+.SS " 7\&.12\&. Windows headers cause build errors\&.\&.\&."
+.PP
+Some Windows headers define min and max as macros which may cause compatibility with third party libraries such as GLM\&. It is highly recommended to \fC\fCdefine NOMINMAX\fP\fP before including Windows headers to workaround this issue\&. To workaround the incompatibility with these macros, GLM will systematically undef these macros if they are defined\&.
+.PP
+.SS " 7\&.13\&. Constant expressions support"
+.PP
+GLM has some C++ \fCconstant expressions\fP support\&. However, GLM automatically detects the use of SIMD instruction sets through compiler arguments to populate its implementation with SIMD intrinsics\&. Unfortunately, GCC and Clang doesn't support SIMD instrinsics as constant expressions\&. To allow constant expressions on all vectors and matrices types, define \fCGLM_FORCE_PURE\fP before including GLM headers\&.
+.PP
+.PP
+  
+.PP
+.SS " 8\&. Code samples"
+.PP
+This series of samples only shows various GLM features without consideration of any sort\&.
+.PP
+.SS " 8\&.1\&. Compute a triangle normal"
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp> // vec3 normalize cross
+
+glm::vec3 computeNormal(glm::vec3 const& a, glm::vec3 const& b, glm::vec3 const& c)
+{
+    return glm::normalize(glm::cross(c - a, b - a));
+}
+
+// A much faster but less accurate alternative:
+#include <glm/glm\&.hpp> // vec3 cross
+#include <glm/gtx/fast_square_root\&.hpp> // fastNormalize
+
+glm::vec3 computeNormal(glm::vec3 const& a, glm::vec3 const& b, glm::vec3 const& c)
+{
+    return glm::fastNormalize(glm::cross(c - a, b - a));
+}
+.fi
+.PP
+.PP
+.SS " 8\&.2\&. Matrix transform"
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp> // vec3, vec4, ivec4, mat4
+#include <glm/gtc/matrix_transform\&.hpp> // translate, rotate, scale, perspective
+#include <glm/gtc/type_ptr\&.hpp> // value_ptr
+
+void setUniformMVP(GLuint Location, glm::vec3 const& Translate, glm::vec3 const& Rotate)
+{
+    glm::mat4 Projection = glm::perspective(45\&.0f, 4\&.0f / 3\&.0f, 0\&.1f, 100\&.f);
+    glm::mat4 ViewTranslate = glm::translate(
+        glm::mat4(1\&.0f), Translate);
+    glm::mat4 ViewRotateX = glm::rotate(
+        ViewTranslate, Rotate\&.y, glm::vec3(-1\&.0f, 0\&.0f, 0\&.0f));
+    glm::mat4 View = glm::rotate(ViewRotateX,
+        Rotate\&.x, glm::vec3(0\&.0f, 1\&.0f, 0\&.0f));
+    glm::mat4 Model = glm::scale(
+        glm::mat4(1\&.0f), glm::vec3(0\&.5f));
+    glm::mat4 MVP = Projection * View * Model;
+    glUniformMatrix4fv(Location, 1, GL_FALSE, glm::value_ptr(MVP));
+}
+.fi
+.PP
+.PP
+.SS " 8\&.3\&. Vector types"
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp> // vec2
+#include <glm/gtc/type_precision\&.hpp> // hvec2, i8vec2, i32vec2
+
+std::size_t const VertexCount = 4;
+
+// Float quad geometry
+std::size_t const PositionSizeF32 = VertexCount * sizeof(glm::vec2);
+glm::vec2 const PositionDataF32[VertexCount] =
+{
+    glm::vec2(-1\&.0f,-1\&.0f),
+    glm::vec2( 1\&.0f,-1\&.0f),
+    glm::vec2( 1\&.0f, 1\&.0f),
+    glm::vec2(-1\&.0f, 1\&.0f)
+};
+
+// Half-float quad geometry
+std::size_t const PositionSizeF16 = VertexCount * sizeof(glm::hvec2);
+glm::hvec2 const PositionDataF16[VertexCount] =
+{
+    glm::hvec2(-1\&.0f, -1\&.0f),
+    glm::hvec2( 1\&.0f, -1\&.0f),
+    glm::hvec2( 1\&.0f, 1\&.0f),
+    glm::hvec2(-1\&.0f, 1\&.0f)
+};
+
+// 8 bits signed integer quad geometry
+std::size_t const PositionSizeI8 = VertexCount * sizeof(glm::i8vec2);
+glm::i8vec2 const PositionDataI8[VertexCount] =
+{
+    glm::i8vec2(-1,-1),
+    glm::i8vec2( 1,-1),
+    glm::i8vec2( 1, 1),
+    glm::i8vec2(-1, 1)
+};
+
+// 32 bits signed integer quad geometry
+std::size_t const PositionSizeI32 = VertexCount * sizeof(glm::i32vec2);
+glm::i32vec2 const PositionDataI32[VertexCount] =
+{
+    glm::i32vec2(-1,-1),
+    glm::i32vec2( 1,-1),
+    glm::i32vec2( 1, 1),
+    glm::i32vec2(-1, 1)
+};
+.fi
+.PP
+.PP
+.SS " 8\&.4\&. Lighting"
+.PP
+.PP
+.nf
+#include <glm/glm\&.hpp> // vec3 normalize reflect dot pow
+#include <glm/gtc/random\&.hpp> // ballRand
+
+// vecRand3, generate a random and equiprobable normalized vec3
+glm::vec3 lighting(intersection const& Intersection, material const& Material, light const& Light, glm::vec3 const& View)
+{
+    glm::vec3 Color = glm::vec3(0\&.0f);
+    glm::vec3 LightVertor = glm::normalize(
+        Light\&.position() - Intersection\&.globalPosition() +
+        glm::ballRand(0\&.0f, Light\&.inaccuracy());
+
+    if(!shadow(Intersection\&.globalPosition(), Light\&.position(), LightVertor))
+    {
+        float Diffuse = glm::dot(Intersection\&.normal(), LightVector);
+        if(Diffuse &lt;= 0\&.0f)
+            return Color;
+
+        if(Material\&.isDiffuse())
+            Color += Light\&.color() * Material\&.diffuse() * Diffuse;
+
+        if(Material\&.isSpecular())
+        {
+            glm::vec3 Reflect = glm::reflect(-LightVector, Intersection\&.normal());
+            float Dot = glm::dot(Reflect, View);
+            float Base = Dot &gt; 0\&.0f ? Dot : 0\&.0f;
+            float Specular = glm::pow(Base, Material\&.exponent());
+            Color += Material\&.specular() \* Specular;
+        }
+    }
+
+    return Color;
+}
+.fi
+.PP
+.PP
+.PP
+  
+.PP
+.SS " 9\&. Contributing to GLM"
+.PP
+.SS " 9\&.1\&. Submitting bug reports"
+.PP
+Bug should be reported on Github using the \fCissue page\fP\&.
+.PP
+A minimal code to reproduce the issue will help\&.
+.PP
+Additional, bugs can be configuration specific\&. We can report the configuration by defining \fCGLM_FORCE_MESSAGES\fP before including GLM headers then build and copy paste the build messages GLM will output\&.
+.PP
+.PP
+.nf
+#define GLM_FORCE_MESSAGES
+#include <glm/glm\&.hpp>
+.fi
+.PP
+.PP
+An example of build messages generated by GLM: 
+.PP
+.nf
+GLM: 0\&.9\&.9\&.1
+GLM: C++ 17 with extensions
+GLM: GCC compiler detected"
+GLM: x86 64 bits with AVX instruction set build target
+GLM: Linux platform detected
+GLM: GLM_FORCE_SWIZZLE is undefined\&. swizzling functions or operators are disabled\&.
+GLM: GLM_FORCE_SIZE_T_LENGTH is undefined\&. \&.length() returns a glm::length_t, a typedef of int following GLSL\&.
+GLM: GLM_FORCE_UNRESTRICTED_GENTYPE is undefined\&. Follows strictly GLSL on valid function genTypes\&.
+GLM: GLM_FORCE_DEPTH_ZERO_TO_ONE is undefined\&. Using negative one to one depth clip space\&.
+GLM: GLM_FORCE_LEFT_HANDED is undefined\&. Using right handed coordinate system\&.
+
+.fi
+.PP
+.PP
+.SS " 9\&.2\&. Contributing to GLM with pull request"
+.PP
+This tutorial will show us how to successfully contribute a bug-fix to GLM using GitHub's Pull Request workflow\&.
+.PP
+We will be typing git commands in the Terminal\&. Mac and Linux users may have git pre-installed\&. You can download git from \fChere\fP\&.
+.PP
+The tutorial assumes you have some basic understanding of git concepts - repositories, branches, commits, etc\&. Explaining it all from scratch is beyond the scope of this tutorial\&. Some good links to learn git basics are: \fCLink 1\fP, \fCLink 2\fP
+.PP
+.SS "Step 1: Setup our GLM Fork"
+.PP
+We will make our changes in our own copy of the GLM sitory\&. On the GLM GitHub repo and we press the Fork button\&. We need to download a copy of our fork to our local machine\&. In the terminal, type:
+.PP
+.PP
+.nf
+>>> git clone <our-repository-fork-git-url>
+.fi
+.PP
+.PP
+This will clone our fork repository into the current folder\&.
+.PP
+We can find our repository git url on the Github reposotory page\&. The url looks like this: \fChttps://github.com/<our-username>/<repository-name>\&.git\fP
+.PP
+.SS "Step 2: Synchronizing our fork"
+.PP
+We can use the following command to add \fCupstream\fP (original project repository) as a remote repository so that we can fetch the latest GLM commits into our branch and keep our forked copy is synchronized\&.
+.PP
+.PP
+.nf
+>>> git remote add upstream https://github\&.com/processing/processing\&.git
+.fi
+.PP
+.PP
+To synchronize our fork to the latest commit in the GLM repository, we can use the following command:
+.PP
+.PP
+.nf
+>>> git fetch upstream
+.fi
+.PP
+.PP
+Then, we can merge the remote master branch to our current branch:
+.PP
+.PP
+.nf
+>>> git merge upstream/master
+.fi
+.PP
+.PP
+Now our local copy of our fork has been synchronized\&. However, the fork's copy is not updated on GitHub's servers yet\&. To do that, use:
+.PP
+.PP
+.nf
+>>> git push origin master
+.fi
+.PP
+.PP
+.SS "Step 3: Modifying our GLM Fork"
+.PP
+Our fork is now setup and we are ready to modify GLM to fix a bug\&.
+.PP
+It's a good practice to make changes in our fork in a separate branch than the master branch because we can submit only one pull request per branch\&.
+.PP
+Before creating a new branch, it's best to synchronize our fork and then create a new branch from the latest master branch\&.
+.PP
+If we are not on the master branch, we should switch to it using: 
+.PP
+.nf
+>>> git checkout master
+
+.fi
+.PP
+.PP
+To create a new branch called \fCbugifx\fP, we use: 
+.PP
+.nf
+git branch bugfix
+
+.fi
+.PP
+.PP
+Once the code changes for the fix is done, we need to commit the changes: 
+.PP
+.nf
+>>> git commit -m "Resolve the issue that caused problem with a specific fix #432"
+
+.fi
+.PP
+.PP
+The commit message should be as specific as possible and finished by the bug number in the \fCGLM GitHub issue page\fP
+.PP
+Finally, we need to push our changes in our branch to our GitHub fork using: 
+.PP
+.nf
+>>> git push origin bugfix
+
+.fi
+.PP
+.PP
+Some things to keep in mind for a pull request:
+.IP "\(bu" 2
+Keep it minimal: Try to make the minimum required changes to fix the issue\&. If we have added any debugging code, we should remove it\&.
+.IP "\(bu" 2
+A fix at a time: The pull request should deal with one issue at a time only, unless two issue are so interlinked they must be fixed together\&.
+.IP "\(bu" 2
+Write a test: GLM is largely unit tests\&. Unit tests are in \fCglm/test\fP directory\&. We should also add tests for the fixes we provide to ensure future regression doesn't happen\&.
+.IP "\(bu" 2
+No whitespace changes: Avoid unnecessary formatting or whitespace changes in other parts of the code\&. Be careful with auto-format options in the code editor which can cause wide scale formatting changes\&.
+.IP "\(bu" 2
+Follow \fCGLM Code Style\fP for consistency\&.
+.IP "\(bu" 2
+Tests passes: Make sure GLM build and tests don't fail because of the changes\&.
+.PP
+.PP
+.SS "Step 4: Submitting a Pull Request"
+.PP
+We need to submit a pull request from the \fCbugfix\fP branch to GLM's master branch\&.
+.PP
+On the fork github page, we can click on the \fIPull Request\fP button\&. Then we can describe our pull request\&. Finally we press \fISend Pull Request\fP\&.
+.PP
+Please be patient and give them some time to go through it\&.
+.PP
+The pull request review may suggest additional changes\&. So we can make those changes in our branch, and push those changes to our fork repository\&. Our pull request will always include the latest changes in our branch on GitHub, so we don't need to resubmit the pull request\&.
+.PP
+Once your changes have been accepted, a project maintainer will merge our pull request\&.
+.PP
+We are grateful to the users for their time and effort in contributing fixes\&.
+.PP
+.SS " 9\&.3\&. Coding style"
+.PP
+.SS "Indentation"
+.PP
+Always tabs\&. Never spaces\&.
+.PP
+.SS "Spacing"
+.PP
+No space after if\&. Use if(blah) not if (blah)\&. Example if/else block:
+.PP
+.PP
+.nf
+if(blah)
+{
+    // yes like this
+}
+else
+{
+    // something besides
+}
+.fi
+.PP
+.PP
+Single line if blocks: 
+.PP
+.nf
+if(blah)
+    // yes like this
+else
+    // something besides
+
+.fi
+.PP
+.PP
+No spaces inside parens: 
+.PP
+.nf
+if (blah)    // No
+if( blah )   // No
+if ( blah )  // No
+if(blah)     // Yes
+
+.fi
+.PP
+.PP
+Use spaces before/after commas: 
+.PP
+.nf
+someFunction(apple,bear,cat);     // No
+someFunction(apple, bear, cat);   // Yes
+
+.fi
+.PP
+.PP
+Use spaces before/after use of \fC+, -, *, /, %, >>, <<, |, &, ^, ||, &&\fP operators: 
+.PP
+.nf
+vec4 v = a + b;
+
+.fi
+.PP
+.PP
+.SS "Blank lines"
+.PP
+One blank line after the function blocks\&.
+.PP
+.SS "Comments"
+.PP
+Always one space after the // in single line comments
+.PP
+One space before // at the end of a line (that has code as well)
+.PP
+Try to use // comments inside functions, to make it easier to remove a whole block via /* */
+.PP
+.SS "Cases"
+.PP
+.PP
+.nf
+#define GLM_MY_DEFINE 76
+
+class myClass
+{};
+
+myClass const MyClass;
+
+namespace glm{ // glm namespace is for public code
+namespace detail // glm::detail namespace is for implementation detail
+{
+    float myFunction(vec2 const& V)
+    {
+        return V\&.x + V\&.y;
+    }
+
+    float myFunction(vec2 const* const V)
+    {
+        return V->x + V->y;
+    }
+}//namespace detail
+}//namespace glm
+.fi
+.PP
+.PP
+.PP
+  
+.PP
+.SS " 10\&. References"
+.PP
+.SS " 10\&.1\&. OpenGL specifications"
+.PP
+.IP "\(bu" 2
+OpenGL 4\&.3 core specification
+.IP "\(bu" 2
+\fCGLSL 4\&.30 specification\fP {width='2\&.859722222222222in' height='1\&.6083333333333334in'}- \fC\fIGLU 1\&.3 specification\fP\fP
+.PP
+.PP
+.SS " 10\&.2\&. External links"
+.PP
+.IP "\(bu" 2
+\fCGLM on stackoverflow\fP
+.PP
+.PP
+.SS " 10\&.3\&. Projects using GLM"
+.PP
+\fI\fB\fCLeo’s Fortune\fP\fP\fP
+.PP
+Leo’s Fortune is a platform adventure game where you hunt down the cunning and mysterious thief that stole your gold\&. Available on PS4, Xbox One, PC, Mac, iOS and Android\&.
+.PP
+Beautifully hand-crafted levels bring the story of Leo to life in this epic adventure\&.
+.PP
+“I just returned home to find all my gold has been stolen! For some devious purpose, the thief has dropped pieces of my gold like breadcrumbs through the woods\&.”
+.PP
+“Despite this pickle of a trap, I am left with no choice but to follow the trail\&.”
+.PP
+“Whatever lies ahead, I must recover my fortune\&.” -Leopold
+.PP
+.PP
+.PP
+\fC\fI\fBOpenGL 4\&.0 Shading Language Cookbook\fP\fP\fP
+.PP
+A set of recipes that demonstrates a wide of techniques for producing high-quality, real-time 3D graphics with GLSL 4\&.0, such as:
+.PP
+.IP "\(bu" 2
+Using GLSL 4\&.0 to implement lighting and shading techniques\&.
+.IP "\(bu" 2
+Using the new features of GLSL 4\&.0 including tessellation and geometry shaders\&.
+.IP "\(bu" 2
+Using textures in GLSL as part of a wide variety of techniques from basic texture mapping to deferred shading\&.
+.PP
+.PP
+Simple, easy-to-follow examples with GLSL source code are provided, as well as a basic description of the theory behind each technique\&.
+.PP
+.PP
+\fC\fI\fBOuterra\fP\fP\fP
+.PP
+A 3D planetary engine for seamless planet rendering from space down to the surface\&. Can use arbitrary resolution of elevation data, refining it to centimetre resolution using fractal algorithms\&.
+.PP
+.PP
+.PP
+.PP
+.PP
+\fC\fI\fBFalcor\fP\fP\fP
+.PP
+Real-time rendering research framework by NVIDIA\&.
+.PP
+\fC\fI\fBCinder\fP\fP\fP
+.PP
+Cinder is a free and open source library for professional-quality creative coding in C++\&.
+.PP
+Cinder is a C++ library for programming with aesthetic intent - the sort of development often called creative coding\&. This includes domains like graphics, audio, video, and computational geometry\&. Cinder is cross-platform, with official support for OS X, Windows, iOS, and WinRT\&.
+.PP
+Cinder is production-proven, powerful enough to be the primary tool for professionals, but still suitable for learning and experimentation\&. Cinder is released under the \fC2-Clause BSD License\fP\&.
+.PP
+.PP
+\fC\fI\fBopencloth\fP\fP\fP
+.PP
+A collection of source codes implementing cloth simulation algorithms in OpenGL\&.
+.PP
+Simple, easy-to-follow examples with GLSL source code, as well as a basic description of the theory behind each technique\&.
+.PP
+.PP
+.PP
+\fC\fI\fBLibreOffice\fP\fP\fP
+.PP
+LibreOffice includes several applications that make it the most powerful Free and Open Source office suite on the market\&.
+.PP
+\fC\fI\fBAre you using GLM in a project?\fP\fP\fP
+.PP
+.SS " 10\&.4\&. Tutorials using GLM"
+.PP
+.IP "\(bu" 2
+\fCSascha Willems' Vulkan examples\fP, Examples and demos for the new Vulkan API
+.IP "\(bu" 2
+\fCVKTS\fP Vulkan examples using VulKan ToolS (VKTS)
+.IP "\(bu" 2
+\fC\fIThe OpenGL Samples Pack\fP\fP, samples that show how to set up all the different new features
+.IP "\(bu" 2
+\fC\fILearning Modern 3D Graphics programming\fP\fP, a great OpenGL tutorial using GLM by Jason L\&. McKesson
+.IP "\(bu" 2
+\fC\fIMorten Nobel-Jørgensen’s\fP\fP review and use an \fC\fIOpenGL renderer\fP\fP
+.IP "\(bu" 2
+\fC\fISwiftless’ OpenGL tutorial\fP\fP using GLM by Donald Urquhart
+.IP "\(bu" 2
+\fC\fIRastergrid\fP\fP, many technical articles with companion programs using GLM by Daniel Rákos\\
+.IP "\(bu" 2
+\fC\fIOpenGL Tutorial\fP\fP, tutorials for OpenGL 3\&.1 and later
+.IP "\(bu" 2
+\fC\fIOpenGL Programming on Wikibooks\fP\fP: For beginners who are discovering OpenGL\&.
+.IP "\(bu" 2
+\fC\fI3D Game Engine Programming\fP\fP: Learning the latest 3D Game Engine Programming techniques\&.
+.IP "\(bu" 2
+\fCGame Tutorials\fP, graphics and game programming\&.
+.IP "\(bu" 2
+\fCopen\&.gl\fP, OpenGL tutorial
+.IP "\(bu" 2
+\fCc-jump\fP, GLM tutorial
+.IP "\(bu" 2
+\fCLearn OpenGL\fP, OpenGL tutorial
+.IP "\(bu" 2
+\fC\fI\fBAre you using GLM in a tutorial?\fP\fP\fP
+.PP
+.PP
+.SS " 10\&.5\&. Equivalent for other languages"
+.PP
+.IP "\(bu" 2
+\fC\fIcglm\fP\fP: OpenGL Mathematics (glm) for C\&.
+.IP "\(bu" 2
+\fC\fIGlmSharp\fP\fP: Open-source semi-generated GLM-flavored math library for \&.NET/C#\&.
+.IP "\(bu" 2
+\fCglm-js\fP: JavaScript adaptation of the OpenGL Mathematics (GLM) C++ library interfaces
+.IP "\(bu" 2
+\fCJVM OpenGL Mathematics (GLM)\fP: written in Kotlin, Java compatible
+.IP "\(bu" 2
+\fCJGLM\fP - Java OpenGL Mathematics Library
+.IP "\(bu" 2
+\fCSwiftGL Math Library\fP GLM for Swift
+.IP "\(bu" 2
+\fCglm-go\fP: Simple linear algebra library similar in spirit to GLM
+.IP "\(bu" 2
+\fCopenll\fP: Lua bindings for OpenGL, GLM, GLFW, OpenAL, SOIL and PhysicsFS
+.IP "\(bu" 2
+\fCglm-rs\fP: GLSL mathematics for Rust programming language
+.IP "\(bu" 2
+\fCglmpython\fP: GLM math library for Python
+.PP
+.PP
+.SS " 10\&.6\&. Alternatives to GLM"
+.PP
+.IP "\(bu" 2
+\fC\fICML\fP\fP: The CML (Configurable Math Library) is a free C++ math library for games and graphics\&.
+.IP "\(bu" 2
+\fC\fIEigen\fP\fP: A more heavy weight math library for general linear algebra in C++\&.
+.IP "\(bu" 2
+\fC\fIglhlib\fP\fP: A much more than glu C library\&.
+.IP "\(bu" 2
+Are you using or developing an alternative library to GLM?
+.PP
+.PP
+.SS " 10\&.7\&. Acknowledgements"
+.PP
+GLM is developed and maintained by \fC\fIChristophe Riccio\fP\fP but many contributors have made this project what it is\&.
+.PP
+Special thanks to:
+.IP "\(bu" 2
+Ashima Arts and Stefan Gustavson for their work on \fC\fIwebgl-noise\fP\fP which has been used for GLM noises implementation\&.
+.IP "\(bu" 2
+\fC\fIArthur Winters\fP\fP for the C++11 and Visual C++ swizzle operators implementation and tests\&.
+.IP "\(bu" 2
+Joshua Smith and Christoph Schied for the discussions and the experiments around the swizzle operators implementation issues\&.
+.IP "\(bu" 2
+Guillaume Chevallereau for providing and maintaining the \fC\fInightlight build system\fP\fP\&.
+.IP "\(bu" 2
+Ghenadii Ursachi for GLM_GTX_matrix_interpolation implementation\&.
+.IP "\(bu" 2
+Mathieu Roumillac for providing some implementation ideas\&.
+.IP "\(bu" 2
+\fC\fIGrant James\fP\fP for the implementation of all combination of none-squared matrix products\&.
+.IP "\(bu" 2
+Jesse Talavera-Greenberg for his work on the manual amount other things\&.
+.IP "\(bu" 2
+All the GLM users that have report bugs and hence help GLM to become a great library! 
+.PP
+

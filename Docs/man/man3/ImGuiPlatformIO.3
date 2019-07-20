@@ -1,0 +1,97 @@
+.TH "ImGuiPlatformIO" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ImGuiPlatformIO
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "void(* \fBPlatform_CreateWindow\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_DestroyWindow\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_ShowWindow\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_SetWindowPos\fP )(\fBImGuiViewport\fP *vp, \fBImVec2\fP pos)"
+.br
+.ti -1c
+.RI "\fBImVec2\fP(* \fBPlatform_GetWindowPos\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_SetWindowSize\fP )(\fBImGuiViewport\fP *vp, \fBImVec2\fP size)"
+.br
+.ti -1c
+.RI "\fBImVec2\fP(* \fBPlatform_GetWindowSize\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_SetWindowFocus\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "bool(* \fBPlatform_GetWindowFocus\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "bool(* \fBPlatform_GetWindowMinimized\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_SetWindowTitle\fP )(\fBImGuiViewport\fP *vp, const char *title)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_SetWindowAlpha\fP )(\fBImGuiViewport\fP *vp, float alpha)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_UpdateWindow\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_RenderWindow\fP )(\fBImGuiViewport\fP *vp, void *render_arg)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_SwapBuffers\fP )(\fBImGuiViewport\fP *vp, void *render_arg)"
+.br
+.ti -1c
+.RI "float(* \fBPlatform_GetWindowDpiScale\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_OnChangedViewport\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBPlatform_SetImeInputPos\fP )(\fBImGuiViewport\fP *vp, \fBImVec2\fP pos)"
+.br
+.ti -1c
+.RI "int(* \fBPlatform_CreateVkSurface\fP )(\fBImGuiViewport\fP *vp, ImU64 vk_inst, const void *vk_allocators, ImU64 *out_vk_surface)"
+.br
+.ti -1c
+.RI "void(* \fBRenderer_CreateWindow\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBRenderer_DestroyWindow\fP )(\fBImGuiViewport\fP *vp)"
+.br
+.ti -1c
+.RI "void(* \fBRenderer_SetWindowSize\fP )(\fBImGuiViewport\fP *vp, \fBImVec2\fP size)"
+.br
+.ti -1c
+.RI "void(* \fBRenderer_RenderWindow\fP )(\fBImGuiViewport\fP *vp, void *render_arg)"
+.br
+.ti -1c
+.RI "void(* \fBRenderer_SwapBuffers\fP )(\fBImGuiViewport\fP *vp, void *render_arg)"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiPlatformMonitor\fP > \fBMonitors\fP"
+.br
+.ti -1c
+.RI "\fBImGuiViewport\fP * \fBMainViewport\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiViewport\fP * > \fBViewports\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

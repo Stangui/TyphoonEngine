@@ -1,0 +1,82 @@
+.TH "gtx_matrix_operation" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_matrix_operation
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > \fBglm::diagonal2x2\fP (\fBvec\fP< 2, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 2, 3, T, Q > \fBglm::diagonal2x3\fP (\fBvec\fP< 2, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 2, 4, T, Q > \fBglm::diagonal2x4\fP (\fBvec\fP< 2, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 3, 2, T, Q > \fBglm::diagonal3x2\fP (\fBvec\fP< 2, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 3, 3, T, Q > \fBglm::diagonal3x3\fP (\fBvec\fP< 3, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 3, 4, T, Q > \fBglm::diagonal3x4\fP (\fBvec\fP< 3, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 4, 2, T, Q > \fBglm::diagonal4x2\fP (\fBvec\fP< 2, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 4, 3, T, Q > \fBglm::diagonal4x3\fP (\fBvec\fP< 3, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 4, 4, T, Q > \fBglm::diagonal4x4\fP (\fBvec\fP< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > \fBglm::adjugate\fP (\fBmat\fP< 2, 2, T, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 3, 3, T, Q > \fBglm::adjugate\fP (\fBmat\fP< 3, 3, T, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 4, 4, T, Q > \fBglm::adjugate\fP (\fBmat\fP< 4, 4, T, Q > const &m)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/matrix_operation\&.hpp\fP> to use the features of this extension\&.
+.PP
+Build diagonal matrices from vectors\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<2, 2, T, Q> glm::adjugate (\fBmat\fP< 2, 2, T, Q > const & m)"
+Build an adjugate matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<3, 3, T, Q> glm::adjugate (\fBmat\fP< 3, 3, T, Q > const & m)"
+Build an adjugate matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<4, 4, T, Q> glm::adjugate (\fBmat\fP< 4, 4, T, Q > const & m)"
+Build an adjugate matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<2, 2, T, Q> glm::diagonal2x2 (\fBvec\fP< 2, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<2, 3, T, Q> glm::diagonal2x3 (\fBvec\fP< 2, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<2, 4, T, Q> glm::diagonal2x4 (\fBvec\fP< 2, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<3, 2, T, Q> glm::diagonal3x2 (\fBvec\fP< 2, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<3, 3, T, Q> glm::diagonal3x3 (\fBvec\fP< 3, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<3, 4, T, Q> glm::diagonal3x4 (\fBvec\fP< 3, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<4, 2, T, Q> glm::diagonal4x2 (\fBvec\fP< 2, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<4, 3, T, Q> glm::diagonal4x3 (\fBvec\fP< 3, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<4, 4, T, Q> glm::diagonal4x4 (\fBvec\fP< 4, T, Q > const & v)"
+Build a diagonal matrix\&. From GLM_GTX_matrix_operation extension\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

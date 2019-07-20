@@ -1,0 +1,46 @@
+.TH "gtx_gradient_paint" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_gradient_paint
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::radialGradient\fP (\fBvec\fP< 2, T, Q > const &Center, T const &Radius, \fBvec\fP< 2, T, Q > const &Focal, \fBvec\fP< 2, T, Q > const &Position)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::linearGradient\fP (\fBvec\fP< 2, T, Q > const &Point0, \fBvec\fP< 2, T, Q > const &Point1, \fBvec\fP< 2, T, Q > const &Position)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/gradient_paint\&.hpp\fP> to use the features of this extension\&.
+.PP
+Functions that return the color of procedural gradient for specific coordinates\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::linearGradient (\fBvec\fP< 2, T, Q > const & Point0, \fBvec\fP< 2, T, Q > const & Point1, \fBvec\fP< 2, T, Q > const & Position)"
+Return a color from a linear gradient\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+- \fBGLM_GTX_gradient_paint\fP 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::radialGradient (\fBvec\fP< 2, T, Q > const & Center, T const & Radius, \fBvec\fP< 2, T, Q > const & Focal, \fBvec\fP< 2, T, Q > const & Position)"
+Return a color from a radial gradient\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+- \fBGLM_GTX_gradient_paint\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

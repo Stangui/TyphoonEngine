@@ -1,0 +1,58 @@
+.TH "arg_formatter< Range >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+arg_formatter< Range >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <format\&.h>\fP
+.PP
+Inherits \fBinternal::function< internal::arg_formatter_base< Range >::iterator >\fP, and \fBinternal::arg_formatter_base< Range >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Range \fBrange\fP"
+.br
+.ti -1c
+.RI "typedef base::iterator \fBiterator\fP"
+.br
+.ti -1c
+.RI "typedef \fBbase::format_specs\fP \fBformat_specs\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBarg_formatter\fP (\fBcontext_type\fP &ctx, \fBformat_specs\fP *spec=FMT_NULL)"
+.br
+.ti -1c
+.RI "\fBarg_formatter\fP (\fBcontext_type\fP &ctx, \fBformat_specs\fP &spec)"
+.br
+.ti -1c
+.RI "iterator \fBoperator()\fP (typename \fBbasic_format_arg\fP< \fBcontext_type\fP >::handle handle)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Range>
+.br
+class arg_formatter< Range >"
+The default argument formatter\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename Range > \fBarg_formatter\fP< Range >::\fBarg_formatter\fP (\fBcontext_type\fP & ctx, \fBformat_specs\fP * spec = \fCFMT_NULL\fP)\fC [inline]\fP, \fC [explicit]\fP"
+\\rst Constructs an argument formatter object\&. ctx* is a reference to the formatting context, spec* contains format specifier information for standard argument types\&. \\endrst 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename Range > iterator \fBarg_formatter\fP< Range >::operator() (typename \fBbasic_format_arg\fP< \fBcontext_type\fP >::handle handle)\fC [inline]\fP"
+Formats an argument of a user-defined type\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

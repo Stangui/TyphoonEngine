@@ -1,0 +1,62 @@
+.TH "gtx_norm" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_norm
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::length2\fP (\fBvec\fP< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::distance2\fP (\fBvec\fP< L, T, Q > const &p0, \fBvec\fP< L, T, Q > const &p1)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::l1Norm\fP (\fBvec\fP< 3, T, Q > const &x, \fBvec\fP< 3, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::l1Norm\fP (\fBvec\fP< 3, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::l2Norm\fP (\fBvec\fP< 3, T, Q > const &x, \fBvec\fP< 3, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::l2Norm\fP (\fBvec\fP< 3, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::lxNorm\fP (\fBvec\fP< 3, T, Q > const &x, \fBvec\fP< 3, T, Q > const &y, unsigned int Depth)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::lxNorm\fP (\fBvec\fP< 3, T, Q > const &x, unsigned int Depth)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/norm\&.hpp\fP> to use the features of this extension\&.
+.PP
+Various ways to compute vector norms\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T glm::distance2 (\fBvec\fP< L, T, Q > const & p0, \fBvec\fP< L, T, Q > const & p1)"
+Returns the squared distance between p0 and p1, i\&.e\&., length2(p0 - p1)\&. From GLM_GTX_norm extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::l1Norm (\fBvec\fP< 3, T, Q > const & x, \fBvec\fP< 3, T, Q > const & y)"
+Returns the L1 norm between x and y\&. From GLM_GTX_norm extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::l1Norm (\fBvec\fP< 3, T, Q > const & v)"
+Returns the L1 norm of v\&. From GLM_GTX_norm extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::l2Norm (\fBvec\fP< 3, T, Q > const & x, \fBvec\fP< 3, T, Q > const & y)"
+Returns the L2 norm between x and y\&. From GLM_GTX_norm extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::l2Norm (\fBvec\fP< 3, T, Q > const & x)"
+Returns the L2 norm of v\&. From GLM_GTX_norm extension\&. 
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T glm::length2 (\fBvec\fP< L, T, Q > const & x)"
+Returns the squared length of x\&. From GLM_GTX_norm extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::lxNorm (\fBvec\fP< 3, T, Q > const & x, \fBvec\fP< 3, T, Q > const & y, unsigned int Depth)"
+Returns the L norm between x and y\&. From GLM_GTX_norm extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::lxNorm (\fBvec\fP< 3, T, Q > const & x, unsigned int Depth)"
+Returns the L norm of v\&. From GLM_GTX_norm extension\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

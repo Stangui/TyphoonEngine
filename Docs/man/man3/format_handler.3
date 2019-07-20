@@ -1,0 +1,56 @@
+.TH "format_handler< ArgFormatter, Char, Context >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+format_handler< ArgFormatter, Char, Context >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBinternal::error_handler\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef ArgFormatter::range \fBrange\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBformat_handler\fP (range r, \fBbasic_string_view\fP< Char > str, \fBbasic_format_args\fP< Context > \fBformat_args\fP, \fBinternal::locale_ref\fP loc)"
+.br
+.ti -1c
+.RI "void \fBon_text\fP (const Char *begin, const Char *end)"
+.br
+.ti -1c
+.RI "void \fBon_arg_id\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_arg_id\fP (unsigned id)"
+.br
+.ti -1c
+.RI "void \fBon_arg_id\fP (\fBbasic_string_view\fP< Char > id)"
+.br
+.ti -1c
+.RI "void \fBon_replacement_field\fP (const Char *p)"
+.br
+.ti -1c
+.RI "const Char * \fBon_format_specs\fP (const Char *begin, const Char *end)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Context \fBcontext\fP"
+.br
+.ti -1c
+.RI "\fBbasic_format_arg\fP< Context > \fBarg\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

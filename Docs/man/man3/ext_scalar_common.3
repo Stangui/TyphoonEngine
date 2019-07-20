@@ -1,0 +1,181 @@
+.TH "ext_scalar_common" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ext_scalar_common
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::min\fP (T a, T b, T c)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::min\fP (T a, T b, T c, T d)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::max\fP (T a, T b, T c)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::max\fP (T a, T b, T c, T d)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::fmin\fP (T a, T b)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::fmin\fP (T a, T b, T c)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::fmin\fP (T a, T b, T c, T d)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::fmax\fP (T a, T b)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::fmax\fP (T a, T b, T C)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::fmax\fP (T a, T b, T C, T D)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Exposes min and max functions for 3 to 4 scalar parameters\&.
+.PP
+Include <\fBglm/ext/scalar_common\&.hpp\fP> to use the features of this extension\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCommon functions\fP 
+.PP
+\fBGLM_EXT_vector_common\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > GLM_FUNC_DECL T glm::fmax (T a, T b)"
+Returns the maximum component-wise values of 2 inputs\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCstd::fmax documentation\fP 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::fmax (T a, T b, T C)"
+Returns the maximum component-wise values of 3 inputs\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCstd::fmax documentation\fP 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::fmax (T a, T b, T C, T D)"
+Returns the maximum component-wise values of 4 inputs\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCstd::fmax documentation\fP 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::fmin (T a, T b)"
+Returns the minimum component-wise values of 2 inputs\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCstd::fmin documentation\fP 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::fmin (T a, T b, T c)"
+Returns the minimum component-wise values of 3 inputs\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCstd::fmin documentation\fP 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::fmin (T a, T b, T c, T d)"
+Returns the minimum component-wise values of 4 inputs\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCstd::fmin documentation\fP 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::max (T a, T b, T c)"
+Returns the maximum component-wise values of 3 inputs
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&. 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::max (T a, T b, T c, T d)"
+Returns the maximum component-wise values of 4 inputs
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&. 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::min (T a, T b, T c)"
+Returns the minimum component-wise values of 3 inputs
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&. 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::min (T a, T b, T c, T d)"
+Returns the minimum component-wise values of 4 inputs
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

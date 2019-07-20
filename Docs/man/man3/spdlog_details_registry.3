@@ -1,0 +1,89 @@
+.TH "spdlog::details::registry" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+spdlog::details::registry
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBregistry\fP (const \fBregistry\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBregistry\fP & \fBoperator=\fP (const \fBregistry\fP &)=delete"
+.br
+.ti -1c
+.RI "void \fBregister_logger\fP (std::shared_ptr< \fBlogger\fP > new_logger)"
+.br
+.ti -1c
+.RI "void \fBinitialize_logger\fP (std::shared_ptr< \fBlogger\fP > new_logger)"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogger\fP > \fBget\fP (const std::string &logger_name)"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogger\fP > \fBdefault_logger\fP ()"
+.br
+.ti -1c
+.RI "\fBlogger\fP * \fBget_default_raw\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_default_logger\fP (std::shared_ptr< \fBlogger\fP > new_default_logger)"
+.br
+.ti -1c
+.RI "void \fBset_tp\fP (std::shared_ptr< \fBthread_pool\fP > tp)"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBthread_pool\fP > \fBget_tp\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_formatter\fP (std::unique_ptr< \fBformatter\fP > \fBformatter\fP)"
+.br
+.ti -1c
+.RI "void \fBset_level\fP (level::level_enum log_level)"
+.br
+.ti -1c
+.RI "void \fBflush_on\fP (level::level_enum log_level)"
+.br
+.ti -1c
+.RI "void \fBflush_every\fP (std::chrono::seconds interval)"
+.br
+.ti -1c
+.RI "void \fBset_error_handler\fP (void(*handler)(const std::string &msg))"
+.br
+.ti -1c
+.RI "void \fBapply_all\fP (const std::function< void(const std::shared_ptr< \fBlogger\fP >)> &fun)"
+.br
+.ti -1c
+.RI "void \fBflush_all\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrop\fP (const std::string &logger_name)"
+.br
+.ti -1c
+.RI "void \fBdrop_all\fP ()"
+.br
+.ti -1c
+.RI "void \fBshutdown\fP ()"
+.br
+.ti -1c
+.RI "std::recursive_mutex & \fBtp_mutex\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_automatic_registration\fP (bool automatic_regsistration)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBregistry\fP & \fBinstance\fP ()"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,47 @@
+.TH "gtx_range" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_range
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> length_t \fBglm::components\fP (\fBvec\fP< 1, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> length_t \fBglm::components\fP (\fBvec\fP< 2, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> length_t \fBglm::components\fP (\fBvec\fP< 3, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> length_t \fBglm::components\fP (\fBvec\fP< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename genType > length_t \fBglm::components\fP (genType const &m)"
+.br
+.ti -1c
+.RI "template<typename genType > genType::value_type const  * \fBglm::begin\fP (genType const &v)"
+.br
+.ti -1c
+.RI "template<typename genType > genType::value_type const  * \fBglm::end\fP (genType const &v)"
+.br
+.ti -1c
+.RI "template<typename genType > genType::value_type * \fBglm::begin\fP (genType &v)"
+.br
+.ti -1c
+.RI "template<typename genType > genType::value_type * \fBglm::end\fP (genType &v)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/range\&.hpp\fP> to use the features of this extension\&.
+.PP
+Defines begin and end for vectors and matrices\&. Useful for range-based for loop\&. The range is defined over the elements, not over columns or rows (e\&.g\&. mat4 has 16 elements)\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

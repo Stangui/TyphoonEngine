@@ -1,0 +1,50 @@
+.TH "TyphoonEngine::IWindow" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TyphoonEngine::IWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBTyphoonEngine::WindowWin64\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBEventCallbackFn\fP = std::function< void(\fBEvent\fP &)>"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBSetEventCallback\fP (const EventCallbackFn &callback)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBUpdate\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetVSync\fP (bool bEnable)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBIsVSync\fP () const =0"
+.br
+.ti -1c
+.RI "virtual const \fBglm::ivec2\fP \fBGetWindowSize\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void * \fBGetNativeWindow\fP () const =0"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBIWindow\fP * \fBCreate\fP (const \fBWindowProperties\fP &props=\fBWindowProperties\fP())"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

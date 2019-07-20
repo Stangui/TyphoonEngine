@@ -11,6 +11,7 @@
 #include "Renderers/Shader.h"
 #include "Renderers/Buffer.h"
 #include "Renderers/VertexArray.h"
+#include "Renderers/Camera.h"
 
 namespace TyphoonEngine
 {
@@ -96,11 +97,13 @@ namespace TyphoonEngine
 			out vec3 v_Position;
 			out vec4 v_Color;
 
+			uniform mat4 u_vpMat;
+
 			void main()
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = vec4(a_Position, 1.0);	
+				gl_Position = u_vpMat * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -151,11 +154,12 @@ namespace TyphoonEngine
 			layout(location = 0) in vec3 a_Position;
 
 			out vec3 v_Position;
+			uniform mat4 u_vpMat;
 
 			void main()
 			{
 				v_Position = a_Position;
-				gl_Position = vec4(a_Position, 1.0);	
+				gl_Position = u_vpMat * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -173,6 +177,11 @@ namespace TyphoonEngine
 		)";
 
 		m_blueShader.reset(new Renderers::Shader(vSrc2, fSrc2));
+
+		m_camera.reset( new Renderers::Camera() );
+		m_camera->Init();
+		m_camera->SetPosition( glm::vec3( 0.5f, 0.5f, 0.f ) );
+		m_camera->SetRotation( 45.f );
 	}
 
 	//----------------------------------------------//
@@ -226,9 +235,11 @@ namespace TyphoonEngine
 			Renderers::IRenderer::BeginScene();
 
 			m_blueShader->Bind();
+			m_blueShader->UploadUniformMat4( "u_vpMat", m_camera->GetViewProjectionMatrix() );
 			Renderers::IRenderer::Submit(m_squareVA);
 
 			m_vertexColorShader->Bind();
+			m_vertexColorShader->UploadUniformMat4( "u_vpMat", m_camera->GetViewProjectionMatrix() );
 			Renderers::IRenderer::Submit(m_triangleVA);
 
 			Renderers::IRenderer::EndScene();

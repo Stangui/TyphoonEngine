@@ -1,0 +1,161 @@
+.TH "Typhoon/ThirdParty/glm/glm/ext/matrix_clip_space.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/ext/matrix_clip_space.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./ext/scalar_constants\&.hpp'\fP
+.br
+\fC#include '\&.\&./geometric\&.hpp'\fP
+.br
+\fC#include '\&.\&./trigonometric\&.hpp'\fP
+.br
+\fC#include 'matrix_clip_space\&.inl'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::ortho\fP (T left, T right, T bottom, T top)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::orthoLH_ZO\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::orthoLH_NO\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::orthoRH_ZO\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::orthoRH_NO\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::orthoZO\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::orthoNO\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::orthoLH\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::orthoRH\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::ortho\fP (T left, T right, T bottom, T top, T zNear, T zFar)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustumLH_ZO\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustumLH_NO\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustumRH_ZO\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustumRH_NO\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustumZO\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustumNO\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustumLH\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustumRH\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::frustum\fP (T left, T right, T bottom, T top, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveRH_ZO\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveRH_NO\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveLH_ZO\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveLH_NO\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveZO\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveNO\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveRH\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveLH\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspective\fP (T fovy, T aspect, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFovRH_ZO\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFovRH_NO\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFovLH_ZO\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFovLH_NO\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFovZO\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFovNO\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFovRH\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFovLH\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::perspectiveFov\fP (T fov, T width, T height, T near, T far)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::infinitePerspectiveLH\fP (T fovy, T aspect, T near)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::infinitePerspectiveRH\fP (T fovy, T aspect, T near)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::infinitePerspective\fP (T fovy, T aspect, T near)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::tweakedInfinitePerspective\fP (T fovy, T aspect, T near)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::tweakedInfinitePerspective\fP (T fovy, T aspect, T near, T ep)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBGLM_EXT_matrix_clip_space\fP 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

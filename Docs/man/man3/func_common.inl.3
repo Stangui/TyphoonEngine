@@ -1,0 +1,278 @@
+.TH "Typhoon/ThirdParty/glm/glm/detail/func_common.inl" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/detail/func_common.inl
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./vector_relational\&.hpp'\fP
+.br
+\fC#include 'compute_common\&.hpp'\fP
+.br
+\fC#include 'type_vec1\&.hpp'\fP
+.br
+\fC#include 'type_vec2\&.hpp'\fP
+.br
+\fC#include 'type_vec3\&.hpp'\fP
+.br
+\fC#include 'type_vec4\&.hpp'\fP
+.br
+\fC#include '_vectorize\&.hpp'\fP
+.br
+\fC#include <limits>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBglm::detail::compute_abs_vector< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_mix_vector< L, T, U, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_mix_vector< L, T, bool, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_mix_scalar< L, T, U, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_mix_scalar< L, T, bool, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_mix< T, U >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_mix< T, bool >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_sign< L, T, Q, isFloat, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_floor< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_ceil< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_fract< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_trunc< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_round< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_mod< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_min_vector< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_max_vector< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_clamp_vector< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_step_vector< L, T, Q, Aligned >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::detail::compute_smoothstep_vector< L, T, Q, Aligned >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType \fBglm::min\fP (genType x, genType y)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType \fBglm::max\fP (genType x, genType y)"
+.br
+.ti -1c
+.RI "template<> GLM_FUNC_QUALIFIER GLM_CONSTEXPR int \fBglm::abs\fP (int x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::round\fP (genType x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::trunc\fP (genType x)"
+.br
+.ti -1c
+.RI "template<typename genFIType > GLM_FUNC_QUALIFIER GLM_CONSTEXPR genFIType \fBglm::abs\fP (genFIType x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec< L, T, Q > \fBglm::abs\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename genFIType > GLM_FUNC_QUALIFIER genFIType \fBglm::sign\fP (genFIType x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::sign\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::floor\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::trunc\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::round\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::roundEven\fP (genType x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::roundEven\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::ceil\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::fract\fP (genType x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::fract\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::mod\fP (genType x, genType y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::mod\fP (vec< L, T, Q > const &x, T y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::mod\fP (vec< L, T, Q > const &x, vec< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::modf\fP (genType x, genType &i)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< 1, T, Q > \fBglm::modf\fP (vec< 1, T, Q > const &x, vec< 1, T, Q > &i)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< 2, T, Q > \fBglm::modf\fP (vec< 2, T, Q > const &x, vec< 2, T, Q > &i)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< 3, T, Q > \fBglm::modf\fP (vec< 3, T, Q > const &x, vec< 3, T, Q > &i)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< 4, T, Q > \fBglm::modf\fP (vec< 4, T, Q > const &x, vec< 4, T, Q > &i)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec< L, T, Q > \fBglm::min\fP (vec< L, T, Q > const &a, T b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec< L, T, Q > \fBglm::min\fP (vec< L, T, Q > const &a, vec< L, T, Q > const &b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec< L, T, Q > \fBglm::max\fP (vec< L, T, Q > const &a, T b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec< L, T, Q > \fBglm::max\fP (vec< L, T, Q > const &a, vec< L, T, Q > const &b)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType \fBglm::clamp\fP (genType x, genType minVal, genType maxVal)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec< L, T, Q > \fBglm::clamp\fP (vec< L, T, Q > const &x, T minVal, T maxVal)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec< L, T, Q > \fBglm::clamp\fP (vec< L, T, Q > const &x, vec< L, T, Q > const &minVal, vec< L, T, Q > const &maxVal)"
+.br
+.ti -1c
+.RI "template<typename genTypeT , typename genTypeU > GLM_FUNC_QUALIFIER genTypeT \fBglm::mix\fP (genTypeT x, genTypeT y, genTypeU a)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::mix\fP (vec< L, T, Q > const &x, vec< L, T, Q > const &y, U a)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::mix\fP (vec< L, T, Q > const &x, vec< L, T, Q > const &y, vec< L, U, Q > const &a)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::step\fP (genType edge, genType x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::step\fP (T edge, vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::step\fP (vec< L, T, Q > const &edge, vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::smoothstep\fP (genType edge0, genType edge1, genType x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::smoothstep\fP (T edge0, T edge1, vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::smoothstep\fP (vec< L, T, Q > const &edge0, vec< L, T, Q > const &edge1, vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER bool \fBglm::isnan\fP (genType x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, bool, Q > \fBglm::isnan\fP (vec< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER bool \fBglm::isinf\fP (genType x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, bool, Q > \fBglm::isinf\fP (vec< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int \fBglm::floatBitsToInt\fP (float const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, qualifier Q> GLM_FUNC_QUALIFIER vec< L, int, Q > \fBglm::floatBitsToInt\fP (vec< L, float, Q > const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint \fBglm::floatBitsToUint\fP (float const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, qualifier Q> GLM_FUNC_QUALIFIER vec< L, uint, Q > \fBglm::floatBitsToUint\fP (vec< L, float, Q > const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL float \fBglm::intBitsToFloat\fP (int const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, qualifier Q> GLM_FUNC_QUALIFIER vec< L, float, Q > \fBglm::intBitsToFloat\fP (vec< L, int, Q > const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL float \fBglm::uintBitsToFloat\fP (uint const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, qualifier Q> GLM_FUNC_QUALIFIER vec< L, float, Q > \fBglm::uintBitsToFloat\fP (vec< L, uint, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::fma\fP (genType const &a, genType const &b, genType const &c)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::frexp\fP (genType x, int &exp)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::frexp\fP (vec< L, T, Q > const &v, vec< L, int, Q > &exp)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_QUALIFIER genType \fBglm::ldexp\fP (genType const &x, int const &exp)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_QUALIFIER vec< L, T, Q > \fBglm::ldexp\fP (vec< L, T, Q > const &v, vec< L, int, Q > const &exp)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBCore features\fP 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

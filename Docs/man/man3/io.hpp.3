@@ -1,0 +1,169 @@
+.TH "Typhoon/ThirdParty/glm/glm/gtx/io.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/gtx/io.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./glm\&.hpp'\fP
+.br
+\fC#include '\&.\&./gtx/quaternion\&.hpp'\fP
+.br
+\fC#include <iosfwd>\fP
+.br
+\fC#include <locale>\fP
+.br
+\fC#include <utility>\fP
+.br
+\fC#include 'io\&.inl'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBglm::io::format_punct< CTy >\fP"
+.br
+.ti -1c
+.RI "class \fBglm::io::basic_state_saver< CTy, CTr >\fP"
+.br
+.ti -1c
+.RI "class \fBglm::io::basic_format_saver< CTy, CTr >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::io::precision\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::io::width\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::io::delimeter< CTy >\fP"
+.br
+.ti -1c
+.RI "struct \fBglm::io::order\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef basic_state_saver< char > \fBglm::io::state_saver\fP"
+.br
+.ti -1c
+.RI "typedef basic_state_saver< wchar_t > \fBglm::io::wstate_saver\fP"
+.br
+.ti -1c
+.RI "typedef basic_format_saver< char > \fBglm::io::format_saver\fP"
+.br
+.ti -1c
+.RI "typedef basic_format_saver< wchar_t > \fBglm::io::wformat_saver\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBorder_type\fP { \fBcolumn_major\fP, \fBrow_major\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename FTy , typename CTy , typename CTr > FTy const  & \fBglm::io::get_facet\fP (std::basic_ios< CTy, CTr > &)"
+.br
+.ti -1c
+.RI "template<typename FTy , typename CTy , typename CTr > std::basic_ios< CTy, CTr > & \fBglm::io::formatted\fP (std::basic_ios< CTy, CTr > &)"
+.br
+.ti -1c
+.RI "template<typename FTy , typename CTy , typename CTr > std::basic_ios< CTy, CTr > & \fBglm::io::unformattet\fP (std::basic_ios< CTy, CTr > &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr > std::basic_ostream< CTy, CTr > & \fBglm::io::operator<<\fP (std::basic_ostream< CTy, CTr > &, precision const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr > std::basic_ostream< CTy, CTr > & \fBglm::io::operator<<\fP (std::basic_ostream< CTy, CTr > &, width const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr > std::basic_ostream< CTy, CTr > & \fBglm::io::operator<<\fP (std::basic_ostream< CTy, CTr > &, delimeter< CTy > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr > std::basic_ostream< CTy, CTr > & \fBglm::io::operator<<\fP (std::basic_ostream< CTy, CTr > &, order const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, qua< T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, vec< 1, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, vec< 2, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, vec< 3, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, vec< 4, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 2, 2, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 2, 3, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 2, 4, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 3, 2, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 3, 3, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 3, 4, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 4, 2, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 4, 3, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, mat< 4, 4, T, Q > const &)"
+.br
+.ti -1c
+.RI "template<typename CTy , typename CTr , typename T , qualifier Q> GLM_FUNC_DECL std::basic_ostream< CTy, CTr > & \fBglm::operator<<\fP (std::basic_ostream< CTy, CTr > &, std::pair< mat< 4, 4, T, Q > const, mat< 4, 4, T, Q > const > const &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBGLM_GTX_io\fP
+.PP
+\fBAuthor:\fP
+.RS 4
+Jan P Springer (regnirpsj@gmail.com)
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCore features\fP (dependence) 
+.PP
+\fBGLM_GTC_matrix_access\fP (dependence) 
+.PP
+\fBGLM_GTC_quaternion\fP (dependence) 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

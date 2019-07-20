@@ -1,0 +1,22 @@
+.TH "formatter< T, Char, typename std::enable_if< internal::format_type< typename buffer_context< Char >::type, T >::value >::type >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+formatter< T, Char, typename std::enable_if< internal::format_type< typename buffer_context< Char >::type, T >::value >::type >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename ParseContext > FMT_CONSTEXPR ParseContext::iterator \fBparse\fP (ParseContext &ctx)"
+.br
+.ti -1c
+.RI "template<typename FormatContext > auto \fBformat\fP (const T &val, FormatContext &ctx) \-> decltype(ctx\&.out())"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,334 @@
+.TH "VkPhysicalDeviceLimits" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VkPhysicalDeviceLimits
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBmaxImageDimension1D\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxImageDimension2D\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxImageDimension3D\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxImageDimensionCube\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxImageArrayLayers\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTexelBufferElements\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxUniformBufferRange\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxStorageBufferRange\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxPushConstantsSize\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxMemoryAllocationCount\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxSamplerAllocationCount\fP"
+.br
+.ti -1c
+.RI "VkDeviceSize \fBbufferImageGranularity\fP"
+.br
+.ti -1c
+.RI "VkDeviceSize \fBsparseAddressSpaceSize\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxBoundDescriptorSets\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxPerStageDescriptorSamplers\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxPerStageDescriptorUniformBuffers\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxPerStageDescriptorStorageBuffers\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxPerStageDescriptorSampledImages\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxPerStageDescriptorStorageImages\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxPerStageDescriptorInputAttachments\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxPerStageResources\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDescriptorSetSamplers\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDescriptorSetUniformBuffers\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDescriptorSetUniformBuffersDynamic\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDescriptorSetStorageBuffers\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDescriptorSetStorageBuffersDynamic\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDescriptorSetSampledImages\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDescriptorSetStorageImages\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDescriptorSetInputAttachments\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxVertexInputAttributes\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxVertexInputBindings\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxVertexInputAttributeOffset\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxVertexInputBindingStride\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxVertexOutputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTessellationGenerationLevel\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTessellationPatchSize\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTessellationControlPerVertexInputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTessellationControlPerVertexOutputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTessellationControlPerPatchOutputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTessellationControlTotalOutputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTessellationEvaluationInputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTessellationEvaluationOutputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxGeometryShaderInvocations\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxGeometryInputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxGeometryOutputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxGeometryOutputVertices\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxGeometryTotalOutputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxFragmentInputComponents\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxFragmentOutputAttachments\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxFragmentDualSrcAttachments\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxFragmentCombinedOutputResources\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxComputeSharedMemorySize\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxComputeWorkGroupCount\fP [3]"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxComputeWorkGroupInvocations\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxComputeWorkGroupSize\fP [3]"
+.br
+.ti -1c
+.RI "uint32_t \fBsubPixelPrecisionBits\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBsubTexelPrecisionBits\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmipmapPrecisionBits\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDrawIndexedIndexValue\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxDrawIndirectCount\fP"
+.br
+.ti -1c
+.RI "float \fBmaxSamplerLodBias\fP"
+.br
+.ti -1c
+.RI "float \fBmaxSamplerAnisotropy\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxViewports\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxViewportDimensions\fP [2]"
+.br
+.ti -1c
+.RI "float \fBviewportBoundsRange\fP [2]"
+.br
+.ti -1c
+.RI "uint32_t \fBviewportSubPixelBits\fP"
+.br
+.ti -1c
+.RI "size_t \fBminMemoryMapAlignment\fP"
+.br
+.ti -1c
+.RI "VkDeviceSize \fBminTexelBufferOffsetAlignment\fP"
+.br
+.ti -1c
+.RI "VkDeviceSize \fBminUniformBufferOffsetAlignment\fP"
+.br
+.ti -1c
+.RI "VkDeviceSize \fBminStorageBufferOffsetAlignment\fP"
+.br
+.ti -1c
+.RI "int32_t \fBminTexelOffset\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTexelOffset\fP"
+.br
+.ti -1c
+.RI "int32_t \fBminTexelGatherOffset\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxTexelGatherOffset\fP"
+.br
+.ti -1c
+.RI "float \fBminInterpolationOffset\fP"
+.br
+.ti -1c
+.RI "float \fBmaxInterpolationOffset\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBsubPixelInterpolationOffsetBits\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxFramebufferWidth\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxFramebufferHeight\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxFramebufferLayers\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBframebufferColorSampleCounts\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBframebufferDepthSampleCounts\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBframebufferStencilSampleCounts\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBframebufferNoAttachmentsSampleCounts\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxColorAttachments\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBsampledImageColorSampleCounts\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBsampledImageIntegerSampleCounts\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBsampledImageDepthSampleCounts\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBsampledImageStencilSampleCounts\fP"
+.br
+.ti -1c
+.RI "VkSampleCountFlags \fBstorageImageSampleCounts\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxSampleMaskWords\fP"
+.br
+.ti -1c
+.RI "VkBool32 \fBtimestampComputeAndGraphics\fP"
+.br
+.ti -1c
+.RI "float \fBtimestampPeriod\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxClipDistances\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxCullDistances\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBmaxCombinedClipAndCullDistances\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBdiscreteQueuePriorities\fP"
+.br
+.ti -1c
+.RI "float \fBpointSizeRange\fP [2]"
+.br
+.ti -1c
+.RI "float \fBlineWidthRange\fP [2]"
+.br
+.ti -1c
+.RI "float \fBpointSizeGranularity\fP"
+.br
+.ti -1c
+.RI "float \fBlineWidthGranularity\fP"
+.br
+.ti -1c
+.RI "VkBool32 \fBstrictLines\fP"
+.br
+.ti -1c
+.RI "VkBool32 \fBstandardSampleLocations\fP"
+.br
+.ti -1c
+.RI "VkDeviceSize \fBoptimalBufferCopyOffsetAlignment\fP"
+.br
+.ti -1c
+.RI "VkDeviceSize \fBoptimalBufferCopyRowPitchAlignment\fP"
+.br
+.ti -1c
+.RI "VkDeviceSize \fBnonCoherentAtomSize\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

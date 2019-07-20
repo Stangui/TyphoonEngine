@@ -1,0 +1,53 @@
+.TH "spdlog::details::log_msg" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+spdlog::details::log_msg
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlog_msg\fP (\fBsource_loc\fP loc, string_view_t logger_name, level::level_enum lvl, string_view_t msg)"
+.br
+.ti -1c
+.RI "\fBlog_msg\fP (string_view_t logger_name, level::level_enum lvl, string_view_t msg)"
+.br
+.ti -1c
+.RI "\fBlog_msg\fP (const \fBlog_msg\fP &other)=default"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const string_view_t \fBlogger_name\fP"
+.br
+.ti -1c
+.RI "level::level_enum \fBlevel\fP {level::off}"
+.br
+.ti -1c
+.RI "log_clock::time_point \fBtime\fP"
+.br
+.ti -1c
+.RI "size_t \fBthread_id\fP {0}"
+.br
+.ti -1c
+.RI "size_t \fBcolor_range_start\fP {0}"
+.br
+.ti -1c
+.RI "size_t \fBcolor_range_end\fP {0}"
+.br
+.ti -1c
+.RI "\fBsource_loc\fP \fBsource\fP"
+.br
+.ti -1c
+.RI "const string_view_t \fBpayload\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

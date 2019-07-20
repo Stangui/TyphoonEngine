@@ -1,0 +1,177 @@
+.TH "ext_quaternion_common" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ext_quaternion_common
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::mix\fP (\fBqua\fP< T, Q > const &x, \fBqua\fP< T, Q > const &y, T a)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::lerp\fP (\fBqua\fP< T, Q > const &x, \fBqua\fP< T, Q > const &y, T a)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::slerp\fP (\fBqua\fP< T, Q > const &x, \fBqua\fP< T, Q > const &y, T a)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::conjugate\fP (\fBqua\fP< T, Q > const &q)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::inverse\fP (\fBqua\fP< T, Q > const &q)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 4, bool, Q > \fBglm::isnan\fP (\fBqua\fP< T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 4, bool, Q > \fBglm::isinf\fP (\fBqua\fP< T, Q > const &x)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides common functions for quaternion types
+.PP
+Include <\fBglm/ext/quaternion_common\&.hpp\fP> to use the features of this extension\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_common\fP 
+.PP
+\fBGLM_EXT_vector_common\fP 
+.PP
+\fBGLM_EXT_quaternion_float\fP 
+.PP
+\fBGLM_EXT_quaternion_double\fP 
+.PP
+\fBGLM_EXT_quaternion_exponential\fP 
+.PP
+\fBGLM_EXT_quaternion_geometric\fP 
+.PP
+\fBGLM_EXT_quaternion_relational\fP 
+.PP
+\fBGLM_EXT_quaternion_trigonometric\fP 
+.PP
+\fBGLM_EXT_quaternion_transform\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::conjugate (\fBqua\fP< T, Q > const & q)"
+Returns the q conjugate\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::inverse (\fBqua\fP< T, Q > const & q)"
+Returns the q inverse\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<4, bool, Q> glm::isinf (\fBqua\fP< T, Q > const & x)"
+Returns true if x holds a positive infinity or negative infinity representation in the underlying implementation's set of floating point representations\&. Returns false otherwise, including for implementations with no infinity representations\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<4, bool, Q> glm::isnan (\fBqua\fP< T, Q > const & x)"
+Returns true if x holds a NaN (not a number) representation in the underlying implementation's set of floating point representations\&. Returns false otherwise, including for implementations with no NaN representations\&.
+.PP
+/!\\ When using compiler fast math, this function may fail\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::lerp (\fBqua\fP< T, Q > const & x, \fBqua\fP< T, Q > const & y, T a)"
+Linear interpolation of two quaternions\&. The interpolation is oriented\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP A quaternion 
+.br
+\fIy\fP A quaternion 
+.br
+\fIa\fP Interpolation factor\&. The interpolation is defined in the range [0, 1]\&.
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::mix (\fBqua\fP< T, Q > const & x, \fBqua\fP< T, Q > const & y, T a)"
+Spherical linear interpolation of two quaternions\&. The interpolation is oriented and the rotation is performed at constant speed\&. For short path spherical linear interpolation, use the slerp function\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP A quaternion 
+.br
+\fIy\fP A quaternion 
+.br
+\fIa\fP Interpolation factor\&. The interpolation is defined beyond the range [0, 1]\&.
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+- slerp(qua<T, Q> const& x, qua<T, Q> const& y, T const& a) 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::slerp (\fBqua\fP< T, Q > const & x, \fBqua\fP< T, Q > const & y, T a)"
+Spherical linear interpolation of two quaternions\&. The interpolation always take the short path and the rotation is performed at constant speed\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP A quaternion 
+.br
+\fIy\fP A quaternion 
+.br
+\fIa\fP Interpolation factor\&. The interpolation is defined beyond the range [0, 1]\&.
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

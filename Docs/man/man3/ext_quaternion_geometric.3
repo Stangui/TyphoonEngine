@@ -1,0 +1,109 @@
+.TH "ext_quaternion_geometric" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ext_quaternion_geometric
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::length\fP (\fBqua\fP< T, Q > const &q)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::normalize\fP (\fBqua\fP< T, Q > const &q)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::dot\fP (\fBqua\fP< T, Q > const &x, \fBqua\fP< T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_QUALIFIER \fBqua\fP< T, Q > \fBglm::cross\fP (\fBqua\fP< T, Q > const &q1, \fBqua\fP< T, Q > const &q2)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides geometric functions for quaternion types
+.PP
+Include <\fBglm/ext/quaternion_geometric\&.hpp\fP> to use the features of this extension\&.
+.PP
+\fBSee also:\fP
+.RS 4
+core_geometric 
+.PP
+\fBGLM_EXT_quaternion_float\fP 
+.PP
+\fBGLM_EXT_quaternion_double\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_QUALIFIER \fBqua\fP< T, Q > glm::cross (\fBqua\fP< T, Q > const & q1, \fBqua\fP< T, Q > const & q2)"
+Compute a cross product\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_quaternion_geometric\fP 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::dot (\fBqua\fP< T, Q > const & x, \fBqua\fP< T, Q > const & y)"
+Returns dot product of q1 and q2, i\&.e\&., q1[0] * q2[0] + q1[1] * q2[1] + \&.\&.\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP Floating-point scalar types\&. 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_quaternion_geometric\fP 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::length (\fBqua\fP< T, Q > const & q)"
+Returns the norm of a quaternions
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_quaternion_geometric\fP 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::normalize (\fBqua\fP< T, Q > const & q)"
+Returns the normalized quaternion\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_quaternion_geometric\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

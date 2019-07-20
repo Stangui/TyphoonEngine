@@ -1,0 +1,154 @@
+.TH "spdlog::sinks::ansicolor_sink< ConsoleMutex >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+spdlog::sinks::ansicolor_sink< ConsoleMutex >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ansicolor_sink\&.h>\fP
+.PP
+Inherits \fBspdlog::sinks::sink\fP\&.
+.PP
+Inherited by \fBspdlog::sinks::ansicolor_stderr_sink< ConsoleMutex >\fP, and \fBspdlog::sinks::ansicolor_stdout_sink< ConsoleMutex >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBmutex_t\fP = typename ConsoleMutex::mutex_t"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBansicolor_sink\fP (FILE *target_file, color_mode mode)"
+.br
+.ti -1c
+.RI "\fBansicolor_sink\fP (const \fBansicolor_sink\fP &other)=delete"
+.br
+.ti -1c
+.RI "\fBansicolor_sink\fP & \fBoperator=\fP (const \fBansicolor_sink\fP &other)=delete"
+.br
+.ti -1c
+.RI "void \fBset_color\fP (level::level_enum color_level, string_view_t color)"
+.br
+.ti -1c
+.RI "void \fBset_color_mode\fP (color_mode mode)"
+.br
+.ti -1c
+.RI "bool \fBshould_color\fP ()"
+.br
+.ti -1c
+.RI "void \fBlog\fP (const \fBdetails::log_msg\fP &msg) override"
+.br
+.ti -1c
+.RI "void \fBflush\fP () override"
+.br
+.ti -1c
+.RI "void \fBset_pattern\fP (const std::string &pattern) final"
+.br
+.ti -1c
+.RI "void \fBset_formatter\fP (std::unique_ptr< \fBspdlog::formatter\fP > sink_formatter) override"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const string_view_t \fBreset\fP = '\\033[m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBbold\fP = '\\033[1m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBdark\fP = '\\033[2m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBunderline\fP = '\\033[4m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBblink\fP = '\\033[5m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBreverse\fP = '\\033[7m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBconcealed\fP = '\\033[8m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBclear_line\fP = '\\033[K'"
+.br
+.ti -1c
+.RI "const string_view_t \fBblack\fP = '\\033[30m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBred\fP = '\\033[31m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBgreen\fP = '\\033[32m'"
+.br
+.ti -1c
+.RI "const string_view_t \fByellow\fP = '\\033[33m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBblue\fP = '\\033[34m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBmagenta\fP = '\\033[35m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBcyan\fP = '\\033[36m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBwhite\fP = '\\033[37m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBon_black\fP = '\\033[40m'"
+.br
+.RI "Background colors\&. "
+.ti -1c
+.RI "const string_view_t \fBon_red\fP = '\\033[41m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBon_green\fP = '\\033[42m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBon_yellow\fP = '\\033[43m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBon_blue\fP = '\\033[44m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBon_magenta\fP = '\\033[45m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBon_cyan\fP = '\\033[46m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBon_white\fP = '\\033[47m'"
+.br
+.ti -1c
+.RI "const string_view_t \fByellow_bold\fP = '\\033[33m\\033[1m'"
+.br
+.RI "Bold colors\&. "
+.ti -1c
+.RI "const string_view_t \fBred_bold\fP = '\\033[31m\\033[1m'"
+.br
+.ti -1c
+.RI "const string_view_t \fBbold_on_red\fP = '\\033[1m\\033[41m'"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename ConsoleMutex>
+.br
+class spdlog::sinks::ansicolor_sink< ConsoleMutex >"
+This sink prefixes the output with an ANSI escape sequence color code depending on the severity of the message\&. If no color terminal detected, omit the escape codes\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

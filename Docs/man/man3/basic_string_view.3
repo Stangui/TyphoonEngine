@@ -1,0 +1,98 @@
+.TH "basic_string_view< Char >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+basic_string_view< Char >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <core\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Char \fBchar_type\fP"
+.br
+.ti -1c
+.RI "typedef const Char * \fBiterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "FMT_CONSTEXPR \fBbasic_string_view\fP (const Char *s, size_t count) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "\fBbasic_string_view\fP (const Char *s)"
+.br
+.ti -1c
+.RI "template<typename Alloc > FMT_CONSTEXPR \fBbasic_string_view\fP (const std::basic_string< Char, Alloc > &s) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR const Char * \fBdata\fP () const"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR size_t \fBsize\fP () const"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR iterator \fBbegin\fP () const"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR iterator \fBend\fP () const"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR void \fBremove_prefix\fP (size_t n)"
+.br
+.ti -1c
+.RI "int \fBcompare\fP (\fBbasic_string_view\fP other) const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBbasic_string_view\fP lhs, \fBbasic_string_view\fP rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (\fBbasic_string_view\fP lhs, \fBbasic_string_view\fP rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (\fBbasic_string_view\fP lhs, \fBbasic_string_view\fP rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (\fBbasic_string_view\fP lhs, \fBbasic_string_view\fP rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (\fBbasic_string_view\fP lhs, \fBbasic_string_view\fP rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (\fBbasic_string_view\fP lhs, \fBbasic_string_view\fP rhs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Char>
+.br
+class basic_string_view< Char >"
+An implementation of \fCstd::basic_string_view\fP for pre-C++17\&. It provides a subset of the API\&. \fCfmt::basic_string_view\fP is used for format strings even if \fCstd::string_view\fP is available to prevent issues when a library is compiled with a different \fC-std\fP option than the client code (which is not recommended)\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename Char> FMT_CONSTEXPR \fBbasic_string_view\fP< Char >::\fBbasic_string_view\fP (const Char * s, size_t count)\fC [inline]\fP"
+Constructs a string reference object from a C string and a size\&. 
+.SS "template<typename Char> \fBbasic_string_view\fP< Char >::\fBbasic_string_view\fP (const Char * s)\fC [inline]\fP"
+\\rst Constructs a string reference object from a C string computing the size with \fCstd::char_traits<Char>::length\fP\&. \\endrst 
+.SS "template<typename Char> template<typename Alloc > FMT_CONSTEXPR \fBbasic_string_view\fP< Char >::\fBbasic_string_view\fP (const std::basic_string< Char, Alloc > & s)\fC [inline]\fP"
+Constructs a string reference from a \fCstd::basic_string\fP object\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename Char> FMT_CONSTEXPR const Char* \fBbasic_string_view\fP< Char >::data () const\fC [inline]\fP"
+Returns a pointer to the string data\&. 
+.SS "template<typename Char> FMT_CONSTEXPR size_t \fBbasic_string_view\fP< Char >::size () const\fC [inline]\fP"
+Returns the string size\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

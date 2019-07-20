@@ -1,0 +1,451 @@
+.TH "gtc_bitfield" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtc_bitfield
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::mask\fP (genIUType Bits)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::mask\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::bitfieldRotateRight\fP (genIUType In, int Shift)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::bitfieldRotateRight\fP (\fBvec\fP< L, T, Q > const &In, int Shift)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::bitfieldRotateLeft\fP (genIUType In, int Shift)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::bitfieldRotateLeft\fP (\fBvec\fP< L, T, Q > const &In, int Shift)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::bitfieldFillOne\fP (genIUType Value, int FirstBit, int BitCount)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::bitfieldFillOne\fP (\fBvec\fP< L, T, Q > const &Value, int FirstBit, int BitCount)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::bitfieldFillZero\fP (genIUType Value, int FirstBit, int BitCount)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::bitfieldFillZero\fP (\fBvec\fP< L, T, Q > const &Value, int FirstBit, int BitCount)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBint16\fP \fBglm::bitfieldInterleave\fP (\fBint8\fP x, \fBint8\fP y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint16\fP \fBglm::bitfieldInterleave\fP (\fBuint8\fP x, \fBuint8\fP y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint16\fP \fBglm::bitfieldInterleave\fP (\fBu8vec2\fP const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBglm::u8vec2\fP \fBglm::bitfieldDeinterleave\fP (\fBglm::uint16\fP x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBint32\fP \fBglm::bitfieldInterleave\fP (\fBint16\fP x, \fBint16\fP y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint32\fP \fBglm::bitfieldInterleave\fP (\fBuint16\fP x, \fBuint16\fP y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint32\fP \fBglm::bitfieldInterleave\fP (\fBu16vec2\fP const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBglm::u16vec2\fP \fBglm::bitfieldDeinterleave\fP (\fBglm::uint32\fP x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBint64\fP \fBglm::bitfieldInterleave\fP (\fBint32\fP x, \fBint32\fP y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint64\fP \fBglm::bitfieldInterleave\fP (\fBuint32\fP x, \fBuint32\fP y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint64\fP \fBglm::bitfieldInterleave\fP (\fBu32vec2\fP const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBglm::u32vec2\fP \fBglm::bitfieldDeinterleave\fP (\fBglm::uint64\fP x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBint32\fP \fBglm::bitfieldInterleave\fP (\fBint8\fP x, \fBint8\fP y, \fBint8\fP z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint32\fP \fBglm::bitfieldInterleave\fP (\fBuint8\fP x, \fBuint8\fP y, \fBuint8\fP z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBint64\fP \fBglm::bitfieldInterleave\fP (\fBint16\fP x, \fBint16\fP y, \fBint16\fP z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint64\fP \fBglm::bitfieldInterleave\fP (\fBuint16\fP x, \fBuint16\fP y, \fBuint16\fP z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBint64\fP \fBglm::bitfieldInterleave\fP (\fBint32\fP x, \fBint32\fP y, \fBint32\fP z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint64\fP \fBglm::bitfieldInterleave\fP (\fBuint32\fP x, \fBuint32\fP y, \fBuint32\fP z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBint32\fP \fBglm::bitfieldInterleave\fP (\fBint8\fP x, \fBint8\fP y, \fBint8\fP z, \fBint8\fP w)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint32\fP \fBglm::bitfieldInterleave\fP (\fBuint8\fP x, \fBuint8\fP y, \fBuint8\fP z, \fBuint8\fP w)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBint64\fP \fBglm::bitfieldInterleave\fP (\fBint16\fP x, \fBint16\fP y, \fBint16\fP z, \fBint16\fP w)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBuint64\fP \fBglm::bitfieldInterleave\fP (\fBuint16\fP x, \fBuint16\fP y, \fBuint16\fP z, \fBuint16\fP w)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtc/bitfield\&.hpp\fP> to use the features of this extension\&.
+.PP
+Allow to perform bit operations on integer values 
+.SH "Function Documentation"
+.PP 
+.SS "GLM_FUNC_QUALIFIER \fBu8vec2\fP glm::bitfieldDeinterleave (\fBglm::uint16\fP x)"
+Deinterleaves the bits of x\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBglm::u16vec2\fP glm::bitfieldDeinterleave (\fBglm::uint32\fP x)"
+Deinterleaves the bits of x\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBglm::u32vec2\fP glm::bitfieldDeinterleave (\fBglm::uint64\fP x)"
+Deinterleaves the bits of x\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::bitfieldFillOne (genIUType Value, int FirstBit, int BitCount)"
+Set to 1 a range of bits\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::bitfieldFillOne (\fBvec\fP< L, T, Q > const & Value, int FirstBit, int BitCount)"
+Set to 1 a range of bits\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Signed and unsigned integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::bitfieldFillZero (genIUType Value, int FirstBit, int BitCount)"
+Set to 0 a range of bits\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::bitfieldFillZero (\fBvec\fP< L, T, Q > const & Value, int FirstBit, int BitCount)"
+Set to 0 a range of bits\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Signed and unsigned integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBint16\fP glm::bitfieldInterleave (\fBint8\fP x, \fBint8\fP y)"
+Interleaves the bits of x and y\&. The first bit is the first bit of x followed by the first bit of y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint16\fP glm::bitfieldInterleave (\fBuint8\fP x, \fBuint8\fP y)"
+Interleaves the bits of x and y\&. The first bit is the first bit of x followed by the first bit of y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint16\fP glm::bitfieldInterleave (\fBu8vec2\fP const & v)"
+Interleaves the bits of x and y\&. The first bit is the first bit of v\&.x followed by the first bit of v\&.y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBint32\fP glm::bitfieldInterleave (\fBint16\fP x, \fBint16\fP y)"
+Interleaves the bits of x and y\&. The first bit is the first bit of x followed by the first bit of y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint32\fP glm::bitfieldInterleave (\fBuint16\fP x, \fBuint16\fP y)"
+Interleaves the bits of x and y\&. The first bit is the first bit of x followed by the first bit of y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBglm::uint32\fP glm::bitfieldInterleave (\fBu16vec2\fP const & v)"
+Interleaves the bits of x and y\&. The first bit is the first bit of v\&.x followed by the first bit of v\&.y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBint64\fP glm::bitfieldInterleave (\fBint32\fP x, \fBint32\fP y)"
+Interleaves the bits of x and y\&. The first bit is the first bit of x followed by the first bit of y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint64\fP glm::bitfieldInterleave (\fBuint32\fP x, \fBuint32\fP y)"
+Interleaves the bits of x and y\&. The first bit is the first bit of x followed by the first bit of y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBglm::uint64\fP glm::bitfieldInterleave (\fBu32vec2\fP const & v)"
+Interleaves the bits of x and y\&. The first bit is the first bit of v\&.x followed by the first bit of v\&.y\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBint32\fP glm::bitfieldInterleave (\fBint8\fP x, \fBint8\fP y, \fBint8\fP z)"
+Interleaves the bits of x, y and z\&. The first bit is the first bit of x followed by the first bit of y and the first bit of z\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint32\fP glm::bitfieldInterleave (\fBuint8\fP x, \fBuint8\fP y, \fBuint8\fP z)"
+Interleaves the bits of x, y and z\&. The first bit is the first bit of x followed by the first bit of y and the first bit of z\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBint64\fP glm::bitfieldInterleave (\fBint16\fP x, \fBint16\fP y, \fBint16\fP z)"
+Interleaves the bits of x, y and z\&. The first bit is the first bit of x followed by the first bit of y and the first bit of z\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint64\fP glm::bitfieldInterleave (\fBuint16\fP x, \fBuint16\fP y, \fBuint16\fP z)"
+Interleaves the bits of x, y and z\&. The first bit is the first bit of x followed by the first bit of y and the first bit of z\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBint64\fP glm::bitfieldInterleave (\fBint32\fP x, \fBint32\fP y, \fBint32\fP z)"
+Interleaves the bits of x, y and z\&. The first bit is the first bit of x followed by the first bit of y and the first bit of z\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint64\fP glm::bitfieldInterleave (\fBuint32\fP x, \fBuint32\fP y, \fBuint32\fP z)"
+Interleaves the bits of x, y and z\&. The first bit is the first bit of x followed by the first bit of y and the first bit of z\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBint32\fP glm::bitfieldInterleave (\fBint8\fP x, \fBint8\fP y, \fBint8\fP z, \fBint8\fP w)"
+Interleaves the bits of x, y, z and w\&. The first bit is the first bit of x followed by the first bit of y, the first bit of z and finally the first bit of w\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint32\fP glm::bitfieldInterleave (\fBuint8\fP x, \fBuint8\fP y, \fBuint8\fP z, \fBuint8\fP w)"
+Interleaves the bits of x, y, z and w\&. The first bit is the first bit of x followed by the first bit of y, the first bit of z and finally the first bit of w\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBint64\fP glm::bitfieldInterleave (\fBint16\fP x, \fBint16\fP y, \fBint16\fP z, \fBint16\fP w)"
+Interleaves the bits of x, y, z and w\&. The first bit is the first bit of x followed by the first bit of y, the first bit of z and finally the first bit of w\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "GLM_FUNC_QUALIFIER \fBuint64\fP glm::bitfieldInterleave (\fBuint16\fP x, \fBuint16\fP y, \fBuint16\fP z, \fBuint16\fP w)"
+Interleaves the bits of x, y, z and w\&. The first bit is the first bit of x followed by the first bit of y, the first bit of z and finally the first bit of w\&. The other bits are interleaved following the previous sequence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::bitfieldRotateLeft (genIUType In, int Shift)"
+Rotate all bits to the left\&. All the bits dropped in the left side are inserted back on the right side\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::bitfieldRotateLeft (\fBvec\fP< L, T, Q > const & In, int Shift)"
+Rotate all bits to the left\&. All the bits dropped in the left side are inserted back on the right side\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Signed and unsigned integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::bitfieldRotateRight (genIUType In, int Shift)"
+Rotate all bits to the right\&. All the bits dropped in the right side are inserted back on the left side\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::bitfieldRotateRight (\fBvec\fP< L, T, Q > const & In, int Shift)"
+Rotate all bits to the right\&. All the bits dropped in the right side are inserted back on the left side\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Signed and unsigned integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::mask (genIUType Bits)"
+Build a mask of 'count' bits
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::mask (\fBvec\fP< L, T, Q > const & v)"
+Build a mask of 'count' bits
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Signed and unsigned integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_bitfield\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,37 @@
+.TH "gtx_color_encoding" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_color_encoding \- Allow to perform bit operations on integer values\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::convertLinearSRGBToD65XYZ\fP (\fBvec\fP< 3, T, Q > const &ColorLinearSRGB)"
+.br
+.RI "Convert a linear sRGB color to D65 YUV\&. "
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::convertLinearSRGBToD50XYZ\fP (\fBvec\fP< 3, T, Q > const &ColorLinearSRGB)"
+.br
+.RI "Convert a linear sRGB color to D50 YUV\&. "
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::convertD65XYZToLinearSRGB\fP (\fBvec\fP< 3, T, Q > const &ColorD65XYZ)"
+.br
+.RI "Convert a D65 YUV color to linear sRGB\&. "
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::convertD65XYZToD50XYZ\fP (\fBvec\fP< 3, T, Q > const &ColorD65XYZ)"
+.br
+.RI "Convert a D65 YUV color to D50 YUV\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Allow to perform bit operations on integer values\&. 
+
+Include <\fBglm/gtx/color_encoding\&.hpp\fP> to use the features of this extension\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

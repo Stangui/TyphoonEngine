@@ -1,0 +1,118 @@
+.TH "ext_quaternion_transform" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ext_quaternion_transform
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::exp\fP (\fBqua\fP< T, Q > const &q)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::log\fP (\fBqua\fP< T, Q > const &q)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::pow\fP (\fBqua\fP< T, Q > const &q, T y)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::sqrt\fP (\fBqua\fP< T, Q > const &q)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP< T, Q > \fBglm::rotate\fP (\fBqua\fP< T, Q > const &q, T const &\fBangle\fP, \fBvec\fP< 3, T, Q > const &\fBaxis\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides transformation functions for quaternion types
+.PP
+Include <\fBglm/ext/quaternion_transform\&.hpp\fP> to use the features of this extension\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_quaternion_float\fP 
+.PP
+\fBGLM_EXT_quaternion_double\fP 
+.PP
+\fBGLM_EXT_quaternion_exponential\fP 
+.PP
+\fBGLM_EXT_quaternion_geometric\fP 
+.PP
+\fBGLM_EXT_quaternion_relational\fP 
+.PP
+\fBGLM_EXT_quaternion_trigonometric\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::exp (\fBqua\fP< T, Q > const & q)"
+Returns a exponential of a quaternion\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::log (\fBqua\fP< T, Q > const & q)"
+Returns a logarithm of a quaternion
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::pow (\fBqua\fP< T, Q > const & q, T y)"
+Returns a quaternion raised to a power\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::rotate (\fBqua\fP< T, Q > const & q, T const & angle, \fBvec\fP< 3, T, Q > const & axis)"
+Rotates a quaternion from a vector of 3 components axis and an angle\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIq\fP Source orientation 
+.br
+\fIangle\fP Angle expressed in radians\&. 
+.br
+\fIaxis\fP Axis of the rotation
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBqua\fP<T, Q> glm::sqrt (\fBqua\fP< T, Q > const & q)"
+Returns the square root of a quaternion
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP A floating-point scalar type 
+.br
+\fIQ\fP A value from qualifier enum 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

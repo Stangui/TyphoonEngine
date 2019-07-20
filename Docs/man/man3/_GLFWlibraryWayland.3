@@ -1,0 +1,241 @@
+.TH "_GLFWlibraryWayland" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_GLFWlibraryWayland
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct wl_display * \fBdisplay\fP"
+.br
+.ti -1c
+.RI "struct wl_registry * \fBregistry\fP"
+.br
+.ti -1c
+.RI "struct wl_compositor * \fBcompositor\fP"
+.br
+.ti -1c
+.RI "struct wl_subcompositor * \fBsubcompositor\fP"
+.br
+.ti -1c
+.RI "struct wl_shm * \fBshm\fP"
+.br
+.ti -1c
+.RI "struct wl_seat * \fBseat\fP"
+.br
+.ti -1c
+.RI "struct wl_pointer * \fBpointer\fP"
+.br
+.ti -1c
+.RI "struct wl_keyboard * \fBkeyboard\fP"
+.br
+.ti -1c
+.RI "struct wl_data_device_manager * \fBdataDeviceManager\fP"
+.br
+.ti -1c
+.RI "struct wl_data_device * \fBdataDevice\fP"
+.br
+.ti -1c
+.RI "struct wl_data_offer * \fBdataOffer\fP"
+.br
+.ti -1c
+.RI "struct wl_data_source * \fBdataSource\fP"
+.br
+.ti -1c
+.RI "struct xdg_wm_base * \fBwmBase\fP"
+.br
+.ti -1c
+.RI "struct zxdg_decoration_manager_v1 * \fBdecorationManager\fP"
+.br
+.ti -1c
+.RI "struct wp_viewporter * \fBviewporter\fP"
+.br
+.ti -1c
+.RI "struct zwp_relative_pointer_manager_v1 * \fBrelativePointerManager\fP"
+.br
+.ti -1c
+.RI "struct zwp_pointer_constraints_v1 * \fBpointerConstraints\fP"
+.br
+.ti -1c
+.RI "struct zwp_idle_inhibit_manager_v1 * \fBidleInhibitManager\fP"
+.br
+.ti -1c
+.RI "int \fBcompositorVersion\fP"
+.br
+.ti -1c
+.RI "int \fBseatVersion\fP"
+.br
+.ti -1c
+.RI "struct wl_cursor_theme * \fBcursorTheme\fP"
+.br
+.ti -1c
+.RI "struct wl_cursor_theme * \fBcursorThemeHiDPI\fP"
+.br
+.ti -1c
+.RI "struct wl_surface * \fBcursorSurface\fP"
+.br
+.ti -1c
+.RI "int \fBcursorTimerfd\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBserial\fP"
+.br
+.ti -1c
+.RI "int32_t \fBkeyboardRepeatRate\fP"
+.br
+.ti -1c
+.RI "int32_t \fBkeyboardRepeatDelay\fP"
+.br
+.ti -1c
+.RI "int \fBkeyboardLastKey\fP"
+.br
+.ti -1c
+.RI "int \fBkeyboardLastScancode\fP"
+.br
+.ti -1c
+.RI "char * \fBclipboardString\fP"
+.br
+.ti -1c
+.RI "size_t \fBclipboardSize\fP"
+.br
+.ti -1c
+.RI "char * \fBclipboardSendString\fP"
+.br
+.ti -1c
+.RI "size_t \fBclipboardSendSize\fP"
+.br
+.ti -1c
+.RI "int \fBtimerfd\fP"
+.br
+.ti -1c
+.RI "short int \fBkeycodes\fP [256]"
+.br
+.ti -1c
+.RI "short int \fBscancodes\fP [GLFW_KEY_LAST+1]"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   void * \fBhandle\fP"
+.br
+.ti -1c
+.RI "   struct xkb_context * \fBcontext\fP"
+.br
+.ti -1c
+.RI "   struct xkb_keymap * \fBkeymap\fP"
+.br
+.ti -1c
+.RI "   struct xkb_state * \fBstate\fP"
+.br
+.ti -1c
+.RI "   xkb_mod_mask_t \fBcontrolMask\fP"
+.br
+.ti -1c
+.RI "   xkb_mod_mask_t \fBaltMask\fP"
+.br
+.ti -1c
+.RI "   xkb_mod_mask_t \fBshiftMask\fP"
+.br
+.ti -1c
+.RI "   xkb_mod_mask_t \fBsuperMask\fP"
+.br
+.ti -1c
+.RI "   xkb_mod_mask_t \fBcapsLockMask\fP"
+.br
+.ti -1c
+.RI "   xkb_mod_mask_t \fBnumLockMask\fP"
+.br
+.ti -1c
+.RI "   unsigned int \fBmodifiers\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_context_new \fBcontext_new\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_context_unref \fBcontext_unref\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_keymap_new_from_string \fBkeymap_new_from_string\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_keymap_unref \fBkeymap_unref\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_keymap_mod_get_index \fBkeymap_mod_get_index\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_keymap_key_repeats \fBkeymap_key_repeats\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_state_new \fBstate_new\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_state_unref \fBstate_unref\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_state_key_get_syms \fBstate_key_get_syms\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_state_update_mask \fBstate_update_mask\fP"
+.br
+.ti -1c
+.RI "   PFN_xkb_state_serialize_mods \fBstate_serialize_mods\fP"
+.br
+.ti -1c
+.RI "} \fBxkb\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWwindow\fP * \fBpointerFocus\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWwindow\fP * \fBkeyboardFocus\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   void * \fBhandle\fP"
+.br
+.ti -1c
+.RI "   PFN_wl_cursor_theme_load \fBtheme_load\fP"
+.br
+.ti -1c
+.RI "   PFN_wl_cursor_theme_destroy \fBtheme_destroy\fP"
+.br
+.ti -1c
+.RI "   PFN_wl_cursor_theme_get_cursor \fBtheme_get_cursor\fP"
+.br
+.ti -1c
+.RI "   PFN_wl_cursor_image_get_buffer \fBimage_get_buffer\fP"
+.br
+.ti -1c
+.RI "} \fBcursor\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   void * \fBhandle\fP"
+.br
+.ti -1c
+.RI "   PFN_wl_egl_window_create \fBwindow_create\fP"
+.br
+.ti -1c
+.RI "   PFN_wl_egl_window_destroy \fBwindow_destroy\fP"
+.br
+.ti -1c
+.RI "   PFN_wl_egl_window_resize \fBwindow_resize\fP"
+.br
+.ti -1c
+.RI "} \fBegl\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

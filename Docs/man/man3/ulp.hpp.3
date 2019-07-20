@@ -1,0 +1,86 @@
+.TH "Typhoon/ThirdParty/glm/glm/gtc/ulp.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/gtc/ulp.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./detail/setup\&.hpp'\fP
+.br
+\fC#include '\&.\&./detail/qualifier\&.hpp'\fP
+.br
+\fC#include '\&.\&./detail/_vectorize\&.hpp'\fP
+.br
+\fC#include '\&.\&./ext/scalar_int_sized\&.hpp'\fP
+.br
+\fC#include 'ulp\&.inl'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::next_float\fP (genType x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::prev_float\fP (genType x)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::next_float\fP (genType x, int ULPs)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::prev_float\fP (genType x, int ULPs)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int \fBglm::float_distance\fP (float x, float y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int64 \fBglm::float_distance\fP (double x, double y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::next_float\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::next_float\fP (vec< L, T, Q > const &x, int ULPs)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::next_float\fP (vec< L, T, Q > const &x, vec< L, int, Q > const &ULPs)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::prev_float\fP (vec< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::prev_float\fP (vec< L, T, Q > const &x, int ULPs)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::prev_float\fP (vec< L, T, Q > const &x, vec< L, int, Q > const &ULPs)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, int, Q > \fBglm::float_distance\fP (vec< L, float, Q > const &x, vec< L, float, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, int64, Q > \fBglm::float_distance\fP (vec< L, double, Q > const &x, vec< L, double, Q > const &y)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBGLM_GTC_ulp\fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCore features\fP (dependence) 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,376 @@
+.TH "core_func_trigonometric" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+core_func_trigonometric
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, T, Q > \fBglm::radians\fP (\fBvec\fP< L, T, Q > const &degrees)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, T, Q > \fBglm::degrees\fP (\fBvec\fP< L, T, Q > const &radians)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::sin\fP (\fBvec\fP< L, T, Q > const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::cos\fP (\fBvec\fP< L, T, Q > const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::tan\fP (\fBvec\fP< L, T, Q > const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::asin\fP (\fBvec\fP< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::acos\fP (\fBvec\fP< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::atan\fP (\fBvec\fP< L, T, Q > const &y, \fBvec\fP< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::atan\fP (\fBvec\fP< L, T, Q > const &y_over_x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::sinh\fP (\fBvec\fP< L, T, Q > const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::cosh\fP (\fBvec\fP< L, T, Q > const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::tanh\fP (\fBvec\fP< L, T, Q > const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::asinh\fP (\fBvec\fP< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::acosh\fP (\fBvec\fP< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::atanh\fP (\fBvec\fP< L, T, Q > const &x)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Function parameters specified as angle are assumed to be in units of radians\&. In no case will any of these functions result in a divide by zero error\&. If the divisor of a ratio is 0, then results will be undefined\&.
+.PP
+These all operate component-wise\&. The description is per component\&.
+.PP
+Include <\fBglm/trigonometric\&.hpp\fP> to use these core features\&.
+.PP
+\fBSee also:\fP
+.RS 4
+ext_vector_trigonometric 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::acos (\fBvec\fP< L, T, Q > const & x)"
+Arc cosine\&. Returns an angle whose sine is x\&. The range of values returned by this function is [0, PI]\&. Results are undefined if |x| > 1\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL acos man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::acosh (\fBvec\fP< L, T, Q > const & x)"
+Arc hyperbolic cosine; returns the non-negative inverse of cosh\&. Results are undefined if x < 1\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL acosh man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::asin (\fBvec\fP< L, T, Q > const & x)"
+Arc sine\&. Returns an angle whose sine is x\&. The range of values returned by this function is [-PI/2, PI/2]\&. Results are undefined if |x| > 1\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL asin man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::asinh (\fBvec\fP< L, T, Q > const & x)"
+Arc hyperbolic sine; returns the inverse of sinh\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL asinh man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::atan (\fBvec\fP< L, T, Q > const & y, \fBvec\fP< L, T, Q > const & x)"
+Arc tangent\&. Returns an angle whose tangent is y/x\&. The signs of x and y are used to determine what quadrant the angle is in\&. The range of values returned by this function is [-PI, PI]\&. Results are undefined if x and y are both 0\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL atan man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::atan (\fBvec\fP< L, T, Q > const & y_over_x)"
+Arc tangent\&. Returns an angle whose tangent is y_over_x\&. The range of values returned by this function is [-PI/2, PI/2]\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL atan man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::atanh (\fBvec\fP< L, T, Q > const & x)"
+Arc hyperbolic tangent; returns the inverse of tanh\&. Results are undefined if abs(x) >= 1\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL atanh man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::cos (\fBvec\fP< L, T, Q > const & angle)"
+The standard trigonometric cosine function\&. The values returned by this function will range from [-1, 1]\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL cos man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::cosh (\fBvec\fP< L, T, Q > const & angle)"
+Returns the hyperbolic cosine function, (exp(x) + exp(-x)) / 2
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL cosh man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, T, Q> glm::degrees (\fBvec\fP< L, T, Q > const & radians)"
+Converts radians to degrees and returns the result\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL degrees man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, T, Q> glm::radians (\fBvec\fP< L, T, Q > const & degrees)"
+Converts degrees to radians and returns the result\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL radians man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::sin (\fBvec\fP< L, T, Q > const & angle)"
+The standard trigonometric sine function\&. The values returned by this function will range from [-1, 1]\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL sin man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::sinh (\fBvec\fP< L, T, Q > const & angle)"
+Returns the hyperbolic sine function, (exp(x) - exp(-x)) / 2
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL sinh man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::tan (\fBvec\fP< L, T, Q > const & angle)"
+The standard trigonometric tangent function\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL tan man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::tanh (\fBvec\fP< L, T, Q > const & angle)"
+Returns the hyperbolic tangent function, sinh(angle) / cosh(angle)
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL tanh man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.1 Angle and Trigonometry Functions\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

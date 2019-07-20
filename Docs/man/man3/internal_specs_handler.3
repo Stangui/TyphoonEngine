@@ -1,0 +1,39 @@
+.TH "internal::specs_handler< Context >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+internal::specs_handler< Context >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBinternal::specs_setter< Context::char_type >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Context::char_type \fBchar_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "FMT_CONSTEXPR \fBspecs_handler\fP (\fBbasic_format_specs\fP< char_type > &specs, Context &ctx)"
+.br
+.ti -1c
+.RI "template<typename Id > FMT_CONSTEXPR void \fBon_dynamic_width\fP (Id arg_id)"
+.br
+.ti -1c
+.RI "template<typename Id > FMT_CONSTEXPR void \fBon_dynamic_precision\fP (Id arg_id)"
+.br
+.ti -1c
+.RI "void \fBon_error\fP (const char *message)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

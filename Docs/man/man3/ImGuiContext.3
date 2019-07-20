@@ -1,0 +1,536 @@
+.TH "ImGuiContext" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ImGuiContext
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImGuiContext\fP (\fBImFontAtlas\fP *shared_font_atlas)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBInitialized\fP"
+.br
+.ti -1c
+.RI "bool \fBFrameScopeActive\fP"
+.br
+.ti -1c
+.RI "bool \fBFrameScopePushedImplicitWindow\fP"
+.br
+.ti -1c
+.RI "bool \fBFontAtlasOwnedByContext\fP"
+.br
+.ti -1c
+.RI "\fBImGuiIO\fP \fBIO\fP"
+.br
+.ti -1c
+.RI "\fBImGuiPlatformIO\fP \fBPlatformIO\fP"
+.br
+.ti -1c
+.RI "\fBImGuiStyle\fP \fBStyle\fP"
+.br
+.ti -1c
+.RI "ImGuiConfigFlags \fBConfigFlagsForFrame\fP"
+.br
+.ti -1c
+.RI "\fBImFont\fP * \fBFont\fP"
+.br
+.ti -1c
+.RI "float \fBFontSize\fP"
+.br
+.ti -1c
+.RI "float \fBFontBaseSize\fP"
+.br
+.ti -1c
+.RI "\fBImDrawListSharedData\fP \fBDrawListSharedData\fP"
+.br
+.ti -1c
+.RI "double \fBTime\fP"
+.br
+.ti -1c
+.RI "int \fBFrameCount\fP"
+.br
+.ti -1c
+.RI "int \fBFrameCountEnded\fP"
+.br
+.ti -1c
+.RI "int \fBFrameCountPlatformEnded\fP"
+.br
+.ti -1c
+.RI "int \fBFrameCountRendered\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiWindow\fP * > \fBWindows\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiWindow\fP * > \fBWindowsFocusOrder\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiWindow\fP * > \fBWindowsSortBuffer\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiWindow\fP * > \fBCurrentWindowStack\fP"
+.br
+.ti -1c
+.RI "\fBImGuiStorage\fP \fBWindowsById\fP"
+.br
+.ti -1c
+.RI "int \fBWindowsActiveCount\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBCurrentWindow\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBHoveredWindow\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBHoveredRootWindow\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBHoveredWindowUnderMovingWindow\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBMovingWindow\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBHoveredId\fP"
+.br
+.ti -1c
+.RI "bool \fBHoveredIdAllowOverlap\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBHoveredIdPreviousFrame\fP"
+.br
+.ti -1c
+.RI "float \fBHoveredIdTimer\fP"
+.br
+.ti -1c
+.RI "float \fBHoveredIdNotActiveTimer\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBActiveId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBActiveIdIsAlive\fP"
+.br
+.ti -1c
+.RI "float \fBActiveIdTimer\fP"
+.br
+.ti -1c
+.RI "bool \fBActiveIdIsJustActivated\fP"
+.br
+.ti -1c
+.RI "bool \fBActiveIdAllowOverlap\fP"
+.br
+.ti -1c
+.RI "bool \fBActiveIdHasBeenPressedBefore\fP"
+.br
+.ti -1c
+.RI "bool \fBActiveIdHasBeenEditedBefore\fP"
+.br
+.ti -1c
+.RI "bool \fBActiveIdHasBeenEditedThisFrame\fP"
+.br
+.ti -1c
+.RI "int \fBActiveIdAllowNavDirFlags\fP"
+.br
+.ti -1c
+.RI "int \fBActiveIdBlockNavInputFlags\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBActiveIdClickOffset\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBActiveIdWindow\fP"
+.br
+.ti -1c
+.RI "ImGuiInputSource \fBActiveIdSource\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBActiveIdPreviousFrame\fP"
+.br
+.ti -1c
+.RI "bool \fBActiveIdPreviousFrameIsAlive\fP"
+.br
+.ti -1c
+.RI "bool \fBActiveIdPreviousFrameHasBeenEditedBefore\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBActiveIdPreviousFrameWindow\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBLastActiveId\fP"
+.br
+.ti -1c
+.RI "float \fBLastActiveIdTimer\fP"
+.br
+.ti -1c
+.RI "\fBImGuiNextWindowData\fP \fBNextWindowData\fP"
+.br
+.ti -1c
+.RI "\fBImGuiNextItemData\fP \fBNextItemData\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiColorMod\fP > \fBColorModifiers\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiStyleMod\fP > \fBStyleModifiers\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImFont\fP * > \fBFontStack\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiPopupData\fP > \fBOpenPopupStack\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiPopupData\fP > \fBBeginPopupStack\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiViewportP\fP * > \fBViewports\fP"
+.br
+.ti -1c
+.RI "\fBImGuiViewportP\fP * \fBCurrentViewport\fP"
+.br
+.ti -1c
+.RI "\fBImGuiViewportP\fP * \fBMouseViewport\fP"
+.br
+.ti -1c
+.RI "\fBImGuiViewportP\fP * \fBMouseLastHoveredViewport\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBPlatformLastFocusedViewport\fP"
+.br
+.ti -1c
+.RI "int \fBViewportFrontMostStampCount\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBNavWindow\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavActivateId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavActivateDownId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavActivatePressedId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavInputId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavJustTabbedId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavJustMovedToId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavJustMovedToMultiSelectScopeId\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavNextActivateId\fP"
+.br
+.ti -1c
+.RI "ImGuiInputSource \fBNavInputSource\fP"
+.br
+.ti -1c
+.RI "\fBImRect\fP \fBNavScoringRectScreen\fP"
+.br
+.ti -1c
+.RI "int \fBNavScoringCount\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBNavWindowingTarget\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBNavWindowingTargetAnim\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBNavWindowingList\fP"
+.br
+.ti -1c
+.RI "float \fBNavWindowingTimer\fP"
+.br
+.ti -1c
+.RI "float \fBNavWindowingHighlightAlpha\fP"
+.br
+.ti -1c
+.RI "bool \fBNavWindowingToggleLayer\fP"
+.br
+.ti -1c
+.RI "ImGuiNavLayer \fBNavLayer\fP"
+.br
+.ti -1c
+.RI "int \fBNavIdTabCounter\fP"
+.br
+.ti -1c
+.RI "bool \fBNavIdIsAlive\fP"
+.br
+.ti -1c
+.RI "bool \fBNavMousePosDirty\fP"
+.br
+.ti -1c
+.RI "bool \fBNavDisableHighlight\fP"
+.br
+.ti -1c
+.RI "bool \fBNavDisableMouseHover\fP"
+.br
+.ti -1c
+.RI "bool \fBNavAnyRequest\fP"
+.br
+.ti -1c
+.RI "bool \fBNavInitRequest\fP"
+.br
+.ti -1c
+.RI "bool \fBNavInitRequestFromMove\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBNavInitResultId\fP"
+.br
+.ti -1c
+.RI "\fBImRect\fP \fBNavInitResultRectRel\fP"
+.br
+.ti -1c
+.RI "bool \fBNavMoveFromClampedRefRect\fP"
+.br
+.ti -1c
+.RI "bool \fBNavMoveRequest\fP"
+.br
+.ti -1c
+.RI "ImGuiNavMoveFlags \fBNavMoveRequestFlags\fP"
+.br
+.ti -1c
+.RI "ImGuiNavForward \fBNavMoveRequestForward\fP"
+.br
+.ti -1c
+.RI "ImGuiDir \fBNavMoveDir\fP"
+.br
+.ti -1c
+.RI "ImGuiDir \fBNavMoveDirLast\fP"
+.br
+.ti -1c
+.RI "ImGuiDir \fBNavMoveClipDir\fP"
+.br
+.ti -1c
+.RI "\fBImGuiNavMoveResult\fP \fBNavMoveResultLocal\fP"
+.br
+.ti -1c
+.RI "\fBImGuiNavMoveResult\fP \fBNavMoveResultLocalVisibleSet\fP"
+.br
+.ti -1c
+.RI "\fBImGuiNavMoveResult\fP \fBNavMoveResultOther\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBFocusRequestCurrWindow\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBFocusRequestNextWindow\fP"
+.br
+.ti -1c
+.RI "int \fBFocusRequestCurrCounterAll\fP"
+.br
+.ti -1c
+.RI "int \fBFocusRequestCurrCounterTab\fP"
+.br
+.ti -1c
+.RI "int \fBFocusRequestNextCounterAll\fP"
+.br
+.ti -1c
+.RI "int \fBFocusRequestNextCounterTab\fP"
+.br
+.ti -1c
+.RI "bool \fBFocusTabPressed\fP"
+.br
+.ti -1c
+.RI "float \fBDimBgRatio\fP"
+.br
+.ti -1c
+.RI "ImGuiMouseCursor \fBMouseCursor\fP"
+.br
+.ti -1c
+.RI "bool \fBDragDropActive\fP"
+.br
+.ti -1c
+.RI "bool \fBDragDropWithinSourceOrTarget\fP"
+.br
+.ti -1c
+.RI "ImGuiDragDropFlags \fBDragDropSourceFlags\fP"
+.br
+.ti -1c
+.RI "int \fBDragDropSourceFrameCount\fP"
+.br
+.ti -1c
+.RI "int \fBDragDropMouseButton\fP"
+.br
+.ti -1c
+.RI "\fBImGuiPayload\fP \fBDragDropPayload\fP"
+.br
+.ti -1c
+.RI "\fBImRect\fP \fBDragDropTargetRect\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBDragDropTargetId\fP"
+.br
+.ti -1c
+.RI "ImGuiDragDropFlags \fBDragDropAcceptFlags\fP"
+.br
+.ti -1c
+.RI "float \fBDragDropAcceptIdCurrRectSurface\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBDragDropAcceptIdCurr\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBDragDropAcceptIdPrev\fP"
+.br
+.ti -1c
+.RI "int \fBDragDropAcceptFrameCount\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< unsigned char > \fBDragDropPayloadBufHeap\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBDragDropPayloadBufLocal\fP [8]"
+.br
+.ti -1c
+.RI "\fBImPool\fP< \fBImGuiTabBar\fP > \fBTabBars\fP"
+.br
+.ti -1c
+.RI "\fBImGuiTabBar\fP * \fBCurrentTabBar\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiTabBarRef\fP > \fBCurrentTabBarStack\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiShrinkWidthItem\fP > \fBShrinkWidthBuffer\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBLastValidMousePos\fP"
+.br
+.ti -1c
+.RI "\fBImGuiInputTextState\fP \fBInputTextState\fP"
+.br
+.ti -1c
+.RI "\fBImFont\fP \fBInputTextPasswordFont\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBTempInputTextId\fP"
+.br
+.ti -1c
+.RI "ImGuiColorEditFlags \fBColorEditOptions\fP"
+.br
+.ti -1c
+.RI "\fBImVec4\fP \fBColorPickerRef\fP"
+.br
+.ti -1c
+.RI "bool \fBDragCurrentAccumDirty\fP"
+.br
+.ti -1c
+.RI "float \fBDragCurrentAccum\fP"
+.br
+.ti -1c
+.RI "float \fBDragSpeedDefaultRatio\fP"
+.br
+.ti -1c
+.RI "float \fBScrollbarClickDeltaToGrabCenter\fP"
+.br
+.ti -1c
+.RI "int \fBTooltipOverrideCount\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< char > \fBPrivateClipboard\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBMultiSelectScopeId\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBPlatformImePos\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBPlatformImeLastPos\fP"
+.br
+.ti -1c
+.RI "\fBImGuiViewportP\fP * \fBPlatformImePosViewport\fP"
+.br
+.ti -1c
+.RI "\fBImGuiDockContext\fP * \fBDockContext\fP"
+.br
+.ti -1c
+.RI "bool \fBSettingsLoaded\fP"
+.br
+.ti -1c
+.RI "float \fBSettingsDirtyTimer\fP"
+.br
+.ti -1c
+.RI "\fBImGuiTextBuffer\fP \fBSettingsIniData\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiSettingsHandler\fP > \fBSettingsHandlers\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiWindowSettings\fP > \fBSettingsWindows\fP"
+.br
+.ti -1c
+.RI "bool \fBLogEnabled\fP"
+.br
+.ti -1c
+.RI "ImGuiLogType \fBLogType\fP"
+.br
+.ti -1c
+.RI "FILE * \fBLogFile\fP"
+.br
+.ti -1c
+.RI "\fBImGuiTextBuffer\fP \fBLogBuffer\fP"
+.br
+.ti -1c
+.RI "float \fBLogLinePosY\fP"
+.br
+.ti -1c
+.RI "bool \fBLogLineFirstItem\fP"
+.br
+.ti -1c
+.RI "int \fBLogDepthRef\fP"
+.br
+.ti -1c
+.RI "int \fBLogDepthToExpand\fP"
+.br
+.ti -1c
+.RI "int \fBLogDepthToExpandDefault\fP"
+.br
+.ti -1c
+.RI "float \fBFramerateSecPerFrame\fP [120]"
+.br
+.ti -1c
+.RI "int \fBFramerateSecPerFrameIdx\fP"
+.br
+.ti -1c
+.RI "float \fBFramerateSecPerFrameAccum\fP"
+.br
+.ti -1c
+.RI "int \fBWantCaptureMouseNextFrame\fP"
+.br
+.ti -1c
+.RI "int \fBWantCaptureKeyboardNextFrame\fP"
+.br
+.ti -1c
+.RI "int \fBWantTextInputNextFrame\fP"
+.br
+.ti -1c
+.RI "char \fBTempBuffer\fP [1024 *3+1]"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

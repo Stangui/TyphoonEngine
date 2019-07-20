@@ -19,6 +19,8 @@ namespace TyphoonEngine
 			void Bind() const;
 			void Unbind() const;
 
+			void UploadUniformMat4(const std::string& name, const glm::mat4& mat);
+
 		private:
 
 			glm::uint32 m_shaderId;

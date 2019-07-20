@@ -1,0 +1,161 @@
+.TH "Typhoon/ThirdParty/glm/glm/gtx/euler_angles.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/gtx/euler_angles.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./glm\&.hpp'\fP
+.br
+\fC#include 'euler_angles\&.inl'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleX\fP (T const &angleX)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleY\fP (T const &angleY)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleZ\fP (T const &angleZ)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::derivedEulerAngleX\fP (T const &angleX, T const &angularVelocityX)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::derivedEulerAngleY\fP (T const &angleY, T const &angularVelocityY)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::derivedEulerAngleZ\fP (T const &angleZ, T const &angularVelocityZ)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleXY\fP (T const &angleX, T const &angleY)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleYX\fP (T const &angleY, T const &angleX)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleXZ\fP (T const &angleX, T const &angleZ)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleZX\fP (T const &angle, T const &angleX)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleYZ\fP (T const &angleY, T const &angleZ)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleZY\fP (T const &angleZ, T const &angleY)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleXYZ\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleYXZ\fP (T const &yaw, T const &pitch, T const &roll)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleXZX\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleXYX\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleYXY\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleYZY\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleZYZ\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleZXZ\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleXZY\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleYZX\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleZYX\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::eulerAngleZXY\fP (T const &t1, T const &t2, T const &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 4, 4, T, defaultp > \fBglm::yawPitchRoll\fP (T const &yaw, T const &pitch, T const &roll)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 2, 2, T, defaultp > \fBglm::orientate2\fP (T const &angle)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL mat< 3, 3, T, defaultp > \fBglm::orientate3\fP (T const &angle)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL mat< 3, 3, T, Q > \fBglm::orientate3\fP (vec< 3, T, Q > const &angles)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL mat< 4, 4, T, Q > \fBglm::orientate4\fP (vec< 3, T, Q > const &angles)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleXYZ\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleYXZ\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleXZX\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleXYX\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleYXY\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleYZY\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleZYZ\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleZXZ\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleXZY\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleYZX\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleZYX\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL void \fBglm::extractEulerAngleZXY\fP (mat< 4, 4, T, defaultp > const &M, T &t1, T &t2, T &t3)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBGLM_GTX_euler_angles\fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCore features\fP (dependence) 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

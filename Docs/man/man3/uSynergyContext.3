@@ -1,0 +1,121 @@
+.TH "uSynergyContext" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+uSynergyContext \- uSynergy context  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <uSynergy\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "uSynergyConnectFunc \fBm_connectFunc\fP"
+.br
+.ti -1c
+.RI "uSynergySendFunc \fBm_sendFunc\fP"
+.br
+.ti -1c
+.RI "uSynergyReceiveFunc \fBm_receiveFunc\fP"
+.br
+.ti -1c
+.RI "uSynergySleepFunc \fBm_sleepFunc\fP"
+.br
+.ti -1c
+.RI "uSynergyGetTimeFunc \fBm_getTimeFunc\fP"
+.br
+.ti -1c
+.RI "const char * \fBm_clientName\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBm_clientWidth\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBm_clientHeight\fP"
+.br
+.ti -1c
+.RI "\fBuSynergyCookie\fP \fBm_cookie\fP"
+.br
+.ti -1c
+.RI "uSynergyTraceFunc \fBm_traceFunc\fP"
+.br
+.ti -1c
+.RI "uSynergyScreenActiveCallback \fBm_screenActiveCallback\fP"
+.br
+.ti -1c
+.RI "uSynergyMouseCallback \fBm_mouseCallback\fP"
+.br
+.ti -1c
+.RI "uSynergyKeyboardCallback \fBm_keyboardCallback\fP"
+.br
+.ti -1c
+.RI "uSynergyJoystickCallback \fBm_joystickCallback\fP"
+.br
+.ti -1c
+.RI "uSynergyClipboardCallback \fBm_clipboardCallback\fP"
+.br
+.ti -1c
+.RI "uSynergyBool \fBm_connected\fP"
+.br
+.ti -1c
+.RI "uSynergyBool \fBm_hasReceivedHello\fP"
+.br
+.ti -1c
+.RI "uSynergyBool \fBm_isCaptured\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBm_lastMessageTime\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBm_sequenceNumber\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBm_receiveBuffer\fP [USYNERGY_RECEIVE_BUFFER_SIZE]"
+.br
+.ti -1c
+.RI "int \fBm_receiveOfs\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBm_replyBuffer\fP [USYNERGY_REPLY_BUFFER_SIZE]"
+.br
+.ti -1c
+.RI "uint8_t * \fBm_replyCur\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBm_mouseX\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBm_mouseY\fP"
+.br
+.ti -1c
+.RI "int16_t \fBm_mouseWheelX\fP"
+.br
+.ti -1c
+.RI "int16_t \fBm_mouseWheelY\fP"
+.br
+.ti -1c
+.RI "uSynergyBool \fBm_mouseButtonLeft\fP"
+.br
+.ti -1c
+.RI "uSynergyBool \fBm_mouseButtonRight\fP"
+.br
+.ti -1c
+.RI "uSynergyBool \fBm_mouseButtonMiddle\fP"
+.br
+.ti -1c
+.RI "int8_t \fBm_joystickSticks\fP [USYNERGY_NUM_JOYSTICKS][4]"
+.br
+.ti -1c
+.RI "uint16_t \fBm_joystickButtons\fP [USYNERGY_NUM_JOYSTICKS]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+uSynergy context 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

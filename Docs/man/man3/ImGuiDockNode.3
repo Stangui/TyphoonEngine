@@ -1,0 +1,158 @@
+.TH "ImGuiDockNode" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ImGuiDockNode
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImGuiDockNode\fP (ImGuiID id)"
+.br
+.ti -1c
+.RI "bool \fBIsRootNode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsDockSpace\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsCentralNode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsHiddenTabBar\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsNoTabBar\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsSplitNode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsLeafNode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsEmpty\fP () const"
+.br
+.ti -1c
+.RI "ImGuiDockNodeFlags \fBGetMergedFlags\fP () const"
+.br
+.ti -1c
+.RI "\fBImRect\fP \fBRect\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "ImGuiID \fBID\fP"
+.br
+.ti -1c
+.RI "ImGuiDockNodeFlags \fBSharedFlags\fP"
+.br
+.ti -1c
+.RI "ImGuiDockNodeFlags \fBLocalFlags\fP"
+.br
+.ti -1c
+.RI "\fBImGuiDockNode\fP * \fBParentNode\fP"
+.br
+.ti -1c
+.RI "\fBImGuiDockNode\fP * \fBChildNodes\fP [2]"
+.br
+.ti -1c
+.RI "\fBImVector\fP< \fBImGuiWindow\fP * > \fBWindows\fP"
+.br
+.ti -1c
+.RI "\fBImGuiTabBar\fP * \fBTabBar\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBPos\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBSize\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBSizeRef\fP"
+.br
+.ti -1c
+.RI "int \fBSplitAxis\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindowClass\fP \fBWindowClass\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBHostWindow\fP"
+.br
+.ti -1c
+.RI "\fBImGuiWindow\fP * \fBVisibleWindow\fP"
+.br
+.ti -1c
+.RI "\fBImGuiDockNode\fP * \fBCentralNode\fP"
+.br
+.ti -1c
+.RI "\fBImGuiDockNode\fP * \fBOnlyNodeWithWindows\fP"
+.br
+.ti -1c
+.RI "int \fBLastFrameAlive\fP"
+.br
+.ti -1c
+.RI "int \fBLastFrameActive\fP"
+.br
+.ti -1c
+.RI "int \fBLastFrameFocused\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBLastFocusedNodeID\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBSelectedTabID\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBWantCloseTabID\fP"
+.br
+.ti -1c
+.RI "ImGuiDataAuthority \fBAuthorityForPos\fP:3"
+.br
+.ti -1c
+.RI "ImGuiDataAuthority \fBAuthorityForSize\fP:3"
+.br
+.ti -1c
+.RI "ImGuiDataAuthority \fBAuthorityForViewport\fP:3"
+.br
+.ti -1c
+.RI "bool \fBIsVisible\fP:1"
+.br
+.ti -1c
+.RI "bool \fBIsFocused\fP:1"
+.br
+.ti -1c
+.RI "bool \fBHasCloseButton\fP:1"
+.br
+.ti -1c
+.RI "bool \fBHasWindowMenuButton\fP:1"
+.br
+.ti -1c
+.RI "bool \fBEnableCloseButton\fP:1"
+.br
+.ti -1c
+.RI "bool \fBWantCloseAll\fP:1"
+.br
+.ti -1c
+.RI "bool \fBWantLockSizeOnce\fP:1"
+.br
+.ti -1c
+.RI "bool \fBWantMouseMove\fP:1"
+.br
+.ti -1c
+.RI "bool \fBWantHiddenTabBarUpdate\fP:1"
+.br
+.ti -1c
+.RI "bool \fBWantHiddenTabBarToggle\fP:1"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

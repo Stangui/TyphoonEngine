@@ -1,0 +1,204 @@
+.TH "monitor_guide" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+monitor_guide \- Monitor guide 
+This guide introduces the monitor related functions of GLFW\&. For details on a specific function in this category, see the \fBMonitor reference\fP\&. There are also guides for the other areas of GLFW\&.
+.PP
+.IP "\(bu" 2
+\fBIntroduction to the API\fP
+.IP "\(bu" 2
+\fBWindow guide\fP
+.IP "\(bu" 2
+\fBContext guide\fP
+.IP "\(bu" 2
+\fBVulkan guide\fP
+.IP "\(bu" 2
+\fBInput guide\fP
+.PP
+.SH "Monitor objects"
+.PP
+A monitor object represents a currently connected monitor and is represented as a pointer to the \fCopaque\fP type \fBGLFWmonitor\fP\&. Monitor objects cannot be created or destroyed by the application and retain their addresses until the monitors they represent are disconnected or until the library is \fBterminated\fP\&.
+.PP
+Each monitor has a current video mode, a list of supported video modes, a virtual position, a human-readable name, an estimated physical size and a gamma ramp\&. One of the monitors is the primary monitor\&.
+.PP
+The virtual position of a monitor is in \fBscreen coordinates\fP and, together with the current video mode, describes the viewports that the connected monitors provide into the virtual desktop that spans them\&.
+.PP
+To see how GLFW views your monitor setup and its available video modes, run the \fCmonitors\fP test program\&.
+.SS "Retrieving monitors"
+The primary monitor is returned by \fBglfwGetPrimaryMonitor\fP\&. It is the user's preferred monitor and is usually the one with global UI elements like task bar or menu bar\&.
+.PP
+.PP
+.nf
+GLFWmonitor* primary = glfwGetPrimaryMonitor();
+.fi
+.PP
+.PP
+You can retrieve all currently connected monitors with \fBglfwGetMonitors\fP\&. See the reference documentation for the lifetime of the returned array\&.
+.PP
+.PP
+.nf
+int count;
+GLFWmonitor** monitors = glfwGetMonitors(&count);
+.fi
+.PP
+.PP
+The primary monitor is always the first monitor in the returned array, but other monitors may be moved to a different index when a monitor is connected or disconnected\&.
+.SS "Monitor configuration changes"
+If you wish to be notified when a monitor is connected or disconnected, set a monitor callback\&.
+.PP
+.PP
+.nf
+glfwSetMonitorCallback(monitor_callback);
+.fi
+.PP
+.PP
+The callback function receives the handle for the monitor that has been connected or disconnected and the event that occurred\&.
+.PP
+.PP
+.nf
+void monitor_callback(GLFWmonitor* monitor, int event)
+{
+    if (event == GLFW_CONNECTED)
+    {
+        // The monitor was connected
+    }
+    else if (event == GLFW_DISCONNECTED)
+    {
+        // The monitor was disconnected
+    }
+}
+.fi
+.PP
+.PP
+If a monitor is disconnected, all windows that are full screen on it will be switched to windowed mode before the callback is called\&. Only \fBglfwGetMonitorName\fP and \fBglfwGetMonitorUserPointer\fP will return useful values for a disconnected monitor and only before the monitor callback returns\&.
+.SH "Monitor properties"
+.PP
+Each monitor has a current video mode, a list of supported video modes, a virtual position, a content scale, a human-readable name, a user pointer, an estimated physical size and a gamma ramp\&.
+.SS "Video modes"
+GLFW generally does a good job selecting a suitable video mode when you create a full screen window, change its video mode or make a windowed one full screen, but it is sometimes useful to know exactly which video modes are supported\&.
+.PP
+Video modes are represented as \fBGLFWvidmode\fP structures\&. You can get an array of the video modes supported by a monitor with \fBglfwGetVideoModes\fP\&. See the reference documentation for the lifetime of the returned array\&.
+.PP
+.PP
+.nf
+int count;
+GLFWvidmode* modes = glfwGetVideoModes(monitor, &count);
+.fi
+.PP
+.PP
+To get the current video mode of a monitor call \fBglfwGetVideoMode\fP\&. See the reference documentation for the lifetime of the returned pointer\&.
+.PP
+.PP
+.nf
+const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+.fi
+.PP
+.PP
+The resolution of a video mode is specified in \fBscreen coordinates\fP, not pixels\&.
+.SS "Physical size"
+The physical size of a monitor in millimetres, or an estimation of it, can be retrieved with \fBglfwGetMonitorPhysicalSize\fP\&. This has no relation to its current \fIresolution\fP, i\&.e\&. the width and height of its current \fBvideo mode\fP\&.
+.PP
+.PP
+.nf
+int width_mm, height_mm;
+glfwGetMonitorPhysicalSize(monitor, &width_mm, &height_mm);
+.fi
+.PP
+.PP
+While this can be used to calculate the raw DPI of a monitor, this is often not useful\&. Instead use the \fBmonitor content scale\fP and \fBwindow content scale\fP to scale your content\&.
+.SS "Content scale"
+The content scale for a monitor can be retrieved with \fBglfwGetMonitorContentScale\fP\&.
+.PP
+.PP
+.nf
+float xscale, yscale;
+glfwGetMonitorContentScale(monitor, &xscale, &yscale);
+.fi
+.PP
+.PP
+The content scale is the ratio between the current DPI and the platform's default DPI\&. This is especially important for text and any UI elements\&. If the pixel dimensions of your UI scaled by this look appropriate on your machine then it should appear at a reasonable size on other machines regardless of their DPI and scaling settings\&. This relies on the system DPI and scaling settings being somewhat correct\&.
+.PP
+The content scale may depend on both the monitor resolution and pixel density and on user settings\&. It may be very different from the raw DPI calculated from the physical size and current resolution\&.
+.SS "Virtual position"
+The position of the monitor on the virtual desktop, in \fBscreen coordinates\fP, can be retrieved with \fBglfwGetMonitorPos\fP\&.
+.PP
+.PP
+.nf
+int xpos, ypos;
+glfwGetMonitorPos(monitor, &xpos, &ypos);
+.fi
+.PP
+.SS "Work area"
+The area of a monitor not occupied by global task bars or menu bars is the work area\&. This is specified in \fBscreen coordinates\fP and can be retrieved with \fBglfwGetMonitorWorkarea\fP\&.
+.PP
+.PP
+.nf
+int xpos, ypos, width, height;
+glfwGetMonitorWorkarea(monitor, &xpos, &ypos, &width, &height);
+.fi
+.PP
+.SS "Human-readable name"
+The human-readable, UTF-8 encoded name of a monitor is returned by \fBglfwGetMonitorName\fP\&. See the reference documentation for the lifetime of the returned string\&.
+.PP
+.PP
+.nf
+const char* name = glfwGetMonitorName(monitor);
+.fi
+.PP
+.PP
+Monitor names are not guaranteed to be unique\&. Two monitors of the same model and make may have the same name\&. Only the monitor handle is guaranteed to be unique, and only until that monitor is disconnected\&.
+.SS "User pointer"
+Each monitor has a user pointer that can be set with \fBglfwSetMonitorUserPointer\fP and queried with \fBglfwGetMonitorUserPointer\fP\&. This can be used for any purpose you need and will not be modified by GLFW\&. The value will be kept until the monitor is disconnected or until the library is terminated\&.
+.PP
+The initial value of the pointer is \fCNULL\fP\&.
+.SS "Gamma ramp"
+The gamma ramp of a monitor can be set with \fBglfwSetGammaRamp\fP, which accepts a monitor handle and a pointer to a \fBGLFWgammaramp\fP structure\&.
+.PP
+.PP
+.nf
+GLFWgammaramp ramp;
+unsigned short red[256], green[256], blue[256];
+
+ramp\&.size = 256;
+ramp\&.red = red;
+ramp\&.green = green;
+ramp\&.blue = blue;
+
+for (i = 0;  i < ramp\&.size;  i++)
+{
+    // Fill out gamma ramp arrays as desired
+}
+
+glfwSetGammaRamp(monitor, &ramp);
+.fi
+.PP
+.PP
+The gamma ramp data is copied before the function returns, so there is no need to keep it around once the ramp has been set\&.
+.PP
+It is recommended that your gamma ramp have the same size as the current gamma ramp for that monitor\&.
+.PP
+The current gamma ramp for a monitor is returned by \fBglfwGetGammaRamp\fP\&. See the reference documentation for the lifetime of the returned structure\&.
+.PP
+.PP
+.nf
+const GLFWgammaramp* ramp = glfwGetGammaRamp(monitor);
+.fi
+.PP
+.PP
+If you wish to set a regular gamma ramp, you can have GLFW calculate it for you from the desired exponent with \fBglfwSetGamma\fP, which in turn calls \fBglfwSetGammaRamp\fP with the resulting ramp\&.
+.PP
+.PP
+.nf
+glfwSetGamma(monitor, 1\&.0);
+.fi
+.PP
+.PP
+To experiment with gamma correction via the \fBglfwSetGamma\fP function, run the \fCgamma\fP test program\&.
+.PP
+\fBNote:\fP
+.RS 4
+The software controlled gamma ramp is applied \fIin addition\fP to the hardware gamma correction, which today is usually an approximation of sRGB gamma\&. This means that setting a perfectly linear ramp, or gamma 1\&.0, will produce the default (usually sRGB-like) behavior\&. 
+.RE
+.PP
+

@@ -1,0 +1,281 @@
+.TH "gtc_round" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtc_round
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::ceilPowerOfTwo\fP (genIUType v)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::ceilPowerOfTwo\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::floorPowerOfTwo\fP (genIUType v)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::floorPowerOfTwo\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::roundPowerOfTwo\fP (genIUType v)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::roundPowerOfTwo\fP (\fBvec\fP< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::ceilMultiple\fP (genType v, genType Multiple)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::ceilMultiple\fP (\fBvec\fP< L, T, Q > const &v, \fBvec\fP< L, T, Q > const &Multiple)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::floorMultiple\fP (genType v, genType Multiple)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::floorMultiple\fP (\fBvec\fP< L, T, Q > const &v, \fBvec\fP< L, T, Q > const &Multiple)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::roundMultiple\fP (genType v, genType Multiple)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::roundMultiple\fP (\fBvec\fP< L, T, Q > const &v, \fBvec\fP< L, T, Q > const &Multiple)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/ext/scalar_integer\&.hpp\fP> to use the features of this extension\&.
+.PP
+Include <\fBglm/ext/vector_integer\&.hpp\fP> to use the features of this extension\&.
+.PP
+Include <\fBglm/gtc/round\&.hpp\fP> to use the features of this extension\&.
+.PP
+Rounding value to specific boundings 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename genType > GLM_FUNC_DECL genType glm::ceilMultiple (genType v, genType Multiple)"
+Higher multiple number of Source\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Floating-point or integer scalar or vector types\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Source value to which is applied the function 
+.br
+\fIMultiple\fP Must be a null or positive value
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::ceilMultiple (\fBvec\fP< L, T, Q > const & v, \fBvec\fP< L, T, Q > const & Multiple)"
+Higher multiple number of Source\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Source values to which is applied the function 
+.br
+\fIMultiple\fP Must be a null or positive value
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::ceilPowerOfTwo (genIUType v)"
+Return the power of two number which value is just higher the input value, round up to a power of two\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::ceilPowerOfTwo (\fBvec\fP< L, T, Q > const & v)"
+Return the power of two number which value is just higher the input value, round up to a power of two\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genType > GLM_FUNC_DECL genType glm::floorMultiple (genType v, genType Multiple)"
+Lower multiple number of Source\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Floating-point or integer scalar or vector types\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Source value to which is applied the function 
+.br
+\fIMultiple\fP Must be a null or positive value
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::floorMultiple (\fBvec\fP< L, T, Q > const & v, \fBvec\fP< L, T, Q > const & Multiple)"
+Lower multiple number of Source\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Source values to which is applied the function 
+.br
+\fIMultiple\fP Must be a null or positive value
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::floorPowerOfTwo (genIUType v)"
+Return the power of two number which value is just lower the input value, round down to a power of two\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::floorPowerOfTwo (\fBvec\fP< L, T, Q > const & v)"
+Return the power of two number which value is just lower the input value, round down to a power of two\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genType > GLM_FUNC_DECL genType glm::roundMultiple (genType v, genType Multiple)"
+Lower multiple number of Source\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Floating-point or integer scalar or vector types\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Source value to which is applied the function 
+.br
+\fIMultiple\fP Must be a null or positive value
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::roundMultiple (\fBvec\fP< L, T, Q > const & v, \fBvec\fP< L, T, Q > const & Multiple)"
+Lower multiple number of Source\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Source values to which is applied the function 
+.br
+\fIMultiple\fP Must be a null or positive value
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::roundPowerOfTwo (genIUType v)"
+Return the power of two number which value is the closet to the input value\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::roundPowerOfTwo (\fBvec\fP< L, T, Q > const & v)"
+Return the power of two number which value is the closet to the input value\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

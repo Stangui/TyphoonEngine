@@ -1,0 +1,147 @@
+.TH "Ext_scalar_integer" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ext_scalar_integer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL bool \fBglm::isPowerOfTwo\fP (genIUType v)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::nextPowerOfTwo\fP (genIUType v)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::prevPowerOfTwo\fP (genIUType v)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL bool \fBglm::isMultiple\fP (genIUType v, genIUType Multiple)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::nextMultiple\fP (genIUType v, genIUType Multiple)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::prevMultiple\fP (genIUType v, genIUType Multiple)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL int \fBglm::findNSB\fP (genIUType x, int significantBitCount)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "template<typename genIUType > GLM_FUNC_DECL int glm::findNSB (genIUType x, int significantBitCount)"
+Returns the bit number of the Nth significant bit set to 1 in the binary representation of value\&. If value bitcount is less than the Nth significant bit, -1 will be returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenIUType\fP Signed or unsigned integer scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBExt_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL bool glm::isMultiple (genIUType v, genIUType Multiple)"
+Return true if the 'Value' is a multiple of 'Multiple'\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBExt_scalar_integer\fP
+.RE
+.PP
+Return true if the 'Value' is a multiple of 'Multiple'\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL bool glm::isPowerOfTwo (genIUType v)"
+Return true if the value is a power of two number\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBExt_scalar_integer\fP
+.RE
+.PP
+Return true if the value is a power of two number\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::nextMultiple (genIUType v, genIUType Multiple)"
+Higher multiple number of Source\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Floating-point or integer scalar or vector types\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Source value to which is applied the function 
+.br
+\fIMultiple\fP Must be a null or positive value
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBExt_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::nextPowerOfTwo (genIUType v)"
+Return the power of two number which value is just higher the input value, round up to a power of two\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBExt_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::prevMultiple (genIUType v, genIUType Multiple)"
+Lower multiple number of Source\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Floating-point or integer scalar or vector types\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Source value to which is applied the function 
+.br
+\fIMultiple\fP Must be a null or positive value
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBExt_scalar_integer\fP 
+.RE
+.PP
+
+.SS "template<typename genIUType > GLM_FUNC_DECL genIUType glm::prevPowerOfTwo (genIUType v)"
+Return the power of two number which value is just lower the input value, round down to a power of two\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBExt_scalar_integer\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

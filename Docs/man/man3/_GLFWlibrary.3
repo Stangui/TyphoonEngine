@@ -1,0 +1,136 @@
+.TH "_GLFWlibrary" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_GLFWlibrary
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "GLFWbool \fBinitialized\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fB_GLFWinitconfig\fP \fBinit\fP"
+.br
+.ti -1c
+.RI "   \fB_GLFWfbconfig\fP \fBframebuffer\fP"
+.br
+.ti -1c
+.RI "   \fB_GLFWwndconfig\fP \fBwindow\fP"
+.br
+.ti -1c
+.RI "   \fB_GLFWctxconfig\fP \fBcontext\fP"
+.br
+.ti -1c
+.RI "   int \fBrefreshRate\fP"
+.br
+.ti -1c
+.RI "} \fBhints\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWerror\fP * \fBerrorListHead\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWcursor\fP * \fBcursorListHead\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWwindow\fP * \fBwindowListHead\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWmonitor\fP ** \fBmonitors\fP"
+.br
+.ti -1c
+.RI "int \fBmonitorCount\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWjoystick\fP \fBjoysticks\fP [GLFW_JOYSTICK_LAST+1]"
+.br
+.ti -1c
+.RI "\fB_GLFWmapping\fP * \fBmappings\fP"
+.br
+.ti -1c
+.RI "int \fBmappingCount\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWtls\fP \fBerrorSlot\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWtls\fP \fBcontextSlot\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWmutex\fP \fBerrorLock\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   uint64_t \fBoffset\fP"
+.br
+.ti -1c
+.RI "   \fB_GLFW_PLATFORM_LIBRARY_TIMER_STATE\fP"
+.br
+.ti -1c
+.RI "} \fBtimer\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   GLFWbool \fBavailable\fP"
+.br
+.ti -1c
+.RI "   void * \fBhandle\fP"
+.br
+.ti -1c
+.RI "   char * \fBextensions\fP [2]"
+.br
+.ti -1c
+.RI "   PFN_vkEnumerateInstanceExtensionProperties \fBEnumerateInstanceExtensionProperties\fP"
+.br
+.ti -1c
+.RI "   PFN_vkGetInstanceProcAddr \fBGetInstanceProcAddr\fP"
+.br
+.ti -1c
+.RI "   GLFWbool \fBKHR_surface\fP"
+.br
+.ti -1c
+.RI "} \fBvk\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBGLFWmonitorfun\fP \fBmonitor\fP"
+.br
+.ti -1c
+.RI "   \fBGLFWjoystickfun\fP \fBjoystick\fP"
+.br
+.ti -1c
+.RI "} \fBcallbacks\fP"
+.br
+.ti -1c
+.RI "\fB_GLFW_PLATFORM_LIBRARY_WINDOW_STATE\fP"
+.br
+.ti -1c
+.RI "\fB_GLFW_PLATFORM_LIBRARY_CONTEXT_STATE\fP"
+.br
+.ti -1c
+.RI "\fB_GLFW_PLATFORM_LIBRARY_JOYSTICK_STATE\fP"
+.br
+.ti -1c
+.RI "\fB_GLFW_EGL_LIBRARY_CONTEXT_STATE\fP"
+.br
+.ti -1c
+.RI "\fB_GLFW_OSMESA_LIBRARY_CONTEXT_STATE\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

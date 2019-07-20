@@ -22,7 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Typhoon Engine
+   &#160;<span id="projectnumber">0.1</span>
    </div>
+   <div id="projectbrief">Multi-Platform Game Engine</div>
   </td>
  </tr>
  </tbody>
@@ -66,27 +68,31 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_typhoon_engine_1_1_renderers_1_1_i_renderer-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">TyphoonEngine::Renderers::IRenderer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">TyphoonEngine::Renderers::IRenderer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:aabf670f18f7582af9c2e8cf36cfc6073"><td class="memItemLeft" align="right" valign="top"><a id="aabf670f18f7582af9c2e8cf36cfc6073"></a>
-RenderingContext *&#160;</td><td class="memItemRight" valign="bottom"><b>CreateContext</b> ()=0</td></tr>
-<tr class="separator:aabf670f18f7582af9c2e8cf36cfc6073"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afebae099acbfe6128a1d858cb15b4f72"><td class="memItemLeft" align="right" valign="top"><a id="afebae099acbfe6128a1d858cb15b4f72"></a>
-const RenderingContext *&#160;</td><td class="memItemRight" valign="bottom"><b>GetContext</b> () const =0</td></tr>
-<tr class="separator:afebae099acbfe6128a1d858cb15b4f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bf51d043130fc17be28d4721b74f055"><td class="memItemLeft" align="right" valign="top"><a id="a6bf51d043130fc17be28d4721b74f055"></a>
-RenderingContext *&#160;</td><td class="memItemRight" valign="bottom"><b>GetContext</b> ()=0</td></tr>
-<tr class="separator:a6bf51d043130fc17be28d4721b74f055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9d9c6025350ca7181b8e2ac3268f57fd"><td class="memItemLeft" align="right" valign="top"><a id="a9d9c6025350ca7181b8e2ac3268f57fd"></a>
+static RendererAPI::API&#160;</td><td class="memItemRight" valign="bottom"><b>GetRenderAPI</b> ()</td></tr>
+<tr class="separator:a9d9c6025350ca7181b8e2ac3268f57fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542b53b2fea522b51bd7e8617c79732c"><td class="memItemLeft" align="right" valign="top"><a id="a542b53b2fea522b51bd7e8617c79732c"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginScene</b> ()</td></tr>
+<tr class="separator:a542b53b2fea522b51bd7e8617c79732c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2794c8ae09b8bcaa1f9a3000d33330"><td class="memItemLeft" align="right" valign="top"><a id="aed2794c8ae09b8bcaa1f9a3000d33330"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>EndScene</b> ()</td></tr>
+<tr class="separator:aed2794c8ae09b8bcaa1f9a3000d33330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe5038035db4fff588ccec434a2861c2"><td class="memItemLeft" align="right" valign="top"><a id="afe5038035db4fff588ccec434a2861c2"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>Submit</b> (const std::shared_ptr&lt; <a class="el" href="class_typhoon_engine_1_1_renderers_1_1_vertex_array.html">VertexArray</a> &gt; &amp;vArray)</td></tr>
+<tr class="separator:afe5038035db4fff588ccec434a2861c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>Typhoon/Src/Typhoon/Renderers/<a class="el" href="_i_renderer_8h_source.html">IRenderer.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>Typhoon/Src/Typhoon/Renderers/<a class="el" href="_src_2_typhoon_2_renderers_2_renderer_8h_source.html">Renderer.h</a></li>
+<li>Typhoon/Src/Typhoon/Renderers/Renderer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

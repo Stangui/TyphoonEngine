@@ -1,0 +1,66 @@
+.TH "file" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+file
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBRDONLY\fP = FMT_POSIX(O_RDONLY), \fBWRONLY\fP = FMT_POSIX(O_WRONLY), \fBRDWR\fP = FMT_POSIX(O_RDWR) }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "FMT_API \fBfile\fP (\fBcstring_view\fP path, int oflag)"
+.br
+.ti -1c
+.RI "\fBfile\fP (\fBfile\fP &&other) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "\fBfile\fP & \fBoperator=\fP (\fBfile\fP &&other)"
+.br
+.ti -1c
+.RI "int \fBdescriptor\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_API void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "FMT_API long long \fBsize\fP () const"
+.br
+.ti -1c
+.RI "FMT_API std::size_t \fBread\fP (void *buffer, std::size_t count)"
+.br
+.ti -1c
+.RI "FMT_API std::size_t \fBwrite\fP (const void *buffer, std::size_t count)"
+.br
+.ti -1c
+.RI "FMT_API void \fBdup2\fP (int fd)"
+.br
+.ti -1c
+.RI "FMT_API void \fBdup2\fP (int fd, \fBerror_code\fP &ec) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_API \fBbuffered_file\fP \fBfdopen\fP (const char *mode)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static FMT_API \fBfile\fP \fBdup\fP (int fd)"
+.br
+.ti -1c
+.RI "static FMT_API void \fBpipe\fP (\fBfile\fP &read_end, \fBfile\fP &write_end)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

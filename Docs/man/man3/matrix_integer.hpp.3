@@ -1,0 +1,340 @@
+.TH "Typhoon/ThirdParty/glm/glm/gtc/matrix_integer.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/gtc/matrix_integer.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./mat2x2\&.hpp'\fP
+.br
+\fC#include '\&.\&./mat2x3\&.hpp'\fP
+.br
+\fC#include '\&.\&./mat2x4\&.hpp'\fP
+.br
+\fC#include '\&.\&./mat3x2\&.hpp'\fP
+.br
+\fC#include '\&.\&./mat3x3\&.hpp'\fP
+.br
+\fC#include '\&.\&./mat3x4\&.hpp'\fP
+.br
+\fC#include '\&.\&./mat4x2\&.hpp'\fP
+.br
+\fC#include '\&.\&./mat4x3\&.hpp'\fP
+.br
+\fC#include '\&.\&./mat4x4\&.hpp'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef mat< 2, 2, int, highp > \fBglm::highp_imat2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, int, highp > \fBglm::highp_imat3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, int, highp > \fBglm::highp_imat4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, int, highp > \fBglm::highp_imat2x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 3, int, highp > \fBglm::highp_imat2x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 4, int, highp > \fBglm::highp_imat2x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 2, int, highp > \fBglm::highp_imat3x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, int, highp > \fBglm::highp_imat3x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 4, int, highp > \fBglm::highp_imat3x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 2, int, highp > \fBglm::highp_imat4x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 3, int, highp > \fBglm::highp_imat4x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, int, highp > \fBglm::highp_imat4x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, int, mediump > \fBglm::mediump_imat2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, int, mediump > \fBglm::mediump_imat3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, int, mediump > \fBglm::mediump_imat4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, int, mediump > \fBglm::mediump_imat2x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 3, int, mediump > \fBglm::mediump_imat2x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 4, int, mediump > \fBglm::mediump_imat2x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 2, int, mediump > \fBglm::mediump_imat3x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, int, mediump > \fBglm::mediump_imat3x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 4, int, mediump > \fBglm::mediump_imat3x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 2, int, mediump > \fBglm::mediump_imat4x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 3, int, mediump > \fBglm::mediump_imat4x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, int, mediump > \fBglm::mediump_imat4x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, int, lowp > \fBglm::lowp_imat2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, int, lowp > \fBglm::lowp_imat3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, int, lowp > \fBglm::lowp_imat4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, int, lowp > \fBglm::lowp_imat2x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 3, int, lowp > \fBglm::lowp_imat2x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 4, int, lowp > \fBglm::lowp_imat2x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 2, int, lowp > \fBglm::lowp_imat3x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, int, lowp > \fBglm::lowp_imat3x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 4, int, lowp > \fBglm::lowp_imat3x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 2, int, lowp > \fBglm::lowp_imat4x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 3, int, lowp > \fBglm::lowp_imat4x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, int, lowp > \fBglm::lowp_imat4x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, uint, highp > \fBglm::highp_umat2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, uint, highp > \fBglm::highp_umat3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, uint, highp > \fBglm::highp_umat4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, uint, highp > \fBglm::highp_umat2x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 3, uint, highp > \fBglm::highp_umat2x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 4, uint, highp > \fBglm::highp_umat2x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 2, uint, highp > \fBglm::highp_umat3x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, uint, highp > \fBglm::highp_umat3x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 4, uint, highp > \fBglm::highp_umat3x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 2, uint, highp > \fBglm::highp_umat4x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 3, uint, highp > \fBglm::highp_umat4x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, uint, highp > \fBglm::highp_umat4x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, uint, mediump > \fBglm::mediump_umat2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, uint, mediump > \fBglm::mediump_umat3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, uint, mediump > \fBglm::mediump_umat4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, uint, mediump > \fBglm::mediump_umat2x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 3, uint, mediump > \fBglm::mediump_umat2x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 4, uint, mediump > \fBglm::mediump_umat2x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 2, uint, mediump > \fBglm::mediump_umat3x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, uint, mediump > \fBglm::mediump_umat3x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 4, uint, mediump > \fBglm::mediump_umat3x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 2, uint, mediump > \fBglm::mediump_umat4x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 3, uint, mediump > \fBglm::mediump_umat4x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, uint, mediump > \fBglm::mediump_umat4x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, uint, lowp > \fBglm::lowp_umat2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, uint, lowp > \fBglm::lowp_umat3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, uint, lowp > \fBglm::lowp_umat4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 2, uint, lowp > \fBglm::lowp_umat2x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 3, uint, lowp > \fBglm::lowp_umat2x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 2, 4, uint, lowp > \fBglm::lowp_umat2x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 2, uint, lowp > \fBglm::lowp_umat3x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 3, uint, lowp > \fBglm::lowp_umat3x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 3, 4, uint, lowp > \fBglm::lowp_umat3x4\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 2, uint, lowp > \fBglm::lowp_umat4x2\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 3, uint, lowp > \fBglm::lowp_umat4x3\fP"
+.br
+.ti -1c
+.RI "typedef mat< 4, 4, uint, lowp > \fBglm::lowp_umat4x4\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat2 \fBglm::imat2\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat3 \fBglm::imat3\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat4 \fBglm::imat4\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat2x2 \fBglm::imat2x2\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat2x3 \fBglm::imat2x3\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat2x4 \fBglm::imat2x4\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat3x2 \fBglm::imat3x2\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat3x3 \fBglm::imat3x3\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat3x4 \fBglm::imat3x4\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat4x2 \fBglm::imat4x2\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat4x3 \fBglm::imat4x3\fP"
+.br
+.ti -1c
+.RI "typedef mediump_imat4x4 \fBglm::imat4x4\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat2 \fBglm::umat2\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat3 \fBglm::umat3\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat4 \fBglm::umat4\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat2x2 \fBglm::umat2x2\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat2x3 \fBglm::umat2x3\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat2x4 \fBglm::umat2x4\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat3x2 \fBglm::umat3x2\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat3x3 \fBglm::umat3x3\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat3x4 \fBglm::umat3x4\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat4x2 \fBglm::umat4x2\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat4x3 \fBglm::umat4x3\fP"
+.br
+.ti -1c
+.RI "typedef mediump_umat4x4 \fBglm::umat4x4\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBGLM_GTC_matrix_integer\fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCore features\fP (dependence) 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

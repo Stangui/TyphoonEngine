@@ -1,0 +1,68 @@
+.TH "Typhoon/ThirdParty/glm/glm/gtx/intersect.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/gtx/intersect.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cfloat>\fP
+.br
+\fC#include <limits>\fP
+.br
+\fC#include '\&.\&./glm\&.hpp'\fP
+.br
+\fC#include '\&.\&./geometric\&.hpp'\fP
+.br
+\fC#include '\&.\&./gtx/closest_point\&.hpp'\fP
+.br
+\fC#include '\&.\&./gtx/vector_query\&.hpp'\fP
+.br
+\fC#include 'intersect\&.inl'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL bool \fBglm::intersectRayPlane\fP (genType const &orig, genType const &dir, genType const &planeOrig, genType const &planeNormal, typename genType::value_type &intersectionDistance)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::intersectRayTriangle\fP (vec< 3, T, Q > const &orig, vec< 3, T, Q > const &dir, vec< 3, T, Q > const &v0, vec< 3, T, Q > const &v1, vec< 3, T, Q > const &v2, vec< 2, T, Q > &baryPosition, T &distance)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL bool \fBglm::intersectLineTriangle\fP (genType const &orig, genType const &dir, genType const &vert0, genType const &vert1, genType const &vert2, genType &position)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL bool \fBglm::intersectRaySphere\fP (genType const &rayStarting, genType const &rayNormalizedDirection, genType const &sphereCenter, typename genType::value_type const sphereRadiusSquered, typename genType::value_type &intersectionDistance)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL bool \fBglm::intersectRaySphere\fP (genType const &rayStarting, genType const &rayNormalizedDirection, genType const &sphereCenter, const typename genType::value_type sphereRadius, genType &intersectionPosition, genType &intersectionNormal)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL bool \fBglm::intersectLineSphere\fP (genType const &point0, genType const &point1, genType const &sphereCenter, typename genType::value_type sphereRadius, genType &intersectionPosition1, genType &intersectionNormal1, genType &intersectionPosition2=genType(), genType &intersectionNormal2=genType())"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBGLM_GTX_intersect\fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCore features\fP (dependence) 
+.PP
+\fBGLM_GTX_closest_point\fP (dependence) 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

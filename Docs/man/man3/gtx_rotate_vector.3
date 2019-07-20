@@ -1,0 +1,93 @@
+.TH "gtx_rotate_vector" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_rotate_vector
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::slerp\fP (\fBvec\fP< 3, T, Q > const &x, \fBvec\fP< 3, T, Q > const &y, T const &a)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 2, T, Q > \fBglm::rotate\fP (\fBvec\fP< 2, T, Q > const &v, T const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::rotate\fP (\fBvec\fP< 3, T, Q > const &v, T const &\fBangle\fP, \fBvec\fP< 3, T, Q > const &normal)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 4, T, Q > \fBglm::rotate\fP (\fBvec\fP< 4, T, Q > const &v, T const &\fBangle\fP, \fBvec\fP< 3, T, Q > const &normal)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::rotateX\fP (\fBvec\fP< 3, T, Q > const &v, T const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::rotateY\fP (\fBvec\fP< 3, T, Q > const &v, T const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::rotateZ\fP (\fBvec\fP< 3, T, Q > const &v, T const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 4, T, Q > \fBglm::rotateX\fP (\fBvec\fP< 4, T, Q > const &v, T const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 4, T, Q > \fBglm::rotateY\fP (\fBvec\fP< 4, T, Q > const &v, T const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 4, T, Q > \fBglm::rotateZ\fP (\fBvec\fP< 4, T, Q > const &v, T const &\fBangle\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< 4, 4, T, Q > \fBglm::orientation\fP (\fBvec\fP< 3, T, Q > const &Normal, \fBvec\fP< 3, T, Q > const &Up)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/rotate_vector\&.hpp\fP> to use the features of this extension\&.
+.PP
+Function to directly rotate a vector 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<4, 4, T, Q> glm::orientation (\fBvec\fP< 3, T, Q > const & Normal, \fBvec\fP< 3, T, Q > const & Up)"
+Build a rotation matrix from a normal and a up vector\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<2, T, Q> glm::rotate (\fBvec\fP< 2, T, Q > const & v, T const & angle)"
+Rotate a two dimensional vector\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::rotate (\fBvec\fP< 3, T, Q > const & v, T const & angle, \fBvec\fP< 3, T, Q > const & normal)"
+Rotate a three dimensional vector around an axis\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<4, T, Q> glm::rotate (\fBvec\fP< 4, T, Q > const & v, T const & angle, \fBvec\fP< 3, T, Q > const & normal)"
+Rotate a four dimensional vector around an axis\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::rotateX (\fBvec\fP< 3, T, Q > const & v, T const & angle)"
+Rotate a three dimensional vector around the X axis\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<4, T, Q> glm::rotateX (\fBvec\fP< 4, T, Q > const & v, T const & angle)"
+Rotate a four dimensional vector around the X axis\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::rotateY (\fBvec\fP< 3, T, Q > const & v, T const & angle)"
+Rotate a three dimensional vector around the Y axis\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<4, T, Q> glm::rotateY (\fBvec\fP< 4, T, Q > const & v, T const & angle)"
+Rotate a four dimensional vector around the Y axis\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::rotateZ (\fBvec\fP< 3, T, Q > const & v, T const & angle)"
+Rotate a three dimensional vector around the Z axis\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<4, T, Q> glm::rotateZ (\fBvec\fP< 4, T, Q > const & v, T const & angle)"
+Rotate a four dimensional vector around the Z axis\&. From GLM_GTX_rotate_vector extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::slerp (\fBvec\fP< 3, T, Q > const & x, \fBvec\fP< 3, T, Q > const & y, T const & a)"
+Returns Spherical interpolation between two vectors
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP A first vector 
+.br
+\fIy\fP A second vector 
+.br
+\fIa\fP Interpolation factor\&. The interpolation is defined beyond the range [0, 1]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_rotate_vector\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

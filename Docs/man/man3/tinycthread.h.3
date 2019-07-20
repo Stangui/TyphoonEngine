@@ -1,0 +1,559 @@
+.TH "Typhoon/ThirdParty/GLFw/deps/tinycthread.h" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/GLFw/deps/tinycthread.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <time\&.h>\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_TTHREAD_POSIX_\fP"
+.br
+.ti -1c
+.RI "#define \fB_TTHREAD_PLATFORM_DEFINED_\fP"
+.br
+.ti -1c
+.RI "#define \fB_GNU_SOURCE\fP"
+.br
+.ti -1c
+.RI "#define \fB_POSIX_C_SOURCE\fP   199309L"
+.br
+.ti -1c
+.RI "#define \fB_XOPEN_SOURCE\fP   500"
+.br
+.ti -1c
+.RI "#define \fBTIME_UTC\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTINYCTHREAD_VERSION_MAJOR\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTINYCTHREAD_VERSION_MINOR\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTINYCTHREAD_VERSION\fP   (\fBTINYCTHREAD_VERSION_MAJOR\fP * 100 + \fBTINYCTHREAD_VERSION_MINOR\fP)"
+.br
+.ti -1c
+.RI "#define \fB_Thread_local\fP"
+.br
+.ti -1c
+.RI "#define \fBTSS_DTOR_ITERATIONS\fP   0"
+.br
+.ti -1c
+.RI "#define \fBthrd_error\fP   0"
+.br
+.ti -1c
+.RI "#define \fBthrd_success\fP   1"
+.br
+.ti -1c
+.RI "#define \fBthrd_timeout\fP   2"
+.br
+.ti -1c
+.RI "#define \fBthrd_busy\fP   3"
+.br
+.ti -1c
+.RI "#define \fBthrd_nomem\fP   4"
+.br
+.ti -1c
+.RI "#define \fBmtx_plain\fP   1"
+.br
+.ti -1c
+.RI "#define \fBmtx_timed\fP   2"
+.br
+.ti -1c
+.RI "#define \fBmtx_try\fP   4"
+.br
+.ti -1c
+.RI "#define \fBmtx_recursive\fP   8"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef pthread_mutex_t \fBmtx_t\fP"
+.br
+.ti -1c
+.RI "typedef pthread_cond_t \fBcnd_t\fP"
+.br
+.ti -1c
+.RI "typedef pthread_t \fBthrd_t\fP"
+.br
+.ti -1c
+.RI "typedef int(* \fBthrd_start_t\fP) (void *arg)"
+.br
+.ti -1c
+.RI "typedef pthread_key_t \fBtss_t\fP"
+.br
+.ti -1c
+.RI "typedef void(* \fBtss_dtor_t\fP) (void *val)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmtx_init\fP (mtx_t *mtx, int type)"
+.br
+.ti -1c
+.RI "void \fBmtx_destroy\fP (mtx_t *mtx)"
+.br
+.ti -1c
+.RI "int \fBmtx_lock\fP (mtx_t *mtx)"
+.br
+.ti -1c
+.RI "int \fBmtx_timedlock\fP (mtx_t *mtx, const struct timespec *ts)"
+.br
+.ti -1c
+.RI "int \fBmtx_trylock\fP (mtx_t *mtx)"
+.br
+.ti -1c
+.RI "int \fBmtx_unlock\fP (mtx_t *mtx)"
+.br
+.ti -1c
+.RI "int \fBcnd_init\fP (cnd_t *cond)"
+.br
+.ti -1c
+.RI "void \fBcnd_destroy\fP (cnd_t *cond)"
+.br
+.ti -1c
+.RI "int \fBcnd_signal\fP (cnd_t *cond)"
+.br
+.ti -1c
+.RI "int \fBcnd_broadcast\fP (cnd_t *cond)"
+.br
+.ti -1c
+.RI "int \fBcnd_wait\fP (cnd_t *cond, mtx_t *mtx)"
+.br
+.ti -1c
+.RI "int \fBcnd_timedwait\fP (cnd_t *cond, mtx_t *mtx, const struct timespec *ts)"
+.br
+.ti -1c
+.RI "int \fBthrd_create\fP (thrd_t *thr, \fBthrd_start_t\fP func, void *arg)"
+.br
+.ti -1c
+.RI "thrd_t \fBthrd_current\fP (void)"
+.br
+.ti -1c
+.RI "int \fBthrd_detach\fP (thrd_t thr)"
+.br
+.ti -1c
+.RI "int \fBthrd_equal\fP (thrd_t thr0, thrd_t thr1)"
+.br
+.ti -1c
+.RI "void \fBthrd_exit\fP (int res)"
+.br
+.ti -1c
+.RI "int \fBthrd_join\fP (thrd_t thr, int *res)"
+.br
+.ti -1c
+.RI "int \fBthrd_sleep\fP (const struct timespec *time_point, struct timespec *remaining)"
+.br
+.ti -1c
+.RI "void \fBthrd_yield\fP (void)"
+.br
+.ti -1c
+.RI "int \fBtss_create\fP (tss_t *key, \fBtss_dtor_t\fP dtor)"
+.br
+.ti -1c
+.RI "void \fBtss_delete\fP (tss_t key)"
+.br
+.ti -1c
+.RI "void * \fBtss_get\fP (tss_t key)"
+.br
+.ti -1c
+.RI "int \fBtss_set\fP (tss_t key, void *val)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _Thread_local"
+\fBThread\fP local storage keyword\&. A variable that is declared with the \fC_Thread_local\fP keyword makes the value of the variable local to each thread (known as thread-local storage, or TLS)\&. Example usage: 
+.PP
+.nf
+// This variable is local to each thread\&.
+_Thread_local int variable;
+
+.fi
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+The \fC_Thread_local\fP keyword is a macro that maps to the corresponding compiler directive (e\&.g\&. \fC__declspec(thread)\fP)\&. 
+.PP
+This directive is currently not supported on Mac OS X (it will give a compiler error), since compile-time TLS is not supported in the Mac OS X executable format\&. Also, some older versions of MinGW (before GCC 4\&.x) do not support this directive\&. 
+.RE
+.PP
+
+.SS "#define thrd_busy   3"
+The requested operation failed because a tesource requested by a test and return function is already in use 
+.SS "#define thrd_error   0"
+The requested operation failed 
+.SS "#define thrd_nomem   4"
+The requested operation failed because it was unable to allocate memory 
+.SS "#define thrd_success   1"
+The requested operation succeeded 
+.SS "#define thrd_timeout   2"
+The time specified in the call was reached without acquiring the requested resource 
+.SS "#define TINYCTHREAD_VERSION   (\fBTINYCTHREAD_VERSION_MAJOR\fP * 100 + \fBTINYCTHREAD_VERSION_MINOR\fP)"
+TinyCThread version (full version)\&. 
+.SS "#define TINYCTHREAD_VERSION_MAJOR   1"
+TinyCThread version (major number)\&. 
+.SS "#define TINYCTHREAD_VERSION_MINOR   1"
+TinyCThread version (minor number)\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef int(* thrd_start_t) (void *arg)"
+\fBThread\fP start function\&. Any thread that is started with the \fBthrd_create()\fP function must be started through a function of this type\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP The thread argument (the \fCarg\fP argument of the corresponding \fBthrd_create()\fP call)\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The thread return value, which can be obtained by another thread by using the \fBthrd_join()\fP function\&. 
+.RE
+.PP
+
+.SS "typedef void(* tss_dtor_t) (void *val)"
+Destructor function for a thread-specific storage\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP The value of the destructed thread-specific storage\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "int cnd_broadcast (cnd_t * cond)"
+Broadcast a condition variable\&. Unblocks all of the threads that are blocked on the given condition variable at the time of the call\&. If no threads are blocked on the condition variable at the time of the call, the function does nothing and return success\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcond\fP A condition variable object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "void cnd_destroy (cnd_t * cond)"
+Release any resources used by the given condition variable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcond\fP A condition variable object\&. 
+.RE
+.PP
+
+.SS "int cnd_init (cnd_t * cond)"
+Create a condition variable object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcond\fP A condition variable object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "int cnd_signal (cnd_t * cond)"
+Signal a condition variable\&. Unblocks one of the threads that are blocked on the given condition variable at the time of the call\&. If no threads are blocked on the condition variable at the time of the call, the function does nothing and return success\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcond\fP A condition variable object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "int cnd_timedwait (cnd_t * cond, mtx_t * mtx, const struct timespec * ts)"
+Wait for a condition variable to become signaled\&. The function atomically unlocks the given mutex and endeavors to block until the given condition variable is signaled by a call to cnd_signal or to cnd_broadcast, or until after the specified time\&. When the calling thread becomes unblocked it locks the mutex before it returns\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcond\fP A condition variable object\&. 
+.br
+\fImtx\fP A mutex object\&. 
+.br
+\fIxt\fP A point in time at which the request will time out (absolute time)\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP upon success, or \fBthrd_timeout\fP if the time specified in the call was reached without acquiring the requested resource, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "int cnd_wait (cnd_t * cond, mtx_t * mtx)"
+Wait for a condition variable to become signaled\&. The function atomically unlocks the given mutex and endeavors to block until the given condition variable is signaled by a call to cnd_signal or to cnd_broadcast\&. When the calling thread becomes unblocked it locks the mutex before it returns\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcond\fP A condition variable object\&. 
+.br
+\fImtx\fP A mutex object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "void mtx_destroy (mtx_t * mtx)"
+Release any resources used by the given mutex\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImtx\fP A mutex object\&. 
+.RE
+.PP
+
+.SS "int mtx_init (mtx_t * mtx, int type)"
+Create a mutex object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImtx\fP A mutex object\&. 
+.br
+\fItype\fP Bit-mask that must have one of the following six values: 
+.PD 0
+
+.IP "\(bu" 2
+\fCmtx_plain\fP for a simple non-recursive mutex 
+.IP "\(bu" 2
+\fCmtx_timed\fP for a non-recursive mutex that supports timeout 
+.IP "\(bu" 2
+\fCmtx_try\fP for a non-recursive mutex that supports test and return 
+.IP "\(bu" 2
+\fCmtx_plain\fP | \fCmtx_recursive\fP (same as \fCmtx_plain\fP, but recursive) 
+.IP "\(bu" 2
+\fCmtx_timed\fP | \fCmtx_recursive\fP (same as \fCmtx_timed\fP, but recursive) 
+.IP "\(bu" 2
+\fCmtx_try\fP | \fCmtx_recursive\fP (same as \fCmtx_try\fP, but recursive) 
+.PP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "int mtx_lock (mtx_t * mtx)"
+Lock the given mutex\&. Blocks until the given mutex can be locked\&. If the mutex is non-recursive, and the calling thread already has a lock on the mutex, this call will block forever\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImtx\fP A mutex object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "int mtx_timedlock (mtx_t * mtx, const struct timespec * ts)"
+NOT YET IMPLEMENTED\&. 
+.SS "int mtx_trylock (mtx_t * mtx)"
+Try to lock the given mutex\&. The specified mutex shall support either test and return or timeout\&. If the mutex is already locked, the function returns without blocking\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImtx\fP A mutex object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_busy\fP if the resource requested is already in use, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "int mtx_unlock (mtx_t * mtx)"
+Unlock the given mutex\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImtx\fP A mutex object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "int thrd_create (thrd_t * thr, \fBthrd_start_t\fP func, void * arg)"
+Create a new thread\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIthr\fP Identifier of the newly created thread\&. 
+.br
+\fIfunc\fP A function pointer to the function that will be executed in the new thread\&. 
+.br
+\fIarg\fP An argument to the thread function\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_nomem\fP if no memory could be allocated for the thread requested, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+A thread’s identifier may be reused for a different thread once the original thread has exited and either been detached or joined to another thread\&. 
+.RE
+.PP
+
+.SS "thrd_t thrd_current (void)"
+Identify the calling thread\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The identifier of the calling thread\&. 
+.RE
+.PP
+
+.SS "int thrd_detach (thrd_t thr)"
+NOT YET IMPLEMENTED\&. 
+.SS "int thrd_equal (thrd_t thr0, thrd_t thr1)"
+Compare two thread identifiers\&. The function determines if two thread identifiers refer to the same thread\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Zero if the two thread identifiers refer to different threads\&. Otherwise a nonzero value is returned\&. 
+.RE
+.PP
+
+.SS "void thrd_exit (int res)"
+Terminate execution of the calling thread\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIres\fP Result code of the calling thread\&. 
+.RE
+.PP
+
+.SS "int thrd_join (thrd_t thr, int * res)"
+Wait for a thread to terminate\&. The function joins the given thread with the current thread by blocking until the other thread has terminated\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIthr\fP The thread to join with\&. 
+.br
+\fIres\fP If this pointer is not NULL, the function will store the result code of the given thread in the integer pointed to by \fCres\fP\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SS "int thrd_sleep (const struct timespec * time_point, struct timespec * remaining)"
+Put the calling thread to sleep\&. Suspend execution of the calling thread\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItime_point\fP A point in time at which the thread will resume (absolute time)\&. 
+.br
+\fIremaining\fP If non-NULL, this parameter will hold the remaining time until time_point upon return\&. This will typically be zero, but if the thread was woken up by a signal that is not ignored before time_point was reached \fCremaining\fP will hold a positive time\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 (zero) on successful sleep, or -1 if an interrupt occurred\&. 
+.RE
+.PP
+
+.SS "void thrd_yield (void)"
+Yield execution to another thread\&. Permit other threads to run, even if the current thread would ordinarily continue to run\&. 
+.SS "int tss_create (tss_t * key, \fBtss_dtor_t\fP dtor)"
+Create a thread-specific storage\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP The unique key identifier that will be set if the function is successful\&. 
+.br
+\fIdtor\fP Destructor function\&. This can be NULL\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+The destructor function is not supported under Windows\&. If \fCdtor\fP is not NULL when calling this function under Windows, the function will fail and return \fBthrd_error\fP\&. 
+.RE
+.PP
+
+.SS "void tss_delete (tss_t key)"
+Delete a thread-specific storage\&. The function releases any resources used by the given thread-specific storage\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP The key that shall be deleted\&. 
+.RE
+.PP
+
+.SS "void* tss_get (tss_t key)"
+Get the value for a thread-specific storage\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP The thread-specific storage identifier\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value for the current thread held in the given thread-specific storage\&. 
+.RE
+.PP
+
+.SS "int tss_set (tss_t key, void * val)"
+Set the value for a thread-specific storage\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP The thread-specific storage identifier\&. 
+.br
+\fIval\fP The value of the thread-specific storage to set for the current thread\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBthrd_success\fP on success, or \fBthrd_error\fP if the request could not be honored\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

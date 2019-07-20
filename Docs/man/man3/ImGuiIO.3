@@ -1,0 +1,278 @@
+.TH "ImGuiIO" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ImGuiIO
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "IMGUI_API void \fBAddInputCharacter\fP (unsigned int c)"
+.br
+.ti -1c
+.RI "IMGUI_API void \fBAddInputCharactersUTF8\fP (const char *str)"
+.br
+.ti -1c
+.RI "IMGUI_API void \fBClearInputCharacters\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "ImGuiConfigFlags \fBConfigFlags\fP"
+.br
+.ti -1c
+.RI "ImGuiBackendFlags \fBBackendFlags\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBDisplaySize\fP"
+.br
+.ti -1c
+.RI "float \fBDeltaTime\fP"
+.br
+.ti -1c
+.RI "float \fBIniSavingRate\fP"
+.br
+.ti -1c
+.RI "const char * \fBIniFilename\fP"
+.br
+.ti -1c
+.RI "const char * \fBLogFilename\fP"
+.br
+.ti -1c
+.RI "float \fBMouseDoubleClickTime\fP"
+.br
+.ti -1c
+.RI "float \fBMouseDoubleClickMaxDist\fP"
+.br
+.ti -1c
+.RI "float \fBMouseDragThreshold\fP"
+.br
+.ti -1c
+.RI "int \fBKeyMap\fP [ImGuiKey_COUNT]"
+.br
+.ti -1c
+.RI "float \fBKeyRepeatDelay\fP"
+.br
+.ti -1c
+.RI "float \fBKeyRepeatRate\fP"
+.br
+.ti -1c
+.RI "void * \fBUserData\fP"
+.br
+.ti -1c
+.RI "\fBImFontAtlas\fP * \fBFonts\fP"
+.br
+.ti -1c
+.RI "float \fBFontGlobalScale\fP"
+.br
+.ti -1c
+.RI "bool \fBFontAllowUserScaling\fP"
+.br
+.ti -1c
+.RI "\fBImFont\fP * \fBFontDefault\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBDisplayFramebufferScale\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigDockingNoSplit\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigDockingWithShift\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigDockingTabBarOnSingleWindows\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigDockingTransparentPayload\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigViewportsNoAutoMerge\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigViewportsNoTaskBarIcon\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigViewportsNoDecoration\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigViewportsNoDefaultParent\fP"
+.br
+.ti -1c
+.RI "bool \fBMouseDrawCursor\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigMacOSXBehaviors\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigInputTextCursorBlink\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigWindowsResizeFromEdges\fP"
+.br
+.ti -1c
+.RI "bool \fBConfigWindowsMoveFromTitleBarOnly\fP"
+.br
+.ti -1c
+.RI "const char * \fBBackendPlatformName\fP"
+.br
+.ti -1c
+.RI "const char * \fBBackendRendererName\fP"
+.br
+.ti -1c
+.RI "void * \fBBackendPlatformUserData\fP"
+.br
+.ti -1c
+.RI "void * \fBBackendRendererUserData\fP"
+.br
+.ti -1c
+.RI "void * \fBBackendLanguageUserData\fP"
+.br
+.ti -1c
+.RI "const char *(* \fBGetClipboardTextFn\fP )(void *user_data)"
+.br
+.ti -1c
+.RI "void(* \fBSetClipboardTextFn\fP )(void *user_data, const char *text)"
+.br
+.ti -1c
+.RI "void * \fBClipboardUserData\fP"
+.br
+.ti -1c
+.RI "void(* \fBRenderDrawListsFn\fP )(\fBImDrawData\fP *data)"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBMousePos\fP"
+.br
+.ti -1c
+.RI "bool \fBMouseDown\fP [5]"
+.br
+.ti -1c
+.RI "float \fBMouseWheel\fP"
+.br
+.ti -1c
+.RI "float \fBMouseWheelH\fP"
+.br
+.ti -1c
+.RI "ImGuiID \fBMouseHoveredViewport\fP"
+.br
+.ti -1c
+.RI "bool \fBKeyCtrl\fP"
+.br
+.ti -1c
+.RI "bool \fBKeyShift\fP"
+.br
+.ti -1c
+.RI "bool \fBKeyAlt\fP"
+.br
+.ti -1c
+.RI "bool \fBKeySuper\fP"
+.br
+.ti -1c
+.RI "bool \fBKeysDown\fP [512]"
+.br
+.ti -1c
+.RI "float \fBNavInputs\fP [ImGuiNavInput_COUNT]"
+.br
+.ti -1c
+.RI "bool \fBWantCaptureMouse\fP"
+.br
+.ti -1c
+.RI "bool \fBWantCaptureKeyboard\fP"
+.br
+.ti -1c
+.RI "bool \fBWantTextInput\fP"
+.br
+.ti -1c
+.RI "bool \fBWantSetMousePos\fP"
+.br
+.ti -1c
+.RI "bool \fBWantSaveIniSettings\fP"
+.br
+.ti -1c
+.RI "bool \fBNavActive\fP"
+.br
+.ti -1c
+.RI "bool \fBNavVisible\fP"
+.br
+.ti -1c
+.RI "float \fBFramerate\fP"
+.br
+.ti -1c
+.RI "int \fBMetricsRenderVertices\fP"
+.br
+.ti -1c
+.RI "int \fBMetricsRenderIndices\fP"
+.br
+.ti -1c
+.RI "int \fBMetricsRenderWindows\fP"
+.br
+.ti -1c
+.RI "int \fBMetricsActiveWindows\fP"
+.br
+.ti -1c
+.RI "int \fBMetricsActiveAllocations\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBMouseDelta\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBMousePosPrev\fP"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBMouseClickedPos\fP [5]"
+.br
+.ti -1c
+.RI "double \fBMouseClickedTime\fP [5]"
+.br
+.ti -1c
+.RI "bool \fBMouseClicked\fP [5]"
+.br
+.ti -1c
+.RI "bool \fBMouseDoubleClicked\fP [5]"
+.br
+.ti -1c
+.RI "bool \fBMouseReleased\fP [5]"
+.br
+.ti -1c
+.RI "bool \fBMouseDownOwned\fP [5]"
+.br
+.ti -1c
+.RI "bool \fBMouseDownWasDoubleClick\fP [5]"
+.br
+.ti -1c
+.RI "float \fBMouseDownDuration\fP [5]"
+.br
+.ti -1c
+.RI "float \fBMouseDownDurationPrev\fP [5]"
+.br
+.ti -1c
+.RI "\fBImVec2\fP \fBMouseDragMaxDistanceAbs\fP [5]"
+.br
+.ti -1c
+.RI "float \fBMouseDragMaxDistanceSqr\fP [5]"
+.br
+.ti -1c
+.RI "float \fBKeysDownDuration\fP [512]"
+.br
+.ti -1c
+.RI "float \fBKeysDownDurationPrev\fP [512]"
+.br
+.ti -1c
+.RI "float \fBNavInputsDownDuration\fP [ImGuiNavInput_COUNT]"
+.br
+.ti -1c
+.RI "float \fBNavInputsDownDurationPrev\fP [ImGuiNavInput_COUNT]"
+.br
+.ti -1c
+.RI "\fBImVector\fP< ImWchar > \fBInputQueueCharacters\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,47 @@
+.TH "buffered_file" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+buffered_file
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbuffered_file\fP (\fBbuffered_file\fP &&other) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "\fBbuffered_file\fP & \fBoperator=\fP (\fBbuffered_file\fP &&other)"
+.br
+.ti -1c
+.RI "FMT_API \fBbuffered_file\fP (\fBcstring_view\fP filename, \fBcstring_view\fP mode)"
+.br
+.ti -1c
+.RI "FMT_API void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "FILE * \fBget\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_API int() \fBfileno\fP () const"
+.br
+.ti -1c
+.RI "void \fBvprint\fP (\fBstring_view\fP format_str, \fBformat_args\fP args)"
+.br
+.ti -1c
+.RI "template<typename\&.\&.\&. Args> void \fBprint\fP (\fBstring_view\fP format_str, const Args &\&.\&.\&. args)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBfile\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

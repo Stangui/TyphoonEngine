@@ -1,0 +1,94 @@
+.TH "gtx_vector_query" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_vector_query
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::areCollinear\fP (\fBvec\fP< L, T, Q > const &v0, \fBvec\fP< L, T, Q > const &v1, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::areOrthogonal\fP (\fBvec\fP< L, T, Q > const &v0, \fBvec\fP< L, T, Q > const &v1, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNormalized\fP (\fBvec\fP< L, T, Q > const &v, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNull\fP (\fBvec\fP< L, T, Q > const &v, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, bool, Q > \fBglm::isCompNull\fP (\fBvec\fP< L, T, Q > const &v, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::areOrthonormal\fP (\fBvec\fP< L, T, Q > const &v0, \fBvec\fP< L, T, Q > const &v1, T const &\fBepsilon\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/vector_query\&.hpp\fP> to use the features of this extension\&.
+.PP
+Query informations of vector types 
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool glm::areCollinear (\fBvec\fP< L, T, Q > const & v0, \fBvec\fP< L, T, Q > const & v1, T const & epsilon)"
+Check whether two vectors are collinears\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_query\fP extensions\&. 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool glm::areOrthogonal (\fBvec\fP< L, T, Q > const & v0, \fBvec\fP< L, T, Q > const & v1, T const & epsilon)"
+Check whether two vectors are orthogonals\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_query\fP extensions\&. 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool glm::areOrthonormal (\fBvec\fP< L, T, Q > const & v0, \fBvec\fP< L, T, Q > const & v1, T const & epsilon)"
+Check whether two vectors are orthonormal\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_query\fP extensions\&. 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, bool, Q> glm::isCompNull (\fBvec\fP< L, T, Q > const & v, T const & epsilon)"
+Check whether a each component of a vector is null\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_query\fP extensions\&. 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool glm::isNormalized (\fBvec\fP< L, T, Q > const & v, T const & epsilon)"
+Check whether a vector is normalized\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_query\fP extensions\&. 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL bool glm::isNull (\fBvec\fP< L, T, Q > const & v, T const & epsilon)"
+Check whether a vector is null\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_vector_query\fP extensions\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

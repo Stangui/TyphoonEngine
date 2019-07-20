@@ -1,0 +1,213 @@
+.TH "ext_matrix_relational" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ext_matrix_relational
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::equal\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::notEqual\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::equal\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y, T \fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::equal\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y, \fBvec\fP< C, T, Q > const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::notEqual\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y, T \fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::notEqual\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y, \fBvec\fP< C, T, Q > const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::equal\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y, int ULPs)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::equal\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y, \fBvec\fP< C, int, Q > const &ULPs)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::notEqual\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y, int ULPs)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< C, bool, Q > \fBglm::notEqual\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y, \fBvec\fP< C, int, Q > const &ULPs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Exposes comparison functions for matrix types that take a user defined epsilon values\&.
+.PP
+Include <\fBglm/ext/matrix_relational\&.hpp\fP> to use the features of this extension\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_vector_relational\fP 
+.PP
+\fBGLM_EXT_scalar_relational\fP 
+.PP
+\fBGLM_EXT_quaternion_relational\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::equal (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y)"
+Perform a component-wise equal-to comparison of two matrices\&. Return a boolean vector which components value is True if this expression is satisfied per column of the matrices\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::equal (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y, T epsilon)"
+Returns the component-wise comparison of |x - y| < epsilon\&. True if this expression is satisfied\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::equal (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y, \fBvec\fP< C, T, Q > const & epsilon)"
+Returns the component-wise comparison of |x - y| < epsilon\&. True if this expression is satisfied\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::equal (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y, int ULPs)"
+Returns the component-wise comparison between two vectors in term of ULPs\&. True if this expression is satisfied\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::equal (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y, \fBvec\fP< C, int, Q > const & ULPs)"
+Returns the component-wise comparison between two vectors in term of ULPs\&. True if this expression is satisfied\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::notEqual (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y)"
+Perform a component-wise not-equal-to comparison of two matrices\&. Return a boolean vector which components value is True if this expression is satisfied per column of the matrices\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::notEqual (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y, T epsilon)"
+Returns the component-wise comparison of |x - y| < epsilon\&. True if this expression is not satisfied\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::notEqual (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y, \fBvec\fP< C, T, Q > const & epsilon)"
+Returns the component-wise comparison of |x - y| >= epsilon\&. True if this expression is not satisfied\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point or integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::notEqual (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y, int ULPs)"
+Returns the component-wise comparison between two vectors in term of ULPs\&. True if this expression is not satisfied\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<C, bool, Q> glm::notEqual (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y, \fBvec\fP< C, int, Q > const & ULPs)"
+Returns the component-wise comparison between two vectors in term of ULPs\&. True if this expression is not satisfied\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number of columns of the matrix 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number of rows of the matrix 
+.br
+\fIT\fP Floating-point 
+.br
+\fIQ\fP Value from qualifier enum 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

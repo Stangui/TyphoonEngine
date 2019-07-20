@@ -1,0 +1,55 @@
+.TH "basic_parse_context< Char, ErrorHandler >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+basic_parse_context< Char, ErrorHandler >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits ErrorHandler\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Char \fBchar_type\fP"
+.br
+.ti -1c
+.RI "typedef \fBbasic_string_view\fP< Char >::iterator \fBiterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "FMT_CONSTEXPR \fBbasic_parse_context\fP (\fBbasic_string_view\fP< Char > format_str, ErrorHandler eh=ErrorHandler())"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR iterator \fBbegin\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR iterator \fBend\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR void \fBadvance_to\fP (iterator it)"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR unsigned \fBnext_arg_id\fP ()"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR bool \fBcheck_arg_id\fP (unsigned)"
+.br
+.ti -1c
+.RI "void \fBcheck_arg_id\fP (\fBbasic_string_view\fP< Char >)"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR void \fBon_error\fP (const char *message)"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR ErrorHandler \fBerror_handler\fP () const"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

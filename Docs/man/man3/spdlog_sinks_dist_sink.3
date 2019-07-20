@@ -1,0 +1,58 @@
+.TH "spdlog::sinks::dist_sink< Mutex >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+spdlog::sinks::dist_sink< Mutex >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBspdlog::sinks::base_sink< Mutex >\fP\&.
+.PP
+Inherited by \fBspdlog::sinks::dup_filter_sink< Mutex >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdist_sink\fP (const \fBdist_sink\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBdist_sink\fP & \fBoperator=\fP (const \fBdist_sink\fP &)=delete"
+.br
+.ti -1c
+.RI "void \fBadd_sink\fP (std::shared_ptr< \fBsink\fP > \fBsink\fP)"
+.br
+.ti -1c
+.RI "void \fBremove_sink\fP (std::shared_ptr< \fBsink\fP > \fBsink\fP)"
+.br
+.ti -1c
+.RI "void \fBset_sinks\fP (std::vector< std::shared_ptr< \fBsink\fP >> sinks)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsink_it_\fP (const \fBdetails::log_msg\fP &msg) override"
+.br
+.ti -1c
+.RI "void \fBflush_\fP () override"
+.br
+.ti -1c
+.RI "void \fBset_pattern_\fP (const std::string &pattern) override"
+.br
+.ti -1c
+.RI "void \fBset_formatter_\fP (std::unique_ptr< \fBspdlog::formatter\fP > sink_formatter) override"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBsink\fP > > \fBsinks_\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,214 @@
+.TH "core_func_vector_relational" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+core_func_vector_relational
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, bool, Q > \fBglm::lessThan\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, bool, Q > \fBglm::lessThanEqual\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, bool, Q > \fBglm::greaterThan\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, bool, Q > \fBglm::greaterThanEqual\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, bool, Q > \fBglm::equal\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, bool, Q > \fBglm::notEqual\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t L, qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR bool \fBglm::any\fP (\fBvec\fP< L, bool, Q > const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR bool \fBglm::all\fP (\fBvec\fP< L, bool, Q > const &v)"
+.br
+.ti -1c
+.RI "template<length_t L, qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP< L, bool, Q > \fBglm::not_\fP (\fBvec\fP< L, bool, Q > const &v)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Relational and equality operators (<, <=, >, >=, ==, !=) are defined to operate on scalars and produce scalar Boolean results\&. For vector results, use the following built-in functions\&.
+.PP
+In all cases, the sizes of all the input and return vectors for any particular call must match\&.
+.PP
+Include <\fBglm/vector_relational\&.hpp\fP> to use these core features\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_EXT_vector_relational\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t L, qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR bool glm::all (\fBvec\fP< L, bool, Q > const & v)"
+Returns true if all components of x are true\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL all man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR bool glm::any (\fBvec\fP< L, bool, Q > const & v)"
+Returns true if any component of x is true\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL any man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, bool, Q> glm::equal (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & y)"
+Returns the component-wise comparison of result x == y\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP A floating-point, integer or bool scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL equal man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, bool, Q> glm::greaterThan (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & y)"
+Returns the component-wise comparison of result x > y\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP A floating-point or integer scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL greaterThan man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, bool, Q> glm::greaterThanEqual (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & y)"
+Returns the component-wise comparison of result x >= y\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP A floating-point or integer scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL greaterThanEqual man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, bool, Q> glm::lessThan (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & y)"
+Returns the component-wise comparison result of x < y\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP A floating-point or integer scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL lessThan man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, bool, Q> glm::lessThanEqual (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & y)"
+Returns the component-wise comparison of result x <= y\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP A floating-point or integer scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL lessThanEqual man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, bool, Q> glm::not_ (\fBvec\fP< L, bool, Q > const & v)"
+Returns the component-wise logical complement of x\&. /!\\ Because of language incompatibilities between C++ and GLSL, GLM defines the function not but not_ instead\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL not man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR \fBvec\fP<L, bool, Q> glm::notEqual (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & y)"
+Returns the component-wise comparison of result x != y\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP A floating-point, integer or bool scalar type\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL notEqual man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.7 Vector Relational Functions\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

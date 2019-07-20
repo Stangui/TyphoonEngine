@@ -1,0 +1,127 @@
+.TH "_GLFWwindowWayland" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_GLFWwindowWayland
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBwidth\fP"
+.br
+.ti -1c
+.RI "int \fBheight\fP"
+.br
+.ti -1c
+.RI "GLFWbool \fBvisible\fP"
+.br
+.ti -1c
+.RI "GLFWbool \fBmaximized\fP"
+.br
+.ti -1c
+.RI "GLFWbool \fBhovered\fP"
+.br
+.ti -1c
+.RI "GLFWbool \fBtransparent\fP"
+.br
+.ti -1c
+.RI "struct wl_surface * \fBsurface\fP"
+.br
+.ti -1c
+.RI "struct wl_egl_window * \fBnative\fP"
+.br
+.ti -1c
+.RI "struct wl_callback * \fBcallback\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   struct xdg_surface * \fBsurface\fP"
+.br
+.ti -1c
+.RI "   struct xdg_toplevel * \fBtoplevel\fP"
+.br
+.ti -1c
+.RI "   struct zxdg_toplevel_decoration_v1 * \fBdecoration\fP"
+.br
+.ti -1c
+.RI "} \fBxdg\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWcursor\fP * \fBcurrentCursor\fP"
+.br
+.ti -1c
+.RI "double \fBcursorPosX\fP"
+.br
+.ti -1c
+.RI "double \fBcursorPosY\fP"
+.br
+.ti -1c
+.RI "char * \fBtitle\fP"
+.br
+.ti -1c
+.RI "int \fBscale\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWmonitor\fP ** \fBmonitors\fP"
+.br
+.ti -1c
+.RI "int \fBmonitorsCount\fP"
+.br
+.ti -1c
+.RI "int \fBmonitorsSize\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   struct zwp_relative_pointer_v1 * \fBrelativePointer\fP"
+.br
+.ti -1c
+.RI "   struct zwp_locked_pointer_v1 * \fBlockedPointer\fP"
+.br
+.ti -1c
+.RI "} \fBpointerLock\fP"
+.br
+.ti -1c
+.RI "struct zwp_idle_inhibitor_v1 * \fBidleInhibitor\fP"
+.br
+.ti -1c
+.RI "GLFWbool \fBwasFullscreen\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   GLFWbool \fBserverSide\fP"
+.br
+.ti -1c
+.RI "   struct wl_buffer * \fBbuffer\fP"
+.br
+.ti -1c
+.RI "   \fB_GLFWdecorationWayland\fP \fBtop\fP"
+.br
+.ti -1c
+.RI "   \fB_GLFWdecorationWayland\fP \fBleft\fP"
+.br
+.ti -1c
+.RI "   \fB_GLFWdecorationWayland\fP \fBright\fP"
+.br
+.ti -1c
+.RI "   \fB_GLFWdecorationWayland\fP \fBbottom\fP"
+.br
+.ti -1c
+.RI "   int \fBfocus\fP"
+.br
+.ti -1c
+.RI "} \fBdecorations\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

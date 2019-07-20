@@ -1,0 +1,54 @@
+.TH "basic_cstring_view< Char >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+basic_cstring_view< Char >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <posix\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbasic_cstring_view\fP (const Char *s)"
+.br
+.ti -1c
+.RI "\fBbasic_cstring_view\fP (const std::basic_string< Char > &s)"
+.br
+.ti -1c
+.RI "const Char * \fBc_str\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Char>
+.br
+class basic_cstring_view< Char >"
+\\rst A reference to a null-terminated string\&. It can be constructed from a C string or \fCstd::string\fP\&.
+.PP
+You can use one of the following typedefs for common character types:
+.PP
++---------------+-----------------------------+ | Type | Definition | +===============+=============================+ | cstring_view | basic_cstring_view<char> | +---------------+-----------------------------+ | wcstring_view | basic_cstring_view<wchar_t> | +---------------+-----------------------------+
+.PP
+This class is most useful as a parameter type to allow passing different types of strings to a function, for example::
+.PP
+template <typename\&.\&.\&. Args> std::string format(cstring_view format_str, const Args & \&.\&.\&. args);
+.PP
+format('{}', 42); format(std::string('{}'), 42); \\endrst 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename Char > \fBbasic_cstring_view\fP< Char >::\fBbasic_cstring_view\fP (const Char * s)\fC [inline]\fP"
+Constructs a string reference object from a C string\&. 
+.SS "template<typename Char > \fBbasic_cstring_view\fP< Char >::\fBbasic_cstring_view\fP (const std::basic_string< Char > & s)\fC [inline]\fP"
+\\rst Constructs a string reference from an \fCstd::string\fP object\&. \\endrst 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename Char > const Char* \fBbasic_cstring_view\fP< Char >::c_str () const\fC [inline]\fP"
+Returns the pointer to a C string\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

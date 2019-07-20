@@ -1,0 +1,261 @@
+.TH "gtx_extended_min_max" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_extended_min_max
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::min\fP (T const &x, T const &y, T const &z)"
+.br
+.ti -1c
+.RI "template<typename T , template< typename > class C> GLM_FUNC_DECL C< T > \fBglm::min\fP (C< T > const &x, typename C< T >::T const &y, typename C< T >::T const &z)"
+.br
+.ti -1c
+.RI "template<typename T , template< typename > class C> GLM_FUNC_DECL C< T > \fBglm::min\fP (C< T > const &x, C< T > const &y, C< T > const &z)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::min\fP (T const &x, T const &y, T const &z, T const &w)"
+.br
+.ti -1c
+.RI "template<typename T , template< typename > class C> GLM_FUNC_DECL C< T > \fBglm::min\fP (C< T > const &x, typename C< T >::T const &y, typename C< T >::T const &z, typename C< T >::T const &w)"
+.br
+.ti -1c
+.RI "template<typename T , template< typename > class C> GLM_FUNC_DECL C< T > \fBglm::min\fP (C< T > const &x, C< T > const &y, C< T > const &z, C< T > const &w)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::max\fP (T const &x, T const &y, T const &z)"
+.br
+.ti -1c
+.RI "template<typename T , template< typename > class C> GLM_FUNC_DECL C< T > \fBglm::max\fP (C< T > const &x, typename C< T >::T const &y, typename C< T >::T const &z)"
+.br
+.ti -1c
+.RI "template<typename T , template< typename > class C> GLM_FUNC_DECL C< T > \fBglm::max\fP (C< T > const &x, C< T > const &y, C< T > const &z)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL T \fBglm::max\fP (T const &x, T const &y, T const &z, T const &w)"
+.br
+.ti -1c
+.RI "template<typename T , template< typename > class C> GLM_FUNC_DECL C< T > \fBglm::max\fP (C< T > const &x, typename C< T >::T const &y, typename C< T >::T const &z, typename C< T >::T const &w)"
+.br
+.ti -1c
+.RI "template<typename T , template< typename > class C> GLM_FUNC_DECL C< T > \fBglm::max\fP (C< T > const &x, C< T > const &y, C< T > const &z, C< T > const &w)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::fmin\fP (genType x, genType y)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::fmax\fP (genType x, genType y)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::fclamp\fP (genType x, genType minVal, genType maxVal)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::fclamp\fP (\fBvec\fP< L, T, Q > const &x, T minVal, T maxVal)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::fclamp\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &minVal, \fBvec\fP< L, T, Q > const &maxVal)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <glm/gtx/extented_min_max\&.hpp> to use the features of this extension\&.
+.PP
+Min and max functions for 3 to 4 parameters\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename genType > GLM_FUNC_DECL genType glm::fclamp (genType x, genType minVal, genType maxVal)"
+Returns min(max(x, minVal), maxVal) for each component in x\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Floating-point scalar or vector types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::fclamp (\fBvec\fP< L, T, Q > const & x, T minVal, T maxVal)"
+Returns min(max(x, minVal), maxVal) for each component in x\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::fclamp (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & minVal, \fBvec\fP< L, T, Q > const & maxVal)"
+Returns min(max(x, minVal), maxVal) for each component in x\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP Integer between 1 and 4 included that qualify the dimension of the vector 
+.br
+\fIT\fP Floating-point scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename genType > GLM_FUNC_DECL genType glm::fmax (genType x, genType y)"
+Returns y if x < y; otherwise, it returns x\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Floating-point; scalar or vector types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.PP
+\fCstd::fmax documentation\fP 
+.RE
+.PP
+
+.SS "template<typename genType > GLM_FUNC_DECL genType glm::fmin (genType x, genType y)"
+Returns y if y < x; otherwise, it returns x\&. If one of the two arguments is NaN, the value of the other argument is returned\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Floating-point or integer; scalar or vector types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::max (T const & x, T const & y, T const & z)"
+Return the maximum component-wise values of 3 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T , template< typename > class C> GLM_FUNC_DECL C<T> glm::max (C< T > const & x, typename C< T >::T const & y, typename C< T >::T const & z)"
+Return the maximum component-wise values of 3 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T , template< typename > class C> GLM_FUNC_DECL C<T> glm::max (C< T > const & x, C< T > const & y, C< T > const & z)"
+Return the maximum component-wise values of 3 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::max (T const & x, T const & y, T const & z, T const & w)"
+Return the maximum component-wise values of 4 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T , template< typename > class C> GLM_FUNC_DECL C<T> glm::max (C< T > const & x, typename C< T >::T const & y, typename C< T >::T const & z, typename C< T >::T const & w)"
+Return the maximum component-wise values of 4 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T , template< typename > class C> GLM_FUNC_DECL C<T> glm::max (C< T > const & x, C< T > const & y, C< T > const & z, C< T > const & w)"
+Return the maximum component-wise values of 4 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::min (T const & x, T const & y, T const & z)"
+Return the minimum component-wise values of 3 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T , template< typename > class C> GLM_FUNC_DECL C<T> glm::min (C< T > const & x, typename C< T >::T const & y, typename C< T >::T const & z)"
+Return the minimum component-wise values of 3 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T , template< typename > class C> GLM_FUNC_DECL C<T> glm::min (C< T > const & x, C< T > const & y, C< T > const & z)"
+Return the minimum component-wise values of 3 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL T glm::min (T const & x, T const & y, T const & z, T const & w)"
+Return the minimum component-wise values of 4 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T , template< typename > class C> GLM_FUNC_DECL C<T> glm::min (C< T > const & x, typename C< T >::T const & y, typename C< T >::T const & z, typename C< T >::T const & w)"
+Return the minimum component-wise values of 4 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SS "template<typename T , template< typename > class C> GLM_FUNC_DECL C<T> glm::min (C< T > const & x, C< T > const & y, C< T > const & z, C< T > const & w)"
+Return the minimum component-wise values of 4 inputs 
+.PP
+\fBSee also:\fP
+.RS 4
+gtx_extented_min_max 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

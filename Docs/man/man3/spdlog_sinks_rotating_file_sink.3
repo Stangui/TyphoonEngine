@@ -1,0 +1,43 @@
+.TH "spdlog::sinks::rotating_file_sink< Mutex >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+spdlog::sinks::rotating_file_sink< Mutex >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBspdlog::sinks::base_sink< Mutex >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBrotating_file_sink\fP (filename_t base_filename, std::size_t max_size, std::size_t max_files, bool rotate_on_open=false)"
+.br
+.ti -1c
+.RI "const filename_t & \fBfilename\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static filename_t \fBcalc_filename\fP (const filename_t &filename, std::size_t index)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsink_it_\fP (const \fBdetails::log_msg\fP &msg) override"
+.br
+.ti -1c
+.RI "void \fBflush_\fP () override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

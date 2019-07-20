@@ -1,0 +1,174 @@
+.TH "glm::mat< 2, 2, T, Q >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+glm::mat< 2, 2, T, Q >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBvec\fP< 2, T, Q > \fBcol_type\fP"
+.br
+.ti -1c
+.RI "typedef \fBvec\fP< 2, T, Q > \fBrow_type\fP"
+.br
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, T, Q > \fBtype\fP"
+.br
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, T, Q > \fBtranspose_type\fP"
+.br
+.ti -1c
+.RI "typedef T \fBvalue_type\fP"
+.br
+.ti -1c
+.RI "typedef length_t \fBlength_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "GLM_FUNC_DECL \fBcol_type\fP & \fBoperator[]\fP (length_type i)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBcol_type\fP const  & \fBoperator[]\fP (length_type i) const"
+.br
+.ti -1c
+.RI "template<qualifier P> GLM_FUNC_DECL GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 2, 2, T, P > const &m)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBmat\fP (T scalar)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBmat\fP (T const &x1, T const &y1, T const &x2, T const &y2)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_CONSTEXPR \fBmat\fP (\fBcol_type\fP const &v1, \fBcol_type\fP const &v2)"
+.br
+.ti -1c
+.RI "template<typename U , typename V , typename M , typename N > GLM_FUNC_DECL GLM_CONSTEXPR \fBmat\fP (U const &x1, V const &y1, M const &x2, N const &y2)"
+.br
+.ti -1c
+.RI "template<typename U , typename V > GLM_FUNC_DECL GLM_CONSTEXPR \fBmat\fP (\fBvec\fP< 2, U, Q > const &v1, \fBvec\fP< 2, V, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename U , qualifier P> GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 2, 2, U, P > const &m)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 3, 3, T, Q > const &x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 4, 4, T, Q > const &x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 2, 3, T, Q > const &x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 3, 2, T, Q > const &x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 2, 4, T, Q > const &x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 4, 2, T, Q > const &x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 3, 4, T, Q > const &x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL GLM_EXPLICIT GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 4, 3, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator+=\fP (U s)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator+=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator\-=\fP (U s)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator\-=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator *=\fP (U s)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator *=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator/=\fP (U s)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator/=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > & \fBoperator\-\-\fP ()"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > \fBoperator++\fP (int)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBmat\fP< 2, 2, T, Q > \fBoperator\-\-\fP (int)"
+.br
+.ti -1c
+.RI "template<qualifier P> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 2, 2, T, P > const &m)"
+.br
+.ti -1c
+.RI "template<typename X1, typename Y1, typename X2 , typename Y2 > GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBmat\fP (X1 const &x1, Y1 const &y1, X2 const &x2, Y2 const &y2)"
+.br
+.ti -1c
+.RI "template<typename V1, typename V2> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBmat\fP (\fBvec\fP< 2, V1, Q > const &v1, \fBvec\fP< 2, V2, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename U, qualifier P> GLM_FUNC_QUALIFIER GLM_CONSTEXPR \fBmat\fP (\fBmat\fP< 2, 2, U, P > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator+=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator+=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator\-=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator\-=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator *=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator *=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator/=\fP (U scalar)"
+.br
+.ti -1c
+.RI "template<typename U > GLM_FUNC_QUALIFIER \fBmat\fP< 2, 2, T, Q > & \fBoperator/=\fP (\fBmat\fP< 2, 2, U, Q > const &m)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static GLM_FUNC_DECL GLM_CONSTEXPR length_type \fBlength\fP ()"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

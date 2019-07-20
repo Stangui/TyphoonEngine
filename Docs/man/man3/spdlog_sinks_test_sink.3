@@ -1,0 +1,50 @@
+.TH "spdlog::sinks::test_sink< Mutex >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+spdlog::sinks::test_sink< Mutex >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBspdlog::sinks::base_sink< Mutex >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBmsg_counter\fP ()"
+.br
+.ti -1c
+.RI "size_t \fBflush_counter\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_delay\fP (std::chrono::milliseconds delay)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsink_it_\fP (const \fBdetails::log_msg\fP &) override"
+.br
+.ti -1c
+.RI "void \fBflush_\fP () override"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBmsg_counter_\fP {0}"
+.br
+.ti -1c
+.RI "size_t \fBflush_counter_\fP {0}"
+.br
+.ti -1c
+.RI "std::chrono::milliseconds \fBdelay_\fP {std::chrono::milliseconds::zero()}"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

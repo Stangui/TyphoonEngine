@@ -1,0 +1,21 @@
+.TH "formatter< T, Char, typename std::enable_if< internal::is_streamable< T, Char >::value &&!internal::format_type< typename buffer_context< Char >::type, T >::value >::type >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+formatter< T, Char, typename std::enable_if< internal::is_streamable< T, Char >::value &&!internal::format_type< typename buffer_context< Char >::type, T >::value >::type >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBformatter< basic_string_view< Char >, Char >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename Context > auto \fBformat\fP (const T &value, Context &ctx) \-> decltype(ctx\&.out())"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

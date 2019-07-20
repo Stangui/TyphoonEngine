@@ -17,6 +17,7 @@ namespace TyphoonEngine
 		class IIndexBuffer;
 		class Shader;
 		class VertexArray;
+		class Camera;
 	}
 
 	//
@@ -71,6 +72,7 @@ namespace TyphoonEngine
 		std::shared_ptr<Renderers::VertexArray> m_squareVA;
 		std::shared_ptr<Renderers::Shader> m_vertexColorShader;
 		std::shared_ptr<Renderers::Shader> m_blueShader;
+		std::shared_ptr<Renderers::Camera> m_camera;
 
 		// Singleton
 		static Application* s_instance;

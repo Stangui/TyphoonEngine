@@ -1,0 +1,80 @@
+.TH "Typhoon/ThirdParty/glm/glm/packing.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/packing.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&./ext/vector_uint2\&.hpp'\fP
+.br
+\fC#include '\&./ext/vector_float2\&.hpp'\fP
+.br
+\fC#include '\&./ext/vector_float4\&.hpp'\fP
+.br
+\fC#include 'detail/func_packing\&.inl'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER uint \fBglm::packUnorm2x16\fP (\fBvec2\fP const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER uint \fBglm::packSnorm2x16\fP (\fBvec2\fP const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER uint \fBglm::packUnorm4x8\fP (vec4 const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER uint \fBglm::packSnorm4x8\fP (vec4 const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER \fBvec2\fP \fBglm::unpackUnorm2x16\fP (uint p)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER \fBvec2\fP \fBglm::unpackSnorm2x16\fP (uint p)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER vec4 \fBglm::unpackUnorm4x8\fP (uint p)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER \fBglm::vec4\fP \fBglm::unpackSnorm4x8\fP (uint p)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER double \fBglm::packDouble2x32\fP (uvec2 const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER uvec2 \fBglm::unpackDouble2x32\fP (double v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER uint \fBglm::packHalf2x16\fP (\fBvec2\fP const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_QUALIFIER \fBvec2\fP \fBglm::unpackHalf2x16\fP (uint v)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBCore features\fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL 4\&.20\&.8 specification, section 8\&.4 Floating-Point Pack and Unpack Functions\fP 
+.PP
+\fBGLM_GTC_packing\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

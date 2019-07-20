@@ -1,0 +1,287 @@
+.TH "gtx_associated_min_max" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_associated_min_max \- Min and max functions that return associated values not the compared onces\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , typename U , qualifier Q> GLM_FUNC_DECL U \fBglm::associatedMin\fP (T x, U a, T y, U b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 2, U, Q > \fBglm::associatedMin\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, U, Q > const &a, \fBvec\fP< L, T, Q > const &y, \fBvec\fP< L, U, Q > const &b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMin\fP (T x, const \fBvec\fP< L, U, Q > &a, T y, const \fBvec\fP< L, U, Q > &b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMin\fP (\fBvec\fP< L, T, Q > const &x, U a, \fBvec\fP< L, T, Q > const &y, U b)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > GLM_FUNC_DECL U \fBglm::associatedMin\fP (T x, U a, T y, U b, T z, U c)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMin\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, U, Q > const &a, \fBvec\fP< L, T, Q > const &y, \fBvec\fP< L, U, Q > const &b, \fBvec\fP< L, T, Q > const &z, \fBvec\fP< L, U, Q > const &c)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > GLM_FUNC_DECL U \fBglm::associatedMin\fP (T x, U a, T y, U b, T z, U c, T w, U d)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMin\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, U, Q > const &a, \fBvec\fP< L, T, Q > const &y, \fBvec\fP< L, U, Q > const &b, \fBvec\fP< L, T, Q > const &z, \fBvec\fP< L, U, Q > const &c, \fBvec\fP< L, T, Q > const &w, \fBvec\fP< L, U, Q > const &d)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMin\fP (T x, \fBvec\fP< L, U, Q > const &a, T y, \fBvec\fP< L, U, Q > const &b, T z, \fBvec\fP< L, U, Q > const &c, T w, \fBvec\fP< L, U, Q > const &d)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMin\fP (\fBvec\fP< L, T, Q > const &x, U a, \fBvec\fP< L, T, Q > const &y, U b, \fBvec\fP< L, T, Q > const &z, U c, \fBvec\fP< L, T, Q > const &w, U d)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > GLM_FUNC_DECL U \fBglm::associatedMax\fP (T x, U a, T y, U b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 2, U, Q > \fBglm::associatedMax\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, U, Q > const &a, \fBvec\fP< L, T, Q > const &y, \fBvec\fP< L, U, Q > const &b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::associatedMax\fP (T x, \fBvec\fP< L, U, Q > const &a, T y, \fBvec\fP< L, U, Q > const &b)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMax\fP (\fBvec\fP< L, T, Q > const &x, U a, \fBvec\fP< L, T, Q > const &y, U b)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > GLM_FUNC_DECL U \fBglm::associatedMax\fP (T x, U a, T y, U b, T z, U c)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMax\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, U, Q > const &a, \fBvec\fP< L, T, Q > const &y, \fBvec\fP< L, U, Q > const &b, \fBvec\fP< L, T, Q > const &z, \fBvec\fP< L, U, Q > const &c)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::associatedMax\fP (T x, \fBvec\fP< L, U, Q > const &a, T y, \fBvec\fP< L, U, Q > const &b, T z, \fBvec\fP< L, U, Q > const &c)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMax\fP (\fBvec\fP< L, T, Q > const &x, U a, \fBvec\fP< L, T, Q > const &y, U b, \fBvec\fP< L, T, Q > const &z, U c)"
+.br
+.ti -1c
+.RI "template<typename T , typename U > GLM_FUNC_DECL U \fBglm::associatedMax\fP (T x, U a, T y, U b, T z, U c, T w, U d)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMax\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, U, Q > const &a, \fBvec\fP< L, T, Q > const &y, \fBvec\fP< L, U, Q > const &b, \fBvec\fP< L, T, Q > const &z, \fBvec\fP< L, U, Q > const &c, \fBvec\fP< L, T, Q > const &w, \fBvec\fP< L, U, Q > const &d)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMax\fP (T x, \fBvec\fP< L, U, Q > const &a, T y, \fBvec\fP< L, U, Q > const &b, T z, \fBvec\fP< L, U, Q > const &c, T w, \fBvec\fP< L, U, Q > const &d)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, U, Q > \fBglm::associatedMax\fP (\fBvec\fP< L, T, Q > const &x, U a, \fBvec\fP< L, T, Q > const &y, U b, \fBvec\fP< L, T, Q > const &z, U c, \fBvec\fP< L, T, Q > const &w, U d)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Min and max functions that return associated values not the compared onces\&. 
+
+Include <\fBglm/gtx/associated_min_max\&.hpp\fP> to use the features of this extension\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , typename U > GLM_FUNC_DECL U glm::associatedMax (T x, U a, T y, U b)"
+Maximum comparison between 2 variables and returns 2 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<2, U, Q> glm::associatedMax (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, U, Q > const & a, \fBvec\fP< L, T, Q > const & y, \fBvec\fP< L, U, Q > const & b)"
+Maximum comparison between 2 variables and returns 2 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::associatedMax (T x, \fBvec\fP< L, U, Q > const & a, T y, \fBvec\fP< L, U, Q > const & b)"
+Maximum comparison between 2 variables and returns 2 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMax (\fBvec\fP< L, T, Q > const & x, U a, \fBvec\fP< L, T, Q > const & y, U b)"
+Maximum comparison between 2 variables and returns 2 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<typename T , typename U > GLM_FUNC_DECL U glm::associatedMax (T x, U a, T y, U b, T z, U c)"
+Maximum comparison between 3 variables and returns 3 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMax (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, U, Q > const & a, \fBvec\fP< L, T, Q > const & y, \fBvec\fP< L, U, Q > const & b, \fBvec\fP< L, T, Q > const & z, \fBvec\fP< L, U, Q > const & c)"
+Maximum comparison between 3 variables and returns 3 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::associatedMax (T x, \fBvec\fP< L, U, Q > const & a, T y, \fBvec\fP< L, U, Q > const & b, T z, \fBvec\fP< L, U, Q > const & c)"
+Maximum comparison between 3 variables and returns 3 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMax (\fBvec\fP< L, T, Q > const & x, U a, \fBvec\fP< L, T, Q > const & y, U b, \fBvec\fP< L, T, Q > const & z, U c)"
+Maximum comparison between 3 variables and returns 3 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<typename T , typename U > GLM_FUNC_DECL U glm::associatedMax (T x, U a, T y, U b, T z, U c, T w, U d)"
+Maximum comparison between 4 variables and returns 4 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMax (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, U, Q > const & a, \fBvec\fP< L, T, Q > const & y, \fBvec\fP< L, U, Q > const & b, \fBvec\fP< L, T, Q > const & z, \fBvec\fP< L, U, Q > const & c, \fBvec\fP< L, T, Q > const & w, \fBvec\fP< L, U, Q > const & d)"
+Maximum comparison between 4 variables and returns 4 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMax (T x, \fBvec\fP< L, U, Q > const & a, T y, \fBvec\fP< L, U, Q > const & b, T z, \fBvec\fP< L, U, Q > const & c, T w, \fBvec\fP< L, U, Q > const & d)"
+Maximum comparison between 4 variables and returns 4 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMax (\fBvec\fP< L, T, Q > const & x, U a, \fBvec\fP< L, T, Q > const & y, U b, \fBvec\fP< L, T, Q > const & z, U c, \fBvec\fP< L, T, Q > const & w, U d)"
+Maximum comparison between 4 variables and returns 4 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<typename T , typename U , qualifier Q> GLM_FUNC_DECL U glm::associatedMin (T x, U a, T y, U b)"
+Minimum comparison between 2 variables and returns 2 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<2, U, Q> glm::associatedMin (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, U, Q > const & a, \fBvec\fP< L, T, Q > const & y, \fBvec\fP< L, U, Q > const & b)"
+Minimum comparison between 2 variables and returns 2 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMin (T x, const \fBvec\fP< L, U, Q > & a, T y, const \fBvec\fP< L, U, Q > & b)"
+Minimum comparison between 2 variables and returns 2 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMin (\fBvec\fP< L, T, Q > const & x, U a, \fBvec\fP< L, T, Q > const & y, U b)"
+Minimum comparison between 2 variables and returns 2 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<typename T , typename U > GLM_FUNC_DECL U glm::associatedMin (T x, U a, T y, U b, T z, U c)"
+Minimum comparison between 3 variables and returns 3 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMin (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, U, Q > const & a, \fBvec\fP< L, T, Q > const & y, \fBvec\fP< L, U, Q > const & b, \fBvec\fP< L, T, Q > const & z, \fBvec\fP< L, U, Q > const & c)"
+Minimum comparison between 3 variables and returns 3 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<typename T , typename U > GLM_FUNC_DECL U glm::associatedMin (T x, U a, T y, U b, T z, U c, T w, U d)"
+Minimum comparison between 4 variables and returns 4 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMin (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, U, Q > const & a, \fBvec\fP< L, T, Q > const & y, \fBvec\fP< L, U, Q > const & b, \fBvec\fP< L, T, Q > const & z, \fBvec\fP< L, U, Q > const & c, \fBvec\fP< L, T, Q > const & w, \fBvec\fP< L, U, Q > const & d)"
+Minimum comparison between 4 variables and returns 4 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMin (T x, \fBvec\fP< L, U, Q > const & a, T y, \fBvec\fP< L, U, Q > const & b, T z, \fBvec\fP< L, U, Q > const & c, T w, \fBvec\fP< L, U, Q > const & d)"
+Minimum comparison between 4 variables and returns 4 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , typename U , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, U, Q> glm::associatedMin (\fBvec\fP< L, T, Q > const & x, U a, \fBvec\fP< L, T, Q > const & y, U b, \fBvec\fP< L, T, Q > const & z, U c, \fBvec\fP< L, T, Q > const & w, U d)"
+Minimum comparison between 4 variables and returns 4 associated variable values 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_associated_min_max\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

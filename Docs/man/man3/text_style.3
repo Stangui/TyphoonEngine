@@ -1,0 +1,59 @@
+.TH "text_style" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+text_style
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "FMT_CONSTEXPR \fBtext_style\fP (emphasis em=emphasis()) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR \fBtext_style\fP & \fBoperator|=\fP (const \fBtext_style\fP &rhs)"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR \fBtext_style\fP & \fBoperator&=\fP (const \fBtext_style\fP &rhs)"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR bool \fBhas_foreground\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR bool \fBhas_background\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR bool \fBhas_emphasis\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR \fBinternal::color_type\fP \fBget_foreground\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR \fBinternal::color_type\fP \fBget_background\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR emphasis \fBget_emphasis\fP () const FMT_NOEXCEPT"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "FMT_CONSTEXPR \fBtext_style\fP \fBoperator|\fP (\fBtext_style\fP lhs, const \fBtext_style\fP &rhs)"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR \fBtext_style\fP \fBoperator &\fP (\fBtext_style\fP lhs, const \fBtext_style\fP &rhs)"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR_DECL \fBtext_style\fP \fBfg\fP (\fBinternal::color_type\fP foreground) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "FMT_CONSTEXPR_DECL \fBtext_style\fP \fBbg\fP (\fBinternal::color_type\fP background) FMT_NOEXCEPT"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

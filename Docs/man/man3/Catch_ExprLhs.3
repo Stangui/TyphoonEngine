@@ -1,0 +1,52 @@
+.TH "Catch::ExprLhs< LhsT >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Catch::ExprLhs< LhsT >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBExprLhs\fP (LhsT lhs)"
+.br
+.ti -1c
+.RI "template<typename RhsT > auto \fBoperator==\fP (RhsT const &rhs) \-> \fBBinaryExpr\fP< LhsT, RhsT const & > const"
+.br
+.ti -1c
+.RI "auto \fBoperator==\fP (bool rhs) \-> \fBBinaryExpr\fP< LhsT, bool > const"
+.br
+.ti -1c
+.RI "template<typename RhsT > auto \fBoperator !=\fP (RhsT const &rhs) \-> \fBBinaryExpr\fP< LhsT, RhsT const & > const"
+.br
+.ti -1c
+.RI "auto \fBoperator !=\fP (bool rhs) \-> \fBBinaryExpr\fP< LhsT, bool > const"
+.br
+.ti -1c
+.RI "template<typename RhsT > auto \fBoperator >\fP (RhsT const &rhs) \-> \fBBinaryExpr\fP< LhsT, RhsT const & > const"
+.br
+.ti -1c
+.RI "template<typename RhsT > auto \fBoperator<\fP (RhsT const &rhs) \-> \fBBinaryExpr\fP< LhsT, RhsT const & > const"
+.br
+.ti -1c
+.RI "template<typename RhsT > auto \fBoperator >=\fP (RhsT const &rhs) \-> \fBBinaryExpr\fP< LhsT, RhsT const & > const"
+.br
+.ti -1c
+.RI "template<typename RhsT > auto \fBoperator<=\fP (RhsT const &rhs) \-> \fBBinaryExpr\fP< LhsT, RhsT const & > const"
+.br
+.ti -1c
+.RI "template<typename RhsT > auto \fBoperator &&\fP (RhsT const &) \-> \fBBinaryExpr\fP< LhsT, RhsT const & > const"
+.br
+.ti -1c
+.RI "template<typename RhsT > auto \fBoperator||\fP (RhsT const &) \-> \fBBinaryExpr\fP< LhsT, RhsT const & > const"
+.br
+.ti -1c
+.RI "auto \fBmakeUnaryExpr\fP () const \-> \fBUnaryExpr\fP< LhsT >"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,148 @@
+.TH "Typhoon/ThirdParty/glm/glm/gtc/bitfield.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/gtc/bitfield.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./detail/setup\&.hpp'\fP
+.br
+\fC#include '\&.\&./ext/scalar_int_sized\&.hpp'\fP
+.br
+\fC#include '\&.\&./ext/scalar_uint_sized\&.hpp'\fP
+.br
+\fC#include '\&.\&./detail/qualifier\&.hpp'\fP
+.br
+\fC#include '\&.\&./detail/_vectorize\&.hpp'\fP
+.br
+\fC#include 'type_precision\&.hpp'\fP
+.br
+\fC#include <limits>\fP
+.br
+\fC#include 'bitfield\&.inl'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::mask\fP (genIUType Bits)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::mask\fP (vec< L, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::bitfieldRotateRight\fP (genIUType In, int Shift)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::bitfieldRotateRight\fP (vec< L, T, Q > const &In, int Shift)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::bitfieldRotateLeft\fP (genIUType In, int Shift)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::bitfieldRotateLeft\fP (vec< L, T, Q > const &In, int Shift)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::bitfieldFillOne\fP (genIUType Value, int FirstBit, int BitCount)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::bitfieldFillOne\fP (vec< L, T, Q > const &Value, int FirstBit, int BitCount)"
+.br
+.ti -1c
+.RI "template<typename genIUType > GLM_FUNC_DECL genIUType \fBglm::bitfieldFillZero\fP (genIUType Value, int FirstBit, int BitCount)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL vec< L, T, Q > \fBglm::bitfieldFillZero\fP (vec< L, T, Q > const &Value, int FirstBit, int BitCount)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int16 \fBglm::bitfieldInterleave\fP (int8 x, int8 y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint16 \fBglm::bitfieldInterleave\fP (uint8 x, uint8 y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint16 \fBglm::bitfieldInterleave\fP (u8vec2 const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBglm::u8vec2\fP \fBglm::bitfieldDeinterleave\fP (\fBglm::uint16\fP x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int32 \fBglm::bitfieldInterleave\fP (int16 x, int16 y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint32 \fBglm::bitfieldInterleave\fP (uint16 x, uint16 y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint32 \fBglm::bitfieldInterleave\fP (u16vec2 const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBglm::u16vec2\fP \fBglm::bitfieldDeinterleave\fP (\fBglm::uint32\fP x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int64 \fBglm::bitfieldInterleave\fP (int32 x, int32 y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint64 \fBglm::bitfieldInterleave\fP (uint32 x, uint32 y)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint64 \fBglm::bitfieldInterleave\fP (u32vec2 const &v)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL \fBglm::u32vec2\fP \fBglm::bitfieldDeinterleave\fP (\fBglm::uint64\fP x)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int32 \fBglm::bitfieldInterleave\fP (int8 x, int8 y, int8 z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint32 \fBglm::bitfieldInterleave\fP (uint8 x, uint8 y, uint8 z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int64 \fBglm::bitfieldInterleave\fP (int16 x, int16 y, int16 z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint64 \fBglm::bitfieldInterleave\fP (uint16 x, uint16 y, uint16 z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int64 \fBglm::bitfieldInterleave\fP (int32 x, int32 y, int32 z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint64 \fBglm::bitfieldInterleave\fP (uint32 x, uint32 y, uint32 z)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int32 \fBglm::bitfieldInterleave\fP (int8 x, int8 y, int8 z, int8 w)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint32 \fBglm::bitfieldInterleave\fP (uint8 x, uint8 y, uint8 z, uint8 w)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL int64 \fBglm::bitfieldInterleave\fP (int16 x, int16 y, int16 z, int16 w)"
+.br
+.ti -1c
+.RI "GLM_FUNC_DECL uint64 \fBglm::bitfieldInterleave\fP (uint16 x, uint16 y, uint16 z, uint16 w)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBGLM_GTC_bitfield\fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBCore features\fP (dependence) 
+.PP
+\fBGLM_GTC_bitfield\fP (dependence) 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

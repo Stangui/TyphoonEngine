@@ -1,0 +1,64 @@
+.TH "MetalContext" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MetalContext
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits NSObject\&.
+.SS "Instance Methods"
+
+.in +1c
+.ti -1c
+.RI "(void) \- \fBmakeDeviceObjectsWithDevice:\fP"
+.br
+.ti -1c
+.RI "(void) \- \fBmakeFontTextureWithDevice:\fP"
+.br
+.ti -1c
+.RI "(\fBMetalBuffer\fP *) \- \fBdequeueReusableBufferOfLength:device:\fP"
+.br
+.ti -1c
+.RI "(void) \- \fBenqueueReusableBuffer:\fP"
+.br
+.ti -1c
+.RI "(id< MTLRenderPipelineState >) \- \fBrenderPipelineStateForFrameAndDevice:\fP"
+.br
+.ti -1c
+.RI "(void) \- \fBemptyRenderPipelineStateCache\fP"
+.br
+.ti -1c
+.RI "(void) \- \fBsetupRenderState:commandBuffer:commandEncoder:renderPipelineState:vertexBuffer:vertexBufferOffset:\fP"
+.br
+.ti -1c
+.RI "(void) \- \fBrenderDrawData:commandBuffer:commandEncoder:\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "id< MTLDepthStencilState > \fBdepthStencilState\fP"
+.br
+.ti -1c
+.RI "\fBFramebufferDescriptor\fP * \fBframebufferDescriptor\fP"
+.br
+.ti -1c
+.RI "NSMutableDictionary * \fBrenderPipelineStateCache\fP"
+.br
+.ti -1c
+.RI "id< MTLTexture > \fBfontTexture\fP"
+.br
+.ti -1c
+.RI "NSMutableArray< \fBMetalBuffer\fP * > * \fBbufferCache\fP"
+.br
+.ti -1c
+.RI "NSTimeInterval \fBlastBufferCachePurge\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

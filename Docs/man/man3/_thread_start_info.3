@@ -1,0 +1,31 @@
+.TH "_thread_start_info" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_thread_start_info
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBthrd_start_t\fP \fBmFunction\fP"
+.br
+.ti -1c
+.RI "void * \fBmArg\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Information to pass to the new thread (what to run)\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "void* _thread_start_info::mArg"
+Function argument for the thread function\&. 
+.SS "\fBthrd_start_t\fP _thread_start_info::mFunction"
+Pointer to the function to be executed\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

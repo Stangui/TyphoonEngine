@@ -1,0 +1,1428 @@
+.TH "gtc_type_aligned" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtc_type_aligned
+.SH SYNOPSIS
+.br
+.PP
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBvec\fP< 1, float, aligned_highp > \fBglm::aligned_highp_vec1\fP"
+.br
+.RI "1 component vector aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, float, aligned_mediump > \fBglm::aligned_mediump_vec1\fP"
+.br
+.RI "1 component vector aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, float, aligned_lowp > \fBglm::aligned_lowp_vec1\fP"
+.br
+.RI "1 component vector aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, double, aligned_highp > \fBglm::aligned_highp_dvec1\fP"
+.br
+.RI "1 component vector aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, double, aligned_mediump > \fBglm::aligned_mediump_dvec1\fP"
+.br
+.RI "1 component vector aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, double, aligned_lowp > \fBglm::aligned_lowp_dvec1\fP"
+.br
+.RI "1 component vector aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, int, aligned_highp > \fBglm::aligned_highp_ivec1\fP"
+.br
+.RI "1 component vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, int, aligned_mediump > \fBglm::aligned_mediump_ivec1\fP"
+.br
+.RI "1 component vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, int, aligned_lowp > \fBglm::aligned_lowp_ivec1\fP"
+.br
+.RI "1 component vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, uint, aligned_highp > \fBglm::aligned_highp_uvec1\fP"
+.br
+.RI "1 component vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, uint, aligned_mediump > \fBglm::aligned_mediump_uvec1\fP"
+.br
+.RI "1 component vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, uint, aligned_lowp > \fBglm::aligned_lowp_uvec1\fP"
+.br
+.RI "1 component vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, bool, aligned_highp > \fBglm::aligned_highp_bvec1\fP"
+.br
+.RI "1 component vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, bool, aligned_mediump > \fBglm::aligned_mediump_bvec1\fP"
+.br
+.RI "1 component vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, bool, aligned_lowp > \fBglm::aligned_lowp_bvec1\fP"
+.br
+.RI "1 component vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, float, \fBpacked_highp\fP > \fBglm::packed_highp_vec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_vec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_vec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, double, \fBpacked_highp\fP > \fBglm::packed_highp_dvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, int, \fBpacked_highp\fP > \fBglm::packed_highp_ivec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, int, \fBpacked_mediump\fP > \fBglm::packed_mediump_ivec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, int, \fBpacked_lowp\fP > \fBglm::packed_lowp_ivec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, uint, \fBpacked_highp\fP > \fBglm::packed_highp_uvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, uint, \fBpacked_mediump\fP > \fBglm::packed_mediump_uvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, uint, \fBpacked_lowp\fP > \fBglm::packed_lowp_uvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, bool, \fBpacked_highp\fP > \fBglm::packed_highp_bvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, bool, \fBpacked_mediump\fP > \fBglm::packed_mediump_bvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 1, bool, \fBpacked_lowp\fP > \fBglm::packed_lowp_bvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, float, aligned_highp > \fBglm::aligned_highp_vec2\fP"
+.br
+.RI "2 components vector aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, float, aligned_mediump > \fBglm::aligned_mediump_vec2\fP"
+.br
+.RI "2 components vector aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, float, aligned_lowp > \fBglm::aligned_lowp_vec2\fP"
+.br
+.RI "2 components vector aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, double, aligned_highp > \fBglm::aligned_highp_dvec2\fP"
+.br
+.RI "2 components vector aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, double, aligned_mediump > \fBglm::aligned_mediump_dvec2\fP"
+.br
+.RI "2 components vector aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, double, aligned_lowp > \fBglm::aligned_lowp_dvec2\fP"
+.br
+.RI "2 components vector aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, int, aligned_highp > \fBglm::aligned_highp_ivec2\fP"
+.br
+.RI "2 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, int, aligned_mediump > \fBglm::aligned_mediump_ivec2\fP"
+.br
+.RI "2 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, int, aligned_lowp > \fBglm::aligned_lowp_ivec2\fP"
+.br
+.RI "2 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, uint, aligned_highp > \fBglm::aligned_highp_uvec2\fP"
+.br
+.RI "2 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, uint, aligned_mediump > \fBglm::aligned_mediump_uvec2\fP"
+.br
+.RI "2 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, uint, aligned_lowp > \fBglm::aligned_lowp_uvec2\fP"
+.br
+.RI "2 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, bool, aligned_highp > \fBglm::aligned_highp_bvec2\fP"
+.br
+.RI "2 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, bool, aligned_mediump > \fBglm::aligned_mediump_bvec2\fP"
+.br
+.RI "2 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, bool, aligned_lowp > \fBglm::aligned_lowp_bvec2\fP"
+.br
+.RI "2 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, float, \fBpacked_highp\fP > \fBglm::packed_highp_vec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_vec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_vec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, double, \fBpacked_highp\fP > \fBglm::packed_highp_dvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, int, \fBpacked_highp\fP > \fBglm::packed_highp_ivec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, int, \fBpacked_mediump\fP > \fBglm::packed_mediump_ivec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, int, \fBpacked_lowp\fP > \fBglm::packed_lowp_ivec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, uint, \fBpacked_highp\fP > \fBglm::packed_highp_uvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, uint, \fBpacked_mediump\fP > \fBglm::packed_mediump_uvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, uint, \fBpacked_lowp\fP > \fBglm::packed_lowp_uvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, bool, \fBpacked_highp\fP > \fBglm::packed_highp_bvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, bool, \fBpacked_mediump\fP > \fBglm::packed_mediump_bvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 2, bool, \fBpacked_lowp\fP > \fBglm::packed_lowp_bvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, float, aligned_highp > \fBglm::aligned_highp_vec3\fP"
+.br
+.RI "3 components vector aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, float, aligned_mediump > \fBglm::aligned_mediump_vec3\fP"
+.br
+.RI "3 components vector aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, float, aligned_lowp > \fBglm::aligned_lowp_vec3\fP"
+.br
+.RI "3 components vector aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, double, aligned_highp > \fBglm::aligned_highp_dvec3\fP"
+.br
+.RI "3 components vector aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, double, aligned_mediump > \fBglm::aligned_mediump_dvec3\fP"
+.br
+.RI "3 components vector aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, double, aligned_lowp > \fBglm::aligned_lowp_dvec3\fP"
+.br
+.RI "3 components vector aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, int, aligned_highp > \fBglm::aligned_highp_ivec3\fP"
+.br
+.RI "3 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, int, aligned_mediump > \fBglm::aligned_mediump_ivec3\fP"
+.br
+.RI "3 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, int, aligned_lowp > \fBglm::aligned_lowp_ivec3\fP"
+.br
+.RI "3 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, uint, aligned_highp > \fBglm::aligned_highp_uvec3\fP"
+.br
+.RI "3 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, uint, aligned_mediump > \fBglm::aligned_mediump_uvec3\fP"
+.br
+.RI "3 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, uint, aligned_lowp > \fBglm::aligned_lowp_uvec3\fP"
+.br
+.RI "3 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, bool, aligned_highp > \fBglm::aligned_highp_bvec3\fP"
+.br
+.RI "3 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, bool, aligned_mediump > \fBglm::aligned_mediump_bvec3\fP"
+.br
+.RI "3 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, bool, aligned_lowp > \fBglm::aligned_lowp_bvec3\fP"
+.br
+.RI "3 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, float, \fBpacked_highp\fP > \fBglm::packed_highp_vec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_vec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_vec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, double, \fBpacked_highp\fP > \fBglm::packed_highp_dvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, int, \fBpacked_highp\fP > \fBglm::packed_highp_ivec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, int, \fBpacked_mediump\fP > \fBglm::packed_mediump_ivec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, int, \fBpacked_lowp\fP > \fBglm::packed_lowp_ivec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, uint, \fBpacked_highp\fP > \fBglm::packed_highp_uvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, uint, \fBpacked_mediump\fP > \fBglm::packed_mediump_uvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, uint, \fBpacked_lowp\fP > \fBglm::packed_lowp_uvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, bool, \fBpacked_highp\fP > \fBglm::packed_highp_bvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, bool, \fBpacked_mediump\fP > \fBglm::packed_mediump_bvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 3, bool, \fBpacked_lowp\fP > \fBglm::packed_lowp_bvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, float, aligned_highp > \fBglm::aligned_highp_vec4\fP"
+.br
+.RI "4 components vector aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, float, aligned_mediump > \fBglm::aligned_mediump_vec4\fP"
+.br
+.RI "4 components vector aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, float, aligned_lowp > \fBglm::aligned_lowp_vec4\fP"
+.br
+.RI "4 components vector aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, double, aligned_highp > \fBglm::aligned_highp_dvec4\fP"
+.br
+.RI "4 components vector aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, double, aligned_mediump > \fBglm::aligned_mediump_dvec4\fP"
+.br
+.RI "4 components vector aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, double, aligned_lowp > \fBglm::aligned_lowp_dvec4\fP"
+.br
+.RI "4 components vector aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, int, aligned_highp > \fBglm::aligned_highp_ivec4\fP"
+.br
+.RI "4 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, int, aligned_mediump > \fBglm::aligned_mediump_ivec4\fP"
+.br
+.RI "4 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, int, aligned_lowp > \fBglm::aligned_lowp_ivec4\fP"
+.br
+.RI "4 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, uint, aligned_highp > \fBglm::aligned_highp_uvec4\fP"
+.br
+.RI "4 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, uint, aligned_mediump > \fBglm::aligned_mediump_uvec4\fP"
+.br
+.RI "4 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, uint, aligned_lowp > \fBglm::aligned_lowp_uvec4\fP"
+.br
+.RI "4 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, bool, aligned_highp > \fBglm::aligned_highp_bvec4\fP"
+.br
+.RI "4 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, bool, aligned_mediump > \fBglm::aligned_mediump_bvec4\fP"
+.br
+.RI "4 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, bool, aligned_lowp > \fBglm::aligned_lowp_bvec4\fP"
+.br
+.RI "4 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, float, \fBpacked_highp\fP > \fBglm::packed_highp_vec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_vec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_vec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, double, \fBpacked_highp\fP > \fBglm::packed_highp_dvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, int, \fBpacked_highp\fP > \fBglm::packed_highp_ivec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, int, \fBpacked_mediump\fP > \fBglm::packed_mediump_ivec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, int, \fBpacked_lowp\fP > \fBglm::packed_lowp_ivec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, uint, \fBpacked_highp\fP > \fBglm::packed_highp_uvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, uint, \fBpacked_mediump\fP > \fBglm::packed_mediump_uvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, uint, \fBpacked_lowp\fP > \fBglm::packed_lowp_uvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, bool, \fBpacked_highp\fP > \fBglm::packed_highp_bvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, bool, \fBpacked_mediump\fP > \fBglm::packed_mediump_bvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBvec\fP< 4, bool, \fBpacked_lowp\fP > \fBglm::packed_lowp_bvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, aligned_highp > \fBglm::aligned_highp_mat2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, aligned_mediump > \fBglm::aligned_mediump_mat2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, aligned_lowp > \fBglm::aligned_lowp_mat2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, aligned_highp > \fBglm::aligned_highp_dmat2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, aligned_mediump > \fBglm::aligned_mediump_dmat2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, aligned_lowp > \fBglm::aligned_lowp_dmat2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, aligned_highp > \fBglm::aligned_highp_mat3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, aligned_mediump > \fBglm::aligned_mediump_mat3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, aligned_lowp > \fBglm::aligned_lowp_mat3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, aligned_highp > \fBglm::aligned_highp_dmat3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, aligned_mediump > \fBglm::aligned_mediump_dmat3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, aligned_lowp > \fBglm::aligned_lowp_dmat3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, aligned_highp > \fBglm::aligned_highp_mat4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, aligned_mediump > \fBglm::aligned_mediump_mat4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, aligned_lowp > \fBglm::aligned_lowp_mat4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, aligned_highp > \fBglm::aligned_highp_dmat4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, aligned_mediump > \fBglm::aligned_mediump_dmat4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, aligned_lowp > \fBglm::aligned_lowp_dmat4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, aligned_highp > \fBglm::aligned_highp_mat2x2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, aligned_mediump > \fBglm::aligned_mediump_mat2x2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, aligned_lowp > \fBglm::aligned_lowp_mat2x2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, aligned_highp > \fBglm::aligned_highp_dmat2x2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, aligned_mediump > \fBglm::aligned_mediump_dmat2x2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, aligned_lowp > \fBglm::aligned_lowp_dmat2x2\fP"
+.br
+.RI "2 by 2 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 2, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, float, aligned_highp > \fBglm::aligned_highp_mat2x3\fP"
+.br
+.RI "2 by 3 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, float, aligned_mediump > \fBglm::aligned_mediump_mat2x3\fP"
+.br
+.RI "2 by 3 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, float, aligned_lowp > \fBglm::aligned_lowp_mat2x3\fP"
+.br
+.RI "2 by 3 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, double, aligned_highp > \fBglm::aligned_highp_dmat2x3\fP"
+.br
+.RI "2 by 3 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, double, aligned_mediump > \fBglm::aligned_mediump_dmat2x3\fP"
+.br
+.RI "2 by 3 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, double, aligned_lowp > \fBglm::aligned_lowp_dmat2x3\fP"
+.br
+.RI "2 by 3 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 3, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, float, aligned_highp > \fBglm::aligned_highp_mat2x4\fP"
+.br
+.RI "2 by 4 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, float, aligned_mediump > \fBglm::aligned_mediump_mat2x4\fP"
+.br
+.RI "2 by 4 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, float, aligned_lowp > \fBglm::aligned_lowp_mat2x4\fP"
+.br
+.RI "2 by 4 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, double, aligned_highp > \fBglm::aligned_highp_dmat2x4\fP"
+.br
+.RI "2 by 4 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, double, aligned_mediump > \fBglm::aligned_mediump_dmat2x4\fP"
+.br
+.RI "2 by 4 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, double, aligned_lowp > \fBglm::aligned_lowp_dmat2x4\fP"
+.br
+.RI "2 by 4 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 2, 4, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, float, aligned_highp > \fBglm::aligned_highp_mat3x2\fP"
+.br
+.RI "3 by 2 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, float, aligned_mediump > \fBglm::aligned_mediump_mat3x2\fP"
+.br
+.RI "3 by 2 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, float, aligned_lowp > \fBglm::aligned_lowp_mat3x2\fP"
+.br
+.RI "3 by 2 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, double, aligned_highp > \fBglm::aligned_highp_dmat3x2\fP"
+.br
+.RI "3 by 2 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, double, aligned_mediump > \fBglm::aligned_mediump_dmat3x2\fP"
+.br
+.RI "3 by 2 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, double, aligned_lowp > \fBglm::aligned_lowp_dmat3x2\fP"
+.br
+.RI "3 by 2 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 2, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, aligned_highp > \fBglm::aligned_highp_mat3x3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, aligned_mediump > \fBglm::aligned_mediump_mat3x3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, aligned_lowp > \fBglm::aligned_lowp_mat3x3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, aligned_highp > \fBglm::aligned_highp_dmat3x3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, aligned_mediump > \fBglm::aligned_mediump_dmat3x3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, aligned_lowp > \fBglm::aligned_lowp_dmat3x3\fP"
+.br
+.RI "3 by 3 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 3, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, float, aligned_highp > \fBglm::aligned_highp_mat3x4\fP"
+.br
+.RI "3 by 4 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, float, aligned_mediump > \fBglm::aligned_mediump_mat3x4\fP"
+.br
+.RI "3 by 4 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, float, aligned_lowp > \fBglm::aligned_lowp_mat3x4\fP"
+.br
+.RI "3 by 4 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, double, aligned_highp > \fBglm::aligned_highp_dmat3x4\fP"
+.br
+.RI "3 by 4 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, double, aligned_mediump > \fBglm::aligned_mediump_dmat3x4\fP"
+.br
+.RI "3 by 4 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, double, aligned_lowp > \fBglm::aligned_lowp_dmat3x4\fP"
+.br
+.RI "3 by 4 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 3, 4, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, float, aligned_highp > \fBglm::aligned_highp_mat4x2\fP"
+.br
+.RI "4 by 2 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, float, aligned_mediump > \fBglm::aligned_mediump_mat4x2\fP"
+.br
+.RI "4 by 2 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, float, aligned_lowp > \fBglm::aligned_lowp_mat4x2\fP"
+.br
+.RI "4 by 2 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, double, aligned_highp > \fBglm::aligned_highp_dmat4x2\fP"
+.br
+.RI "4 by 2 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, double, aligned_mediump > \fBglm::aligned_mediump_dmat4x2\fP"
+.br
+.RI "4 by 2 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, double, aligned_lowp > \fBglm::aligned_lowp_dmat4x2\fP"
+.br
+.RI "4 by 2 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 2, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, float, aligned_highp > \fBglm::aligned_highp_mat4x3\fP"
+.br
+.RI "4 by 3 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, float, aligned_mediump > \fBglm::aligned_mediump_mat4x3\fP"
+.br
+.RI "4 by 3 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, float, aligned_lowp > \fBglm::aligned_lowp_mat4x3\fP"
+.br
+.RI "4 by 3 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, double, aligned_highp > \fBglm::aligned_highp_dmat4x3\fP"
+.br
+.RI "4 by 3 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, double, aligned_mediump > \fBglm::aligned_mediump_dmat4x3\fP"
+.br
+.RI "4 by 3 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, double, aligned_lowp > \fBglm::aligned_lowp_dmat4x3\fP"
+.br
+.RI "4 by 3 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 3, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, aligned_highp > \fBglm::aligned_highp_mat4x4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, aligned_mediump > \fBglm::aligned_mediump_mat4x4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, aligned_lowp > \fBglm::aligned_lowp_mat4x4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, aligned_highp > \fBglm::aligned_highp_dmat4x4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, aligned_mediump > \fBglm::aligned_mediump_dmat4x4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, aligned_lowp > \fBglm::aligned_lowp_dmat4x4\fP"
+.br
+.RI "4 by 4 matrix aligned in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, \fBpacked_highp\fP > \fBglm::packed_highp_mat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of single-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, \fBpacked_mediump\fP > \fBglm::packed_mediump_mat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of single-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, float, \fBpacked_lowp\fP > \fBglm::packed_lowp_mat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of single-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, \fBpacked_highp\fP > \fBglm::packed_highp_dmat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of double-precision floating-point numbers using high precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, \fBpacked_mediump\fP > \fBglm::packed_mediump_dmat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of double-precision floating-point numbers using medium precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBmat\fP< 4, 4, double, \fBpacked_lowp\fP > \fBglm::packed_lowp_dmat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of double-precision floating-point numbers using low precision arithmetic in term of ULPs\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_vec1\fP \fBglm::aligned_vec1\fP"
+.br
+.RI "1 component vector aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_vec2\fP \fBglm::aligned_vec2\fP"
+.br
+.RI "2 components vector aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_vec3\fP \fBglm::aligned_vec3\fP"
+.br
+.RI "3 components vector aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_vec4\fP \fBglm::aligned_vec4\fP"
+.br
+.RI "4 components vector aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_vec1\fP \fBglm::packed_vec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_vec2\fP \fBglm::packed_vec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_vec3\fP \fBglm::packed_vec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_vec4\fP \fBglm::packed_vec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat2\fP \fBglm::aligned_mat2\fP"
+.br
+.RI "2 by 2 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat3\fP \fBglm::aligned_mat3\fP"
+.br
+.RI "3 by 3 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat4\fP \fBglm::aligned_mat4\fP"
+.br
+.RI "4 by 4 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat2\fP \fBglm::packed_mat2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat3\fP \fBglm::packed_mat3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat4\fP \fBglm::packed_mat4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat2x2\fP \fBglm::aligned_mat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat2x3\fP \fBglm::aligned_mat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat2x4\fP \fBglm::aligned_mat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat3x2\fP \fBglm::aligned_mat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat3x3\fP \fBglm::aligned_mat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat3x4\fP \fBglm::aligned_mat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat4x2\fP \fBglm::aligned_mat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat4x3\fP \fBglm::aligned_mat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_mat4x4\fP \fBglm::aligned_mat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly aligned in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat2x2\fP \fBglm::packed_mat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat2x3\fP \fBglm::packed_mat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat2x4\fP \fBglm::packed_mat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat3x2\fP \fBglm::packed_mat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat3x3\fP \fBglm::packed_mat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat3x4\fP \fBglm::packed_mat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat4x2\fP \fBglm::packed_mat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat4x3\fP \fBglm::packed_mat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_mat4x4\fP \fBglm::packed_mat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of single-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dvec1\fP \fBglm::aligned_dvec1\fP"
+.br
+.RI "1 component vector aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dvec2\fP \fBglm::aligned_dvec2\fP"
+.br
+.RI "2 components vector aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dvec3\fP \fBglm::aligned_dvec3\fP"
+.br
+.RI "3 components vector aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dvec4\fP \fBglm::aligned_dvec4\fP"
+.br
+.RI "4 components vector aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dvec1\fP \fBglm::packed_dvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dvec2\fP \fBglm::packed_dvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dvec3\fP \fBglm::packed_dvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dvec4\fP \fBglm::packed_dvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat2\fP \fBglm::aligned_dmat2\fP"
+.br
+.RI "2 by 2 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat3\fP \fBglm::aligned_dmat3\fP"
+.br
+.RI "3 by 3 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat4\fP \fBglm::aligned_dmat4\fP"
+.br
+.RI "4 by 4 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat2\fP \fBglm::packed_dmat2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat3\fP \fBglm::packed_dmat3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat4\fP \fBglm::packed_dmat4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat2x2\fP \fBglm::aligned_dmat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat2x3\fP \fBglm::aligned_dmat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat2x4\fP \fBglm::aligned_dmat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat3x2\fP \fBglm::aligned_dmat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat3x3\fP \fBglm::aligned_dmat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat3x4\fP \fBglm::aligned_dmat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat4x2\fP \fBglm::aligned_dmat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat4x3\fP \fBglm::aligned_dmat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_dmat4x4\fP \fBglm::aligned_dmat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly aligned in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat2x2\fP \fBglm::packed_dmat2x2\fP"
+.br
+.RI "2 by 2 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat2x3\fP \fBglm::packed_dmat2x3\fP"
+.br
+.RI "2 by 3 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat2x4\fP \fBglm::packed_dmat2x4\fP"
+.br
+.RI "2 by 4 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat3x2\fP \fBglm::packed_dmat3x2\fP"
+.br
+.RI "3 by 2 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat3x3\fP \fBglm::packed_dmat3x3\fP"
+.br
+.RI "3 by 3 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat3x4\fP \fBglm::packed_dmat3x4\fP"
+.br
+.RI "3 by 4 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat4x2\fP \fBglm::packed_dmat4x2\fP"
+.br
+.RI "4 by 2 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat4x3\fP \fBglm::packed_dmat4x3\fP"
+.br
+.RI "4 by 3 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_dmat4x4\fP \fBglm::packed_dmat4x4\fP"
+.br
+.RI "4 by 4 matrix tightly packed in memory of double-precision floating-point numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_ivec1\fP \fBglm::aligned_ivec1\fP"
+.br
+.RI "1 component vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_ivec2\fP \fBglm::aligned_ivec2\fP"
+.br
+.RI "2 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_ivec3\fP \fBglm::aligned_ivec3\fP"
+.br
+.RI "3 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_ivec4\fP \fBglm::aligned_ivec4\fP"
+.br
+.RI "4 components vector aligned in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_ivec1\fP \fBglm::packed_ivec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_ivec2\fP \fBglm::packed_ivec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_ivec3\fP \fBglm::packed_ivec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_ivec4\fP \fBglm::packed_ivec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of signed integer numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_uvec1\fP \fBglm::aligned_uvec1\fP"
+.br
+.RI "1 component vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_uvec2\fP \fBglm::aligned_uvec2\fP"
+.br
+.RI "2 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_uvec3\fP \fBglm::aligned_uvec3\fP"
+.br
+.RI "3 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_uvec4\fP \fBglm::aligned_uvec4\fP"
+.br
+.RI "4 components vector aligned in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_uvec1\fP \fBglm::packed_uvec1\fP"
+.br
+.RI "1 component vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_uvec2\fP \fBglm::packed_uvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_uvec3\fP \fBglm::packed_uvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_uvec4\fP \fBglm::packed_uvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of unsigned integer numbers\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_bvec1\fP \fBglm::aligned_bvec1\fP"
+.br
+.RI "1 component vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_bvec2\fP \fBglm::aligned_bvec2\fP"
+.br
+.RI "2 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_bvec3\fP \fBglm::aligned_bvec3\fP"
+.br
+.RI "3 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBaligned_highp_bvec4\fP \fBglm::aligned_bvec4\fP"
+.br
+.RI "4 components vector aligned in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_bvec1\fP \fBglm::packed_bvec1\fP"
+.br
+.RI "1 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_bvec2\fP \fBglm::packed_bvec2\fP"
+.br
+.RI "2 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_bvec3\fP \fBglm::packed_bvec3\fP"
+.br
+.RI "3 components vector tightly packed in memory of bool values\&. "
+.ti -1c
+.RI "typedef \fBpacked_highp_bvec4\fP \fBglm::packed_bvec4\fP"
+.br
+.RI "4 components vector tightly packed in memory of bool values\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtc/type_aligned\&.hpp\fP> to use the features of this extension\&.
+.PP
+Aligned types allowing SIMD optimizations of vectors and matrices types 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

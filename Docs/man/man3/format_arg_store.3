@@ -1,0 +1,52 @@
+.TH "format_arg_store< Context, Args >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+format_arg_store< Context, Args >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBformat_arg_store\fP (const Args &\&.\&.\&. args)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned long long \fBTYPES\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBbasic_format_args< Context >\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Context, typename \&.\&.\&. Args>
+.br
+class format_arg_store< Context, Args >"
+\\rst An array of references to arguments\&. It can be implicitly converted into \fC~fmt\fBbasic_format_args\fP\fP for passing into type-erased formatting functions such as \fC~fmt::vformat\fP\&. \\endrst 
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename Context, typename \&.\&.\&. Args> const unsigned long long \fBformat_arg_store\fP< Context, Args >::TYPES\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+=
+    get_types()
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

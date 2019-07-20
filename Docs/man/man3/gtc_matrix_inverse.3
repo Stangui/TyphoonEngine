@@ -1,0 +1,66 @@
+.TH "gtc_matrix_inverse" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtc_matrix_inverse
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::affineInverse\fP (genType const &m)"
+.br
+.ti -1c
+.RI "template<typename genType > GLM_FUNC_DECL genType \fBglm::inverseTranspose\fP (genType const &m)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtc/matrix_integer\&.hpp\fP> to use the features of this extension\&.
+.PP
+Defines additional matrix inverting functions\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename genType > GLM_FUNC_DECL genType glm::affineInverse (genType const & m)"
+Fast matrix inverse for affine matrix\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP Input matrix to invert\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Squared floating-point matrix: half, float or double\&. Inverse of matrix based of half-qualifier floating point value is highly innacurate\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_matrix_inverse\fP 
+.RE
+.PP
+
+.SS "template<typename genType > GLM_FUNC_DECL genType glm::inverseTranspose (genType const & m)"
+Compute the inverse transpose of a matrix\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP Input matrix to invert transpose\&. 
+.RE
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIgenType\fP Squared floating-point matrix: half, float or double\&. Inverse of matrix based of half-qualifier floating point value is highly innacurate\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTC_matrix_inverse\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

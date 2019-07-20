@@ -1,0 +1,193 @@
+.TH "demo" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+demo
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGLFWwindow\fP * \fBwindow\fP"
+.br
+.ti -1c
+.RI "VkSurfaceKHR \fBsurface\fP"
+.br
+.ti -1c
+.RI "bool \fBuse_staging_buffer\fP"
+.br
+.ti -1c
+.RI "VkInstance \fBinst\fP"
+.br
+.ti -1c
+.RI "VkPhysicalDevice \fBgpu\fP"
+.br
+.ti -1c
+.RI "VkDevice \fBdevice\fP"
+.br
+.ti -1c
+.RI "VkQueue \fBqueue\fP"
+.br
+.ti -1c
+.RI "\fBVkPhysicalDeviceProperties\fP \fBgpu_props\fP"
+.br
+.ti -1c
+.RI "\fBVkPhysicalDeviceFeatures\fP \fBgpu_features\fP"
+.br
+.ti -1c
+.RI "\fBVkQueueFamilyProperties\fP * \fBqueue_props\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBgraphics_queue_node_index\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBenabled_extension_count\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBenabled_layer_count\fP"
+.br
+.ti -1c
+.RI "const char * \fBextension_names\fP [64]"
+.br
+.ti -1c
+.RI "const char * \fBenabled_layers\fP [64]"
+.br
+.ti -1c
+.RI "int \fBwidth\fP"
+.br
+.ti -1c
+.RI "int \fBheight\fP"
+.br
+.ti -1c
+.RI "VkFormat \fBformat\fP"
+.br
+.ti -1c
+.RI "VkColorSpaceKHR \fBcolor_space\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBswapchainImageCount\fP"
+.br
+.ti -1c
+.RI "VkSwapchainKHR \fBswapchain\fP"
+.br
+.ti -1c
+.RI "\fBSwapchainBuffers\fP * \fBbuffers\fP"
+.br
+.ti -1c
+.RI "VkCommandPool \fBcmd_pool\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   VkFormat \fBformat\fP"
+.br
+.ti -1c
+.RI "   VkImage \fBimage\fP"
+.br
+.ti -1c
+.RI "   VkDeviceMemory \fBmem\fP"
+.br
+.ti -1c
+.RI "   VkImageView \fBview\fP"
+.br
+.ti -1c
+.RI "} \fBdepth\fP"
+.br
+.ti -1c
+.RI "struct \fBtexture_object\fP \fBtextures\fP [DEMO_TEXTURE_COUNT]"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   VkBuffer \fBbuf\fP"
+.br
+.ti -1c
+.RI "   VkDeviceMemory \fBmem\fP"
+.br
+.ti -1c
+.RI "   \fBVkPipelineVertexInputStateCreateInfo\fP \fBvi\fP"
+.br
+.ti -1c
+.RI "   \fBVkVertexInputBindingDescription\fP \fBvi_bindings\fP [1]"
+.br
+.ti -1c
+.RI "   \fBVkVertexInputAttributeDescription\fP \fBvi_attrs\fP [2]"
+.br
+.ti -1c
+.RI "} \fBvertices\fP"
+.br
+.ti -1c
+.RI "VkCommandBuffer \fBsetup_cmd\fP"
+.br
+.ti -1c
+.RI "VkCommandBuffer \fBdraw_cmd\fP"
+.br
+.ti -1c
+.RI "VkPipelineLayout \fBpipeline_layout\fP"
+.br
+.ti -1c
+.RI "VkDescriptorSetLayout \fBdesc_layout\fP"
+.br
+.ti -1c
+.RI "VkPipelineCache \fBpipelineCache\fP"
+.br
+.ti -1c
+.RI "VkRenderPass \fBrender_pass\fP"
+.br
+.ti -1c
+.RI "VkPipeline \fBpipeline\fP"
+.br
+.ti -1c
+.RI "VkShaderModule \fBvert_shader_module\fP"
+.br
+.ti -1c
+.RI "VkShaderModule \fBfrag_shader_module\fP"
+.br
+.ti -1c
+.RI "VkDescriptorPool \fBdesc_pool\fP"
+.br
+.ti -1c
+.RI "VkDescriptorSet \fBdesc_set\fP"
+.br
+.ti -1c
+.RI "VkFramebuffer * \fBframebuffers\fP"
+.br
+.ti -1c
+.RI "\fBVkPhysicalDeviceMemoryProperties\fP \fBmemory_properties\fP"
+.br
+.ti -1c
+.RI "int32_t \fBcurFrame\fP"
+.br
+.ti -1c
+.RI "int32_t \fBframeCount\fP"
+.br
+.ti -1c
+.RI "bool \fBvalidate\fP"
+.br
+.ti -1c
+.RI "bool \fBuse_break\fP"
+.br
+.ti -1c
+.RI "VkDebugReportCallbackEXT \fBmsg_callback\fP"
+.br
+.ti -1c
+.RI "float \fBdepthStencil\fP"
+.br
+.ti -1c
+.RI "float \fBdepthIncrement\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBcurrent_buffer\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBqueue_count\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

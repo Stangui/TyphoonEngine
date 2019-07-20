@@ -1,0 +1,286 @@
+.TH "md__typhoon__third_party__g_l_fw_docs__c_o_n_t_r_i_b_u_t_i_n_g" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__typhoon__third_party__g_l_fw_docs__c_o_n_t_r_i_b_u_t_i_n_g \- Contribution Guide 
+
+.SS "Contents"
+.PP
+.IP "\(bu" 2
+\fCAsking a question\fP
+.IP "\(bu" 2
+\fCReporting a bug\fP
+.IP "  \(bu" 4
+\fCReporting a compile or link bug\fP
+.IP "  \(bu" 4
+\fCReporting a segfault or other crash bug\fP
+.IP "  \(bu" 4
+\fCReporting a context creation bug\fP
+.IP "  \(bu" 4
+\fCReporting a monitor or video mode bug\fP
+.IP "  \(bu" 4
+\fCReporting a window, input or event bug\fP
+.IP "  \(bu" 4
+\fCReporting some other library bug\fP
+.IP "  \(bu" 4
+\fCReporting a documentation bug\fP
+.IP "  \(bu" 4
+\fCReporting a website bug\fP
+.PP
+
+.IP "\(bu" 2
+\fCRequesting a feature\fP
+.IP "\(bu" 2
+\fCContributing a bug fix\fP
+.IP "\(bu" 2
+\fCContributing a feature\fP
+.PP
+.PP
+.SS "Asking a question"
+.PP
+Questions about how to use GLFW should be asked either in the \fCsupport section\fP of the forum, under the \fCStack Overflow tag\fP or \fCGame Development tag\fP on Stack Exchange or in the IRC channel \fC#glfw\fP on \fCFreenode\fP\&.
+.PP
+Questions about the design or implementation of GLFW or about future plans should be asked in the \fCdev section\fP of the forum or in the IRC channel\&. Please don't open a GitHub issue to discuss design questions without first checking with a maintainer\&.
+.PP
+.SS "Reporting a bug"
+.PP
+If GLFW is behaving unexpectedly at run-time, start by setting an \fCerror callback\fP\&. GLFW will often tell you the cause of an error via this callback\&. If it doesn't, that might be a separate bug\&.
+.PP
+If GLFW is crashing or triggering asserts, make sure that all your object handles and other pointers are valid\&.
+.PP
+For bugs where it makes sense, a short, self contained example is absolutely invaluable\&. Just put it inline in the body text\&. Note that if the bug is reproducible with one of the test programs that come with GLFW, just mention that instead\&.
+.PP
+\fBDon't worry about adding too much information\fP\&. Unimportant information can be abbreviated or removed later, but missing information can stall bug fixing, especially when your schedule doesn't align with that of the maintainer\&.
+.PP
+\fBPlease provide text as text, not as images\fP\&. This includes code, error messages and any other text\&. Text in images cannot be found by other users searching for the same problem and may have to be re-typed by maintainers when debugging\&.
+.PP
+You don't need to manually indent your code or other text to quote it with GitHub Markdown; just surround it with triple backticks: 
+.PP
+.nf
+```
+Some quoted text.
+```
+
+.fi
+.PP
+.PP
+You can also add syntax highlighting by appending the common file extension: 
+.PP
+.nf
+```c
+int five(void)
+{
+    return 5;
+}
+```
+
+.fi
+.PP
+.PP
+There are issue labels for both platforms and GPU manufacturers, so there is no need to mention these in the subject line\&. If you do, it will be removed when the issue is labeled\&.
+.PP
+If your bug is already reported, please add any new information you have, or if it already has everything, give it a :+1:\&.
+.PP
+.SS "Reporting a compile or link bug"
+.PP
+\fBNote:\fP GLFW needs many system APIs to do its job, which on some platforms means linking to many system libraries\&. If you are using GLFW as a static library, that means your application needs to link to these in addition to GLFW\&.
+.PP
+\fBNote:\fP Check the \fCCompiling GLFW\fP guide and or \fCBuilding applications\fP guide for before opening an issue of this kind\&. Most issues are caused by a missing package or linker flag\&.
+.PP
+Always include the \fBoperating system name and version\fP (e\&.g\&. \fCWindows 7 64-bit\fP or \fCUbuntu 15\&.10\fP) and the \fBcompiler name and version\fP (e\&.g\&. \fCVisual C++ 2015 Update 2\fP)\&. If you are using an official release of GLFW, include the \fBGLFW release version\fP (e\&.g\&. \fC3\&.1\&.2\fP), otherwise include the \fBGLFW commit ID\fP (e\&.g\&. \fC3795d78b14ef06008889cc422a1fb8d642597751\fP) from Git\&.
+.PP
+Please also include the \fBcomplete build log\fP from your compiler and linker, even if it's long\&. It can always be shortened later, if necessary\&.
+.PP
+.SS "Quick template"
+.PP
+.PP
+.nf
+OS and version:
+Compiler version:
+Release or commit:
+Build log:
+.fi
+.PP
+.PP
+.SS "Reporting a segfault or other crash bug"
+.PP
+Always include the \fBoperating system name and version\fP (e\&.g\&. \fCWindows 7 64-bit\fP or \fCUbuntu 15\&.10\fP)\&. If you are using an official release of GLFW, include the \fBGLFW release version\fP (e\&.g\&. \fC3\&.1\&.2\fP), otherwise include the \fBGLFW commit ID\fP (e\&.g\&. \fC3795d78b14ef06008889cc422a1fb8d642597751\fP) from Git\&.
+.PP
+Please also include any \fBerror messages\fP provided to your application via the \fCerror callback\fP and the \fBfull call stack\fP of the crash, or if the crash does not occur in debug mode, mention that instead\&.
+.PP
+.SS "Quick template"
+.PP
+.PP
+.nf
+OS and version:
+Release or commit:
+Error messages:
+Call stack:
+.fi
+.PP
+.PP
+.SS "Reporting a context creation bug"
+.PP
+\fBNote:\fP Windows ships with graphics drivers that do not support OpenGL\&. If GLFW says that your machine lacks support for OpenGL, it very likely does\&. Install drivers from the computer manufacturer or graphics card manufacturer (\fCNvidia\fP, \fCAMD\fP, \fCIntel\fP) to fix this\&.
+.PP
+\fBNote:\fP AMD only supports OpenGL ES on Windows via EGL\&. See the \fCGLFW_CONTEXT_CREATION_API\fP hint for how to select EGL\&.
+.PP
+Please verify that context creation also fails with the \fCglfwinfo\fP tool before reporting it as a bug\&. This tool is included in the GLFW source tree as \fCtests/glfwinfo\&.c\fP and is built along with the library\&. It has switches for all GLFW context and framebuffer hints\&. Run \fCglfwinfo -h\fP for a complete list\&.
+.PP
+Always include the \fBoperating system name and version\fP (e\&.g\&. \fCWindows 7 64-bit\fP or \fCUbuntu 15\&.10\fP)\&. If you are using an official release of GLFW, include the \fBGLFW release version\fP (e\&.g\&. \fC3\&.1\&.2\fP), otherwise include the \fBGLFW commit ID\fP (e\&.g\&. \fC3795d78b14ef06008889cc422a1fb8d642597751\fP) from Git\&.
+.PP
+If you are running your program in a virtual machine, please mention this and include the \fBVM name and version\fP (e\&.g\&. \fCVirtualBox 5\&.1\fP)\&.
+.PP
+Please also include the \fBGLFW version string\fP (\fC3\&.2\&.0 X11 EGL clock_gettime /dev/js\fP), as described \fChere\fP, the \fBGPU model and driver version\fP (e\&.g\&. \fCGeForce GTX660 with 352\&.79\fP), and the \fBoutput of \fCglfwinfo\fP\fP (with switches matching any hints you set in your code) when reporting this kind of bug\&. If this tool doesn't run on the machine, mention that instead\&.
+.PP
+.SS "Quick template"
+.PP
+.PP
+.nf
+OS and version:
+GPU and driver:
+Release or commit:
+Version string:
+glfwinfo output:
+.fi
+.PP
+.PP
+.SS "Reporting a monitor or video mode bug"
+.PP
+\fBNote:\fP On headless systems on some platforms, no monitors are reported\&. This causes glfwGetPrimaryMonitor to return \fCNULL\fP, which not all applications are prepared for\&.
+.PP
+\fBNote:\fP Some third-party tools report more video modes than are approved of by the OS\&. For safety and compatibility, GLFW only reports video modes the OS wants programs to use\&. This is not a bug\&.
+.PP
+The \fCmonitors\fP tool is included in the GLFW source tree as \fCtests/monitors\&.c\fP and is built along with the library\&. It lists all information GLFW provides about monitors it detects\&.
+.PP
+Always include the \fBoperating system name and version\fP (e\&.g\&. \fCWindows 7 64-bit\fP or \fCUbuntu 15\&.10\fP)\&. If you are using an official release of GLFW, include the \fBGLFW release version\fP (e\&.g\&. \fC3\&.1\&.2\fP), otherwise include the \fBGLFW commit ID\fP (e\&.g\&. \fC3795d78b14ef06008889cc422a1fb8d642597751\fP) from Git\&.
+.PP
+If you are running your program in a virtual machine, please mention this and include the \fBVM name and version\fP (e\&.g\&. \fCVirtualBox 5\&.1\fP)\&.
+.PP
+Please also include any \fBerror messages\fP provided to your application via the \fCerror callback\fP and the \fBoutput of \fCmonitors\fP\fP when reporting this kind of bug\&. If this tool doesn't run on the machine, mention this instead\&.
+.PP
+.SS "Quick template"
+.PP
+.PP
+.nf
+OS and version:
+Release or commit:
+Error messages:
+monitors output:
+.fi
+.PP
+.PP
+.SS "Reporting a window, input or event bug"
+.PP
+\fBNote:\fP The exact ordering of related window events will sometimes differ\&.
+.PP
+\fBNote:\fP Window moving and resizing (by the user) will block the main thread on some platforms\&. This is not a bug\&. Set a \fCrefresh callback\fP if you want to keep the window contents updated during a move or size operation\&.
+.PP
+The \fCevents\fP tool is included in the GLFW source tree as \fCtests/events\&.c\fP and is built along with the library\&. It prints all information provided to every callback supported by GLFW as events occur\&. Each event is listed with the time and a unique number to make discussions about event logs easier\&. The tool has command-line options for creating multiple windows and full screen windows\&.
+.PP
+Always include the \fBoperating system name and version\fP (e\&.g\&. \fCWindows 7 64-bit\fP or \fCUbuntu 15\&.10\fP)\&. If you are using an official release of GLFW, include the \fBGLFW release version\fP (e\&.g\&. \fC3\&.1\&.2\fP), otherwise include the \fBGLFW commit ID\fP (e\&.g\&. \fC3795d78b14ef06008889cc422a1fb8d642597751\fP) from Git\&.
+.PP
+If you are running your program in a virtual machine, please mention this and include the \fBVM name and version\fP (e\&.g\&. \fCVirtualBox 5\&.1\fP)\&.
+.PP
+Please also include any \fBerror messages\fP provided to your application via the \fCerror callback\fP and if relevant, the \fBoutput of \fCevents\fP\fP when reporting this kind of bug\&. If this tool doesn't run on the machine, mention this instead\&.
+.PP
+\fBX11:\fP If possible, please include what desktop environment (e\&.g\&. GNOME, Unity, KDE) and/or window manager (e\&.g\&. Openbox, dwm, Window Maker) you are running\&. If the bug is related to keyboard input, please include any input method (e\&.g\&. ibus, SCIM) you are using\&.
+.PP
+.SS "Quick template"
+.PP
+.PP
+.nf
+OS and version:
+Release or commit:
+Error messages:
+events output:
+.fi
+.PP
+.PP
+.SS "Reporting some other library bug"
+.PP
+Always include the \fBoperating system name and version\fP (e\&.g\&. \fCWindows 7 64-bit\fP or \fCUbuntu 15\&.10\fP)\&. If you are using an official release of GLFW, include the \fBGLFW release version\fP (e\&.g\&. \fC3\&.1\&.2\fP), otherwise include the \fBGLFW commit ID\fP (e\&.g\&. \fC3795d78b14ef06008889cc422a1fb8d642597751\fP) from Git\&.
+.PP
+Please also include any \fBerror messages\fP provided to your application via the \fCerror callback\fP, if relevant\&.
+.PP
+.SS "Quick template"
+.PP
+.PP
+.nf
+OS and version:
+Release or commit:
+Error messages:
+.fi
+.PP
+.PP
+.SS "Reporting a documentation bug"
+.PP
+If you found a bug in the documentation, including this file, then it's fine to just link to that web page or mention that source file\&. You don't need to match the source to the output or vice versa\&.
+.PP
+.SS "Reporting a website bug"
+.PP
+If the bug is in the documentation (anything under \fC/docs/\fP) then please see the section above\&. Bugs in the rest of the site are reported to the \fCwebsite source repository\fP\&.
+.PP
+.SS "Requesting a feature"
+.PP
+Please explain why you need the feature and how you intend to use it\&. If you have a specific API design in mind, please add that as well\&. If you have or are planning to write code for the feature, see the section below\&.
+.PP
+If there already is a request for the feature you need, add your specific use case unless it is already mentioned\&. If it is, give it a :+1:\&.
+.PP
+.SS "Contributing a bug fix"
+.PP
+\fBNote:\fP You must have all necessary \fCintellectual property rights\fP to any code you contribute\&. If you did not write the code yourself, you must explain where it came from and under what license you received it\&. Even code using the same license as GLFW may not be copied without attribution\&.
+.PP
+\fBThere is no preferred patch size\fP\&. A one character fix is just as welcome as a thousand line one, if that is the appropriate size for the fix\&.
+.PP
+In addition to the code, a complete bug fix includes:
+.PP
+.IP "\(bu" 2
+Change log entry in \fCREADME\&.md\fP, describing the incorrect behavior
+.IP "\(bu" 2
+Credits entries for all authors of the bug fix
+.PP
+.PP
+Bug fixes will not be rejected because they don't include all the above parts, but please keep in mind that maintainer time is finite and that there are many other bugs and features to work on\&.
+.PP
+If the patch fixes a bug introduced after the last release, it should not get a change log entry\&.
+.PP
+If you haven't already, read the excellent article \fCHow to Write a Git Commit Message\fP\&.
+.PP
+.SS "Contributing a feature"
+.PP
+\fBNote:\fP You must have all necessary rights to any code you contribute\&. If you did not write the code yourself, you must explain where it came from and under what license\&. Even code using the same license as GLFW may not be copied without attribution\&.
+.PP
+\fBNote:\fP If you haven't already implemented the feature, check first if there already is an open issue for it and if it's already being developed in an \fCexperimental branch\fP\&.
+.PP
+\fBThere is no preferred patch size\fP\&. A one character change is just as welcome as one adding a thousand line one, if that is the appropriate size for the feature\&.
+.PP
+In addition to the code, a complete feature includes:
+.PP
+.IP "\(bu" 2
+Change log entry in \fCREADME\&.md\fP, listing all new symbols
+.IP "\(bu" 2
+News page entry, briefly describing the feature
+.IP "\(bu" 2
+Guide documentation, with minimal examples, in the relevant guide
+.IP "\(bu" 2
+Reference documentation, with all applicable tags
+.IP "\(bu" 2
+Cross-references and mentions in appropriate places
+.IP "\(bu" 2
+Credits entries for all authors of the feature
+.PP
+.PP
+If the feature requires platform-specific code, at minimum stubs must be added for the new platform function to all supported and experimental platforms\&.
+.PP
+If it adds a new callback, support for it must be added to \fCtests/event\&.c\fP\&.
+.PP
+If it adds a new monitor property, support for it must be added to \fCtests/monitor\&.c\fP\&.
+.PP
+If it adds a new OpenGL, OpenGL ES or Vulkan option or extension, support for it must be added to \fCtests/glfwinfo\&.c\fP and the behavior of the library when the extension is missing documented in \fCdocs/compat\&.dox\fP\&.
+.PP
+If you haven't already, read the excellent article \fCHow to Write a Git Commit Message\fP\&.
+.PP
+Features will not be rejected because they don't include all the above parts, but please keep in mind that maintainer time is finite and that there are many other features and bugs to work on\&.
+.PP
+Please also keep in mind that any part of the public API that has been included in a release cannot be changed until the next \fImajor\fP version\&. Features can be added and existing parts can sometimes be overloaded (in the general sense of doing more things, not in the C++ sense), but code written to the API of one minor release should both compile and run on subsequent minor releases\&. 

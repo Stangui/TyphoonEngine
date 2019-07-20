@@ -1,0 +1,95 @@
+.TH "ImGuiInputTextState" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ImGuiInputTextState
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClearFreeMemory\fP ()"
+.br
+.ti -1c
+.RI "void \fBCursorAnimReset\fP ()"
+.br
+.ti -1c
+.RI "void \fBCursorClamp\fP ()"
+.br
+.ti -1c
+.RI "bool \fBHasSelection\fP () const"
+.br
+.ti -1c
+.RI "void \fBClearSelection\fP ()"
+.br
+.ti -1c
+.RI "void \fBSelectAll\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetUndoAvailCount\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetRedoAvailCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBOnKeyPressed\fP (int key)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "ImGuiID \fBID\fP"
+.br
+.ti -1c
+.RI "int \fBCurLenW\fP"
+.br
+.ti -1c
+.RI "int \fBCurLenA\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< ImWchar > \fBTextW\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< char > \fBTextA\fP"
+.br
+.ti -1c
+.RI "\fBImVector\fP< char > \fBInitialTextA\fP"
+.br
+.ti -1c
+.RI "bool \fBTextAIsValid\fP"
+.br
+.ti -1c
+.RI "int \fBBufCapacityA\fP"
+.br
+.ti -1c
+.RI "float \fBScrollX\fP"
+.br
+.ti -1c
+.RI "\fBImStb::STB_TexteditState\fP \fBStb\fP"
+.br
+.ti -1c
+.RI "float \fBCursorAnim\fP"
+.br
+.ti -1c
+.RI "bool \fBCursorFollow\fP"
+.br
+.ti -1c
+.RI "bool \fBSelectedAllMouseLock\fP"
+.br
+.ti -1c
+.RI "ImGuiInputTextFlags \fBUserFlags\fP"
+.br
+.ti -1c
+.RI "ImGuiInputTextCallback \fBUserCallback\fP"
+.br
+.ti -1c
+.RI "void * \fBUserCallbackData\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

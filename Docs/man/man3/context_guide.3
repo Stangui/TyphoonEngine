@@ -1,0 +1,254 @@
+.TH "context_guide" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+context_guide \- Context guide 
+This guide introduces the OpenGL and OpenGL ES context related functions of GLFW\&. For details on a specific function in this category, see the \fBContext reference\fP\&. There are also guides for the other areas of the GLFW API\&.
+.PP
+.IP "\(bu" 2
+\fBIntroduction to the API\fP
+.IP "\(bu" 2
+\fBWindow guide\fP
+.IP "\(bu" 2
+\fBVulkan guide\fP
+.IP "\(bu" 2
+\fBMonitor guide\fP
+.IP "\(bu" 2
+\fBInput guide\fP
+.PP
+.SH "Context objects"
+.PP
+A window object encapsulates both a top-level window and an OpenGL or OpenGL ES context\&. It is created with \fBglfwCreateWindow\fP and destroyed with \fBglfwDestroyWindow\fP or \fBglfwTerminate\fP\&. See \fBWindow creation\fP for more information\&.
+.PP
+As the window and context are inseparably linked, the window object also serves as the context handle\&.
+.PP
+To test the creation of various kinds of contexts and see their properties, run the \fCglfwinfo\fP test program\&.
+.PP
+\fBNote:\fP
+.RS 4
+Vulkan does not have a context and the Vulkan instance is created via the Vulkan API itself\&. If you will be using Vulkan to render to a window, disable context creation by setting the \fBGLFW_CLIENT_API\fP hint to \fCGLFW_NO_API\fP\&. For more information, see the \fBVulkan guide\fP\&.
+.RE
+.PP
+.SS "Context creation hints"
+There are a number of hints, specified using \fBglfwWindowHint\fP, related to what kind of context is created\&. See \fBcontext related hints\fP in the window guide\&.
+.SS "Context object sharing"
+When creating a window and its OpenGL or OpenGL ES context with \fBglfwCreateWindow\fP, you can specify another window whose context the new one should share its objects (textures, vertex and element buffers, etc\&.) with\&.
+.PP
+.PP
+.nf
+GLFWwindow* second_window = glfwCreateWindow(640, 480, "Second Window", NULL, first_window);
+.fi
+.PP
+.PP
+Object sharing is implemented by the operating system and graphics driver\&. On platforms where it is possible to choose which types of objects are shared, GLFW requests that all types are shared\&.
+.PP
+See the relevant chapter of the \fCOpenGL\fP or \fCOpenGL ES\fP reference documents for more information\&. The name and number of this chapter unfortunately varies between versions and APIs, but has at times been named \fIShared Objects and Multiple Contexts\fP\&.
+.PP
+GLFW comes with a barebones object sharing example program called \fCsharing\fP\&.
+.SS "Offscreen contexts"
+GLFW doesn't support creating contexts without an associated window\&. However, contexts with hidden windows can be created with the \fBGLFW_VISIBLE\fP window hint\&.
+.PP
+.PP
+.nf
+glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
+
+GLFWwindow* offscreen_context = glfwCreateWindow(640, 480, "", NULL, NULL);
+.fi
+.PP
+.PP
+The window never needs to be shown and its context can be used as a plain offscreen context\&. Depending on the window manager, the size of a hidden window's framebuffer may not be usable or modifiable, so framebuffer objects are recommended for rendering with such contexts\&.
+.PP
+You should still \fBprocess events\fP as long as you have at least one window, even if none of them are visible\&.
+.PP
+@macos The first time a window is created the menu bar is created\&. This is not desirable for example when writing a command-line only application\&. Menu bar creation can be disabled with the \fBGLFW_COCOA_MENUBAR\fP init hint\&.
+.SS "Windows without contexts"
+You can disable context creation by setting the \fBGLFW_CLIENT_API\fP hint to \fCGLFW_NO_API\fP\&. Windows without contexts must not be passed to \fBglfwMakeContextCurrent\fP or \fBglfwSwapBuffers\fP\&.
+.SH "Current context"
+.PP
+Before you can make OpenGL or OpenGL ES calls, you need to have a current context of the correct type\&. A context can only be current for a single thread at a time, and a thread can only have a single context current at a time\&.
+.PP
+When moving a context between threads, you must make it non-current on the old thread before making it current on the new one\&.
+.PP
+The context of a window is made current with \fBglfwMakeContextCurrent\fP\&.
+.PP
+.PP
+.nf
+glfwMakeContextCurrent(window);
+.fi
+.PP
+.PP
+The window of the current context is returned by \fBglfwGetCurrentContext\fP\&.
+.PP
+.PP
+.nf
+GLFWwindow* window = glfwGetCurrentContext();
+.fi
+.PP
+.PP
+The following GLFW functions require a context to be current\&. Calling any these functions without a current context will generate a \fBGLFW_NO_CURRENT_CONTEXT\fP error\&.
+.PP
+.IP "\(bu" 2
+\fBglfwSwapInterval\fP
+.IP "\(bu" 2
+\fBglfwExtensionSupported\fP
+.IP "\(bu" 2
+\fBglfwGetProcAddress\fP
+.PP
+.SH "Buffer swapping"
+.PP
+See \fBBuffer swapping\fP in the window guide\&.
+.SH "OpenGL and OpenGL ES extensions"
+.PP
+One of the benefits of OpenGL and OpenGL ES is their extensibility\&. Hardware vendors may include extensions in their implementations that extend the API before that functionality is included in a new version of the OpenGL or OpenGL ES specification, and some extensions are never included and remain as extensions until they become obsolete\&.
+.PP
+An extension is defined by:
+.PP
+.IP "\(bu" 2
+An extension name (e\&.g\&. \fCGL_ARB_debug_output\fP)
+.IP "\(bu" 2
+New OpenGL tokens (e\&.g\&. \fCGL_DEBUG_SEVERITY_HIGH_ARB\fP)
+.IP "\(bu" 2
+New OpenGL functions (e\&.g\&. \fCglGetDebugMessageLogARB\fP)
+.PP
+.PP
+Note the \fCARB\fP affix, which stands for Architecture Review Board and is used for official extensions\&. The extension above was created by the ARB, but there are many different affixes, like \fCNV\fP for Nvidia and \fCAMD\fP for, well, AMD\&. Any group may also use the generic \fCEXT\fP affix\&. Lists of extensions, together with their specifications, can be found at the \fCOpenGL Registry\fP and \fCOpenGL ES Registry\fP\&.
+.SS "Loading extension with a loader library"
+An extension loader library is the easiest and best way to access both OpenGL and OpenGL ES extensions and modern versions of the core OpenGL or OpenGL ES APIs\&. They will take care of all the details of declaring and loading everything you need\&. One such library is \fCglad\fP and there are several others\&.
+.PP
+The following example will use glad but all extension loader libraries work similarly\&.
+.PP
+First you need to generate the source files using the glad Python script\&. This example generates a loader for any version of OpenGL, which is the default for both GLFW and glad, but loaders for OpenGL ES, as well as loaders for specific API versions and extension sets can be generated\&. The generated files are written to the \fCoutput\fP directory\&.
+.PP
+.PP
+.nf
+python main\&.py --generator c --no-loader --out-path output
+.fi
+.PP
+.PP
+The \fC--no-loader\fP option is added because GLFW already provides a function for loading OpenGL and OpenGL ES function pointers, one that automatically uses the selected context creation API, and glad can call this instead of having to implement its own\&. There are several other command-line options as well\&. See the glad documentation for details\&.
+.PP
+Add the generated \fCoutput/src/glad\&.c\fP, \fCoutput/include/glad/glad\&.h\fP and \fCoutput/include/KHR/khrplatform\&.h\fP files to your build\&. Then you need to include the glad header file, which will replace the OpenGL header of your development environment\&. By including the glad header before the GLFW header, it suppresses the development environment's OpenGL or OpenGL ES header\&.
+.PP
+.PP
+.nf
+#include <glad/glad\&.h>
+#include <GLFW/glfw3\&.h>
+.fi
+.PP
+.PP
+Finally you need to initialize glad once you have a suitable current context\&.
+.PP
+.PP
+.nf
+window = glfwCreateWindow(640, 480, "My Window", NULL, NULL);
+if (!window)
+{
+    \&.\&.\&.
+}
+
+glfwMakeContextCurrent(window);
+
+gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
+.fi
+.PP
+.PP
+Once glad has been loaded, you have access to all OpenGL core and extension functions supported by both the context you created and the glad loader you generated and you are ready to start rendering\&.
+.PP
+You can specify a minimum required OpenGL or OpenGL ES version with \fBcontext hints\fP\&. If your needs are more complex, you can check the actual OpenGL or OpenGL ES version with \fBcontext attributes\fP, or you can check whether a specific version is supported by the current context with the \fCGLAD_GL_VERSION_x_x\fP booleans\&.
+.PP
+.PP
+.nf
+if (GLAD_GL_VERSION_3_2)
+{
+    // Call OpenGL 3\&.2+ specific code
+}
+.fi
+.PP
+.PP
+To check whether a specific extension is supported, use the \fCGLAD_GL_xxx\fP booleans\&.
+.PP
+.PP
+.nf
+if (GLAD_GL_ARB_debug_output)
+{
+    // Use GL_ARB_debug_output
+}
+.fi
+.PP
+.SS "Loading extensions manually"
+\fBDo not use this technique\fP unless it is absolutely necessary\&. An \fBextension loader library\fP will save you a ton of tedious, repetitive, error prone work\&.
+.PP
+To use a certain extension, you must first check whether the context supports that extension and then, if it introduces new functions, retrieve the pointers to those functions\&. GLFW provides \fBglfwExtensionSupported\fP and \fBglfwGetProcAddress\fP for manual loading of extensions and new API functions\&.
+.PP
+This section will demonstrate manual loading of OpenGL extensions\&. The loading of OpenGL ES extensions is identical except for the name of the extension header\&.
+.SS "The glext\&.h header"
+The \fCglext\&.h\fP extension header is a continually updated file that defines the interfaces for all OpenGL extensions\&. The latest version of this can always be found at the \fCOpenGL Registry\fP\&. There are also extension headers for the various versions of OpenGL ES at the \fCOpenGL ES Registry\fP\&. It it strongly recommended that you use your own copy of the extension header, as the one included in your development environment may be several years out of date and may not include the extensions you wish to use\&.
+.PP
+The header defines function pointer types for all functions of all extensions it supports\&. These have names like \fCPFNGLGETDEBUGMESSAGELOGARBPROC\fP (for \fCglGetDebugMessageLogARB\fP), i\&.e\&. the name is made uppercase and \fCPFN\fP (pointer to function) and \fCPROC\fP (procedure) are added to the ends\&.
+.PP
+To include the extension header, define \fBGLFW_INCLUDE_GLEXT\fP before including the GLFW header\&.
+.PP
+.PP
+.nf
+#define GLFW_INCLUDE_GLEXT
+#include <GLFW/glfw3\&.h>
+.fi
+.PP
+.SS "Checking for extensions"
+A given machine may not actually support the extension (it may have older drivers or a graphics card that lacks the necessary hardware features), so it is necessary to check at run-time whether the context supports the extension\&. This is done with \fBglfwExtensionSupported\fP\&.
+.PP
+.PP
+.nf
+if (glfwExtensionSupported("GL_ARB_debug_output"))
+{
+    // The extension is supported by the current context
+}
+.fi
+.PP
+.PP
+The argument is a null terminated ASCII string with the extension name\&. If the extension is supported, \fBglfwExtensionSupported\fP returns \fCGLFW_TRUE\fP, otherwise it returns \fCGLFW_FALSE\fP\&.
+.SS "Fetching function pointers"
+Many extensions, though not all, require the use of new OpenGL functions\&. These functions often do not have entry points in the client API libraries of your operating system, making it necessary to fetch them at run time\&. You can retrieve pointers to these functions with \fBglfwGetProcAddress\fP\&.
+.PP
+.PP
+.nf
+PFNGLGETDEBUGMESSAGELOGARBPROC pfnGetDebugMessageLog = glfwGetProcAddress("glGetDebugMessageLogARB");
+.fi
+.PP
+.PP
+In general, you should avoid giving the function pointer variables the (exact) same name as the function, as this may confuse your linker\&. Instead, you can use a different prefix, like above, or some other naming scheme\&.
+.PP
+Now that all the pieces have been introduced, here is what they might look like when used together\&.
+.PP
+.PP
+.nf
+#define GLFW_INCLUDE_GLEXT
+#include <GLFW/glfw3\&.h>
+
+#define glGetDebugMessageLogARB pfnGetDebugMessageLog
+PFNGLGETDEBUGMESSAGELOGARBPROC pfnGetDebugMessageLog;
+
+// Flag indicating whether the extension is supported
+int has_ARB_debug_output = 0;
+
+void load_extensions(void)
+{
+    if (glfwExtensionSupported("GL_ARB_debug_output"))
+    {
+        pfnGetDebugMessageLog = (PFNGLGETDEBUGMESSAGELOGARBPROC)
+            glfwGetProcAddress("glGetDebugMessageLogARB");
+        has_ARB_debug_output = 1;
+    }
+}
+
+void some_function(void)
+{
+    if (has_ARB_debug_output)
+    {
+        // Now the extension function can be called as usual
+        glGetDebugMessageLogARB(\&.\&.\&.);
+    }
+}
+.fi
+.PP
+ 

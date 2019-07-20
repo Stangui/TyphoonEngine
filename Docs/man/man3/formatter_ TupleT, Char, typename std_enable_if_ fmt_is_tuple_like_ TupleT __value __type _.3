@@ -1,0 +1,29 @@
+.TH "formatter< TupleT, Char, typename std::enable_if< fmt::is_tuple_like< TupleT >::value >::type >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+formatter< TupleT, Char, typename std::enable_if< fmt::is_tuple_like< TupleT >::value >::type >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename ParseContext > FMT_CONSTEXPR auto \fBparse\fP (ParseContext &ctx) \-> decltype(ctx\&.begin())"
+.br
+.ti -1c
+.RI "template<typename FormatContext  = format_context> auto \fBformat\fP (const TupleT &values, FormatContext &ctx) \-> decltype(ctx\&.out())"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBformatting_tuple\fP< Char > \fBformatting\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

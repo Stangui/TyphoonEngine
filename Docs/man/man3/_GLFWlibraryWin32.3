@@ -1,0 +1,172 @@
+.TH "_GLFWlibraryWin32" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_GLFWlibraryWin32
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "HWND \fBhelperWindowHandle\fP"
+.br
+.ti -1c
+.RI "HDEVNOTIFY \fBdeviceNotificationHandle\fP"
+.br
+.ti -1c
+.RI "DWORD \fBforegroundLockTimeout\fP"
+.br
+.ti -1c
+.RI "int \fBacquiredMonitorCount\fP"
+.br
+.ti -1c
+.RI "char * \fBclipboardString\fP"
+.br
+.ti -1c
+.RI "short int \fBkeycodes\fP [512]"
+.br
+.ti -1c
+.RI "short int \fBscancodes\fP [GLFW_KEY_LAST+1]"
+.br
+.ti -1c
+.RI "char \fBkeynames\fP [GLFW_KEY_LAST+1][5]"
+.br
+.ti -1c
+.RI "double \fBrestoreCursorPosX\fP"
+.br
+.ti -1c
+.RI "double \fBrestoreCursorPosY\fP"
+.br
+.ti -1c
+.RI "\fB_GLFWwindow\fP * \fBdisabledCursorWindow\fP"
+.br
+.ti -1c
+.RI "RAWINPUT * \fBrawInput\fP"
+.br
+.ti -1c
+.RI "int \fBrawInputSize\fP"
+.br
+.ti -1c
+.RI "UINT \fBmouseTrailSize\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   HINSTANCE \fBinstance\fP"
+.br
+.ti -1c
+.RI "   PFN_timeGetTime \fBGetTime\fP"
+.br
+.ti -1c
+.RI "} \fBwinmm\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   HINSTANCE \fBinstance\fP"
+.br
+.ti -1c
+.RI "   PFN_DirectInput8Create \fBCreate\fP"
+.br
+.ti -1c
+.RI "   IDirectInput8W * \fBapi\fP"
+.br
+.ti -1c
+.RI "} \fBdinput8\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   HINSTANCE \fBinstance\fP"
+.br
+.ti -1c
+.RI "   PFN_XInputGetCapabilities \fBGetCapabilities\fP"
+.br
+.ti -1c
+.RI "   PFN_XInputGetState \fBGetState\fP"
+.br
+.ti -1c
+.RI "} \fBxinput\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   HINSTANCE \fBinstance\fP"
+.br
+.ti -1c
+.RI "   PFN_SetProcessDPIAware \fBSetProcessDPIAware_\fP"
+.br
+.ti -1c
+.RI "   PFN_ChangeWindowMessageFilterEx \fBChangeWindowMessageFilterEx_\fP"
+.br
+.ti -1c
+.RI "   PFN_EnableNonClientDpiScaling \fBEnableNonClientDpiScaling_\fP"
+.br
+.ti -1c
+.RI "   PFN_SetProcessDpiAwarenessContext \fBSetProcessDpiAwarenessContext_\fP"
+.br
+.ti -1c
+.RI "   PFN_GetDpiForWindow \fBGetDpiForWindow_\fP"
+.br
+.ti -1c
+.RI "   PFN_AdjustWindowRectExForDpi \fBAdjustWindowRectExForDpi_\fP"
+.br
+.ti -1c
+.RI "} \fBuser32\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   HINSTANCE \fBinstance\fP"
+.br
+.ti -1c
+.RI "   PFN_DwmIsCompositionEnabled \fBIsCompositionEnabled\fP"
+.br
+.ti -1c
+.RI "   PFN_DwmFlush \fBFlush\fP"
+.br
+.ti -1c
+.RI "   PFN_DwmEnableBlurBehindWindow \fBEnableBlurBehindWindow\fP"
+.br
+.ti -1c
+.RI "} \fBdwmapi\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   HINSTANCE \fBinstance\fP"
+.br
+.ti -1c
+.RI "   PFN_SetProcessDpiAwareness \fBSetProcessDpiAwareness_\fP"
+.br
+.ti -1c
+.RI "   PFN_GetDpiForMonitor \fBGetDpiForMonitor_\fP"
+.br
+.ti -1c
+.RI "} \fBshcore\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   HINSTANCE \fBinstance\fP"
+.br
+.ti -1c
+.RI "   PFN_RtlVerifyVersionInfo \fBRtlVerifyVersionInfo_\fP"
+.br
+.ti -1c
+.RI "} \fBntdll\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

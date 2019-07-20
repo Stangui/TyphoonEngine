@@ -1,0 +1,94 @@
+.TH "gtx_color_space" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_color_space
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::rgbColor\fP (\fBvec\fP< 3, T, Q > const &hsvValue)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::hsvColor\fP (\fBvec\fP< 3, T, Q > const &rgbValue)"
+.br
+.ti -1c
+.RI "template<typename T > GLM_FUNC_DECL \fBmat\fP< 4, 4, T, defaultp > \fBglm::saturation\fP (T const s)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::saturation\fP (T const s, \fBvec\fP< 3, T, Q > const &color)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 4, T, Q > \fBglm::saturation\fP (T const s, \fBvec\fP< 4, T, Q > const &color)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::luminosity\fP (\fBvec\fP< 3, T, Q > const &color)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/color_space\&.hpp\fP> to use the features of this extension\&.
+.PP
+Related to RGB to HSV conversions and operations\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::hsvColor (\fBvec\fP< 3, T, Q > const & rgbValue)"
+Converts a color from RGB color space to its color in HSV color space\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_color_space\fP 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL T glm::luminosity (\fBvec\fP< 3, T, Q > const & color)"
+Compute color luminosity associating ratios (0\&.33, 0\&.59, 0\&.11) to RGB canals\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_color_space\fP 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::rgbColor (\fBvec\fP< 3, T, Q > const & hsvValue)"
+Converts a color from HSV color space to its color in RGB color space\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_color_space\fP 
+.RE
+.PP
+
+.SS "template<typename T > GLM_FUNC_DECL \fBmat\fP<4, 4, T, defaultp> glm::saturation (T const s)"
+Build a saturation matrix\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_color_space\fP 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::saturation (T const s, \fBvec\fP< 3, T, Q > const & color)"
+Modify the saturation of a color\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_color_space\fP 
+.RE
+.PP
+
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<4, T, Q> glm::saturation (T const s, \fBvec\fP< 4, T, Q > const & color)"
+Modify the saturation of a color\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBGLM_GTX_color_space\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

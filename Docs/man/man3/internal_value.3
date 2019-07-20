@@ -1,0 +1,105 @@
+.TH "internal::value< Context >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+internal::value< Context >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Context::char_type \fBchar_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "FMT_CONSTEXPR \fBvalue\fP (int val=0)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (unsigned val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (long long val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (unsigned long long val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (double val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (long double val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (const char_type *val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (const signed char *val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (const unsigned char *val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (\fBbasic_string_view\fP< char_type > val)"
+.br
+.ti -1c
+.RI "\fBvalue\fP (const void *val)"
+.br
+.ti -1c
+.RI "template<typename T > \fBvalue\fP (const T &val)"
+.br
+.ti -1c
+.RI "const \fBnamed_arg_base\fP< char_type > & \fBas_named_arg\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   int \fBint_value\fP"
+.br
+.ti -1c
+.RI "   unsigned \fBuint_value\fP"
+.br
+.ti -1c
+.RI "   long long \fBlong_long_value\fP"
+.br
+.ti -1c
+.RI "   unsigned long long \fBulong_long_value\fP"
+.br
+.ti -1c
+.RI "   double \fBdouble_value\fP"
+.br
+.ti -1c
+.RI "   long double \fBlong_double_value\fP"
+.br
+.ti -1c
+.RI "   const void * \fBpointer\fP"
+.br
+.ti -1c
+.RI "   \fBstring_value\fP< char_type > \fBstring\fP"
+.br
+.ti -1c
+.RI "   \fBstring_value\fP< signed char > \fBsstring\fP"
+.br
+.ti -1c
+.RI "   \fBstring_value\fP< unsigned char > \fBustring\fP"
+.br
+.ti -1c
+.RI "   \fBcustom_value\fP< Context > \fBcustom\fP"
+.br
+.ti -1c
+.RI "}; "
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

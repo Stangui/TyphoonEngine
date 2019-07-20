@@ -1,0 +1,30 @@
+.TH "Catch::is_range< T >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Catch::is_range< T >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const bool \fBvalue\fP"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename T > const bool \fBCatch::is_range\fP< T >::value\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+=
+            !std::is_same<decltype(begin(std::declval<T>())), not_this_one>::value &&
+            !std::is_same<decltype(end(std::declval<T>())), not_this_one>::value
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

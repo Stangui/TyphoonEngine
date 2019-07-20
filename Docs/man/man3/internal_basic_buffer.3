@@ -1,0 +1,116 @@
+.TH "internal::basic_buffer< T >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+internal::basic_buffer< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <core\&.h>\fP
+.PP
+Inherited by \fBbasic_memory_buffer< T, SIZE, Allocator >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef T \fBvalue_type\fP"
+.br
+.ti -1c
+.RI "typedef const T & \fBconst_reference\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "T * \fBbegin\fP () FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "T * \fBend\fP () FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "std::size_t \fBsize\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "std::size_t \fBcapacity\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "T * \fBdata\fP () FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "const T * \fBdata\fP () const FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "void \fBresize\fP (std::size_t new_size)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBreserve\fP (std::size_t new_capacity)"
+.br
+.ti -1c
+.RI "void \fBpush_back\fP (const T &\fBvalue\fP)"
+.br
+.ti -1c
+.RI "template<typename U > void \fBappend\fP (const U *begin, const U *end)"
+.br
+.ti -1c
+.RI "T & \fBoperator[]\fP (std::size_t index)"
+.br
+.ti -1c
+.RI "const T & \fBoperator[]\fP (std::size_t index) const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbasic_buffer\fP (std::size_t sz) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "\fBbasic_buffer\fP (T *p=FMT_NULL, std::size_t sz=0, std::size_t cap=0) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "void \fBset\fP (T *buf_data, std::size_t buf_capacity) FMT_NOEXCEPT"
+.br
+.ti -1c
+.RI "virtual void \fBgrow\fP (std::size_t \fBcapacity\fP)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T>
+.br
+class internal::basic_buffer< T >"
+A contiguous memory buffer with an optional growing ability\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > template<typename U > template FMT_API void \fBinternal::basic_buffer\fP< T >::append (const U * begin, const U * end)"
+Appends data to the end of the buffer\&. 
+.SS "template<typename T> std::size_t \fBinternal::basic_buffer\fP< T >::capacity () const\fC [inline]\fP"
+Returns the capacity of this buffer\&. 
+.SS "template<typename T> void \fBinternal::basic_buffer\fP< T >::clear ()\fC [inline]\fP"
+Clears this buffer\&. 
+.SS "template<typename T> T* \fBinternal::basic_buffer\fP< T >::\fBdata\fP ()\fC [inline]\fP"
+Returns a pointer to the buffer data\&. 
+.SS "template<typename T> const T* \fBinternal::basic_buffer\fP< T >::\fBdata\fP () const\fC [inline]\fP"
+Returns a pointer to the buffer data\&. 
+.SS "template<typename T> virtual void \fBinternal::basic_buffer\fP< T >::grow (std::size_t capacity)\fC [protected]\fP, \fC [pure virtual]\fP"
+Increases the buffer capacity to hold at least \fIcapacity\fP elements\&. 
+.PP
+Implemented in \fBbasic_memory_buffer< T, SIZE, Allocator >\fP, \fBbasic_memory_buffer< Char >\fP, and \fBinternal::container_buffer< Container >\fP\&.
+.SS "template<typename T> void \fBinternal::basic_buffer\fP< T >::reserve (std::size_t new_capacity)\fC [inline]\fP"
+Reserves space to store at least \fIcapacity\fP elements\&. 
+.SS "template<typename T> void \fBinternal::basic_buffer\fP< T >::resize (std::size_t new_size)\fC [inline]\fP"
+Resizes the buffer\&. If T is a POD type new elements may not be initialized\&. 
+.SS "template<typename T> void \fBinternal::basic_buffer\fP< T >::set (T * buf_data, std::size_t buf_capacity)\fC [inline]\fP, \fC [protected]\fP"
+Sets the buffer data and capacity\&. 
+.SS "template<typename T> std::size_t \fBinternal::basic_buffer\fP< T >::size () const\fC [inline]\fP"
+Returns the size of this buffer\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

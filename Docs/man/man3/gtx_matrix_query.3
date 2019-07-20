@@ -1,0 +1,62 @@
+.TH "gtx_matrix_query" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gtx_matrix_query
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNull\fP (\fBmat\fP< 2, 2, T, Q > const &m, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNull\fP (\fBmat\fP< 3, 3, T, Q > const &m, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNull\fP (\fBmat\fP< 4, 4, T, Q > const &m, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q, template< length_t, length_t, typename, qualifier > class matType> GLM_FUNC_DECL bool \fBglm::isIdentity\fP (matType< C, R, T, Q > const &m, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNormalized\fP (\fBmat\fP< 2, 2, T, Q > const &m, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNormalized\fP (\fBmat\fP< 3, 3, T, Q > const &m, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL bool \fBglm::isNormalized\fP (\fBmat\fP< 4, 4, T, Q > const &m, T const &\fBepsilon\fP)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q, template< length_t, length_t, typename, qualifier > class matType> GLM_FUNC_DECL bool \fBglm::isOrthogonal\fP (matType< C, R, T, Q > const &m, T const &\fBepsilon\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include <\fBglm/gtx/matrix_query\&.hpp\fP> to use the features of this extension\&.
+.PP
+Query to evaluate matrix properties 
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t C, length_t R, typename T , qualifier Q, template< length_t, length_t, typename, qualifier > class matType> GLM_FUNC_DECL bool glm::isIdentity (matType< C, R, T, Q > const & m, T const & epsilon)"
+Return whether a matrix is an identity matrix\&. From GLM_GTX_matrix_query extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL bool glm::isNormalized (\fBmat\fP< 2, 2, T, Q > const & m, T const & epsilon)"
+Return whether a matrix is a normalized matrix\&. From GLM_GTX_matrix_query extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL bool glm::isNormalized (\fBmat\fP< 3, 3, T, Q > const & m, T const & epsilon)"
+Return whether a matrix is a normalized matrix\&. From GLM_GTX_matrix_query extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL bool glm::isNormalized (\fBmat\fP< 4, 4, T, Q > const & m, T const & epsilon)"
+Return whether a matrix is a normalized matrix\&. From GLM_GTX_matrix_query extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL bool glm::isNull (\fBmat\fP< 2, 2, T, Q > const & m, T const & epsilon)"
+Return whether a matrix a null matrix\&. From GLM_GTX_matrix_query extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL bool glm::isNull (\fBmat\fP< 3, 3, T, Q > const & m, T const & epsilon)"
+Return whether a matrix a null matrix\&. From GLM_GTX_matrix_query extension\&. 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL bool glm::isNull (\fBmat\fP< 4, 4, T, Q > const & m, T const & epsilon)"
+Return whether a matrix is a null matrix\&. From GLM_GTX_matrix_query extension\&. 
+.SS "template<length_t C, length_t R, typename T , qualifier Q, template< length_t, length_t, typename, qualifier > class matType> GLM_FUNC_DECL bool glm::isOrthogonal (matType< C, R, T, Q > const & m, T const & epsilon)"
+Return whether a matrix is an orthonormalized matrix\&. From GLM_GTX_matrix_query extension\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

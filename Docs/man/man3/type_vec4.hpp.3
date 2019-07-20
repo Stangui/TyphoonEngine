@@ -1,0 +1,211 @@
+.TH "Typhoon/ThirdParty/glm/glm/detail/type_vec4.hpp" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Typhoon/ThirdParty/glm/glm/detail/type_vec4.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'qualifier\&.hpp'\fP
+.br
+\fC#include <cstddef>\fP
+.br
+\fC#include 'type_vec4\&.inl'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBglm::vec< 4, T, Q >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBglm\fP"
+.br
+.RI "\fBCore features\fP "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator+\fP (vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator\-\fP (vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator+\fP (vec< 4, T, Q > const &v, T const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator+\fP (vec< 4, T, Q > const &v1, vec< 1, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator+\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator+\fP (vec< 1, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator+\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator\-\fP (vec< 4, T, Q > const &v, T const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator\-\fP (vec< 4, T, Q > const &v1, vec< 1, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator\-\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator\-\fP (vec< 1, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator\-\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator *\fP (vec< 4, T, Q > const &v, T const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator *\fP (vec< 4, T, Q > const &v1, vec< 1, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator *\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator *\fP (vec< 1, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator *\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator/\fP (vec< 4, T, Q > const &v, T const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator/\fP (vec< 4, T, Q > const &v1, vec< 1, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator/\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator/\fP (vec< 1, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator/\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator%\fP (vec< 4, T, Q > const &v, T scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator%\fP (vec< 4, T, Q > const &v, vec< 1, T, Q > const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator%\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator%\fP (vec< 1, T, Q > const &scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator%\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator &\fP (vec< 4, T, Q > const &v, T scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator &\fP (vec< 4, T, Q > const &v, vec< 1, T, Q > const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator &\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator &\fP (vec< 1, T, Q > const &scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator &\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator|\fP (vec< 4, T, Q > const &v, T scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator|\fP (vec< 4, T, Q > const &v, vec< 1, T, Q > const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator|\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator|\fP (vec< 1, T, Q > const &scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator|\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator^\fP (vec< 4, T, Q > const &v, T scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator^\fP (vec< 4, T, Q > const &v, vec< 1, T, Q > const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator^\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator^\fP (vec< 1, T, Q > const &scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator^\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator<<\fP (vec< 4, T, Q > const &v, T scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator<<\fP (vec< 4, T, Q > const &v, vec< 1, T, Q > const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator<<\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator<<\fP (vec< 1, T, Q > const &scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator<<\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator>>\fP (vec< 4, T, Q > const &v, T scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator>>\fP (vec< 4, T, Q > const &v, vec< 1, T, Q > const &scalar)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator>>\fP (T scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator>>\fP (vec< 1, T, Q > const &scalar, vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator>>\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, T, Q > \fBglm::operator~\fP (vec< 4, T, Q > const &v)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR bool \fBglm::operator==\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR bool \fBglm::operator!=\fP (vec< 4, T, Q > const &v1, vec< 4, T, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, bool, Q > \fBglm::operator &&\fP (vec< 4, bool, Q > const &v1, vec< 4, bool, Q > const &v2)"
+.br
+.ti -1c
+.RI "template<qualifier Q> GLM_FUNC_DECL GLM_CONSTEXPR vec< 4, bool, Q > \fBglm::operator||\fP (vec< 4, bool, Q > const &v1, vec< 4, bool, Q > const &v2)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBCore features\fP 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

@@ -1,0 +1,147 @@
+.TH "core_func_matrix" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+core_func_matrix
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< C, R, T, Q > \fBglm::matrixCompMult\fP (\fBmat\fP< C, R, T, Q > const &x, \fBmat\fP< C, R, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL \fBdetail::outerProduct_trait\fP< C, R, T, Q >::\fBtype\fP \fBglm::outerProduct\fP (\fBvec\fP< C, T, Q > const &c, \fBvec\fP< R, T, Q > const &r)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< C, R, T, Q >::transpose_type \fBglm::transpose\fP (\fBmat\fP< C, R, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::determinant\fP (\fBmat\fP< C, R, T, Q > const &m)"
+.br
+.ti -1c
+.RI "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP< C, R, T, Q > \fBglm::inverse\fP (\fBmat\fP< C, R, T, Q > const &m)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides GLSL matrix functions\&.
+.PP
+Include <\fBglm/matrix\&.hpp\fP> to use these core features\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL T glm::determinant (\fBmat\fP< C, R, T, Q > const & m)"
+Return the determinant of a squared matrix\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number a column 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number a row 
+.br
+\fIT\fP Floating-point or signed integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL determinant man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.6 Matrix Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<C, R, T, Q> glm::inverse (\fBmat\fP< C, R, T, Q > const & m)"
+Return the inverse of a squared matrix\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number a column 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number a row 
+.br
+\fIT\fP Floating-point or signed integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL inverse man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.6 Matrix Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<C, R, T, Q> glm::matrixCompMult (\fBmat\fP< C, R, T, Q > const & x, \fBmat\fP< C, R, T, Q > const & y)"
+Multiply matrix x by matrix y component-wise, i\&.e\&., result[i][j] is the scalar product of x[i][j] and y[i][j]\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number a column 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number a row 
+.br
+\fIT\fP Floating-point or signed integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL matrixCompMult man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.6 Matrix Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL \fBdetail::outerProduct_trait\fP<C, R, T, Q>::\fBtype\fP glm::outerProduct (\fBvec\fP< C, T, Q > const & c, \fBvec\fP< R, T, Q > const & r)"
+Treats the first parameter c as a column vector and the second parameter r as a row vector and does a linear algebraic matrix multiply c * r\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number a column 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number a row 
+.br
+\fIT\fP Floating-point or signed integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL outerProduct man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.6 Matrix Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t C, length_t R, typename T , qualifier Q> GLM_FUNC_DECL \fBmat\fP<C, R, T, Q>::transpose_type glm::transpose (\fBmat\fP< C, R, T, Q > const & x)"
+Returns the transposed matrix of x
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIC\fP Integer between 1 and 4 included that qualify the number a column 
+.br
+\fIR\fP Integer between 1 and 4 included that qualify the number a row 
+.br
+\fIT\fP Floating-point or signed integer scalar types 
+.br
+\fIQ\fP Value from qualifier enum
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL transpose man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.6 Matrix Functions\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

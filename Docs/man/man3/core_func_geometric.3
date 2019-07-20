@@ -1,0 +1,188 @@
+.TH "core_func_geometric" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+core_func_geometric
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::length\fP (\fBvec\fP< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::distance\fP (\fBvec\fP< L, T, Q > const &p0, \fBvec\fP< L, T, Q > const &p1)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T \fBglm::dot\fP (\fBvec\fP< L, T, Q > const &x, \fBvec\fP< L, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< 3, T, Q > \fBglm::cross\fP (\fBvec\fP< 3, T, Q > const &x, \fBvec\fP< 3, T, Q > const &y)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::normalize\fP (\fBvec\fP< L, T, Q > const &x)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::faceforward\fP (\fBvec\fP< L, T, Q > const &N, \fBvec\fP< L, T, Q > const &I, \fBvec\fP< L, T, Q > const &Nref)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::reflect\fP (\fBvec\fP< L, T, Q > const &I, \fBvec\fP< L, T, Q > const &N)"
+.br
+.ti -1c
+.RI "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP< L, T, Q > \fBglm::refract\fP (\fBvec\fP< L, T, Q > const &I, \fBvec\fP< L, T, Q > const &N, T eta)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+These operate on vectors as vectors, not component-wise\&.
+.PP
+Include <\fBglm/geometric\&.hpp\fP> to use these core features\&. 
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<3, T, Q> glm::cross (\fBvec\fP< 3, T, Q > const & x, \fBvec\fP< 3, T, Q > const & y)"
+Returns the cross product of x and y\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL cross man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.5 Geometric Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T glm::distance (\fBvec\fP< L, T, Q > const & p0, \fBvec\fP< L, T, Q > const & p1)"
+Returns the distance betwwen p0 and p1, i\&.e\&., length(p0 - p1)\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL distance man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.5 Geometric Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T glm::dot (\fBvec\fP< L, T, Q > const & x, \fBvec\fP< L, T, Q > const & y)"
+Returns the dot product of x and y, i\&.e\&., result = x * y\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL dot man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.5 Geometric Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::faceforward (\fBvec\fP< L, T, Q > const & N, \fBvec\fP< L, T, Q > const & I, \fBvec\fP< L, T, Q > const & Nref)"
+If dot(Nref, I) < 0\&.0, return N, otherwise, return -N\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL faceforward man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.5 Geometric Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL T glm::length (\fBvec\fP< L, T, Q > const & x)"
+Returns the length of x, i\&.e\&., sqrt(x * x)\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL length man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.5 Geometric Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::normalize (\fBvec\fP< L, T, Q > const & x)"
+Returns a vector in the same direction as x but with length of 1\&. According to issue 10 GLSL 1\&.10 specification, if length(x) == 0 then result is undefined and generate an error\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL normalize man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.5 Geometric Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::reflect (\fBvec\fP< L, T, Q > const & I, \fBvec\fP< L, T, Q > const & N)"
+For the incident vector I and surface orientation N, returns the reflection direction : result = I - 2\&.0 * dot(N, I) * N\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL reflect man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.5 Geometric Functions\fP 
+.RE
+.PP
+
+.SS "template<length_t L, typename T , qualifier Q> GLM_FUNC_DECL \fBvec\fP<L, T, Q> glm::refract (\fBvec\fP< L, T, Q > const & I, \fBvec\fP< L, T, Q > const & N, T eta)"
+For the incident vector I and surface normal N, and the ratio of indices of refraction eta, return the refraction vector\&.
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIL\fP An integer between 1 and 4 included that qualify the dimension of the vector\&. 
+.br
+\fIT\fP Floating-point scalar types\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fCGLSL refract man page\fP 
+.PP
+\fCGLSL 4\&.20\&.8 specification, section 8\&.5 Geometric Functions\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.

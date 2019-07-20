@@ -1,0 +1,30 @@
+.TH "convert_to_int< T, Char, void >" 3 "Sat Jul 20 2019" "Version 0.1" "Typhoon Engine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+convert_to_int< T, Char, void >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const bool \fBvalue\fP"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename T , typename Char > const bool \fBconvert_to_int\fP< T, Char, void >::value\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+=
+    convert_to_int<T, Char, int>::value &&
+    !internal::is_streamable<T, Char>::value
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Typhoon Engine from the source code\&.
