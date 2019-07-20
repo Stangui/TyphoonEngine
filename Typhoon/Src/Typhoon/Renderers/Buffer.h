@@ -92,24 +92,42 @@ namespace TyphoonEngine
 
 		public:
 
+			//
+			// Default constructor
+			//
 			BufferLayout() {}
 
-			BufferLayout( const std::initializer_list<BufferElement>& elements )
-				: m_elements(elements)
+			//
+			// Initializer list constructor
+			// 
+			BufferLayout( const std::initializer_list<BufferElement>& elements ) : m_elements(elements)
 			{
 				CalculateOffsetAndStride();
 			}
 
+			//
+			// Gets stride of this layout
+			// Returns:
+			//	stride of this layout in bytes.
+			//
 			const glm::uint32 GetStride() const
 			{
 				return m_stride;
 			}
 
+			// Range-For iterators
 			std::vector<BufferElement>::iterator begin() { return m_elements.begin(); }
 			std::vector<BufferElement>::iterator end() { return m_elements.end(); }
 
+			// Const Range-For iterators
+			std::vector<BufferElement>::const_iterator begin() const { return m_elements.begin(); }
+			std::vector<BufferElement>::const_iterator end() const { return m_elements.end(); }
+
 		private:
 
+			//
+			// Calculates byte stride/offset for this layout
+			//
 			void CalculateOffsetAndStride()
 			{
 				glm::uint32 offset = 0;
@@ -123,7 +141,10 @@ namespace TyphoonEngine
 				}
 			}
 
+			// Vector of buffer elements
 			std::vector<BufferElement> m_elements;
+			
+			// Size of stride in bytes
 			glm::uint32 m_stride;
 		};
 

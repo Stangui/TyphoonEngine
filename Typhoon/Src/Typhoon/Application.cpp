@@ -9,12 +9,14 @@
 #include "Renderers/Renderer.h"
 #include "Renderers/Shader.h"
 #include "Renderers/Buffer.h"
+#include "Renderers/VertexArray.h"
 
 namespace TyphoonEngine
 {
 
 	Application* Application::s_instance = nullptr;
 
+	// Type converter
 	static GLenum ShaderDataTypeToOpenGLType( Renderers::ShaderDataType type )
 	{
 		switch ( type )
@@ -54,12 +56,13 @@ namespace TyphoonEngine
 		m_window = std::unique_ptr<IWindow>( IWindow::Create( wp ) );
 		m_window->SetEventCallback( BIND_CB_FUNC( &Application::OnEvent ) );
 
+		Renderers::IRenderer::SetRenderAPI( Renderers::RenderAPI::OpenGL );
+
 		// Add UI debug layer
 		m_imgui = new ImGuiLayer();
 		PushOverlay( m_imgui );
 
-		glGenVertexArrays( 1, &m_vertexArray );
-		glBindVertexArray( m_vertexArray );
+		m_vertexArray.reset( Renderers::VertexArray::Create() );
 
 		float vertices[3 * 7] =
 		{
@@ -68,33 +71,21 @@ namespace TyphoonEngine
 		 	 0.0f,  0.5f, 0.0f, 0.f, 1.f, 1.f, 1.f
 		};
 
-		Renderers::IRenderer::SetRenderAPI( Renderers::RenderAPI::OpenGL );
 		m_vertexBuffer.reset( Renderers::IVertexBuffer::Create( vertices, sizeof( vertices ) ) );
 
-		Renderers::BufferLayout layout = 
+		Renderers::BufferLayout layout =
 		{
 			{ Renderers::ShaderDataType::Float3, "a_Position" },
 			{ Renderers::ShaderDataType::Float4, "a_Color" }
 		};
 
 		m_vertexBuffer->SetLayout( layout );
-
-		glm::uint32 idx = 0;
-		for ( const auto& element : layout )
-		{
-			glEnableVertexAttribArray( idx );
-			glVertexAttribPointer( idx, 
-				                   element.GetComponentCount(), 
-				                   ShaderDataTypeToOpenGLType( element.m_type ), 
-				                   element.m_bNormalised ? GL_TRUE : GL_FALSE, 
-				                   layout.GetStride(), 
-				                   (const void*)element.m_offset );
-			++idx;
-		}
+		m_vertexArray->AddVertexBuffer( m_vertexBuffer );
 
 		glm::uint32 indices[3] = { 0, 1, 2 };
 		m_indexBuffer.reset( Renderers::IIndexBuffer::Create( indices, sizeof(indices) / sizeof(glm::uint32) ) );
-
+		m_vertexArray->SetIndexBuffer( m_indexBuffer );
+		
 		const std::string vSrc = R"(
 			#version 330 core
 
@@ -127,7 +118,6 @@ namespace TyphoonEngine
 		)";
 
 		m_shader.reset( new Renderers::Shader(vSrc, fSrc) );
-		m_shader->Bind();
 	}
 
 	//----------------------------------------------//
@@ -178,7 +168,9 @@ namespace TyphoonEngine
 			glClearColor( 0.1f, 0.1f, 0.1f, 1.f );
 			glClear( GL_COLOR_BUFFER_BIT );
 			
-			glBindVertexArray( m_vertexArray );
+			m_shader->Bind();
+			m_vertexArray->Bind();
+
 			glDrawElements( GL_TRIANGLES, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr );
 
 			for ( Layer* layer : m_layerStack )

@@ -16,6 +16,7 @@ namespace TyphoonEngine
 		class IVertexBuffer;
 		class IIndexBuffer;
 		class Shader;
+		class VertexArray;
 	}
 
 	//
@@ -66,10 +67,10 @@ namespace TyphoonEngine
 		LayerStack m_layerStack;
 
 		//Temp GL rendering
-		unsigned int m_vertexArray;
-		std::unique_ptr<Renderers::Shader> m_shader;
-		std::unique_ptr<Renderers::IVertexBuffer> m_vertexBuffer;
-		std::unique_ptr<Renderers::IIndexBuffer> m_indexBuffer;
+		std::shared_ptr<Renderers::VertexArray> m_vertexArray;
+		std::shared_ptr<Renderers::Shader> m_shader;
+		std::shared_ptr<Renderers::IVertexBuffer> m_vertexBuffer;
+		std::shared_ptr<Renderers::IIndexBuffer> m_indexBuffer;
 
 		// Singleton
 		static Application* s_instance;
