@@ -37,6 +37,7 @@ namespace TyphoonEngine
 		
 		OpenGLVertexArray::~OpenGLVertexArray()
 		{
+			glDeleteVertexArrays(1, &m_bufferId);
 		}
 
 		void OpenGLVertexArray::Bind() const
@@ -54,6 +55,8 @@ namespace TyphoonEngine
 			glBindVertexArray( m_bufferId );
 			vBuffer->Bind();
 
+			TE_ASSERT(vBuffer->GetLayout().GetElements().size(), "Vertex buffer must have size > 0");
+			
 			glm::uint32 idx = 0;
 			for ( const auto& element : vBuffer->GetLayout() )
 			{

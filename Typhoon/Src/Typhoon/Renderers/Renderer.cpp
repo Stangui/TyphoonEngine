@@ -1,12 +1,28 @@
 #include "TyphoonPCH.h"
 #include "Renderer.h"
 
+#include "RenderCommand.h"
+#include "VertexArray.h"
+
 namespace TyphoonEngine
 {
 	namespace Renderers
 	{
 
-		RenderAPI IRenderer::s_renderAPI = RenderAPI::None;
+		void IRenderer::BeginScene()
+		{
 
+		}
+
+		void IRenderer::EndScene()
+		{
+
+		}
+
+		void IRenderer::Submit(const std::shared_ptr<VertexArray>& vArray)
+		{
+			vArray->Bind();
+			RenderCommand::DrawIndexed(vArray);
+		}
 	}
 }

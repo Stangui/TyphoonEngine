@@ -12,7 +12,7 @@ namespace TyphoonEngine
 		OpenGLVertexBuffer::OpenGLVertexBuffer( const float* vertices, glm::uint32 size ) : m_bufferId( 0 )
 		{
 			glCreateBuffers( 1, &m_bufferId );
-			Bind();
+			glBindBuffer( GL_ARRAY_BUFFER, m_bufferId );
 			glBufferData( GL_ARRAY_BUFFER, size, vertices, GL_STATIC_DRAW );
 		}
 
@@ -52,7 +52,7 @@ namespace TyphoonEngine
 			,m_count(count)
 		{
 			glCreateBuffers( 1, &m_bufferId );
-			Bind();
+			glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, m_bufferId );
 			glBufferData( GL_ELEMENT_ARRAY_BUFFER, count * sizeof(glm::uint32), indices, GL_STATIC_DRAW );
 		}
 

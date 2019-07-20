@@ -67,10 +67,10 @@ namespace TyphoonEngine
 		LayerStack m_layerStack;
 
 		//Temp GL rendering
-		std::shared_ptr<Renderers::VertexArray> m_vertexArray;
-		std::shared_ptr<Renderers::Shader> m_shader;
-		std::shared_ptr<Renderers::IVertexBuffer> m_vertexBuffer;
-		std::shared_ptr<Renderers::IIndexBuffer> m_indexBuffer;
+		std::shared_ptr<Renderers::VertexArray> m_triangleVA;
+		std::shared_ptr<Renderers::VertexArray> m_squareVA;
+		std::shared_ptr<Renderers::Shader> m_vertexColorShader;
+		std::shared_ptr<Renderers::Shader> m_blueShader;
 
 		// Singleton
 		static Application* s_instance;

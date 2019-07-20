@@ -13,7 +13,7 @@ namespace TyphoonEngine
 		{
 			switch ( IRenderer::GetRenderAPI() )
 			{
-			case RenderAPI::OpenGL: return new OpenGLVertexArray();
+			case RendererAPI::API::OpenGL: return new OpenGLVertexArray();
 			}
 
 			TE_ASSERT( false, "Unsupported API!" );

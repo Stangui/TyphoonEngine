@@ -26,12 +26,12 @@ namespace TyphoonEngine
 		{
 			switch ( IRenderer::GetRenderAPI() )
 			{
-			case RenderAPI::None:
+			case RendererAPI::API::None:
 			{
 				TE_ASSERT( false, "RenderingAPI::None is not supported!" );
 				break;
 			}
-			case RenderAPI::OpenGL:
+			case RendererAPI::API::OpenGL:
 			{
 				return new OpenGLVertexBuffer( vertices, size );
 			}
@@ -43,14 +43,14 @@ namespace TyphoonEngine
 			}
 #endif	//TE_PLATFORM_WINDOWS
 #if TE_PLATFORM_VULKAN
-			case RenderAPI::Vulkan:
+			case RendererAPI::API::Vulkan:
 			{
 				TE_ASSERT( false, "RenderingAPI::Vulkan is not supported!" );
 				break;
 			}
 #endif	//TE_PLATFORM_VULKAN
 #if TE_PLATFORM_MACOS
-			case RenderAPI::Metal:
+			case RendererAPI::API::Metal:
 			{
 				TE_ASSERT( false, "RenderingAPI::Metal is not supported!" );
 				break;
@@ -64,31 +64,31 @@ namespace TyphoonEngine
 		{
 			switch ( IRenderer::GetRenderAPI() )
 			{
-			case RenderAPI::None:
+			case RendererAPI::API::None:
 			{
 				TE_ASSERT( false, "RenderingAPI::None is not supported!" );
 				break;
 			}
-			case RenderAPI::OpenGL:
+			case RendererAPI::API::OpenGL:
 			{
 				return new OpenGLIndexBuffer( indices, count );
 			}
 #if TE_PLATFORM_WINDOWS
-			case RenderAPI::DirectX:
+			case RendererAPI::API::DirectX:
 			{
 				TE_ASSERT( false, "RenderingAPI::DirectX is not supported!" );
 				break;
 			}
 #endif	//TE_PLATFORM_WINDOWS
 #if TE_PLATFORM_WINDOWS
-			case RenderAPI::Vulkan:
+			case RendererAPI::API::Vulkan:
 			{
 				TE_ASSERT( false, "RenderingAPI::Vulkan is not supported!" );
 				break;
 			}
 #endif	//TE_PLATFORM_VULKAN
 #if TE_PLATFORM_WINDOWS
-			case RenderAPI::Metal:
+			case RendererAPI::API::Metal:
 			{
 				TE_ASSERT( false, "RenderingAPI::Metal is not supported!" );
 				break;

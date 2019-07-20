@@ -7,6 +7,7 @@
 #include "UI/ImGuiLayer.h"
 #include "glad/glad.h"
 #include "Renderers/Renderer.h"
+#include "Renderers/RenderCommand.h"
 #include "Renderers/Shader.h"
 #include "Renderers/Buffer.h"
 #include "Renderers/VertexArray.h"
@@ -56,36 +57,36 @@ namespace TyphoonEngine
 		m_window = std::unique_ptr<IWindow>( IWindow::Create( wp ) );
 		m_window->SetEventCallback( BIND_CB_FUNC( &Application::OnEvent ) );
 
-		Renderers::IRenderer::SetRenderAPI( Renderers::RenderAPI::OpenGL );
-
 		// Add UI debug layer
 		m_imgui = new ImGuiLayer();
 		PushOverlay( m_imgui );
 
-		m_vertexArray.reset( Renderers::VertexArray::Create() );
+		// Add triangle mesh & shader
+		m_triangleVA.reset(Renderers::VertexArray::Create());;
 
 		float vertices[3 * 7] =
 		{
 			-0.5f, -0.5f, 0.0f, 0.f, 1.f, 0.f, 1.f,
-			 0.5f, -0.5f, 0.0f, 1.f, 1.f, 0.f, 1.f,
-		 	 0.0f,  0.5f, 0.0f, 0.f, 1.f, 1.f, 1.f
+			0.5f, -0.5f, 0.0f, 1.f, 1.f, 0.f, 1.f,
+			0.0f,  0.5f, 0.0f, 0.f, 1.f, 1.f, 1.f
 		};
 
-		m_vertexBuffer.reset( Renderers::IVertexBuffer::Create( vertices, sizeof( vertices ) ) );
-
-		Renderers::BufferLayout layout =
-		{
-			{ Renderers::ShaderDataType::Float3, "a_Position" },
+		std::shared_ptr<Renderers::IVertexBuffer> vBuffer;
+		vBuffer.reset( Renderers::IVertexBuffer::Create(vertices, sizeof(vertices) ) );
+		vBuffer->SetLayout(
+			{
+				{ Renderers::ShaderDataType::Float3, "a_Position" },
 			{ Renderers::ShaderDataType::Float4, "a_Color" }
-		};
+			}
+		);
 
-		m_vertexBuffer->SetLayout( layout );
-		m_vertexArray->AddVertexBuffer( m_vertexBuffer );
+		m_triangleVA->AddVertexBuffer(vBuffer);
 
 		glm::uint32 indices[3] = { 0, 1, 2 };
-		m_indexBuffer.reset( Renderers::IIndexBuffer::Create( indices, sizeof(indices) / sizeof(glm::uint32) ) );
-		m_vertexArray->SetIndexBuffer( m_indexBuffer );
-		
+		std::shared_ptr<Renderers::IIndexBuffer> iBuffer;
+		iBuffer.reset( Renderers::IIndexBuffer::Create(indices, sizeof(indices) / sizeof(glm::uint32) ) );
+		m_triangleVA->SetIndexBuffer(iBuffer);
+
 		const std::string vSrc = R"(
 			#version 330 core
 
@@ -117,7 +118,61 @@ namespace TyphoonEngine
 			}
 		)";
 
-		m_shader.reset( new Renderers::Shader(vSrc, fSrc) );
+		m_vertexColorShader.reset(new Renderers::Shader(vSrc, fSrc));
+
+		// Add triangle mesh & shader
+		m_squareVA.reset(Renderers::VertexArray::Create());;
+
+		float sqVertices[3 * 4] =
+		{
+			-0.5f, -0.5f, 0.0f, 
+			 0.5f, -0.5f, 0.0f, 
+			 0.5f,  0.5f, 0.0f, 
+			-0.5f,  0.5f, 0.0f 
+		};
+
+		std::shared_ptr<Renderers::IVertexBuffer> vBufferSq;
+		vBufferSq.reset(Renderers::IVertexBuffer::Create(sqVertices, sizeof(sqVertices)));
+		vBufferSq->SetLayout(
+			{
+				{ Renderers::ShaderDataType::Float3, "a_Position" }
+			}
+		);
+		m_squareVA->AddVertexBuffer(vBufferSq);
+
+		glm::uint32 sqIndices[6] = { 0, 1, 2, 2, 3, 0 };
+		std::shared_ptr<Renderers::IIndexBuffer> iBufferSq;
+		iBufferSq.reset( Renderers::IIndexBuffer::Create(sqIndices, sizeof(sqIndices) / sizeof(glm::uint32) ) );
+		m_squareVA->SetIndexBuffer(iBufferSq);
+
+		const std::string vSrc2 = R"(
+			#version 330 core
+
+			layout(location = 0) in vec3 a_Position;
+
+			out vec3 v_Position;
+
+			void main()
+			{
+				v_Position = a_Position;
+				gl_Position = vec4(a_Position, 1.0);	
+			}
+		)";
+
+		const std::string fSrc2 = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;
+
+			in vec3 v_Position;
+
+			void main()
+			{
+				color = vec4(0.2, 0.3, 0.6, 1.0);	
+			}
+		)";
+
+		m_blueShader.reset(new Renderers::Shader(vSrc2, fSrc2));
 	}
 
 	//----------------------------------------------//
@@ -165,13 +220,18 @@ namespace TyphoonEngine
 	{
 		while ( m_bRunning )
 		{
-			glClearColor( 0.1f, 0.1f, 0.1f, 1.f );
-			glClear( GL_COLOR_BUFFER_BIT );
+			Renderers::RenderCommand::SetClearColour(glm::vec4(0.7f, 0.f, 0.7f, 1.f));
+			Renderers::RenderCommand::Clear();
 			
-			m_shader->Bind();
-			m_vertexArray->Bind();
+			Renderers::IRenderer::BeginScene();
 
-			glDrawElements( GL_TRIANGLES, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr );
+			m_blueShader->Bind();
+			Renderers::IRenderer::Submit(m_squareVA);
+
+			m_vertexColorShader->Bind();
+			Renderers::IRenderer::Submit(m_triangleVA);
+
+			Renderers::IRenderer::EndScene();
 
 			for ( Layer* layer : m_layerStack )
 			{

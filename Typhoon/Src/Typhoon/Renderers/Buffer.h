@@ -92,6 +92,10 @@ namespace TyphoonEngine
 
 		public:
 
+			typedef std::vector<BufferElement> ElementVec;
+
+		public:
+
 			//
 			// Default constructor
 			//
@@ -115,13 +119,18 @@ namespace TyphoonEngine
 				return m_stride;
 			}
 
+			//
+			// Returns element vector
+			//
+			const ElementVec& GetElements() const { return m_elements; }
+
 			// Range-For iterators
-			std::vector<BufferElement>::iterator begin() { return m_elements.begin(); }
-			std::vector<BufferElement>::iterator end() { return m_elements.end(); }
+			ElementVec::iterator begin() { return m_elements.begin(); }
+			ElementVec::iterator end() { return m_elements.end(); }
 
 			// Const Range-For iterators
-			std::vector<BufferElement>::const_iterator begin() const { return m_elements.begin(); }
-			std::vector<BufferElement>::const_iterator end() const { return m_elements.end(); }
+			ElementVec::const_iterator begin() const { return m_elements.begin(); }
+			ElementVec::const_iterator end() const { return m_elements.end(); }
 
 		private:
 
