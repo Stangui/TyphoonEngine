@@ -65,7 +65,7 @@ workspace "Typhoon"
 			
 			defines
 			{
-				"TYPHOON_PLATFORM_WINDOWS",
+				"TE_PLATFORM_WINDOWS",
 				"GLFW_INCLUDE_NONE",
 				"_CRT_SECURE_NO_WARNINGS"
 			}
@@ -102,7 +102,8 @@ workspace "Typhoon"
 		{
 			"Typhoon/src",
 			"Typhoon/ThirdParty/spdlog/include",
-			"%{IncludeDir.glm}"
+			"%{IncludeDir.glm}",
+			"%{IncludeDir.imgui}"
 		}
 		
 		links

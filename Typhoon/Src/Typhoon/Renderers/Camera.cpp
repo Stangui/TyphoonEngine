@@ -12,7 +12,7 @@ namespace TyphoonEngine
 		Camera::Camera() :
 			m_type( PROJECTION_TYPE::Orthographic )
 			, m_position( glm::vec3( 0.f ) )
-			, m_rotation( 0.f )
+			, m_rotation( glm::quat( glm::vec3(0.f) ) )
 			, m_viewMat( glm::mat4( 1.f ) )
 			, m_projMat( glm::ortho( -1.6f, 1.6f, -0.9f, 0.9f, -1.f, 1.f ) )
 			, m_viewProjMat( glm::mat4( 1.f ) )
@@ -50,10 +50,11 @@ namespace TyphoonEngine
 		//------------------------------------------------------------//
 		void Camera::_recalculateViewMatrix()
 		{
-			glm::mat4 transform = glm::translate(glm::mat4(1.f), m_position) *
-				glm::rotate( glm::mat4( 1.f ), glm::radians(m_rotation), glm::vec3( 0.f, 0.f, 1.f ) );
+			m_rotation = glm::normalize( m_rotation);
+			glm::mat4 rotate = glm::mat4_cast( m_rotation );
+			glm::mat4 translate = glm::translate( glm::mat4( 1.0f ), -m_position );
 
-			m_viewMat = glm::inverse(transform);
+			m_viewMat = rotate * translate;
 			m_viewProjMat = m_projMat * m_viewMat;
 		}
 
@@ -83,14 +84,21 @@ namespace TyphoonEngine
 		}
 
 		//------------------------------------------------------------//
-		void Camera::SetRotation(float rotation)
+		void Camera::SetRotation( glm::quat& rotation )
 		{
 			m_rotation = rotation;
 			_recalculateViewMatrix();
 		}
 
 		//------------------------------------------------------------//
-		const float Camera::GetRotation() const
+		void Camera::SetRotation( glm::vec3& eulers )
+		{
+			m_rotation = glm::quat(glm::vec3( glm::radians( eulers.r ), glm::radians( eulers.y ), glm::radians( eulers.p ) ) );
+			_recalculateViewMatrix();
+		}
+
+		//------------------------------------------------------------//
+		const glm::quat& Camera::GetRotation() const
 		{
 			return m_rotation;
 		}

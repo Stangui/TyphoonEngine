@@ -60,9 +60,10 @@ namespace TyphoonEngine
 			//
 			// Gets/Sets the rotation
 			//
-			void SetRotation(float rotation);
-			const float GetRotation() const;
-
+			void SetRotation( glm::quat& rotation );
+			void SetRotation( glm::vec3& eulers );
+			const glm::quat& GetRotation() const;
+			
 			//
 			// Gets/Sets clip planes
 			//
@@ -98,7 +99,7 @@ namespace TyphoonEngine
 			glm::mat4 m_viewProjMat;
 
 			glm::vec3 m_position;
-			float m_rotation;
+			glm::quat m_rotation;
 
 			float m_fov;
 			float m_aspectRatio;

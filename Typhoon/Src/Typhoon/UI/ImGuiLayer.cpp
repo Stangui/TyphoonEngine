@@ -3,7 +3,7 @@
 
 #include "imgui.h"
 
-#include "Typhoon/Windows/IWindow.h"
+#include "Typhoon/IWindow.h"
 #include "Typhoon/Application.h"
 #include "Typhoon/Input/KeyCodes.h"
 
@@ -94,7 +94,5 @@ namespace TyphoonEngine
 	//--------------------------------------//
 	void ImGuiLayer::OnImGuiRender()
 	{
-		static bool show = true;
-		ImGui::ShowDemoWindow( &show );
 	}
 }

@@ -14,6 +14,6 @@
 
 #ifdef TE_PLATFORM_WINDOWS
 
-#include <windows>
+#include <Windows.h>
 
 #endif	//TE_PLATFORM_WINDOWS

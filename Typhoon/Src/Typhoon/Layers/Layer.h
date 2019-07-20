@@ -38,7 +38,7 @@ namespace TyphoonEngine
 		//
 		// Called during application update
 		//
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(float deltaTime) {}
 
 		//
 		// Called after layer is inserted into stack

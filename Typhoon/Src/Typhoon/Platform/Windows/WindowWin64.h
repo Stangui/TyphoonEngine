@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Typhoon/Windows/IWindow.h"
+#include "Typhoon/IWindow.h"
 
 #include "GLFW/glfw3.h"
 

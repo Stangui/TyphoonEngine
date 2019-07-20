@@ -1,6 +1,6 @@
 #include "TyphoonPCH.h"
 #include "Application.h"
-#include "Windows/IWindow.h"
+#include "IWindow.h"
 #include "Input/Input.h"
 #include "Input/KeyCodes.h"
 #include "Layers/Layer.h"
@@ -44,6 +44,7 @@ namespace TyphoonEngine
 	Application::Application() :
 		m_bRunning( true )
 		, m_bFocused( true )
+		,m_lastFrameTime( 0.f )
 	{
 		TE_ASSERT( !s_instance, "Application already exists!" )
 		// Singleton
@@ -62,128 +63,10 @@ namespace TyphoonEngine
 		m_imgui = new ImGuiLayer();
 		PushOverlay( m_imgui );
 
-		// Add triangle mesh & shader
-		m_triangleVA.reset(Renderers::VertexArray::Create());;
-
-		float vertices[3 * 7] =
-		{
-			-0.5f, -0.5f, 0.0f, 0.f, 1.f, 0.f, 1.f,
-			0.5f, -0.5f, 0.0f, 1.f, 1.f, 0.f, 1.f,
-			0.0f,  0.5f, 0.0f, 0.f, 1.f, 1.f, 1.f
-		};
-
-		std::shared_ptr<Renderers::IVertexBuffer> vBuffer;
-		vBuffer.reset( Renderers::IVertexBuffer::Create(vertices, sizeof(vertices) ) );
-		vBuffer->SetLayout(
-			{
-				{ Renderers::ShaderDataType::Float3, "a_Position" },
-			{ Renderers::ShaderDataType::Float4, "a_Color" }
-			}
-		);
-
-		m_triangleVA->AddVertexBuffer(vBuffer);
-
-		glm::uint32 indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Renderers::IIndexBuffer> iBuffer;
-		iBuffer.reset( Renderers::IIndexBuffer::Create(indices, sizeof(indices) / sizeof(glm::uint32) ) );
-		m_triangleVA->SetIndexBuffer(iBuffer);
-
-		const std::string vSrc = R"(
-			#version 330 core
-
-			layout(location = 0) in vec3 a_Position;
-			layout(location = 1) in vec4 a_Color;
-
-			out vec3 v_Position;
-			out vec4 v_Color;
-
-			uniform mat4 u_vpMat;
-
-			void main()
-			{
-				v_Position = a_Position;
-				v_Color = a_Color;
-				gl_Position = u_vpMat * vec4(a_Position, 1.0);	
-			}
-		)";
-
-		const std::string fSrc = R"(
-			#version 330 core
-
-			layout(location = 0) out vec4 color;
-
-			in vec3 v_Position;
-			in vec4 v_Color;
-
-			void main()
-			{
-				color = v_Color;	
-			}
-		)";
-
-		m_vertexColorShader.reset(new Renderers::Shader(vSrc, fSrc));
-
-		// Add triangle mesh & shader
-		m_squareVA.reset(Renderers::VertexArray::Create());;
-
-		float sqVertices[3 * 4] =
-		{
-			-0.5f, -0.5f, 0.0f, 
-			 0.5f, -0.5f, 0.0f, 
-			 0.5f,  0.5f, 0.0f, 
-			-0.5f,  0.5f, 0.0f 
-		};
-
-		std::shared_ptr<Renderers::IVertexBuffer> vBufferSq;
-		vBufferSq.reset(Renderers::IVertexBuffer::Create(sqVertices, sizeof(sqVertices)));
-		vBufferSq->SetLayout(
-			{
-				{ Renderers::ShaderDataType::Float3, "a_Position" }
-			}
-		);
-		m_squareVA->AddVertexBuffer(vBufferSq);
-
-		glm::uint32 sqIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Renderers::IIndexBuffer> iBufferSq;
-		iBufferSq.reset( Renderers::IIndexBuffer::Create(sqIndices, sizeof(sqIndices) / sizeof(glm::uint32) ) );
-		m_squareVA->SetIndexBuffer(iBufferSq);
-
-		const std::string vSrc2 = R"(
-			#version 330 core
-
-			layout(location = 0) in vec3 a_Position;
-
-			out vec3 v_Position;
-			uniform mat4 u_vpMat;
-
-			void main()
-			{
-				v_Position = a_Position;
-				gl_Position = u_vpMat * vec4(a_Position, 1.0);	
-			}
-		)";
-
-		const std::string fSrc2 = R"(
-			#version 330 core
-
-			layout(location = 0) out vec4 color;
-
-			in vec3 v_Position;
-
-			void main()
-			{
-				color = vec4(0.2, 0.3, 0.6, 1.0);	
-			}
-		)";
-
-		m_blueShader.reset(new Renderers::Shader(vSrc2, fSrc2));
-
-		m_camera.reset( new Renderers::Camera() );
-		m_camera->Init();
-		m_camera->SetPosition( glm::vec3( 0.5f, 0.5f, 0.f ) );
-		m_camera->SetRotation( 45.f );
+		m_timestep.reset( Timestep::Create() );
+		TE_ASSERT( m_timestep, "Unable to create Platform Timestep!" );
 	}
-
+	 
 	//----------------------------------------------//
 	Application::~Application()
 	{
@@ -195,7 +78,6 @@ namespace TyphoonEngine
 	{
 		EventDispatch dispatch( Evt );
 		dispatch.Dispatch<WindowCloseEvent>( BIND_CB_FUNC( &Application::OnWindowClose ) );
-		dispatch.Dispatch<KeyPressedEvent>( BIND_CB_FUNC( &Application::OnKeyPressed ) );
 
 		for ( auto it = m_layerStack.end(); it != m_layerStack.begin(); )
 		{
@@ -210,17 +92,7 @@ namespace TyphoonEngine
 	//----------------------------------------------//
 	bool Application::OnWindowClose( WindowCloseEvent& Evt )
 	{
-		m_bRunning = false;
-		return true;
-	}
-
-	//----------------------------------------------//
-	bool Application::OnKeyPressed( KeyPressedEvent& Evt )
-	{
-		if ( Evt.GetKeyCode() == TE_KEY_ESCAPE )
-		{
-			m_bRunning = false;
-		}
+		QuitApp();
 		return true;
 	}
 
@@ -228,25 +100,14 @@ namespace TyphoonEngine
 	void Application::Run()
 	{
 		while ( m_bRunning )
-		{
-			Renderers::RenderCommand::SetClearColour(glm::vec4(0.7f, 0.f, 0.7f, 1.f));
-			Renderers::RenderCommand::Clear();
-			
-			Renderers::IRenderer::BeginScene();
-
-			m_blueShader->Bind();
-			m_blueShader->UploadUniformMat4( "u_vpMat", m_camera->GetViewProjectionMatrix() );
-			Renderers::IRenderer::Submit(m_squareVA);
-
-			m_vertexColorShader->Bind();
-			m_vertexColorShader->UploadUniformMat4( "u_vpMat", m_camera->GetViewProjectionMatrix() );
-			Renderers::IRenderer::Submit(m_triangleVA);
-
-			Renderers::IRenderer::EndScene();
+		{			
+			float cTime = m_timestep->GetSeconds();
+			float dTime = cTime - m_lastFrameTime;
+			m_lastFrameTime = cTime;
 
 			for ( Layer* layer : m_layerStack )
 			{
-				layer->OnUpdate();
+				layer->OnUpdate( dTime );
 			}
 
 			// UI render			

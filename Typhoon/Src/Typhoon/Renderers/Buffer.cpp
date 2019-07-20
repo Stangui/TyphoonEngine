@@ -36,7 +36,7 @@ namespace TyphoonEngine
 				return new OpenGLVertexBuffer( vertices, size );
 			}
 #if TE_PLATFORM_WINDOWS
-			case RenderAPI::DirectX:
+			case RendererAPI::API::DirectX:
 			{
 				TE_ASSERT( false, "RenderingAPI::DirectX is not supported!" );
 				break;
