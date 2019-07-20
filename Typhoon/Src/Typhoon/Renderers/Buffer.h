@@ -8,17 +8,17 @@ namespace TyphoonEngine
 	namespace Renderers
 	{
 
-		//
-		// Enumeration for shader data types
-		//
+		/// 
+		///  Enumeration for shader data types
+		/// 
 		enum class ShaderDataType
 		{
 			None = 0, Float, Float2, Float3, Float4, Int, Int2, Int3, Int4, Mat3, Mat4, Bool
 		};
 
-		//
-		// Get byte size for ShaderDataType
-		//
+		/// 
+		///  Get byte size for ShaderDataType
+		/// 
 		static glm::uint32 ShaderDataTypeSize( ShaderDataType type )
 		{
 			switch ( type )
@@ -40,9 +40,9 @@ namespace TyphoonEngine
 			return 0;
 		}
 
-		//
-		// Shader buffer element definition
-		//
+		/// 
+		///  Shader buffer element definition
+		/// 
 		struct BufferElement
 		{
 			std::string m_name;
@@ -84,9 +84,9 @@ namespace TyphoonEngine
 			}
 		};
 
-		//
-		// Layout description for a single shader buffer
-		//
+		/// 
+		///  Layout description for a single shader buffer
+		/// 
 		class BufferLayout
 		{
 
@@ -96,47 +96,47 @@ namespace TyphoonEngine
 
 		public:
 
-			//
-			// Default constructor
-			//
+			/// 
+			///  Default constructor
+			/// 
 			BufferLayout() {}
 
-			//
-			// Initializer list constructor
-			// 
+			/// 
+			///  Initializer list constructor
+			///  
 			BufferLayout( const std::initializer_list<BufferElement>& elements ) : m_elements(elements)
 			{
 				CalculateOffsetAndStride();
 			}
 
-			//
-			// Gets stride of this layout
-			// Returns:
-			//	stride of this layout in bytes.
-			//
+			/// 
+			///  Gets stride of this layout
+			///  Returns:
+			/// 	stride of this layout in bytes.
+			/// 
 			const glm::uint32 GetStride() const
 			{
 				return m_stride;
 			}
 
-			//
-			// Returns element vector
-			//
+			/// 
+			///  Returns element vector
+			/// 
 			const ElementVec& GetElements() const { return m_elements; }
 
-			// Range-For iterators
+			///  Range-For iterators
 			ElementVec::iterator begin() { return m_elements.begin(); }
 			ElementVec::iterator end() { return m_elements.end(); }
 
-			// Const Range-For iterators
+			///  Const Range-For iterators
 			ElementVec::const_iterator begin() const { return m_elements.begin(); }
 			ElementVec::const_iterator end() const { return m_elements.end(); }
 
 		private:
 
-			//
-			// Calculates byte stride/offset for this layout
-			//
+			/// 
+			///  Calculates byte stride/offset for this layout
+			/// 
 			void CalculateOffsetAndStride()
 			{
 				glm::uint32 offset = 0;
@@ -150,16 +150,16 @@ namespace TyphoonEngine
 				}
 			}
 
-			// Vector of buffer elements
+			///  Vector of buffer elements
 			std::vector<BufferElement> m_elements;
 			
-			// Size of stride in bytes
+			///  Size of stride in bytes
 			glm::uint32 m_stride;
 		};
 
-		//
-		// Generic vertex buffer class
-		//
+		/// 
+		///  Generic vertex buffer class
+		/// 
 		class IVertexBuffer
 		{
 
@@ -175,9 +175,9 @@ namespace TyphoonEngine
 			static IVertexBuffer* Create( const float* vertices, glm::uint32 size );
 		};
 
-		//
-		// Generic index buffer class
-		//
+		/// 
+		///  Generic index buffer class
+		/// 
 		class IIndexBuffer
 		{
 

@@ -16,7 +16,7 @@
 namespace TyphoonEngine
 {
 	
-	//--------------------------------------//
+	///--------------------------------------///
 	ImGuiLayer::ImGuiLayer() : 
 		 Layer("UILayer")
 		,m_time(0.f)
@@ -24,12 +24,12 @@ namespace TyphoonEngine
 	}
 
 
-	//--------------------------------------//
+	///--------------------------------------///
 	ImGuiLayer::~ImGuiLayer()
 	{
 	}
 
-	//--------------------------------------//
+	///--------------------------------------///
 	void ImGuiLayer::OnAttach()
 	{
 		IMGUI_CHECKVERSION();
@@ -56,7 +56,7 @@ namespace TyphoonEngine
 		ImGui_ImplOpenGL3_Init( "#version 410" );
 	}
 
-	//--------------------------------------//
+	///--------------------------------------///
 	void ImGuiLayer::OnDetach()
 	{
 		ImGui_ImplOpenGL3_Shutdown();
@@ -64,7 +64,7 @@ namespace TyphoonEngine
 		ImGui::DestroyContext();
 	}
 	
-	//--------------------------------------//
+	///--------------------------------------///
 	void ImGuiLayer::OnBegin()
 	{
 		ImGui_ImplOpenGL3_NewFrame();
@@ -72,7 +72,7 @@ namespace TyphoonEngine
 		ImGui::NewFrame();
 	}
 	
-	//--------------------------------------//
+	///--------------------------------------///
 	void ImGuiLayer::OnEnd()
 	{
 		ImGuiIO& io = ImGui::GetIO();
@@ -91,7 +91,7 @@ namespace TyphoonEngine
 		}
 	}
 
-	//--------------------------------------//
+	///--------------------------------------///
 	void ImGuiLayer::OnImGuiRender()
 	{
 	}

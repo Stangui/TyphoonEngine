@@ -12,13 +12,13 @@ namespace TyphoonEngine
 
 	bool WindowWin64::s_glfwInitialised = false;
 
-	//------------------------------------------//
+	////------------------------------------------////
 	static void GLFWErrorCallback( int32 error, const char* msg )
 	{
 		TE_ENGINE_LOG_ERROR( "GLFWError: {0} - {1}", error, msg );
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	WindowWin64::WindowWin64( const WindowProperties& props ) : 
 		 m_glWindow( nullptr )
 		,m_context( nullptr )
@@ -26,13 +26,13 @@ namespace TyphoonEngine
 		_init( props );
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	WindowWin64::~WindowWin64()
 	{
 		_shutdown();
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	bool WindowWin64::Update()
 	{
 		if ( s_glfwInitialised )
@@ -42,25 +42,25 @@ namespace TyphoonEngine
 		return true;
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	const ivec2 WindowWin64::GetWindowSize() const
 	{
 		return m_windowData.m_dims;
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	void* WindowWin64::GetNativeWindow() const
 	{
 		return m_glWindow;
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	bool WindowWin64::IsVSync() const
 	{
 		return m_windowData.m_bVSync;
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	void WindowWin64::SetVSync(bool bEnable)
 	{
 		m_windowData.m_bVSync = bEnable;
@@ -77,7 +77,7 @@ namespace TyphoonEngine
 		}
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	ivec2 WindowWin64::_calculateWindowPos( GLFWmonitor* monitor, const glm::ivec2 size )
 	{
 		ivec2 pos(0, 0);
@@ -96,7 +96,7 @@ namespace TyphoonEngine
 		return pos;
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	void WindowWin64::_setCallbacks(GLFWwindow* win)
 	{
 		glfwSetWindowCloseCallback( m_glWindow, []( GLFWwindow* win )
@@ -198,7 +198,7 @@ namespace TyphoonEngine
 		glfwSetErrorCallback( GLFWErrorCallback );
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	bool WindowWin64::_init( const WindowProperties& props )
 	{
 		m_windowData.m_dims = props.m_dimensions;
@@ -221,7 +221,7 @@ namespace TyphoonEngine
 			windowMonitor = monitors[m_windowData.m_monitorId];
 		}
 
-		// Create window
+		///// Create window
 		switch ( m_windowData.m_type )
 		{
 			case EWINDOW_TYPE::BorderlessWindowed:
@@ -281,13 +281,13 @@ namespace TyphoonEngine
 		return true;
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	void WindowWin64::SetEventCallback( const EventCallbackFn& callback )
 	{
 		m_windowData.m_callback = callback;
 	}
 
-	//------------------------------------------//
+	////------------------------------------------////
 	void WindowWin64::_shutdown()
 	{
 		if ( s_glfwInitialised )
@@ -296,13 +296,13 @@ namespace TyphoonEngine
 		}
 	}
 
-	//------------------------------------------//
-	//------------------------------------------//
+	////------------------------------------------////
+	////------------------------------------------////
 	IWindow* IWindow::Create( const WindowProperties& props )
 	{
 		return new WindowWin64( props );
 	}
-	//------------------------------------------//
-	//------------------------------------------//
+	////------------------------------------------////
+	////------------------------------------------////
 
 }

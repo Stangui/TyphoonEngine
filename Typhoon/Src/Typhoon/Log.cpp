@@ -12,10 +12,10 @@ namespace TyphoonEngine
 
 	void Log::Init( glm::int32 logLevel, const std::string& logFormat )
 	{
-		// Set output format
+		///// Set output format
 		spdlog::set_pattern( logFormat );
 
-		// Create loggers
+		///// Create loggers
 		s_coreLogger = spdlog::stderr_color_mt( "EngineLog" );
 		s_coreLogger->set_level( static_cast<spdlog::level::level_enum>( logLevel ) );
 

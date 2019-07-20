@@ -9,39 +9,39 @@ namespace TyphoonEngine
 	namespace Renderers
 	{
 
-		// 
-		// Creates a platform-specific rendering context
-		//
+		///  
+		///  Creates a platform-specific rendering context
+		/// 
 		class VulkanContext : public IRenderingContext
 		{
 
 		public:
 
-			//
-			// Constructor
-			// Parameters:
-			//	win - GLFWwindow pointer
-			//
+			/// 
+			///  Constructor
+			///  Parameters:
+			/// 	win - GLFWwindow pointer
+			/// 
 			VulkanContext( GLFWwindow* win );
 
-			//
-			// Destructor
-			//
+			/// 
+			///  Destructor
+			/// 
 			virtual ~VulkanContext() override;
 
-			//
-			// Creates context
-			//
+			/// 
+			///  Creates context
+			/// 
 			void Init() override;
 
-			//
-			// Swaps rendering buffers
-			//
+			/// 
+			///  Swaps rendering buffers
+			/// 
 			void SwapBuffers() override;
 
 		private:
 
-			// Rendering window pointer
+			///  Rendering window pointer
 			GLFWwindow* m_window;
 		};
 	}

@@ -8,7 +8,7 @@ namespace TyphoonEngine
 {
 	namespace Renderers
 	{
-		// Type converter
+		///// Type converter
 		static GLenum ShaderDataTypeToOpenGLType( ShaderDataType type )
 		{
 			switch ( type )

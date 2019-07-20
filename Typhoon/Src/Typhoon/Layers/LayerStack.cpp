@@ -5,12 +5,12 @@
 namespace TyphoonEngine
 {
 
-	//---------------------------------------------//
+	////---------------------------------------------////
 	LayerStack::LayerStack() : m_layerInsertIdx(0)
 	{
 	}
 
-	//---------------------------------------------//
+	////---------------------------------------------////
 	LayerStack::~LayerStack()
 	{
 		for ( Layer* layer : m_layers )
@@ -19,7 +19,7 @@ namespace TyphoonEngine
 		}
 	}
 
-	//---------------------------------------------//
+	////---------------------------------------------////
 	void LayerStack::PushLayer( Layer* layer )
 	{
 		m_layers.emplace( m_layers.begin() + m_layerInsertIdx, layer );
@@ -27,14 +27,14 @@ namespace TyphoonEngine
 		layer->OnAttach();
 	}
 	
-	//---------------------------------------------//
+	////---------------------------------------------////
 	void LayerStack::PushOverlay( Layer* layer )
 	{
 		m_layers.emplace_back( layer );
 		layer->OnAttach();
 	}
 
-	//---------------------------------------------//
+	////---------------------------------------------////
 	void LayerStack::PopLayer( Layer* layer )
 	{
 		auto it = std::find( m_layers.begin(), m_layers.end(), layer );
@@ -46,7 +46,7 @@ namespace TyphoonEngine
 		}
 	}
 
-	//---------------------------------------------//
+	////---------------------------------------------////
 	void LayerStack::PopOverlay( Layer* layer )
 	{
 		auto it = std::find( m_layers.begin(), m_layers.end(), layer );

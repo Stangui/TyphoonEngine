@@ -11,7 +11,7 @@ namespace TyphoonEngine
                          virtual EventType GetEventType() const override { return GetStaticType(); }\
                          virtual const char* GetName() const override { return #type; }
 
-	// Type of event 
+	///  Type of event 
 	enum class EventType : glm::uint8
 	{
 		AppInit, AppUpdate, AppRender, AppClose, AppTick,
@@ -20,7 +20,7 @@ namespace TyphoonEngine
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScroll
 	};
 
-	// Category of event
+	///  Category of event
 	enum EventCategory
 	{
 		None			= 0,
@@ -31,31 +31,31 @@ namespace TyphoonEngine
 		GameController  = BIT( 4 )
 	};
 
-	// Base class for an event
+	///  Base class for an event
 	class Event
 	{
 
 	public:
 
-		// Returns type of this event
+		///  Returns type of this event
 		virtual EventType GetEventType() const = 0;
 		
-		// Returns the category this event belongs to
+		///  Returns the category this event belongs to
 		virtual glm::int32 GetCategoryFlags() const = 0;
 		
-		// Gets event name
+		///  Gets event name
 		virtual const char* GetName() const = 0;
 
-		// Returns whether this event is in the specified category
+		///  Returns whether this event is in the specified category
 		inline bool IsInCategory( EventCategory category )
 		{
 			return GetCategoryFlags() & category;
 		}
 
-		// Returns a debug string event name
+		///  Returns a debug string event name
 		virtual const std::string ToString() const = 0;
 
-		// Has event been handled?
+		///  Has event been handled?
 		bool bHandled = false;
 	};
 

@@ -7,15 +7,15 @@
 
 #if TE_PLATFORM_WINDOWS
 #	include "DirectX/DirectXBuffer.h"
-#endif	//TE_PLATFORM_WINDOWS
+#endif	////TE_PLATFORM_WINDOWS
 
 #if TE_PLATFORM_VULKAN
 #	include "Vulkan/VulkanBuffer.h"
-#endif	//TE_PLATFORM_WINDOWS
+#endif	////TE_PLATFORM_WINDOWS
 
 #if TE_PLATFORM_MACOS
 #	include "MACOS/MetalBuffer.h"
-#endif	//TE_PLATFORM_WINDOWS
+#endif	////TE_PLATFORM_WINDOWS
 
 namespace TyphoonEngine
 {
@@ -41,21 +41,21 @@ namespace TyphoonEngine
 				TE_ASSERT( false, "RenderingAPI::DirectX is not supported!" );
 				break;
 			}
-#endif	//TE_PLATFORM_WINDOWS
+#endif	////TE_PLATFORM_WINDOWS
 #if TE_PLATFORM_VULKAN
 			case RendererAPI::API::Vulkan:
 			{
 				TE_ASSERT( false, "RenderingAPI::Vulkan is not supported!" );
 				break;
 			}
-#endif	//TE_PLATFORM_VULKAN
+#endif	////TE_PLATFORM_VULKAN
 #if TE_PLATFORM_MACOS
 			case RendererAPI::API::Metal:
 			{
 				TE_ASSERT( false, "RenderingAPI::Metal is not supported!" );
 				break;
 			}
-#endif	//TE_PLATFORM_MACOS
+#endif	////TE_PLATFORM_MACOS
 			}
 			return nullptr;
 		}
@@ -79,21 +79,21 @@ namespace TyphoonEngine
 				TE_ASSERT( false, "RenderingAPI::DirectX is not supported!" );
 				break;
 			}
-#endif	//TE_PLATFORM_WINDOWS
+#endif	////TE_PLATFORM_WINDOWS
 #if TE_PLATFORM_WINDOWS
 			case RendererAPI::API::Vulkan:
 			{
 				TE_ASSERT( false, "RenderingAPI::Vulkan is not supported!" );
 				break;
 			}
-#endif	//TE_PLATFORM_VULKAN
+#endif	////TE_PLATFORM_VULKAN
 #if TE_PLATFORM_WINDOWS
 			case RendererAPI::API::Metal:
 			{
 				TE_ASSERT( false, "RenderingAPI::Metal is not supported!" );
 				break;
 			}
-#endif	//TE_PLATFORM_MACOS
+#endif	////TE_PLATFORM_MACOS
 			}
 			return nullptr;
 		}

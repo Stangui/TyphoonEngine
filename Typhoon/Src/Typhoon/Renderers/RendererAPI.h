@@ -11,9 +11,9 @@ namespace TyphoonEngine
 
 		public:
 
-			//
-			// Rendering API enum
-			//
+			/// 
+			///  Rendering API enum
+			/// 
 			enum class API : unsigned char
 			{
 				None = 0, OpenGL, DirectX, Vulkan, Metal

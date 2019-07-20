@@ -8,22 +8,22 @@ namespace TyphoonEngine
 	namespace Renderers
 	{
 	
-		//
-		// 3D renderer interface 
-		//
+		/// 
+		///  3D renderer interface 
+		/// 
 		class IRenderer
 		{
 
 		public:
 
-			//
-			// Return current rendering API
-			//
+			/// 
+			///  Return current rendering API
+			/// 
 			inline static RendererAPI::API GetRenderAPI() { return RendererAPI::GetAPI(); }
 
-			//
-			// Destructor
-			//
+			/// 
+			///  Destructor
+			/// 
 			virtual ~IRenderer() {};
 
 			static void BeginScene();

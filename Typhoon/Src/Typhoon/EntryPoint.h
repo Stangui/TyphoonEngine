@@ -1,13 +1,13 @@
 #pragma once
 
-// Client defined application
+///  Client defined application
 extern TyphoonEngine::Application* CreateApplication();
 
 #if defined( TYPHOON_PLATFORM_WINDOWS ) || defined( TYPHOON_PLATFORM_LINUX )
 
-//
-// Creates, runs and destroys application
-//
+/// 
+///  Creates, runs and destroys application
+/// 
 int main( int argc, char** argv )
 {
 	TyphoonEngine::Log::Init();

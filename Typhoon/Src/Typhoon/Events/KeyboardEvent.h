@@ -5,7 +5,7 @@
 namespace TyphoonEngine
 {
 
-	// Base keyboard event, holds keycode
+	///  Base keyboard event, holds keycode
 	class KeyEvent : public Event
 	{
 	public:
@@ -25,7 +25,7 @@ namespace TyphoonEngine
 		glm::int32 m_keyCode;
 	};
 
-	// Key pressed event, holds additional repeated flag
+	///  Key pressed event, holds additional repeated flag
 	class KeyPressedEvent : public KeyEvent
 	{
 
@@ -51,7 +51,7 @@ namespace TyphoonEngine
 		bool m_bRepeated;
 	};
 	
-	// Key released event
+	///  Key released event
 	class KeyReleasedEvent : public KeyEvent
 	{
 

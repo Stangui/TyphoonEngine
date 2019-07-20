@@ -5,31 +5,31 @@
 
 namespace TyphoonEngine
 {
-	//
-	// Default logger
-	//
+	/// 
+	///  Default logger
+	/// 
 	class Log
 	{
 
 	public:
 
-		// Create loggers and set format
+		///  Create loggers and set format
 		static void Init( glm::int32 logLevel = 0, const std::string& logFormat = "%^[%T] %n: %v%$" );
 
-		// Engine and client loggers
+		///  Engine and client loggers
 		inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_coreLogger; }
 		inline static std::shared_ptr<spdlog::logger>& GetClientLogger() { return s_clientLogger; }
 
 	private:
 
-		// Loggers
+		///  Loggers
 		static std::shared_ptr<spdlog::logger> s_coreLogger;
 		static std::shared_ptr<spdlog::logger> s_clientLogger;
 
 	};
 }
 
-// MACROS
+///  MACROS
 #ifdef TE_BUILD_SHIPPING
 
 #define TE_ENGINE_LOG_ERROR

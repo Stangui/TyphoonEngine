@@ -1,46 +1,46 @@
 #pragma once
 
-//---------------- Applications -------------------//
+/// ---------------- Applications -------------------/// 
 #include "Typhoon/Application.h"
-//---------------- Applications -------------------//
+/// ---------------- Applications -------------------/// 
 
-//------------------ Logging ----------------------//
+/// ------------------ Logging ----------------------/// 
 #include "Typhoon/Log.h"
-//------------------ Logging ----------------------//
+/// ------------------ Logging ----------------------/// 
 
-//------------------- Layers ----------------------//
+/// ------------------- Layers ----------------------/// 
 #include "Typhoon/Layers/Layer.h"
-//------------------- Layers ----------------------//
+/// ------------------- Layers ----------------------/// 
 
-//--------------------- UI ------------------------//
+/// --------------------- UI ------------------------/// 
 #include "Typhoon/UI/ImGuiLayer.h"
-//--------------------- UI ------------------------//
+/// --------------------- UI ------------------------/// 
 
-//------------------- Events ----------------------//
+/// ------------------- Events ----------------------/// 
 #include "Typhoon/Events/Event.h"
 #include "Typhoon/Events/KeyboardEvent.h"
 #include "Typhoon/Events/ApplicationEvent.h"
 #include "Typhoon/Events/MouseEvent.h"
-//------------------- Events ----------------------//
+/// ------------------- Events ----------------------/// 
 
-//------------------ Renderer ---------------------//
+/// ------------------ Renderer ---------------------/// 
 #include "Typhoon/Renderers/Camera.h"
 #include "Typhoon/Renderers/Renderer.h"
 #include "Typhoon/Renderers/RenderCommand.h"
 #include "Typhoon/Renderers/Shader.h"
 #include "Typhoon/Renderers/VertexArray.h"
-//------------------ Renderer ---------------------//
+/// ------------------ Renderer ---------------------/// 
 
 #include "Typhoon/Timestep.h"
 
-//------------------- Input -----------------------//
+/// ------------------- Input -----------------------/// 
 #include "Typhoon/Input/Input.h"
 #include "Typhoon/Input/GamepadCodes.h"
 #include "Typhoon/Input/JoystickCodes.h"
 #include "Typhoon/Input/KeyCodes.h"
 #include "Typhoon/Input/MouseCodes.h"
-//------------------- Input -----------------------//
+/// ------------------- Input -----------------------/// 
 
-//---------------- Entry point --------------------//
+/// ---------------- Entry point --------------------/// 
 #include "Typhoon/EntryPoint.h"
-//---------------- Entry point --------------------//
+/// ---------------- Entry point --------------------/// 

@@ -5,74 +5,74 @@
 namespace TyphoonEngine
 {
 
-	//
-	// Base application layer, receives engine events
-	//
+	/// 
+	///  Base application layer, receives engine events
+	/// 
 	class Layer
 	{
 	public:
 
-		//
-		// Constructor
-		// Parameters:
-		//	name - debug name
-		//  bEnable - true/False 
-		//
+		/// 
+		///  Constructor
+		///  Parameters:
+		/// 	name - debug name
+		///   bEnable - true/False 
+		/// 
 		Layer(const std::string& name = "Layer", bool bEnable = true);
 		
-		//
-		// Destructor
-		//
+		/// 
+		///  Destructor
+		/// 
 		virtual ~Layer();
 
-		//
-		// Called after layer is inserted into stack
-		//
+		/// 
+		///  Called after layer is inserted into stack
+		/// 
 		virtual void OnAttach() {}
 
-		//
-		// Called after layer is removed from stack
-		//
+		/// 
+		///  Called after layer is removed from stack
+		/// 
 		virtual void OnDetach() {}
 
-		//
-		// Called during application update
-		//
+		/// 
+		///  Called during application update
+		/// 
 		virtual void OnUpdate(float deltaTime) {}
 
-		//
-		// Called after layer is inserted into stack
-		//
+		/// 
+		///  Called after layer is inserted into stack
+		/// 
 		virtual void OnEvent(Event& Evt) {}
 
-		//
-		// Called during GUI rendering
-		//
+		/// 
+		///  Called during GUI rendering
+		/// 
 		virtual void OnImGuiRender() {}
 		
-		//
-		// Sets whether this layer is active
-		// Parameters:
-		//	bEnabled - True/False
-		//
+		/// 
+		///  Sets whether this layer is active
+		///  Parameters:
+		/// 	bEnabled - True/False
+		/// 
 		inline void SetEnabled( bool bEnable ) { m_bEnabled = bEnable; }
 		
-		//
-		// Returns whether this layer is active
-		//
+		/// 
+		///  Returns whether this layer is active
+		/// 
 		inline bool IsEnabled() const { return m_bEnabled; }
 
-		//
-		// Returns the debug name
-		//
+		/// 
+		///  Returns the debug name
+		/// 
 		const std::string& GetName() const { return m_name; }
 
 	private:
 
-		// Debug name
+		///  Debug name
 		std::string m_name;
 
-		// Active flag
+		///  Active flag
 		bool m_bEnabled = false;
 	};
 

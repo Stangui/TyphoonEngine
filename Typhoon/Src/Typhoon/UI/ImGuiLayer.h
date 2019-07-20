@@ -5,47 +5,47 @@
 namespace TyphoonEngine
 {
 
-	//
-	// Adds ImGui UI rendering
-	//
+	/// 
+	///  Adds ImGui UI rendering
+	/// 
 	class  ImGuiLayer : public Layer
 	{
 
 	public:
 
-		//
-		// Constructor/Destructor
-		//
+		/// 
+		///  Constructor/Destructor
+		/// 
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		//
-		// Initialises ImGui on layer attach
-		//
+		/// 
+		///  Initialises ImGui on layer attach
+		/// 
 		void OnAttach() override;
 
-		//
-		// Destroys ImGui on layer detach
-		//
+		/// 
+		///  Destroys ImGui on layer detach
+		/// 
 		void OnDetach() override;
 
-		//
-		// Used to draw ImGui UI geometry 
-		//
+		/// 
+		///  Used to draw ImGui UI geometry 
+		/// 
 		void OnImGuiRender() override;
 
-		//
-		// Initialises ImGui for a frame render
-		//
+		/// 
+		///  Initialises ImGui for a frame render
+		/// 
 		void OnBegin();
-		//
-		// Ends an ImGui frame render
-		//
+		/// 
+		///  Ends an ImGui frame render
+		/// 
 		void OnEnd();
 
 	private:
 
-		// frametime
+		///  frametime
 		float m_time;
 	};
 

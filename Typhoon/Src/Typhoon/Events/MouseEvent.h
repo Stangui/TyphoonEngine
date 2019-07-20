@@ -4,7 +4,7 @@
 
 namespace TyphoonEngine
 {
-	// Mouse move event, holds x,y mouse coordinates
+	///  Mouse move event, holds x,y mouse coordinates
 	class MouseMovedEvent : public Event
 	{
 	public:

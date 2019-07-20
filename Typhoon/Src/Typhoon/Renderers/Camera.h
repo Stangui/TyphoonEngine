@@ -8,16 +8,16 @@ namespace TyphoonEngine
 	namespace Renderers
 	{
 
-		//
-		// Scene camera implementation
-		//
+		/// 
+		///  Scene camera implementation
+		/// 
 		class Camera
 		{
 		public:
 
-			//
-			// Projection type for this camera
-			//
+			/// 
+			///  Projection type for this camera
+			/// 
 			enum class PROJECTION_TYPE : glm::uint8
 			{
 				Orthographic, 
@@ -25,67 +25,67 @@ namespace TyphoonEngine
 				Fisheye
 			};
 
-			//
-			// Constructor
-			// Parameters:
-			//	left - frustum near-plane left position
-			//	right - frustum near-plane right position
-			//	top - frustum near-plane top position
-			//	bottom - frustum near-plane bottom position
-			//
+			/// 
+			///  Constructor
+			///  Parameters:
+			/// 	left - frustum near-plane left position
+			/// 	right - frustum near-plane right position
+			/// 	top - frustum near-plane top position
+			/// 	bottom - frustum near-plane bottom position
+			/// 
 			Camera();
 			virtual ~Camera();
 
-			//
-			// Initialise camera
-			//
+			/// 
+			///  Initialise camera
+			/// 
 			virtual void Init();
 
-			//
-			// Sets the projection type for this camera
-			//
+			/// 
+			///  Sets the projection type for this camera
+			/// 
 			void SetProjectionType(PROJECTION_TYPE type);
 			
-			//
-			// Sets the projection type for this camera
-			//
+			/// 
+			///  Sets the projection type for this camera
+			/// 
 			const PROJECTION_TYPE GetProjectionType( ) const;
 
-			//
-			// Gets/Sets the position
-			//
+			/// 
+			///  Gets/Sets the position
+			/// 
 			void SetPosition(const glm::vec3& pos);
 			const glm::vec3& GetPosition() const;
 
-			//
-			// Gets/Sets the rotation
-			//
+			/// 
+			///  Gets/Sets the rotation
+			/// 
 			void SetRotation( glm::quat& rotation );
 			void SetRotation( glm::vec3& eulers );
 			const glm::quat& GetRotation() const;
 			
-			//
-			// Gets/Sets clip planes
-			//
+			/// 
+			///  Gets/Sets clip planes
+			/// 
 			void SetClipPlanes( float nearClip, float farClipB );
 			const float GetNearClip() const;
 			const float GetFarClip() const;
 
-			//
-			// Gets/Sets fov
-			//
+			/// 
+			///  Gets/Sets fov
+			/// 
 			void SetFovY( float fov );
 			const float GetFovY() const;
 
-			//
-			// Gets/Sets clip planes
-			//
+			/// 
+			///  Gets/Sets clip planes
+			/// 
 			void SetAspectRatio( float aspect );
 			const float GetAspectRatio() const;
 
-			//
-			// Gets matrices
-			//
+			/// 
+			///  Gets matrices
+			/// 
 			const glm::mat4& GetViewMatrix() const;
 			const glm::mat4& GetProjectionMatrix() const;
 			const glm::mat4& GetViewProjectionMatrix() const;

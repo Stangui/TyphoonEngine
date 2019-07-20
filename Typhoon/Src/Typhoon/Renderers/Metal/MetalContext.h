@@ -9,34 +9,34 @@ namespace TyphoonEngine
 	namespace Renderers
 	{
 
-		// 
-		// Creates a platform-specific rendering context
-		//
+		///  
+		///  Creates a platform-specific rendering context
+		/// 
 		class MetalContext : public IRenderingContext
 		{
 
 		public:
 
-			//
-			// Constructor
-			// Parameters:
-			//	win - GLFWwindow pointer
-			//
+			/// 
+			///  Constructor
+			///  Parameters:
+			/// 	win - GLFWwindow pointer
+			/// 
 			MetalContext();
 
-			//
-			// Destructor
-			//
+			/// 
+			///  Destructor
+			/// 
 			virtual ~MetalContext() override;
 
-			//
-			// Creates context
-			//
+			/// 
+			///  Creates context
+			/// 
 			void Init() override;
 
-			//
-			// Swaps rendering buffers
-			//
+			/// 
+			///  Swaps rendering buffers
+			/// 
 			void SwapBuffers() override;
 
 		};

@@ -16,4 +16,4 @@
 
 #include <Windows.h>
 
-#endif	//TE_PLATFORM_WINDOWS
+#endif	/// TE_PLATFORM_WINDOWS

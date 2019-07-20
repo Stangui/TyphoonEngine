@@ -12,7 +12,7 @@ namespace TyphoonEngine
 
 	std::unique_ptr<IInput> IInput::s_instance = std::unique_ptr<IInput>(new GLFWInput);
 
-	//---------------------------------------------------------//
+	///---------------------------------------------------------///
 	bool GLFWInput::IsKeyPressedImpl( int32 keyCode ) const
 	{
 		const Application& app = Application::Get();
@@ -28,7 +28,7 @@ namespace TyphoonEngine
 		return false;
 	}
 
-	//---------------------------------------------------------//
+	///---------------------------------------------------------///
 	bool GLFWInput::IsMouseButtonPressedImpl( int32 button ) const
 	{
 		const Application& app = Application::Get();
@@ -43,7 +43,7 @@ namespace TyphoonEngine
 		return false;
 	}
 
-	//---------------------------------------------------------//
+	///---------------------------------------------------------///
 	vec2 GLFWInput::GetMousePosImpl() const
 	{
 		const Application& app = Application::Get();

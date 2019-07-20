@@ -21,59 +21,59 @@ namespace TyphoonEngine
 		class Camera;
 	}
 
-	//
-	// Platform-agnostic application
-	//
+	/// 
+	///  Platform-agnostic application
+	/// 
 	class Application
 	{
 
 	public:
 
-		// Constructor
+		///  Constructor
 		Application();
 
-		// Destructor
+		///  Destructor
 		virtual ~Application();
 
-		// Getters
+		///  Getters
 		inline static Application& Get() { return *s_instance; }
 		inline const IWindow* GetWindow() const { return m_window.get(); }
 		
-		// Update
+		///  Update
 		void Run();
 
-		// Events
+		///  Events
 		void OnEvent( Event& Evt );
 		bool OnWindowClose( WindowCloseEvent& Evt );
 
-		//Layers
+		/// Layers
 		void PushLayer( Layer* layer );
 		void PushOverlay( Layer* layer );
 		void PopLayer( Layer* layer );
 		void PopOverlay( Layer* layer );
 
-		// Quit
+		///  Quit
 		inline void QuitApp() { m_bRunning = false; }
 
 	private:
 
-		// IWindow interface pointer
+		///  IWindow interface pointer
 		std::unique_ptr<class IWindow> m_window;
 		
-		// GUI layer pointer
+		///  GUI layer pointer
 		ImGuiLayer* m_imgui;
 		
-		// Application flags
+		///  Application flags
 		bool m_bRunning : 1;
 		bool m_bFocused : 1;
 		
-		// Layer stack
+		///  Layer stack
 		LayerStack m_layerStack;
 		
-		// Singleton
+		///  Singleton
 		static Application* s_instance;
 
-		// Timer
+		///  Timer
 		std::unique_ptr<Timestep> m_timestep;
 		float m_lastFrameTime;
 	};

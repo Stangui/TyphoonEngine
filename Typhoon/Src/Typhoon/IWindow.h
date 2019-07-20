@@ -5,9 +5,9 @@
 namespace TyphoonEngine
 {
 
-	//
-	// Type of window to create
-	//
+	/// 
+	///  Type of window to create
+	/// 
 	enum class EWINDOW_TYPE : glm::uint8
 	{
 		BorderWindowed,
@@ -16,16 +16,16 @@ namespace TyphoonEngine
 		Fullscreen
 	};
 
-	//
-	// Properties of window to create
-	//
+	/// 
+	///  Properties of window to create
+	/// 
 	struct WindowProperties
 	{
-		glm::ivec2 m_dimensions;	// size
-		bool m_bVSync : 1;			// vsync enabled
-		EWINDOW_TYPE m_type;		// window style
-		glm::uint8 m_monitorId;		// monitor to display
-		std::string m_title;		// window title text
+		glm::ivec2 m_dimensions;	///  size
+		bool m_bVSync : 1;			///  vsync enabled
+		EWINDOW_TYPE m_type;		///  window style
+		glm::uint8 m_monitorId;		///  monitor to display
+		std::string m_title;		///  window title text
 
 		WindowProperties() :
 			 m_dimensions(1270, 720)
@@ -37,57 +37,57 @@ namespace TyphoonEngine
 		}
 	};
 
-	//
-	// Platform agnostic window
-	//
+	/// 
+	///  Platform agnostic window
+	/// 
 	class IWindow
 	{
 	
 	public:
 
-		//
-		// Function pointer definition
-		//
+		/// 
+		///  Function pointer definition
+		/// 
 		using EventCallbackFn = std::function<void( Event& )>;
 
-		//
-		// Destructor
-		//
+		/// 
+		///  Destructor
+		/// 
 		virtual ~IWindow() {};
 		
-		//
-		// Sets the window data callback function pointer
-		//
+		/// 
+		///  Sets the window data callback function pointer
+		/// 
 		inline virtual void SetEventCallback( const EventCallbackFn& callback ) = 0;
 		
-		//
-		// Updates window
-		//
+		/// 
+		///  Updates window
+		/// 
 		virtual bool Update() = 0;
 
-		//
-		// Sets vsync status
-		//
+		/// 
+		///  Sets vsync status
+		/// 
 		virtual void SetVSync( bool bEnable ) = 0;
 
-		//
-		// Gets vsync status
-		//
+		/// 
+		///  Gets vsync status
+		/// 
 		virtual bool IsVSync( ) const = 0;
 
-		//
-		// Gets window size
-		//
+		/// 
+		///  Gets window size
+		/// 
 		virtual const glm::ivec2 GetWindowSize() const = 0;
 
-		//
-		// Gets native window ptr
-		//
+		/// 
+		///  Gets native window ptr
+		/// 
 		virtual void* GetNativeWindow() const = 0;
 
-		//
-		// Creates window
-		//
+		/// 
+		///  Creates window
+		/// 
 		static IWindow* Create( const WindowProperties& props = WindowProperties() );
 	
 	};

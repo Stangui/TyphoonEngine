@@ -18,7 +18,7 @@ namespace TyphoonEngine
 
 	Application* Application::s_instance = nullptr;
 
-	// Type converter
+	//// Type converter
 	static GLenum ShaderDataTypeToOpenGLType( Renderers::ShaderDataType type )
 	{
 		switch ( type )
@@ -40,17 +40,17 @@ namespace TyphoonEngine
 		return 0;
 	}
 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	Application::Application() :
 		m_bRunning( true )
 		, m_bFocused( true )
 		,m_lastFrameTime( 0.f )
 	{
 		TE_ASSERT( !s_instance, "Application already exists!" )
-		// Singleton
+		//// Singleton
 		s_instance = this;
 
-		//TODO:- config this..
+		///TODO:- config this..
 		WindowProperties wp;
 		wp.m_bVSync = true;
 		wp.m_monitorId = 1;
@@ -59,7 +59,7 @@ namespace TyphoonEngine
 		m_window = std::unique_ptr<IWindow>( IWindow::Create( wp ) );
 		m_window->SetEventCallback( BIND_CB_FUNC( &Application::OnEvent ) );
 
-		// Add UI debug layer
+		//// Add UI debug layer
 		m_imgui = new ImGuiLayer();
 		PushOverlay( m_imgui );
 
@@ -67,13 +67,13 @@ namespace TyphoonEngine
 		TE_ASSERT( m_timestep, "Unable to create Platform Timestep!" );
 	}
 	 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	Application::~Application()
 	{
 		TE_ENGINE_LOG_INFO( "Application closing..." );
 	}
 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	void Application::OnEvent( Event& Evt )
 	{
 		EventDispatch dispatch( Evt );
@@ -89,14 +89,14 @@ namespace TyphoonEngine
 		}
 	}
 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	bool Application::OnWindowClose( WindowCloseEvent& Evt )
 	{
 		QuitApp();
 		return true;
 	}
 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	void Application::Run()
 	{
 		while ( m_bRunning )
@@ -110,7 +110,7 @@ namespace TyphoonEngine
 				layer->OnUpdate( dTime );
 			}
 
-			// UI render			
+			//// UI render			
 			m_imgui->OnBegin();
 
 			for ( Layer* layer : m_layerStack )
@@ -124,25 +124,25 @@ namespace TyphoonEngine
 		}
 	}
 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	void Application::PushLayer( Layer* layer )
 	{
 		m_layerStack.PushLayer( layer );
 	}
 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	void Application::PushOverlay( Layer* layer )
 	{
 		m_layerStack.PushOverlay( layer );
 	}
 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	void Application::PopLayer( Layer* layer )
 	{
 		m_layerStack.PopLayer( layer );
 	}
 
-	//----------------------------------------------//
+	///----------------------------------------------///
 	void Application::PopOverlay( Layer* layer )
 	{
 		m_layerStack.PopOverlay( layer );

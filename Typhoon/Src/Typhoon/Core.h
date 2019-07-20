@@ -2,9 +2,9 @@
 
 #include "Log.h"
 
-//
-// Provides scoped timing and logs via the default log system
-//
+/// 
+///  Provides scoped timing and logs via the default log system
+/// 
 struct ScopedTimer
 {
 	std::chrono::time_point<std::chrono::steady_clock> m_start, m_end;
@@ -24,26 +24,26 @@ struct ScopedTimer
 	}
 };
 
-//------------------- MACROS ----------------------//
+/// ------------------- MACROS ----------------------/// 
 
-// Safe delete of raw pointers
+///  Safe delete of raw pointers
 #define TE_DELETE(x) if ( x ) { delete x; x = nullptr; }
-// Scoped timing
+///  Scoped timing
 #define SCOPED_TIMER(x) ScopedTimer x(#x)
 
-// Flags
+///  Flags
 #define BIT(x) (1 << x)
 
-// Asserts
+///  Asserts
 #ifdef TE_ASSERTS
 	#define TE_ASSERT( x, ... ) { if ( (!x) ) { TE_ERROR( "Assertion Failed {0}", __VA_ARGS__ ); __debugbreak(); } }
 	#define TE_VERIFY( x, ... ) { if ( (!x) ) { TE_ERROR( "Assertion Failed {0}", __VA_ARGS__ ); __debugbreak(); } }
 #else
 	#define TE_ASSERT( x, ... ) 
 	#define TE_VERIFY( x, ... ) x 
-#endif	//TE_ENABLE_ASSERTS
+#endif	/// TE_ENABLE_ASSERTS
 
-// Callbacks
+///  Callbacks
 #define BIND_CB_FUNC(x) std::bind(x, this, std::placeholders::_1)
 
-//------------------- MACROS ----------------------//
+/// ------------------- MACROS ----------------------/// 

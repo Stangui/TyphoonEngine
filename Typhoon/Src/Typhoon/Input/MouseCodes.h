@@ -1,6 +1,6 @@
 #pragma once
 
-// Taken from GLFW
+///  Taken from GLFW
 #define TE_MOUSE_BUTTON_1         0
 #define TE_MOUSE_BUTTON_2         1
 #define TE_MOUSE_BUTTON_3         2
