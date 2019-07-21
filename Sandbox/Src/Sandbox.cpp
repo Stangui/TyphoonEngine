@@ -154,6 +154,7 @@ public:
 		glm::mat4 scale = glm::scale( glm::mat4( 1.f ), glm::vec3( 1.3f ) );
 		glm::mat4 trans = glm::translate( glm::mat4( 1.f ), m_squarePos ) * scale;
 		m_square->SetTransform( trans );
+		m_square->SetRenderQueue( 10 );
 
 		r.AddRenderObject( m_square );
 

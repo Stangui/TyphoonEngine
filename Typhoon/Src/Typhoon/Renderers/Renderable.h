@@ -19,7 +19,8 @@ namespace TyphoonEngine
 			const std::shared_ptr<VertexArray>& GetVertexArray() const;
 			void SetTransform( const glm::mat4& transform );
 			const glm::mat4& GetTransform() const;
-			void SetRenderqueue( const glm::uint8 id );
+			void SetRenderQueue( const glm::uint8 id );
+			const glm::uint8 GetRenderQueue() const;
 			void SetEnabled(bool bEnable);
 			const bool IsEnabled() const;
 

@@ -13,6 +13,14 @@ namespace TyphoonEngine
 
 		SceneData* IRenderer::m_sceneData = new SceneData;
 
+		struct RenderSort_tag
+		{
+			bool operator() ( const RenderablePtr& a, const RenderablePtr& b )
+			{
+				return a->GetRenderQueue() < b->GetRenderQueue();
+			}
+		} RenderSort;
+
 		void IRenderer::RenderFrame(const Camera& cam) 
 		{
 			_BeginScene(cam);
@@ -27,6 +35,8 @@ namespace TyphoonEngine
 		void IRenderer::_BeginScene( const Camera& cam )
 		{
 			m_sceneData->m_viewProjMat = cam.GetViewProjectionMatrix();
+
+			std::sort( m_sceneData->m_objects.begin(), m_sceneData->m_objects.end(), RenderSort );
 		}
 
 		void IRenderer::_EndScene()

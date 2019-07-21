@@ -43,9 +43,15 @@ namespace TyphoonEngine
 		}
 
 		//-------------------------------------------//
-		void Renderable::SetRenderqueue( const glm::uint8 renderqueue )
+		void Renderable::SetRenderQueue( const glm::uint8 renderqueue )
 		{
 			m_renderQueue = renderqueue;
+		}
+
+		//-------------------------------------------//
+		const glm::uint8 Renderable::GetRenderQueue() const
+		{
+			return m_renderQueue;
 		}
 
 		//-------------------------------------------//
