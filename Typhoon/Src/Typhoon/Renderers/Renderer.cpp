@@ -13,25 +13,51 @@ namespace TyphoonEngine
 
 		SceneData* IRenderer::m_sceneData = new SceneData;
 
-		void IRenderer::BeginScene( const Camera& cam )
+		void IRenderer::RenderFrame(const Camera& cam) 
+		{
+			_BeginScene(cam);
+
+			for ( const RenderablePtr& obj : m_sceneData->m_objects )
+			{
+				_Submit( obj );
+			}
+			_EndScene();
+		}
+
+		void IRenderer::_BeginScene( const Camera& cam )
 		{
 			m_sceneData->m_viewProjMat = cam.GetViewProjectionMatrix();
 		}
 
-		void IRenderer::EndScene()
+		void IRenderer::_EndScene()
 		{
 
 		}
 
-		void IRenderer::Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vArray, const glm::mat4& transform)
+		void IRenderer::AddRenderObject( const RenderablePtr& renderable )
 		{
-			shader->Bind();
-			shader->UploadUniformMat4( "u_vpMat", m_sceneData->m_viewProjMat );
-			shader->UploadUniformMat4( "u_transform", transform );
-			
-			vArray->Bind();
+			m_sceneData->m_objects.push_back( renderable );
+		}
 
-			RenderCommand::DrawIndexed(vArray);
+		void IRenderer::_Submit(const RenderablePtr& renderable)
+		{
+			if ( !renderable || !renderable->GetVertexArray() || !renderable->IsEnabled() )
+			{
+				return;
+			}
+
+			if ( renderable->GetShader() )
+			{
+				renderable->GetShader()->Bind();
+				renderable->GetShader()->UploadUniformMat4( "u_vpMat", m_sceneData->m_viewProjMat );
+				renderable->GetShader()->UploadUniformMat4( "u_transform", renderable->GetTransform() );
+			}
+
+			if ( renderable->GetVertexArray() )
+			{
+				renderable->GetVertexArray()->Bind();
+				RenderCommand::DrawIndexed( renderable->GetVertexArray() );
+			}
 		}
 	}
 }

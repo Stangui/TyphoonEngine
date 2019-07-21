@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RendererAPI.h"
+#include "Renderable.h"
 
 namespace TyphoonEngine
 {
@@ -17,6 +18,7 @@ namespace TyphoonEngine
 		struct SceneData
 		{
 			glm::mat4 m_viewProjMat;
+			RenderVec m_objects;
 		};
 
 		/// 
@@ -24,8 +26,6 @@ namespace TyphoonEngine
 		/// 
 		class IRenderer
 		{
-		public:
-
 
 		public:
 
@@ -39,11 +39,21 @@ namespace TyphoonEngine
 			/// 
 			virtual ~IRenderer() {};
 
-			static void BeginScene( const Camera& cam );
-			static void EndScene();
-			static void Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vArray, const glm::mat4& transform);
+			///
+			/// Render a single frame
+			///
+			void RenderFrame( const Camera& cam );
+
+			///
+			/// Adds a RenderObject to the render list
+			///
+			void AddRenderObject( const RenderablePtr& obj );
 
 		private:
+
+			void _BeginScene( const Camera& cam );
+			void _EndScene();
+			void _Submit( const RenderablePtr& renderable );
 
 			static SceneData* m_sceneData;
 		};

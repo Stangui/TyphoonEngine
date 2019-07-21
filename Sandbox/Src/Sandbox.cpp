@@ -80,10 +80,10 @@ public:
 
 		float sqVertices[5 * 4] =
 		{
-			-0.5f, -0.5f, 0.0f, 0.f, 1.f,
-			 0.5f, -0.5f, 0.0f, 1.f, 1.f,
-			 0.5f,  0.5f, 0.0f, 1.f, 0.f,
-			-0.5f,  0.5f, 0.0f, 0.f, 0.f
+			-0.5f, -0.5f, 0.0f, 0.f, 0.f,
+			 0.5f, -0.5f, 0.0f, 1.f, 0.f,
+			 0.5f,  0.5f, 0.0f, 1.f, 1.f,
+			-0.5f,  0.5f, 0.0f, 0.f, 1.f
 		};
 
 		std::shared_ptr<Renderers::IVertexBuffer> vBufferSq;
@@ -149,6 +149,18 @@ public:
 		m_camera.reset( new Renderers::Camera() );
 		m_camera->Init();
 		m_camera->SetRotation( glm::vec3( 0.f, 0.f, 0.f ) );
+
+		m_square = std::make_shared<Renderers::Renderable>( m_squareVA, m_blueShader );
+		glm::mat4 scale = glm::scale( glm::mat4( 1.f ), glm::vec3( 1.3f ) );
+		glm::mat4 trans = glm::translate( glm::mat4( 1.f ), m_squarePos ) * scale;
+		m_square->SetTransform( trans );
+
+		r.AddRenderObject( m_square );
+
+		m_triangle = std::make_shared<Renderers::Renderable>( m_triangleVA, m_vertexColorShader );
+		trans = glm::translate( glm::mat4( 1.f ), glm::vec3( 0.f ) );
+		m_triangle->SetTransform( trans );
+		r.AddRenderObject( m_triangle );
 	}
 
 	virtual ~ExampleLayer() override
@@ -170,6 +182,11 @@ public:
 			m_fps = fps;
 			fps = 0;
 		}
+
+		glm::mat4 trans = m_square->GetTransform();
+		glm::mat4 rot = glm::rotate( glm::mat4( 1.f ), glm::radians( 90.f * deltaTime ), glm::vec3( 0.f, 0.f, 1.f ) );
+
+		m_square->SetTransform( trans * rot );
 
 		/// Handle input polling
 		_HandleInput(deltaTime);
@@ -207,16 +224,7 @@ private:
 		Renderers::RenderCommand::SetClearColour( glm::vec4( 0.7f, 0.f, 0.7f, 1.f ) );
 		Renderers::RenderCommand::Clear();
 
-		Renderers::IRenderer::BeginScene( *m_camera );
-
-		glm::mat4 scale = glm::scale( glm::mat4( 1.f ), glm::vec3( 1.3f ) );
-		glm::mat4 trans = glm::translate( glm::mat4( 1.f ), m_squarePos ) * scale;
-		Renderers::IRenderer::Submit( m_blueShader, m_squareVA, trans );
-
-		trans = glm::translate( glm::mat4( 1.f ), glm::vec3( 0.f ) );
-		Renderers::IRenderer::Submit( m_vertexColorShader, m_triangleVA, trans );
-
-		Renderers::IRenderer::EndScene();
+		r.RenderFrame( *m_camera );
 	}
 
 	void _HandleInput( float deltaTime )
@@ -253,6 +261,10 @@ private:
 
 	glm::int32 m_fps = 0;
 
+	Renderers::RenderablePtr m_square;
+	Renderers::RenderablePtr m_triangle;
+
+	Renderers::IRenderer r;
 };
 
 //
@@ -279,8 +291,9 @@ public:
 TyphoonEngine::Application* CreateApplication() 
 {
 	TyphoonEngine::WindowProperties props;
-	props.m_bVSync = true;
-	props.m_dimensions = glm::ivec2(1280, 800);
+	props.m_bVSync = false;
+	props.m_dimensions = glm::ivec2(1600, 900);
 	props.m_title = "Test";	
+	props.m_type = TyphoonEngine::EWINDOW_TYPE::BorderWindowed;
 	return new SandboxApp(props);
 }
