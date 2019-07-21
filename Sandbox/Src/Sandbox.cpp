@@ -10,6 +10,8 @@ public:
 
 	ExampleLayer()
 		: Layer("Test")
+		, m_cameraPos( glm::vec3( 0.f ) )
+		, m_squarePos( glm::vec3( 0.f ) )
 	{
 		// Add triangle mesh & shader
 		m_triangleVA.reset( Renderers::VertexArray::Create() );;
@@ -47,12 +49,13 @@ public:
 			out vec4 v_Color;
 
 			uniform mat4 u_vpMat;
+			uniform mat4 u_transform;
 
 			void main()
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = u_vpMat * vec4(a_Position, 1.0);	
+				gl_Position = u_vpMat * u_transform * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -104,11 +107,12 @@ public:
 
 			out vec3 v_Position;
 			uniform mat4 u_vpMat;
+			uniform mat4 u_transform;
 
 			void main()
 			{
 				v_Position = a_Position;
-				gl_Position = u_vpMat * vec4(a_Position, 1.0);	
+				gl_Position = u_vpMat * u_transform * vec4(a_Position, 1.0);	
 			}
 		)";
 
@@ -135,13 +139,50 @@ public:
 	virtual ~ExampleLayer() override
 	{
 	}
+	
+	void _Render()
+	{
+		Renderers::RenderCommand::SetClearColour( glm::vec4( 0.7f, 0.f, 0.7f, 1.f ) );
+		Renderers::RenderCommand::Clear();
 
-	void OnUpdate(float delaTime)
+		Renderers::IRenderer::BeginScene( *m_camera );
+
+		glm::mat4 trans = glm::translate( glm::mat4( 1.f ), m_squarePos );
+		Renderers::IRenderer::Submit( m_blueShader, m_squareVA, trans );
+		Renderers::IRenderer::Submit( m_vertexColorShader, m_triangleVA, glm::mat4( 1.f ) );
+
+		Renderers::IRenderer::EndScene();
+	}
+
+	void _HandleInput(float deltaTime)
+	{	
+		// Camera
+		if ( IInput::IsKeyPressed( TE_KEY_LEFT ) )
+		{
+			m_cameraPos.x -= 1.f * deltaTime;
+		}
+		if ( IInput::IsKeyPressed( TE_KEY_RIGHT ) )
+		{
+			m_cameraPos.x += 1.f * deltaTime;
+		}
+		if ( IInput::IsKeyPressed( TE_KEY_UP ) )
+		{
+			m_cameraPos.y += 1.f * deltaTime;
+		}
+		if ( IInput::IsKeyPressed( TE_KEY_DOWN ) )
+		{
+			m_cameraPos.y -= 1.f * deltaTime;
+		}
+
+		m_camera->SetPosition( m_cameraPos );
+	}
+
+	void OnUpdate(float deltaTime)
 	{
 		static float cTime = 0.f;
 		static int fps = 0;
 
-		cTime += delaTime;
+		cTime += deltaTime;
 		++fps;
 		if ( cTime >= 1.f )
 		{
@@ -150,20 +191,8 @@ public:
 			fps = 0;
 		}
 
-		Renderers::RenderCommand::SetClearColour( glm::vec4( 0.7f, 0.f, 0.7f, 1.f ) );
-		Renderers::RenderCommand::Clear();
-
-		Renderers::IRenderer::BeginScene();
-
-		m_blueShader->Bind();
-		m_blueShader->UploadUniformMat4( "u_vpMat", m_camera->GetViewProjectionMatrix() );
-		Renderers::IRenderer::Submit( m_squareVA );
-
-		m_vertexColorShader->Bind();
-		m_vertexColorShader->UploadUniformMat4( "u_vpMat", m_camera->GetViewProjectionMatrix() );
-		Renderers::IRenderer::Submit( m_triangleVA );
-
-		Renderers::IRenderer::EndScene();
+		_HandleInput(deltaTime);
+		_Render();
 	}
 
 	void OnImGuiRender() override
@@ -195,6 +224,9 @@ private:
 	std::shared_ptr<Renderers::Shader> m_vertexColorShader;
 	std::shared_ptr<Renderers::Shader> m_blueShader;
 	std::shared_ptr<Renderers::Camera> m_camera;
+
+	glm::vec3 m_squarePos;
+	glm::vec3 m_cameraPos;
 
 	int m_fps = 0;
 

@@ -72,7 +72,7 @@ namespace TyphoonEngine
 		
 		///  Singleton
 		static Application* s_instance;
-
+		
 		///  Timer
 		std::unique_ptr<Timestep> m_timestep;
 		float m_lastFrameTime;

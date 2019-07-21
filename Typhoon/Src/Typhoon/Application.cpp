@@ -53,7 +53,7 @@ namespace TyphoonEngine
 		///TODO:- config this..
 		WindowProperties wp;
 		wp.m_bVSync = true;
-		wp.m_monitorId = 1;
+		wp.m_monitorId = 0;
 		wp.m_type = EWINDOW_TYPE::BorderWindowed;
 		wp.m_dimensions = glm::vec2( 1280, 720 );
 		m_window = std::unique_ptr<IWindow>( IWindow::Create( wp ) );
