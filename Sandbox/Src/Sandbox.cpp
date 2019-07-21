@@ -140,7 +140,7 @@ public:
 		m_blueShader.reset( new Renderers::Shader( vSrc2, fSrc2 ) );
 
 		std::shared_ptr<Renderers::Texture> texture;
-		texture.reset( new Renderers::Texture( "res/test.png" ) );
+		texture.reset( new Renderers::Texture( "resources/test.png" ) );
 		std::shared_ptr<Renderers::OpenGLTexture2D> glTexture;
 		glTexture.reset( new Renderers::OpenGLTexture2D( texture ) );
 
