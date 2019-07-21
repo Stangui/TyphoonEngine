@@ -5,11 +5,11 @@
 #include "Typhoon/Events/ApplicationEvent.h"
 #include "Typhoon/Events/KeyboardEvent.h"
 #include "Typhoon/Layers/LayerStack.h"
+#include "Typhoon/IWindow.h"
 #include "Timestep.h"
 
 namespace TyphoonEngine
 {
-	class IWindow;
 	class ImGuiLayer;
 
 	namespace Renderers
@@ -30,7 +30,7 @@ namespace TyphoonEngine
 	public:
 
 		///  Constructor
-		Application();
+		Application( const WindowProperties& props = WindowProperties() );
 
 		///  Destructor
 		virtual ~Application();
@@ -70,12 +70,12 @@ namespace TyphoonEngine
 		///  Layer stack
 		LayerStack m_layerStack;
 		
-		///  Singleton
-		static Application* s_instance;
-		
 		///  Timer
 		std::unique_ptr<Timestep> m_timestep;
 		float m_lastFrameTime;
+
+		///  Singleton
+		static Application* s_instance;
 	};
 
 }

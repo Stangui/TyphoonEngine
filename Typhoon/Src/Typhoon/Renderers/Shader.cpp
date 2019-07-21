@@ -1,5 +1,6 @@
 #include "TyphoonPCH.h"
 #include "Shader.h"
+#include "OpenGL\OpenGLTexture2D.h"
 #include "Typhoon/Core.h"
 
 #include "glad/glad.h"
@@ -133,12 +134,23 @@ namespace TyphoonEngine
 		void Shader::Bind() const
 		{
 			glUseProgram( m_shaderId );
+			if ( m_texture )
+			{
+				m_texture->Bind( m_slot );
+			}
 		}
 		
 		////--------------------------------------------////
 		void Shader::Unbind() const
 		{
 			glUseProgram( 0 );
+		}
+
+		////--------------------------------------------////
+		void Shader::AddTexture( std::shared_ptr<OpenGLTexture2D>& texture, glm::uint32 slot )
+		{
+			m_texture = texture;
+			m_slot = slot;
 		}
 
 		////--------------------------------------------////

@@ -78,19 +78,20 @@ public:
 		// Add triangle mesh & shader
 		m_squareVA.reset( Renderers::VertexArray::Create() );;
 
-		float sqVertices[3 * 4] =
+		float sqVertices[5 * 4] =
 		{
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.5f,  0.5f, 0.0f,
-			-0.5f,  0.5f, 0.0f
+			-0.5f, -0.5f, 0.0f, 0.f, 1.f,
+			 0.5f, -0.5f, 0.0f, 1.f, 1.f,
+			 0.5f,  0.5f, 0.0f, 1.f, 0.f,
+			-0.5f,  0.5f, 0.0f, 0.f, 0.f
 		};
 
 		std::shared_ptr<Renderers::IVertexBuffer> vBufferSq;
 		vBufferSq.reset( Renderers::IVertexBuffer::Create( sqVertices, sizeof( sqVertices ) ) );
 		vBufferSq->SetLayout(
 			{
-				{ Renderers::ShaderDataType::Float3, "a_Position" }
+				{ Renderers::ShaderDataType::Float3, "a_Position" },
+				{ Renderers::ShaderDataType::Float2, "a_TexCoord0" }
 			}
 		);
 		m_squareVA->AddVertexBuffer( vBufferSq );
@@ -104,14 +105,18 @@ public:
 			#version 330 core
 
 			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord0;
 
 			out vec3 v_Position;
+			out vec2 v_TexCoords;
+
 			uniform mat4 u_vpMat;
 			uniform mat4 u_transform;
-
+			
 			void main()
 			{
 				v_Position = a_Position;
+				v_TexCoords = a_TexCoord0;
 				gl_Position = u_vpMat * u_transform * vec4(a_Position, 1.0);	
 			}
 		)";
@@ -119,17 +124,27 @@ public:
 		const std::string fSrc2 = R"(
 			#version 330 core
 
-			layout(location = 0) out vec4 color;
+			layout(location = 0) out vec4 colour;
 
 			in vec3 v_Position;
+			in vec2 v_TexCoords;
+
+			uniform sampler2D u_texture;
 
 			void main()
 			{
-				color = vec4(0.2, 0.3, 0.6, 1.0);	
+				colour = texture(u_texture, v_TexCoords);
 			}
 		)";
 
 		m_blueShader.reset( new Renderers::Shader( vSrc2, fSrc2 ) );
+
+		std::shared_ptr<Renderers::Texture> texture;
+		texture.reset( new Renderers::Texture( "res/test.png" ) );
+		std::shared_ptr<Renderers::OpenGLTexture2D> glTexture;
+		glTexture.reset( new Renderers::OpenGLTexture2D( texture ) );
+
+		m_blueShader->AddTexture( glTexture, 0 );
 
 		m_camera.reset( new Renderers::Camera() );
 		m_camera->Init();
@@ -140,50 +155,15 @@ public:
 	{
 	}
 	
-	void _Render()
-	{
-		Renderers::RenderCommand::SetClearColour( glm::vec4( 0.7f, 0.f, 0.7f, 1.f ) );
-		Renderers::RenderCommand::Clear();
-
-		Renderers::IRenderer::BeginScene( *m_camera );
-
-		glm::mat4 trans = glm::translate( glm::mat4( 1.f ), m_squarePos );
-		Renderers::IRenderer::Submit( m_blueShader, m_squareVA, trans );
-		Renderers::IRenderer::Submit( m_vertexColorShader, m_triangleVA, glm::mat4( 1.f ) );
-
-		Renderers::IRenderer::EndScene();
-	}
-
-	void _HandleInput(float deltaTime)
-	{	
-		// Camera
-		if ( IInput::IsKeyPressed( TE_KEY_LEFT ) )
-		{
-			m_cameraPos.x -= 1.f * deltaTime;
-		}
-		if ( IInput::IsKeyPressed( TE_KEY_RIGHT ) )
-		{
-			m_cameraPos.x += 1.f * deltaTime;
-		}
-		if ( IInput::IsKeyPressed( TE_KEY_UP ) )
-		{
-			m_cameraPos.y += 1.f * deltaTime;
-		}
-		if ( IInput::IsKeyPressed( TE_KEY_DOWN ) )
-		{
-			m_cameraPos.y -= 1.f * deltaTime;
-		}
-
-		m_camera->SetPosition( m_cameraPos );
-	}
-
 	void OnUpdate(float deltaTime)
 	{
 		static float cTime = 0.f;
-		static int fps = 0;
+		static glm::int32 fps = 0;
 
 		cTime += deltaTime;
 		++fps;
+
+		/// FPS counter
 		if ( cTime >= 1.f )
 		{
 			cTime = 0.f;
@@ -191,7 +171,10 @@ public:
 			fps = 0;
 		}
 
+		/// Handle input polling
 		_HandleInput(deltaTime);
+
+		/// Render 3D geometry
 		_Render();
 	}
 
@@ -219,16 +202,56 @@ public:
 
 private:
 
+	void _Render()
+	{
+		Renderers::RenderCommand::SetClearColour( glm::vec4( 0.7f, 0.f, 0.7f, 1.f ) );
+		Renderers::RenderCommand::Clear();
+
+		Renderers::IRenderer::BeginScene( *m_camera );
+
+		glm::mat4 scale = glm::scale( glm::mat4( 1.f ), glm::vec3( 1.3f ) );
+		glm::mat4 trans = glm::translate( glm::mat4( 1.f ), m_squarePos ) * scale;
+		Renderers::IRenderer::Submit( m_blueShader, m_squareVA, trans );
+
+		trans = glm::translate( glm::mat4( 1.f ), glm::vec3( 0.f ) );
+		Renderers::IRenderer::Submit( m_vertexColorShader, m_triangleVA, trans );
+
+		Renderers::IRenderer::EndScene();
+	}
+
+	void _HandleInput( float deltaTime )
+	{
+		// Camera
+		if ( IInput::IsKeyPressed( TE_KEY_LEFT ) )
+		{
+			m_cameraPos.x -= 1.f * deltaTime;
+		}
+		if ( IInput::IsKeyPressed( TE_KEY_RIGHT ) )
+		{
+			m_cameraPos.x += 1.f * deltaTime;
+		}
+		if ( IInput::IsKeyPressed( TE_KEY_UP ) )
+		{
+			m_cameraPos.y += 1.f * deltaTime;
+		}
+		if ( IInput::IsKeyPressed( TE_KEY_DOWN ) )
+		{
+			m_cameraPos.y -= 1.f * deltaTime;
+		}
+
+		m_camera->SetPosition( m_cameraPos );
+	}
+
 	std::shared_ptr<Renderers::VertexArray> m_triangleVA;
 	std::shared_ptr<Renderers::VertexArray> m_squareVA;
 	std::shared_ptr<Renderers::Shader> m_vertexColorShader;
 	std::shared_ptr<Renderers::Shader> m_blueShader;
 	std::shared_ptr<Renderers::Camera> m_camera;
-
+	
 	glm::vec3 m_squarePos;
 	glm::vec3 m_cameraPos;
 
-	int m_fps = 0;
+	glm::int32 m_fps = 0;
 
 };
 
@@ -239,7 +262,7 @@ class SandboxApp : public TyphoonEngine::Application
 {
 public:
 
-	SandboxApp() 
+	SandboxApp(const TyphoonEngine::WindowProperties& props) : Application(props)
 	{
 		PushLayer( new ExampleLayer );
 	}
@@ -255,5 +278,9 @@ public:
 //
 TyphoonEngine::Application* CreateApplication() 
 {
-	return new SandboxApp();
+	TyphoonEngine::WindowProperties props;
+	props.m_bVSync = true;
+	props.m_dimensions = glm::ivec2(1280, 800);
+	props.m_title = "Test";	
+	return new SandboxApp(props);
 }

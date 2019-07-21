@@ -18,48 +18,21 @@ namespace TyphoonEngine
 
 	Application* Application::s_instance = nullptr;
 
-	//// Type converter
-	static GLenum ShaderDataTypeToOpenGLType( Renderers::ShaderDataType type )
-	{
-		switch ( type )
-		{
-		case Renderers::ShaderDataType::Int:
-		case Renderers::ShaderDataType::Int2:
-		case Renderers::ShaderDataType::Int3:
-		case Renderers::ShaderDataType::Int4:	return GL_INT;
-		case Renderers::ShaderDataType::Float:
-		case Renderers::ShaderDataType::Float2:
-		case Renderers::ShaderDataType::Float3:
-		case Renderers::ShaderDataType::Float4:
-		case Renderers::ShaderDataType::Mat3:
-		case Renderers::ShaderDataType::Mat4:	return GL_FLOAT;
-		case Renderers::ShaderDataType::Bool:	return GL_BOOL;
-		}
-
-		TE_ASSERT( false, "Unknown ShaderDataType!" );
-		return 0;
-	}
-
 	///----------------------------------------------///
-	Application::Application() :
+	Application::Application( const WindowProperties& props ) :
 		m_bRunning( true )
 		, m_bFocused( true )
 		,m_lastFrameTime( 0.f )
 	{
 		TE_ASSERT( !s_instance, "Application already exists!" )
-		//// Singleton
+		/// Singleton
 		s_instance = this;
 
-		///TODO:- config this..
-		WindowProperties wp;
-		wp.m_bVSync = true;
-		wp.m_monitorId = 0;
-		wp.m_type = EWINDOW_TYPE::BorderWindowed;
-		wp.m_dimensions = glm::vec2( 1280, 720 );
-		m_window = std::unique_ptr<IWindow>( IWindow::Create( wp ) );
+		/// Create window
+		m_window = std::unique_ptr<IWindow>( IWindow::Create( props ) );
 		m_window->SetEventCallback( BIND_CB_FUNC( &Application::OnEvent ) );
 
-		//// Add UI debug layer
+		/// Add UI debug layer
 		m_imgui = new ImGuiLayer();
 		PushOverlay( m_imgui );
 

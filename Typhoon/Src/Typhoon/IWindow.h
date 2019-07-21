@@ -30,7 +30,7 @@ namespace TyphoonEngine
 		WindowProperties() :
 			 m_dimensions(1270, 720)
 			, m_bVSync( true )
-			, m_type( EWINDOW_TYPE::BorderlessWindowed )
+			, m_type( EWINDOW_TYPE::BorderWindowed )
 			, m_monitorId( 0 )
 			, m_title("Typhoon Application")
 		{

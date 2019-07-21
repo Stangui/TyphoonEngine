@@ -262,6 +262,8 @@ namespace TyphoonEngine
 			}
 		}		
 		
+		SetVSync( m_windowData.m_bVSync );
+
 		m_context = new Renderers::OpenGLContext( m_glWindow );
 		TE_ASSERT( m_context, "!!! Failed to create rendering context!" );
 		m_context->Init();

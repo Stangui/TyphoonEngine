@@ -7,6 +7,7 @@ namespace TyphoonEngine
 {
 	namespace Renderers
 	{
+		class OpenGLTexture2D;
 
 		class Shader
 		{
@@ -19,11 +20,15 @@ namespace TyphoonEngine
 			void Bind() const;
 			void Unbind() const;
 
+			void AddTexture( std::shared_ptr<OpenGLTexture2D>& texture, glm::uint32 slot );
+
 			void UploadUniformMat4(const std::string& name, const glm::mat4& mat);
 
 		private:
 
 			glm::uint32 m_shaderId;
+			glm::uint32 m_slot;
+			std::shared_ptr<OpenGLTexture2D> m_texture;
 		};
 
 	}

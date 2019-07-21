@@ -8,19 +8,44 @@ namespace TyphoonEngine
 	namespace Renderers
 	{
 
-		class ITexture
+		///
+		/// Texture loader
+		///
+		class Texture
 		{
 		
 		public:
 		
-			ITexture(const std::string& path);
-			virtual ~ITexture();
+			///
+			/// Constructor
+			/// Parameters:
+			///	 path - filepath to image
+			///
+			Texture(const std::string& path);
 
-			void Load( const std::string& path ) = 0;
-			const glm::int32 GetWidth() const = 0;
-			const glm::int32 GetHeight() const = 0;
-			const glm::int32 GetBits() const = 0;
-			const glm::uint8* GetBuffer() const = 0;
+			///
+			/// Destructor
+			///
+			~Texture();
+
+			///
+			/// Getters for texture properties
+			///
+			const glm::int32 GetWidth() const;
+			const glm::int32 GetHeight() const;
+			const glm::int32 GetBits() const;
+			const glm::uint8* GetBuffer() const;
+
+		private:
+
+			/// filepath
+			std::string m_filePath;
+			
+			/// Texture dims
+			glm::int32 m_width, m_height, m_bpp;
+
+			/// Pixel data 
+			glm::uint8* m_buffer;
 
 		};
 		

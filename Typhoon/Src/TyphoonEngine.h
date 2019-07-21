@@ -2,6 +2,7 @@
 
 /// ---------------- Applications -------------------/// 
 #include "Typhoon/Application.h"
+#include "Typhoon/IWindow.h"
 /// ---------------- Applications -------------------/// 
 
 /// ------------------ Logging ----------------------/// 
@@ -29,6 +30,8 @@
 #include "Typhoon/Renderers/RenderCommand.h"
 #include "Typhoon/Renderers/Shader.h"
 #include "Typhoon/Renderers/VertexArray.h"
+#include "Typhoon\Renderers\Texture.h"
+#include "Typhoon\Renderers\OpenGL\OpenGLTexture2D.h"
 /// ------------------ Renderer ---------------------/// 
 
 #include "Typhoon/Timestep.h"
